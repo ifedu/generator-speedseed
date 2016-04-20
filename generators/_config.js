@@ -3,41 +3,44 @@
 const config = {
     base: require('yeoman-generator').Base,
 
-    createFile(fileOrig, fileDest, props) {
-        props = props || {}
+    create(fileTpl, fileDest) {
+        fileDest = fileDest || fileTpl
 
         this.fs.copyTpl(
-            this.templatePath(fileOrig),
-            this.destinationPath(fileDest), {
-                nameProject: this.props.nameProject
-            }
+            this.templatePath(fileTpl),
+            this.destinationPath(fileDest),
+            this.props
         )
+    },
+
+    del(file) {
+        this.fs.delete(file)
     },
 
     paths() {
         this.sourceRoot(__dirname)
     },
 
-    prompting(prompts, fn) {
+    prompting(prompts) {
         const done = this.async()
 
         this.prompt(prompts, (answers) => {
-            // this.log(answers.name)
             this.props = answers
 
-            if (fn !== undefined) {
-                fn(answers)
+            for (let answer in answers) {
+                this.config.set(answer, answers[answer])
             }
-
-            this.props.moduleName = this.config.get('moduleName')
 
             done()
         })
-    }
+    },
+
+    props: {}
 }
 
 config.construct = function () {
-    config.createFile = config.createFile.bind(this)
+    config.create = config.create.bind(this)
+    config.del = config.del.bind(this)
     config.paths = config.paths.bind(this)
     config.prompting = config.prompting.bind(this)
 

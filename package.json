@@ -1,8 +1,8 @@
 {
-  "description": "",
+  "description": "Speed seed with multiple posibilities. Writed with es6 - nodejs >4.0",
   "main": "generators/index.js",
   "name": "generator-speedseed",
-  "version": "0.1.1",
+  "version": "0.1.2",
   
   "keywords": [
     "yeoman-generator"

@@ -1,0 +1,34 @@
+*
+    box-sizing border-box
+
+body
+    font-family arial
+    user-select none
+    -webkit-user-select none
+
+    .table
+        display table
+        margin auto
+        text-align center
+        width 300px
+
+        .row
+            display table-row
+
+            mttt-square
+                display table-cell
+
+            .square
+                border 1px solid #000
+                cursor pointer
+                display table-cell
+                height 100px
+                vertical-align middle
+                width 100px
+
+                img
+                    max-height 100px
+                    max-width 100px
+
+                    &.hidden
+                        visibility hidden
