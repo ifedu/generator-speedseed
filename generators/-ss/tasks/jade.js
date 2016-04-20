@@ -1,23 +1,24 @@
 module.exports = ($) => {
-    // 'use strict'
+    'use strict'
 
-    // $.gulp.task('jade', () =>
-    //     $.gulp
-    //     .src([
-    //         `${$.dev.dir}/**/*.jade`,
-    //         `!${$.dev.dir}/**/_*.jade`,
-    //         `!${$.dev.dir}/**/_**/**/*.jade`
-    //     ])
-    //     .pipe($.changed($.deploy.dir, {extension: '.html'}))
+    $.gulp.task('jade', () => {
     //     .pipe($.data((file) => $.fn.jsonJade(file)))
-    //     .pipe($.jade({
-    //         pretty: true
-    //     }))
-    //     .on('error', (error) => {
-    //         console.log(error)
-    //     })
-    //     .pipe($.gulp.dest($.deploy.dir))
-    // )
+        const jade = require('gulp-jade')
+        
+        return $
+        .gulp
+        .src([
+            `${$.dev.dir}/**/*.jade`,
+            `!${$.dev.dir}/**/_*.jade`,
+            `!${$.dev.dir}/**/_**/**/*.jade`
+        ])
+        .pipe($.changed($.deploy.dir, {extension: '.html'}))
+        .pipe(jade({
+            pretty: true
+        }))
+        .on('error', (error) => console.log(error))
+        .pipe($.gulp.dest($.deploy.dir))
+    })
 
     // $.gulp.task('jade-script', () =>
     //     $.gulp

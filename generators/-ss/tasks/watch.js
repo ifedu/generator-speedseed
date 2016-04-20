@@ -1,17 +1,17 @@
 module.exports = ($) => {
     'use strict'
 
-    // $.gulp.task('watch', () => {
-    //     setTimeout(() => {
-    //         $.gulp.watch([`${$.deploy.dir}/**/*`], (event) => {
-    //             const FILE_NAME = $.path.relative(__dirname, event.path)
+    $.gulp.task('watch', () => {
+        setTimeout(() => {
+            $.gulp.watch([`${$.deploy.dir}/**/*`], (event) => {
+                const FILE_NAME = $.path.relative(__dirname, event.path)
 
-    //             $.tinylr.changed({
-    //                 body: {
-    //                     files: [FILE_NAME]
-    //                 }
-    //             })
-    //         })
+                $.tinylr.changed({
+                    body: {
+                        files: [FILE_NAME]
+                    }
+                })
+            })
 
     //         $.gulp.watch(`${$.dev.dir}/**/*.jade`, () => $.runSequence('jade', 'templateCache'))
 
@@ -28,6 +28,6 @@ module.exports = ($) => {
 
     //         $.gulp.watch(`${$.dev.guide}/**/*.styl`, ['styles-guide'])
     //         $.gulp.watch(`${$.dev.serverTasks}/*.js`, ['compile'])
-    //     }, 2000)
-    // })
+        }, 2000)
+    })
 }

@@ -12,7 +12,7 @@ module.exports = ($) => {
     //     .pipe($.gulp.dest($.deploy.dir))
     // )
 
-    // $.gulp.task('karma', (done) => {
+    $.gulp.task('karma', (done) => {
     //     $.karma.start({
     //         configFile: $.path.resolve(__dirname, '../karma.conf.js')
     //     }, () => done)
@@ -23,5 +23,5 @@ module.exports = ($) => {
     //             `${$.dev.dir}/**/*.spec.js`
     //         ], ['scripts-js-test'])
     //     }, 2000)
-    // })
+    })
 }

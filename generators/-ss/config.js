@@ -1,24 +1,14 @@
 'use strict'
 
 const $ = {
-    // babel: require('gulp-babel'),
-    // changed: require('gulp-changed'),
-    // connect: require('connect-livereload'),
+    changed: require('gulp-changed'),
     // data: require('gulp-data'),
-    // del: require('del'),
-    // express: require('express'),
     // extend: require('extend'),
     gulp: require('gulp'),
     // inject: require('gulp-inject'),
-    // jade: require('gulp-jade'),
     // karma: require('karma').server,
-    // ngAnnotate: require('gulp-ng-annotate'),
-    // open: require('open'),
-    // request: require('request'),
-    // runSequence: require('run-sequence'),
-    // styles: require('gulp-stylus'),
-    // templateCache: require('gulp-angular-templatecache'),
-    // tinylr: require('tiny-lr')(),
+    runSequence: require('run-sequence'),
+    tinylr: require('tiny-lr')(),
     // uglify: require('gulp-uglify'),
     // useref: require('gulp-useref'),
     // wrap: require('gulp-wrap'),
@@ -31,26 +21,26 @@ const $ = {
     // server: './server',
     tasks: './tasks',
 
-    // dev: {
-    //     assets: './dev/assets',
-    //     dir: './dev',
-    //     guide: './dev/guide',
-    //     styles: './dev/styles',
-    //     vendor: './dev/_vendor'
-    // },
-
-    // deploy: {
+    deploy: {
     //     app: './_deploy/app',
-    //     assets: './_deploy/assets',
-    //     dir: './_deploy',
+        assets: './_deploy/assets',
+        dir: './_deploy',
     //     guide: './_deploy/guide',
     //     guideIndex: './_deploy/guide.html',
     //     index: './_deploy/index.html',
-    //     js: './_deploy/js',
+        js: './_deploy/js',
     //     styles: './_deploy/styles',
-    //     vendor: './_deploy/vendor',
+        vendor: './_deploy/vendor',
     //     views: './_deploy/views'
-    // },
+    },
+
+    dev: {
+        assets: './dev/assets',
+        dir: './dev',
+    //     guide: './dev/guide',
+    //     styles: './dev/styles',
+        vendor: './dev/_vendor'
+    },
 
     // dist: {
     //     allJs: './_public-dist/js/all.js',
