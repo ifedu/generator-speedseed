@@ -1,8 +1,8 @@
 module.exports = ($) => {
     'use strict'
 
-    $.gulp.task('jade', () => {
-    //     .pipe($.data((file) => $.fn.jsonJade(file)))
+    $.gulp.task('html', () => {
+        const data = require('gulp-data')
         const jade = require('gulp-jade')
         
         return $
@@ -13,6 +13,7 @@ module.exports = ($) => {
             `!${$.dev.dir}/**/_**/**/*.jade`
         ])
         .pipe($.changed($.deploy.dir, {extension: '.html'}))
+        .pipe(data((file) => $.jsonJade(file)))
         .pipe(jade({
             pretty: true
         }))

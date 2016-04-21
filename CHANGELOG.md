@@ -1,3 +1,6 @@
+## v.0.1.4
+    - Pasa propiedades js a jade
+
 ## v.0.1.3
     - Añadidas tareas básicas de gulp
 

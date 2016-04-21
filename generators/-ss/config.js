@@ -1,9 +1,7 @@
 'use strict'
 
-const $ = {
+module.exports = {
     changed: require('gulp-changed'),
-    // data: require('gulp-data'),
-    // extend: require('extend'),
     gulp: require('gulp'),
     // inject: require('gulp-inject'),
     // karma: require('karma').server,
@@ -52,36 +50,38 @@ const $ = {
     //     vendor: './_public-dist/vendor'
     // },
 
-    // jsonData: {},
+    jsonJade(file) {
+        const extend = require('extend')
+
+        const NAME = file.path
+
+        const FILEJADE = this.path.basename(NAME, '.jade')
+
+        let dirname = this.path.dirname(NAME)
+        dirname = dirname.replace(`${this.path.sep}_dev${this.path.sep}`, `${this.path.sep}deploy${this.path.sep}`)
+
+        const ROUTE = this.path.resolve(__dirname, dirname, `_${FILEJADE}.js`)
+        const ROUTE_GLOBAL = this.path.resolve(__dirname, '../', `${this.dev.dir}/__global.js`)
+
+        delete require.cache[ROUTE]
+        delete require.cache[ROUTE_GLOBAL]
+
+        const JSON_FILE = (this.fs.existsSync(ROUTE)) ? require(ROUTE) : {}
+        const JSON_FILE_GLOBAL = (this.fs.existsSync(ROUTE_GLOBAL)) ? require(ROUTE_GLOBAL) : {}
+
+        const jsonData = {}
+
+        extend(true, jsonData, JSON_FILE_GLOBAL)
+        extend(true, jsonData, JSON_FILE)
+
+        return jsonData
+    },
 
     readFolder(folder) {
         const PATH = this.path.join(__dirname, folder)
 
         const FILES = this.fs.readdirSync(PATH)
 
-        FILES.forEach((file) => require(`${$.tasks}/${file}`)($))
+        FILES.forEach((file) => require(`${this.tasks}/${file}`)(this))
     }
 }
-
-$.fn = {
-    // jsonJade(file) {
-    //     const NAME = file.path
-
-    //     const FILEJADE = $.path.basename(NAME, '.jade')
-
-    //     let dirname = $.path.dirname(NAME)
-    //     dirname = dirname.replace(`${$.path.sep}dev${$.path.sep}`, `${$.path.sep}deploy${$.path.sep}`)
-
-    //     const ROUTE = $.path.resolve(__dirname, dirname, '_' + FILEJADE + '.js')
-
-    //     const JSON_FILE = ($.fs.existsSync(ROUTE)) ? require(ROUTE) : {}
-
-    //     delete require.cache[ROUTE]
-
-    //     $.extend(true, $.jsonData, JSON_FILE)
-
-    //     return $.jsonData
-    // },
-}
-
-module.exports = $
