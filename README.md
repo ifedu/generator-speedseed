@@ -1,15 +1,15 @@
 ## generator-speedseed
 ## v.0.1.4
 
-### Uso
-    * Una vez *
+### Use
+    * Once *
     npm install gulp -g
     npm install yo -g
     npm install generator-speedseed -g
 
-    * En la carpeta del proyecto *
+    * In the project *
     yo speedseed
     npm install
 
-    * Para lanzar el proyecto
+    * Launch project
     gulp run
