@@ -1,4 +1,7 @@
-## v.0.2.4
+## v.0.2.6
+    Copia vendors
+
+## v.0.2.5
     Crea carpeta dev sólo 1 vez
 
 ## v.0.2.4

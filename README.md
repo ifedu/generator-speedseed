@@ -1,5 +1,5 @@
 ## generator-speedseed
-## v.0.2.5
+## v.0.2.6
 
 ### Use
     * Once *

@@ -25,8 +25,8 @@ module.exports = {
     //     guideIndex: './_deploy/guide.html',
     //     index: './_deploy/index.html',
         js: './_deploy/js',
+        jsVendor: './_deploy/js/vendor',
     //     styles: './_deploy/styles',
-        vendor: './_deploy/vendor',
     //     views: './_deploy/views'
     },
 
@@ -35,7 +35,7 @@ module.exports = {
         dir: './dev',
     //     guide: './dev/guide',
     //     styles: './dev/styles',
-        vendor: './dev/_vendor'
+        jsVendor: './dev/js/_vendor'
     },
 
     // dist: {
