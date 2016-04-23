@@ -1,9 +1,9 @@
 {
-  "description": "Speed seed with multiple posibilities. Writed with es6 - nodejs >4.0",
+  "description": "Speed seed with multiple posibilities. Writed with es6 - Required nodejs > 4.0",
   "main": "generators/index.js",
   "name": "generator-speedseed",
   "repository": "https://github.com/ifedu/generator-speedseed",
-  "version": "0.1.4",
+  "version": "0.2.0",
   
   "keywords": [
     "yeoman-generator"

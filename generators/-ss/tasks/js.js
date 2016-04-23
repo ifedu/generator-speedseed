@@ -1,7 +1,7 @@
 module.exports = ($) => {
     'use strict'
 
-    $.gulp.task('scripts', () => {
+    $.gulp.task('js', () => {
         const babel = require('gulp-babel')
         const ngAnnotate = require('gulp-ng-annotate')
         

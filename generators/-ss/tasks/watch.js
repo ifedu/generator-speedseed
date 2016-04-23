@@ -13,20 +13,18 @@ module.exports = ($) => {
                 })
             })
 
-    //         $.gulp.watch(`${$.dev.dir}/**/*.jade`, () => $.runSequence('jade', 'templateCache'))
+            $.gulp.watch(`${$.dev.dir}/**/*.jade`, () => $.runSequence('html', 'templateCache'))
 
-    //         $.gulp.watch([
-    //             `${$.dev.dir}/**/*.js`,
-    //             `!${$.dev.dir}/**/_*.js`,
-    //             `!${$.dev.dir}/**/*.config.js`,
-    //             `!${$.dev.dir}/**/*.spec.js`
-    //         ], ['scripts'])
+            $.gulp.watch([
+                `${$.dev.dir}/**/*.js`,
+                `!${$.dev.dir}/**/_*.js`,
+                `!${$.dev.dir}/**/*.spec.js`
+            ], ['js'])
 
-    //         $.gulp.watch(`${$.dev.dir}/**/_*.js`, ['jade-script'])
+            $.gulp.watch(`${$.dev.dir}/**/_*.js`, ['html-js'])
 
-    //         $.gulp.watch(`${$.dev.dir}/**/*.styl`, ['styles'])
+            $.gulp.watch(`${$.dev.dir}/**/*.styl`, ['css'])
 
-    //         $.gulp.watch(`${$.dev.guide}/**/*.styl`, ['styles-guide'])
     //         $.gulp.watch(`${$.dev.serverTasks}/*.js`, ['compile'])
         }, 2000)
     })

@@ -3,13 +3,11 @@
 module.exports = {
     changed: require('gulp-changed'),
     gulp: require('gulp'),
-    // inject: require('gulp-inject'),
-    // karma: require('karma').server,
     runSequence: require('run-sequence'),
     tinylr: require('tiny-lr')(),
+
     // uglify: require('gulp-uglify'),
     // useref: require('gulp-useref'),
-    // wrap: require('gulp-wrap'),
 
     // NODE LIBS
     fs: require('fs'),
@@ -50,31 +48,26 @@ module.exports = {
     //     vendor: './_public-dist/vendor'
     // },
 
-    jsonJade(file) {
+    propsHtml: {},
+
+    getJs(route) {
+        delete require.cache[route]
+
+        const JSON_FILE = (this.fs.existsSync(route)) ? require(route) : {}
+
         const extend = require('extend')
+        extend(true, this.propsHtml, JSON_FILE)
+    },
 
-        const NAME = file.path
+    getJsOfHtml(file) {
+        const PATH_NAME = file.path
+        const FILE_NAME = this.path.basename(PATH_NAME, '.jade')
+        const DIR_NAME = this.path.dirname(PATH_NAME)
 
-        const FILEJADE = this.path.basename(NAME, '.jade')
+        const ROUTE_LOCAL = this.path.resolve(__dirname, DIR_NAME, `_${FILE_NAME}.js`)
+        this.getJs(ROUTE_LOCAL)
 
-        let dirname = this.path.dirname(NAME)
-        dirname = dirname.replace(`${this.path.sep}_dev${this.path.sep}`, `${this.path.sep}deploy${this.path.sep}`)
-
-        const ROUTE = this.path.resolve(__dirname, dirname, `_${FILEJADE}.js`)
-        const ROUTE_GLOBAL = this.path.resolve(__dirname, '../', `${this.dev.dir}/__global.js`)
-
-        delete require.cache[ROUTE]
-        delete require.cache[ROUTE_GLOBAL]
-
-        const JSON_FILE = (this.fs.existsSync(ROUTE)) ? require(ROUTE) : {}
-        const JSON_FILE_GLOBAL = (this.fs.existsSync(ROUTE_GLOBAL)) ? require(ROUTE_GLOBAL) : {}
-
-        const jsonData = {}
-
-        extend(true, jsonData, JSON_FILE_GLOBAL)
-        extend(true, jsonData, JSON_FILE)
-
-        return jsonData
+        return this.propsHtml
     },
 
     readFolder(folder) {
@@ -83,5 +76,12 @@ module.exports = {
         const FILES = this.fs.readdirSync(PATH)
 
         FILES.forEach((file) => require(`${this.tasks}/${file}`)(this))
+    },
+
+    resetPropsHtml() {
+        this.propsHtml = {}
+
+        const ROUTE_GLOBAL = this.path.resolve(__dirname, '../', `${this.dev.dir}/__global.js`)
+        this.getJs(ROUTE_GLOBAL)
     }
 }

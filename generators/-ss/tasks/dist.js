@@ -1,5 +1,5 @@
 module.exports = ($) => {
-    // 'use strict'
+    'use strict'
 
     // $.gulp.task('jade-dist', () =>
     //     $.gulp

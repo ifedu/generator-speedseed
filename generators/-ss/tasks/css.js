@@ -1,7 +1,7 @@
 module.exports = ($) => {
     'use strict'
 
-    $.gulp.task('styles', () => {
+    $.gulp.task('css', () => {
         const styles = require('gulp-stylus')
 
         return $

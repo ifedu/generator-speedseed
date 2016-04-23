@@ -1,3 +1,7 @@
+## v.0.2.0
+    compila js, jade y styl
+    watch a js, jade y styl
+
 ## v.0.1.4
     - Pasa propiedades js a jade
 

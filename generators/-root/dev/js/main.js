@@ -1,2 +1,2 @@
 angular
-.module('speedseed-tic-tac-toe', [])
+.module('<%= projectName %>', [])
