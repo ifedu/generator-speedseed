@@ -1,3 +1,9 @@
+## v.0.2.4
+    Crea carpeta dev sólo 1 vez
+
+## v.0.2.4
+    Añade ejemplo de componentes jade
+
 ## v.0.2.0
     compila js, jade y styl
     watch a js, jade y styl

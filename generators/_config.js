@@ -22,16 +22,14 @@ const config = {
     },
 
     prompting(prompts) {
-        console.log(this.config.get('-ss').version)
-
         const done = this.async()
 
         this.prompt(prompts, (answers) => {
             this.props = answers
 
-            this.config.set('-ss', {
-                version: 'generator-speedseed version 0.2.0'
-            })
+            this.config.set('-ss_version', 'generator-speedseed version 0.2.5')
+
+            console.log(this.config.get('-ss_version'))
 
             for (let answer in answers) {
                 this.config.set(answer, answers[answer])

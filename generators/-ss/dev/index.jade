@@ -1,3 +1,5 @@
+include _components/index
+
 doctype html
 html(lang='es')
     head
@@ -18,5 +20,8 @@ html(lang='es')
     body
         div= helloLocal
         div= helloGlobal
+
+        each box in boxes
+            +box(box)
 
         script(src='js/main.js')
