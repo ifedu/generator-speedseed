@@ -1,4 +1,8 @@
+## v.0.2.7
+    Description files
+
 ## v.0.2.6
+    Add example component jade
     Copia vendors
 
 ## v.0.2.5
