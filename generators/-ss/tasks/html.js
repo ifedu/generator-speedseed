@@ -5,8 +5,12 @@ module.exports = ($) => {
         const data = require('gulp-data')
         const jade = require('gulp-jade')
 
+        const configJade = {
+            pretty: true || $.config.html.pretty
+        }
+
         $.resetPropsHtml()
-        
+
         return $
         .gulp
         .src([
@@ -16,12 +20,29 @@ module.exports = ($) => {
         ])
         .pipe($.changed($.deploy.dir, {extension: '.html'}))
         .pipe(data((file) => $.getJsOfHtml(file)))
-        .pipe(jade({
-            pretty: true
-        }))
+        .pipe(jade(configJade))
         .on('error', (error) => console.log(error))
         .pipe($.gulp.dest($.deploy.dir))
     })
+
+    // $.gulp.task('jade-dist', () =>
+    //     $.gulp
+    //     .src([
+    //         `${$.dev.dir}/**/*.jade`,
+    //         `!${$.dev.dir}/**/_**/*.jade`,
+    //         `!${$.dev.dir}/**/_*.jade`,
+
+    //         `!${$.dev.guide}/**/*.jade`,
+    //         `!${$.dev.dir}/guide.jade`
+    //     ])
+    //     .pipe($.data((file) => $.fn.jsonJade(file)))
+    //     .pipe($.jade({
+    //         pretty: false
+    //     }))
+    //     .on('error', (error) => {
+    //         console.log(error);
+    //     })
+        // .pipe($.gulp.dest($.dist.dir))
 
     $.gulp.task('html-js', () => {
         const babel = require('gulp-babel')
@@ -29,7 +50,7 @@ module.exports = ($) => {
         const jade = require('gulp-jade')
 
         $.resetPropsHtml()
-        
+
         return $
         .gulp
         .src([`${$.dev.dir}/**/_*.js`])

@@ -1,24 +1,5 @@
 module.exports = ($) => {
     'use strict'
-
-    // $.gulp.task('jade-dist', () =>
-    //     $.gulp
-    //     .src([
-    //         `${$.dev.dir}/**/*.jade`,
-    //         `!${$.dev.dir}/**/_**/*.jade`,
-    //         `!${$.dev.dir}/**/_*.jade`,
-
-    //         `!${$.dev.guide}/**/*.jade`,
-    //         `!${$.dev.dir}/guide.jade`
-    //     ])
-    //     .pipe($.data((file) => $.fn.jsonJade(file)))
-    //     .pipe($.jade({
-    //         pretty: false
-    //     }))
-    //     .on('error', (error) => {
-    //         console.log(error);
-    //     })
-    //     .pipe($.gulp.dest($.dist.dir))
     // )
 
     // $.gulp.task('styles-dist', () =>

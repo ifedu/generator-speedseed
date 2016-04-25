@@ -1,5 +1,5 @@
 ## generator-speedseed
-## v.0.2.7
+## v.0.3.0
 
 ### Seed for projects created with:
 - *Tasks*
