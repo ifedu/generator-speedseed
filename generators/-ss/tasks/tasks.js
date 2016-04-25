@@ -1,4 +1,6 @@
 module.exports = ($) => {
+    'use strict'
+
     $.gulp.task('build', (cb) => $.runSequence('clean', 'js', ['css', 'html', 'copy'], 'templateCache', cb))
     // $.gulp.task('compiledMin', (cb) => $.runSequence('scripts', ['styles-dist', 'jade-dist', 'copy'], 'copyDeploy', 'templateCache-dist', 'distTask', cb))
 
@@ -7,10 +9,15 @@ module.exports = ($) => {
     $.gulp.task('test', (cb) => $.runSequence('build', 'js-test', 'karma', 'watch', cb))
 
     $.gulp.task('dist', (cb) => {
-        $.config.html.pretty = false
+        $.config.css.min = false
+        $.config.html.min = false
 
-        return $.runSequence('run', cb)
+        for (let prop in $.deploy) {
+            let value = $.deploy[prop].replace('_deploy-dev', '_deploy-min')
 
-        // $.runSequence('compiledMin', 'webserver-dist', cb)
+            $.deploy[prop] = value
+        }
+
+        $.runSequence('run', cb)
     })
 }

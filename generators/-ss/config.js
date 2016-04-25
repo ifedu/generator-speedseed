@@ -18,16 +18,16 @@ module.exports = {
     tasks: './tasks',
 
     deploy: {
-    //     app: './_deploy/app',
-        assets: './_deploy/assets',
-        dir: './_deploy',
-    //     guide: './_deploy/guide',
-    //     guideIndex: './_deploy/guide.html',
-    //     index: './_deploy/index.html',
-        js: './_deploy/js',
-        jsVendor: './_deploy/js/vendor'
-    //     styles: './_deploy/styles',
-    //     views: './_deploy/views'
+    //     app: './_deploy-dev/app',
+        assets: './_deploy-dev/assets',
+        dir: './_deploy-dev',
+    //     guide: './_deploy-dev/guide',
+    //     guideIndex: './_deploy-dev/guide.html',
+    //     index: './_deploy-dev/index.html',
+        js: './_deploy-dev/js',
+        jsVendor: './_deploy-dev/js/vendor'
+    //     styles: './_deploy-dev/styles',
+    //     views: './_deploy-dev/views'
     },
 
     dev: {
@@ -49,6 +49,7 @@ module.exports = {
     // },
 
     config: {
+        css: {},
         html: {}
     },
 

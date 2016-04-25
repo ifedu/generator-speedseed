@@ -1,24 +1,5 @@
 module.exports = ($) => {
     'use strict'
-    // )
-
-    // $.gulp.task('styles-dist', () =>
-    //     $.gulp
-    //     .src(`${$.dev.styles}/main.styl`)
-    //     .pipe($.styles({
-    //         compress: true
-    //     }))
-    //     .pipe($.gulp.dest($.dist.styles))
-    // )
-
-    // $.gulp.task('copyDeploy', (done) =>
-    //     $.gulp
-    //     .src([
-    //         `${$.deploy.dir}/**/*.*`,
-    //         `${$.deploy.vendor}/**/*.*`
-    //     ])
-    //     .pipe($.gulp.dest($.dist.dir))
-    // )
 
     // $.gulp.task('generateOneScriptFile', (done) => {
     //     const assets = $.useref.assets()

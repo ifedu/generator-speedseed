@@ -5,9 +5,7 @@ module.exports = ($) => {
         const data = require('gulp-data')
         const jade = require('gulp-jade')
 
-        const configJade = {
-            pretty: true || $.config.html.pretty
-        }
+        const configJade = ($.config.html.min === false) ? {pretty: false} : {pretty: true}
 
         $.resetPropsHtml()
 
