@@ -1,5 +1,5 @@
 ## generator-speedseed
-## v.0.3.0
+## v.0.3.3
 
 ### Templates
 - https://github.com/ifedu/speedseed-multi-tic-tac-toe
@@ -10,8 +10,8 @@
     - **Gulp**
 
 - *Lints*
-    - Editorconfig
-    - EsLint
+    - **Editorconfig**
+    - **EsLint**
 
 - *Html*
     - **Jade**
@@ -40,11 +40,11 @@
 
     - **npm run deploy**
         - Compile project in _deploy-dev and launch project
-        - *gulp deploy**
+        - *gulp deploy*
 
     - **npm run dist**
         - Compile project minified in _deploy-min and launch project
-        - *gulp deploy --dist=true**
+        - *gulp deploy* --dist=true
 
 ### Structure
 - **-ss** - *don't change this content folder, is updated with generator-speedseed next versions*
