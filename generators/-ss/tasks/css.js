@@ -11,9 +11,7 @@ module.exports = ($) => {
             `!${$.dev.dir}/**/_*.styl`,
             `!${$.dev.dir}/**/_**/**/*.styl`
         ])
-        .pipe(styles({
-            linenos: true
-        }))
+        .pipe(styles($.config.css))
         .pipe($.gulp.dest($.deploy.dir))
         .on('error', (error) => console.log(error))
     })

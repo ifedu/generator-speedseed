@@ -6,7 +6,7 @@ module.exports = ($) => {
         const jade = require('gulp-jade')
 
         $.resetPropsHtml()
-        
+
         return $
         .gulp
         .src([
@@ -16,9 +16,7 @@ module.exports = ($) => {
         ])
         .pipe($.changed($.deploy.dir, {extension: '.html'}))
         .pipe(data((file) => $.getJsOfHtml(file)))
-        .pipe(jade({
-            pretty: true
-        }))
+        .pipe(jade($.config.html))
         .on('error', (error) => console.log(error))
         .pipe($.gulp.dest($.deploy.dir))
     })
@@ -29,7 +27,7 @@ module.exports = ($) => {
         const jade = require('gulp-jade')
 
         $.resetPropsHtml()
-        
+
         return $
         .gulp
         .src([`${$.dev.dir}/**/_*.js`])
