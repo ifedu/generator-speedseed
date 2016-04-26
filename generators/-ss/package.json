@@ -1,6 +1,6 @@
 {
-  "description": "<%= projectDescription %>",
-  "name": "<%= projectName %>",
+  "description": "tic-tac-toe created with generator-speedseed, multiplayer, multisystem, multilanguage",
+  "name": "speedseed-multi-tic-tac-toe",
   "private": true,
   "version": "0.2.0",
 
@@ -43,9 +43,9 @@
   "scripts": {
     "init": "yo speedseed && npm install",
     "install": "npm install gulp -g && npm install yo -g && npm install generator-speedseed -g",
-    "update": "npm install generator-speedseed -g && yo speedseed",
+    "update": "npm install && generator-speedseed -g && yo speedseed",
 
-    "dist": "gulp run --dist=true",
-    "run": "gulp run"
+    "deploy": "gulp deploy",
+    "dist": "gulp deploy --dist=true"
   }
 }

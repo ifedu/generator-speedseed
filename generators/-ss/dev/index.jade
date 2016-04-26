@@ -17,11 +17,13 @@ html(lang='es')
             href='css/main.css'
             rel='stylesheet'
         )
+
     body
-        div= helloLocal
-        div= helloGlobal
+        +table()
 
-        each box in boxes
-            +box(box)
+        +script-min-ini()
 
-        script(src='js/main.js')
+        +script-min('js/vendor/jquery/jquery-2.2.0.min.js')
+        +script-min('js/main.js')
+
+        +script-min-end()

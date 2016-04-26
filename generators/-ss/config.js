@@ -14,6 +14,18 @@ module.exports = {
     // server: './server',
     tasks: './tasks',
 
+    config: {
+        dist: false,
+
+        css: {
+            linenos: true
+        },
+
+        html: {
+            pretty: true
+        }
+    },
+
     deploy: {
     //     app: './_deploy-dev/app',
         assets: './_deploy-dev/assets',
@@ -33,11 +45,6 @@ module.exports = {
     //     guide: './dev/guide',
     //     styles: './dev/styles',
         jsVendor: './dev/js/_vendor'
-    },
-
-    config: {
-        css: {},
-        html: {}
     },
 
     propsHtml: {},
@@ -75,5 +82,29 @@ module.exports = {
 
         const ROUTE_GLOBAL = this.path.resolve(__dirname, '../', `${this.dev.dir}/__global.js`)
         this.getJs(ROUTE_GLOBAL)
+    },
+
+    setDist() {
+        const util = require('gulp-util')
+
+        if (util.env.dist === 'true') {
+            this.config = {
+                dist: true,
+
+                css: {
+                    compress: true
+                },
+
+                html: {
+                    pretty: false
+                }
+            }
+
+            for (let prop in this.deploy) {
+                let value = this.deploy[prop].replace('_deploy-dev', '_deploy-min')
+
+                this.deploy[prop] = value
+            }
+        }
     }
 }

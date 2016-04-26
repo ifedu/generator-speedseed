@@ -1,6 +1,7 @@
 ## v.0.3.0
-    - Crea alias para las tareas
-    - Crea tareas de distribución
+    - Alias para las tareas
+    - Plantilla de juego multi-tic-tac-toe
+    - Tareas de distribución
 
 ## v.0.2.7
     - Description files

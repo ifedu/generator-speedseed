@@ -41,7 +41,9 @@ module.exports = ($) => {
 
     $.gulp.task('minified', (cb) => {
         if ($.config.dist === true) {
-            $.runSequence('generateOneScriptFile', 'compress', 'clean-min', cb)
+            return $.runSequence('generateOneScriptFile', 'compress', 'clean-min', cb)
         }
+
+        cb()
     })
 }

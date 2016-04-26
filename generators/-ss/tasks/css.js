@@ -4,8 +4,6 @@ module.exports = ($) => {
     $.gulp.task('css', () => {
         const styles = require('gulp-stylus')
 
-        const configCss = ($.config.css.min === false) ? {compress: true} : {linenos: true}
-
         return $
         .gulp
         .src([
@@ -13,7 +11,7 @@ module.exports = ($) => {
             `!${$.dev.dir}/**/_*.styl`,
             `!${$.dev.dir}/**/_**/**/*.styl`
         ])
-        .pipe(styles(configCss))
+        .pipe(styles($.config.css))
         .pipe($.gulp.dest($.deploy.dir))
         .on('error', (error) => console.log(error))
     })

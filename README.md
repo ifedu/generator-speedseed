@@ -1,10 +1,17 @@
 ## generator-speedseed
 ## v.0.3.0
 
+### Templates
+- https://github.com/ifedu/speedseed-multi-tic-tac-toe
+
 ### Seed for projects created with:
 - *Tasks*
     - **BabelJs**
     - **Gulp**
+
+- *Lints*
+    - Editorconfig
+    - EsLint
 
 - *Html*
     - **Jade**
@@ -13,17 +20,31 @@
     - **Stylus**
 
 ### Use
-- *Once*
-    - **npm install gulp -g**
-    - **npm install yo -g**
-    - **npm install generator-speedseed -g**
+- *Use once*
+    - **npm run install**
+        - Install libs in the Operating System
+        - *npm install gulp -g*
+        - *npm install yo -g*
+        - *npm install generator-speedseed -g*
 
-- *In the project*
-    - **yo speedseed**
-    - **npm install**
+- *In the project folder*
+    - **npm run init**
+        - Launch generator and install dependencies
+        - *yo speedseed*
+        - *npm install*
 
-- *Launch project*
-    - **gulp run**
+    - **npm run update**
+        - Update generator, install dependencies and launch generator
+        - *npm install*
+        - *yo speedseed*
+
+    - **npm run deploy**
+        - Compile project in _deploy-dev and launch project
+        - *gulp deploy**
+
+    - **npm run dist**
+        - Compile project minified in _deploy-min and launch project
+        - *gulp deploy --dist=true**
 
 ### Structure
 - **-ss** - *don't change this content folder, is updated with generator-speedseed next versions*

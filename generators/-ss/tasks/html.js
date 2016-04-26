@@ -5,8 +5,6 @@ module.exports = ($) => {
         const data = require('gulp-data')
         const jade = require('gulp-jade')
 
-        const configJade = ($.config.html.min === false) ? {pretty: false} : {pretty: true}
-
         $.resetPropsHtml()
 
         return $
@@ -18,7 +16,7 @@ module.exports = ($) => {
         ])
         .pipe($.changed($.deploy.dir, {extension: '.html'}))
         .pipe(data((file) => $.getJsOfHtml(file)))
-        .pipe(jade(configJade))
+        .pipe(jade($.config.html))
         .on('error', (error) => console.log(error))
         .pipe($.gulp.dest($.deploy.dir))
     })
