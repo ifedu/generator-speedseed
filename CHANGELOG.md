@@ -1,19 +1,24 @@
+## v.0.3.0
+    - Alias para las tareas
+    - Plantilla de juego multi-tic-tac-toe
+    - Tareas de distribución
+
 ## v.0.2.7
-    Description files
+    - Description files
 
 ## v.0.2.6
-    Add example component jade
-    Copia vendors
+    - Add example component jade
+    - Copia vendors
 
 ## v.0.2.5
-    Crea carpeta dev sólo 1 vez
+    - Crea carpeta dev sólo 1 vez
 
 ## v.0.2.4
-    Añade ejemplo de componentes jade
+    - Añade ejemplo de componentes jade
 
 ## v.0.2.0
-    compila js, jade y styl
-    watch a js, jade y styl
+    - compila js, jade y styl
+    - watch a js, jade y styl
 
 ## v.0.1.4
     - Pasa propiedades js a jade

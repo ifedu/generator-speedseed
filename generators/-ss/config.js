@@ -6,9 +6,6 @@ module.exports = {
     runSequence: require('run-sequence'),
     tinylr: require('tiny-lr')(),
 
-    // uglify: require('gulp-uglify'),
-    // useref: require('gulp-useref'),
-
     // NODE LIBS
     fs: require('fs'),
     path: require('path'),
@@ -17,17 +14,29 @@ module.exports = {
     // server: './server',
     tasks: './tasks',
 
+    config: {
+        dist: false,
+
+        css: {
+            linenos: true
+        },
+
+        html: {
+            pretty: true
+        }
+    },
+
     deploy: {
-    //     app: './_deploy/app',
-        assets: './_deploy/assets',
-        dir: './_deploy',
-    //     guide: './_deploy/guide',
-    //     guideIndex: './_deploy/guide.html',
-    //     index: './_deploy/index.html',
-        js: './_deploy/js',
-        jsVendor: './_deploy/js/vendor',
-    //     styles: './_deploy/styles',
-    //     views: './_deploy/views'
+    //     app: './_deploy-dev/app',
+        assets: './_deploy-dev/assets',
+        dir: './_deploy-dev',
+    //     guide: './_deploy-dev/guide',
+    //     guideIndex: './_deploy-dev/guide.html',
+        index: './_deploy-dev/index.html',
+        js: './_deploy-dev/js',
+        jsVendor: './_deploy-dev/js/vendor'
+    //     styles: './_deploy-dev/styles',
+    //     views: './_deploy-dev/views'
     },
 
     dev: {
@@ -37,16 +46,6 @@ module.exports = {
     //     styles: './dev/styles',
         jsVendor: './dev/js/_vendor'
     },
-
-    // dist: {
-    //     allJs: './_public-dist/js/all.js',
-    //     app: './_public-dist/app',
-    //     dir: './_public-dist',
-    //     index: './_public-dist/index.html',
-    //     js: './_public-dist/js',
-    //     styles: './_public-dist/styles',
-    //     vendor: './_public-dist/vendor'
-    // },
 
     propsHtml: {},
 
@@ -83,5 +82,29 @@ module.exports = {
 
         const ROUTE_GLOBAL = this.path.resolve(__dirname, '../', `${this.dev.dir}/__global.js`)
         this.getJs(ROUTE_GLOBAL)
+    },
+
+    setDist() {
+        const util = require('gulp-util')
+
+        if (util.env.dist === 'true') {
+            this.config = {
+                dist: true,
+
+                css: {
+                    compress: true
+                },
+
+                html: {
+                    pretty: false
+                }
+            }
+
+            for (let prop in this.deploy) {
+                let value = this.deploy[prop].replace('_deploy-dev', '_deploy-min')
+
+                this.deploy[prop] = value
+            }
+        }
     }
 }
