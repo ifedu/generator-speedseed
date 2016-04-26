@@ -1,3 +1,10 @@
+## v.0.3.3
+    - Copia correctamente la carpeta mixins de -ss
+
+## v.0.3.2
+    - Añade dependencia gulp-util
+    - Corrige la varible en package nombre y descripción
+
 ## v.0.3.0
     - Alias para las tareas
     - Plantilla de juego multi-tic-tac-toe

@@ -28,6 +28,7 @@ module.exports = config.base.extend({
         config.create('-ss/package.json', './package.json')
 
         //-SS
+        config.create('-ss/mixins')
         config.create('-ss/tasks')
 
         //DEV
