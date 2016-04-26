@@ -1,3 +1,6 @@
+## v.0.3.4
+    - Corrige npm run update
+
 ## v.0.3.3
     - Copia correctamente la carpeta mixins de -ss
 

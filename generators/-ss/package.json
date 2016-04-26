@@ -44,7 +44,7 @@
   "scripts": {
     "init": "yo speedseed && npm install",
     "install": "npm install gulp -g && npm install yo -g && npm install generator-speedseed -g",
-    "update": "npm install && generator-speedseed -g && yo speedseed",
+    "update": "npm install generator-speedseed -g && yo speedseed && npm install",
 
     "deploy": "gulp deploy",
     "dist": "gulp deploy --dist=true"
