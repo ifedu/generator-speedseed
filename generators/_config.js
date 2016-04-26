@@ -27,7 +27,7 @@ const config = {
         this.prompt(prompts, (answers) => {
             this.props = answers
 
-            this.config.set('-ss_version', 'generator-speedseed version 0.3.3')
+            this.config.set('-ss_version', 'generator-speedseed version 0.3.4')
 
             console.log(this.config.get('-ss_version'))
 

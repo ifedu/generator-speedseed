@@ -1,5 +1,5 @@
 ## generator-speedseed
-## v.0.3.3
+## v.0.3.4
 
 ### Templates
 - https://github.com/ifedu/speedseed-multi-tic-tac-toe
@@ -35,8 +35,9 @@
 
     - **npm run update**
         - Update generator, install dependencies and launch generator
-        - *npm install*
+        - *npm install generator-speedseed -g*
         - *yo speedseed*
+        - *npm install*
 
     - **npm run deploy**
         - Compile project in _deploy-dev and launch project
