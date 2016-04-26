@@ -45,6 +45,7 @@
     "install": "npm install gulp -g && npm install yo -g && npm install generator-speedseed -g",
     "update": "npm install generator-speedseed -g && yo speedseed",
 
+    "dist": "gulp run --dist=true",
     "run": "gulp run"
   }
 }

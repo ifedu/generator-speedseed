@@ -1,52 +1,47 @@
 module.exports = ($) => {
     'use strict'
 
-    // $.gulp.task('generateOneScriptFile', (done) => {
-    //     const assets = $.useref.assets()
+    $.gulp.task('generateOneScriptFile', (done) => {
+        const useref = require('gulp-useref')
 
-    //     return $.gulp
-    //     .src($.dist.index)
-    //     .pipe(assets)
-    //     .pipe(assets.restore())
-    //     .pipe($.useref())
-    //     .pipe($.gulp.dest($.dist.dir))
-    // })
+        const assets = useref.assets()
 
-    // $.gulp.task('compress', () =>
-    //     $.gulp
-    //     .src(`${$.dist.dir}/**/*.js`)
-    //     .pipe($.uglify())
-    //     .pipe($.gulp.dest($.dist.dir))
-    // )
+        return $
+        .gulp
+        .src($.deploy.index)
+        .pipe(assets)
+        .pipe(assets.restore())
+        .pipe(useref())
+        .pipe($.gulp.dest($.deploy.dir))
+    })
 
-    // $.gulp.task('clean-dist', (cb) =>
-    //     $.del([
-    //         $.deploy.dir,
-    //         $.dist.dir
-    //     ], FORCE, cb)
-    // )
+    $.gulp.task('compress', () => {
+        const uglify = require('gulp-uglify')
 
-    // $.gulp.task('clean-min', (cb) =>
-    //     $.del([
-    //         `${$.dist.js}/**/*.js`,
-    //         $.dist.vendor,
-    //         `!${$.dist.js}/all.js`,
-    //         `${$.dist.dir}/**/_*`,
-    //         `${$.dist.dir}/**/_**/**/*`
-    //     ], {
-    //         force: true
-    //     }, cb)
-    // )
+        return $
+        .gulp
+        .src(`${$.deploy.dir}/**/*.js`)
+        .pipe(uglify())
+        .pipe($.gulp.dest($.deploy.dir))
+    })
 
-    // $.gulp.task('templateCache-dist', (done) =>
-    //     $.gulp.src(`${$.dist.dir}/**/directives/**/*.html`)
-    //     .pipe($.templateCache('templates.js', {
-    //         standalone: true
-    //     }))
-    //     .pipe($.gulp.dest($.dist.js))
-    // )
+    $.gulp.task('clean-min', (cb) => {
+        const del = require('del')
 
-    // $.gulp.task('webserver-dist', () => require(`../${$.server}/server-dist.js`)($))
+        return del([
+            `${$.deploy.js}/**/*.js`,
+            $.deploy.jsVendor,
+            `${$.deploy.dir}/**/_*`,
+            `${$.deploy.dir}/**/_**/**/*`,
+            `!${$.deploy.js}/all.js`
+        ], {
+            force: true
+        }, cb)
+    })
 
-    // $.gulp.task('distTask', (cb) => $.runSequence('generateOneScriptFile', 'compress', 'clean-min', cb))
+    $.gulp.task('minified', (cb) => {
+        if ($.config.dist === true) {
+            $.runSequence('generateOneScriptFile', 'compress', 'clean-min', cb)
+        }
+    })
 }

@@ -6,9 +6,6 @@ module.exports = {
     runSequence: require('run-sequence'),
     tinylr: require('tiny-lr')(),
 
-    // uglify: require('gulp-uglify'),
-    // useref: require('gulp-useref'),
-
     // NODE LIBS
     fs: require('fs'),
     path: require('path'),
@@ -23,7 +20,7 @@ module.exports = {
         dir: './_deploy-dev',
     //     guide: './_deploy-dev/guide',
     //     guideIndex: './_deploy-dev/guide.html',
-    //     index: './_deploy-dev/index.html',
+        index: './_deploy-dev/index.html',
         js: './_deploy-dev/js',
         jsVendor: './_deploy-dev/js/vendor'
     //     styles: './_deploy-dev/styles',
@@ -37,16 +34,6 @@ module.exports = {
     //     styles: './dev/styles',
         jsVendor: './dev/js/_vendor'
     },
-
-    // dist: {
-    //     allJs: './_public-dist/js/all.js',
-    //     app: './_public-dist/app',
-    //     dir: './_public-dist',
-    //     index: './_public-dist/index.html',
-    //     js: './_public-dist/js',
-    //     styles: './_public-dist/styles',
-    //     vendor: './_public-dist/vendor'
-    // },
 
     config: {
         css: {},
