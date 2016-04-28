@@ -1,5 +1,5 @@
 # generator-speedseed
-## v.0.4.0
+## v.0.4.1
 
 #English
 ### Templates

@@ -29,7 +29,7 @@ module.exports = config.base.extend({
         config.create('-ss/eslintrc', './.eslintrc')
         config.create('-ss/gitignore', './.gitignore')
         config.create('-ss/gulpfile.js', './gulpfile.js')
-        config.create('-ss/karma.conf', '././-ss/karma.conf')
+        config.create('-ss/karma.conf.js', '././-ss/karma.conf.js')
         config.create('-ss/package.json', './package.json')
 
         //-SS
