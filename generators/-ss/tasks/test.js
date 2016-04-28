@@ -3,11 +3,11 @@ module.exports = ($) => {
 
     $.gulp.task('js-test', () => {
         const babel = require('gulp-babel')
-        
+
         return $
         .gulp
         .src([
-            `${$.dev.dir}/**/*.spec.js`
+            `${$.deploy.dir}/**/*.test.js`
         ])
         .pipe($.changed($.deploy.dir))
         .pipe(babel())
@@ -23,8 +23,8 @@ module.exports = ($) => {
 
         setTimeout(() => {
             $.gulp.watch([
-                `${$.dev.dir}/**/*.spec.js`
-            ], ['scripts-js-test'])
+                `${$.deploy.dir}/**/*.test.js`
+            ], ['js-test'])
         }, 2000)
     })
 }

@@ -15,6 +15,10 @@ module.exports = config.base.extend({
             default: this.config.get('projectDescription'),
             message: 'project description',
             name: 'projectDescription'
+        }, {
+            default: this.config.get('projectVersion') || '0.1.0',
+            message: 'project version',
+            name: 'projectVersion'
         }])
     },
 
@@ -25,6 +29,7 @@ module.exports = config.base.extend({
         config.create('-ss/eslintrc', './.eslintrc')
         config.create('-ss/gitignore', './.gitignore')
         config.create('-ss/gulpfile.js', './gulpfile.js')
+        config.create('-ss/karma.conf', '././-ss/karma.conf')
         config.create('-ss/package.json', './package.json')
 
         //-SS

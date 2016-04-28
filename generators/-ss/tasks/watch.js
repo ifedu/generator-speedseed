@@ -24,8 +24,6 @@ module.exports = ($) => {
             $.gulp.watch(`${$.dev.dir}/**/_*.js`, ['html-js'])
 
             $.gulp.watch(`${$.dev.dir}/**/*.styl`, ['css'])
-
-    //         $.gulp.watch(`${$.dev.serverTasks}/*.js`, ['compile'])
         }, 2000)
     })
 }

@@ -25,20 +25,6 @@ module.exports = ($) => {
         .pipe($.gulp.dest($.deploy.dir))
     })
 
-    $.gulp.task('clean-min', (cb) => {
-        const del = require('del')
-
-        return del([
-            `${$.deploy.js}/**/*.js`,
-            $.deploy.jsVendor,
-            `${$.deploy.dir}/**/_*`,
-            `${$.deploy.dir}/**/_**/**/*`,
-            `!${$.deploy.js}/all.js`
-        ], {
-            force: true
-        }, cb)
-    })
-
     $.gulp.task('minified', (cb) => {
         if ($.config.dist === true) {
             return $.runSequence('generateOneScriptFile', 'compress', 'clean-min', cb)

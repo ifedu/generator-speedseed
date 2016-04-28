@@ -8,7 +8,7 @@ module.exports = ($) => {
             .pipe($.gulp.dest(dest))
 
     $.gulp.task('copy-assets', copy(`${$.dev.assets}/**/*`, $.deploy.assets))
-    $.gulp.task('copy-vendor', copy(`${$.dev.jsVendor}/**/*`, $.deploy.jsVendor))
+    $.gulp.task('copy-vendor', copy(`${$.dev.vendor}/**/*`, $.deploy.vendor))
 
     $.gulp.task('copy', (cb) => $.runSequence(['copy-assets', 'copy-vendor'], cb))
 
