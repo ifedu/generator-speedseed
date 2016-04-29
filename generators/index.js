@@ -8,17 +8,18 @@ module.exports = config.base.extend({
 
     prompting() {
         config.prompting([{
-            default: this.config.get('projectName'),
-            message: 'project name',
-            name: 'projectName'
-        }, {
-            default: this.config.get('projectDescription'),
-            message: 'project description',
-            name: 'projectDescription'
-        }, {
-            default: this.config.get('projectVersion') || '0.1.0',
-            message: 'project version',
-            name: 'projectVersion'
+            default: 1,
+            message: 'Library / Framework?',
+            name: 'libraryJS',
+            type: 'list',
+
+            choices: [{
+                name: 'jQuery',
+                value: 'jquery'
+            },{
+                name: 'AngularJS',
+                value: 'angularjs'
+            }]
         }])
     },
 

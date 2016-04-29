@@ -1,8 +1,8 @@
 {
-  "description": "<%= projectDescription %>",
-  "name": "<%= projectName %>",
+  "description": "",
+  "name": "",
   "private": true,
-  "version": "<%= projectVersion %>",
+  "version": "0.0.0",
 
   "dependencies": {
     "browserify": "^10.2.4",
