@@ -8,17 +8,30 @@ module.exports = config.base.extend({
 
     prompting() {
         config.prompting([{
-            default: 1,
+            default: 0,
+            message: 'Template?',
+            name: 'template',
+            type: 'list',
+
+            choices: [{
+                name: 'No',
+                value: 'no'
+            }, {
+                name: 'multi-tic-tac-toe',
+                value: 'multi-tic-tac-toe'
+            }]
+        }, {
+            default: 0,
             message: 'Library / Framework?',
             name: 'libraryJS',
             type: 'list',
 
             choices: [{
-                name: 'jQuery',
-                value: 'jquery'
-            },{
                 name: 'AngularJS',
                 value: 'angularjs'
+            }, {
+                name: 'jQuery',
+                value: 'jquery'
             }]
         }])
     },
@@ -38,12 +51,9 @@ module.exports = config.base.extend({
         config.create('-ss/tasks')
 
         //DEV
-        if (this.config.get('-ss_dev') !== true) {
-            this.config.set('-ss_dev', true)
-
-            config.del('dev')
-
+        if (this.config.get('template') !== 'no') {
             config.create('-ss/dev', './dev')
+            config.create(`-ss/${this.config.get('libraryJS')}`, './dev')
         }
     }
 })

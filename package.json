@@ -16,6 +16,8 @@
     },
 
     "dependencies": {
+        "angular": "^1.5.5",
+        "jquery": "^2.2.3",
         "yeoman-generator": "^0.20.3"
     },
 

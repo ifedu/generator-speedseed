@@ -1,0 +1,29 @@
+include components/index
+
+doctype html
+html(lang='es')
+    head
+        meta(charset='utf-8')
+        title
+        meta(
+            content=''
+            name='description'
+        )
+        //- link(
+        //-     href='favicon.ico'
+        //-     rel='shortcut icon'
+        //- )
+        link(
+            href='css/main.css'
+            rel='stylesheet'
+        )
+
+    body
+        +table()
+
+        +script-min-ini()
+
+        +script-min('vendor/jquery/jquery.min.js')
+        +script-min('components/box/index.js')
+
+        +script-min-end()

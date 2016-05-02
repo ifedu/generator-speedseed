@@ -20,37 +20,37 @@
 - *CSS*
     - **Stylus**
 
+- *JavaScript*
+    - **AngularJS 1.5.5**
+    - **jQuery 2.2.3**
+
 ### Use
-- *Use once*
-    - **npm run install**
-        - Install libs in the Operating System
-        - *npm install gulp -g*
-        - *npm install yo -g*
-        - *npm install generator-speedseed -g*
+- *Once use in the Operating System*
+    - Install libs in the Operating System
+    - **npm install gulp -g**
+    - **npm install yo -g**
+    - **npm install generator-speedseed -g**
+
+- *Once use in the project folder*
+    - Launch generator and install dependencies
+    - **yo speedseed**
+    - **npm install**
 
 - *In the project folder*
-    - **npm run init**
-        - Launch generator and install dependencies
-        - *yo speedseed*
-        - *npm install*
+    - Compile project in _deploy-dev and launch project
+    - **npm run ss-deploy**
 
-    - **npm run update**
-        - Update generator, install dependencies and launch generator
-        - *npm install generator-speedseed -g*
-        - *yo speedseed*
-        - *npm install*
+    - Compile project minified in _deploy-min and launch project
+    - **npm run ss-dist**
 
-    - **npm run deploy**
-        - Compile project in _deploy-dev and launch project
-        - *gulp deploy*
+    - Update generator, install dependencies and launch generator
+    - **npm run ss-update**
 
-    - **npm run dist**
-        - Compile project minified in _deploy-min and launch project
-        - *gulp deploy* --dist=true
+    - Compile project and launch complexity code test plato
+    - **npm run ss-check**
 
+    - Compile project and launch unit test
     - **npm run ss-test**
-        - Compile project and launch unit test
-        - *gulp test*
 
 ### Structure
 - **-ss** - *don't change this content folder, is updated with generator-speedseed next versions*
@@ -92,35 +92,31 @@
 
 ### Uso
 - *Usar una vez en el Sistema Operativo*
-    - **npm run ss-install**
-        - Instala libs in the Operating System
-        - *npm install gulp -g*
-        - *npm install yo -g*
-        - *npm install generator-speedseed -g*
+    - Instala librerías en el Sistema Operativo
+    - **npm install gulp -g**
+    - **npm install yo -g**
+    - **npm install generator-speedseed -g**
+
+- *Usar una vez en la carpeta del proyecto*
+    - Lanza el generador e instalas las dependencias
+    - **yo speedseed**
+    - **npm install**
 
 - *En la carpeta del proyecto*
-    - **npm run ss-init**
-        - Lanza el generador e instalas las dependencias
-        - *yo speedseed*
-        - *npm install*
-
-    - **npm run ss-update**
-        - Actualiza el generador, lo lanza e instala las dependencias
-        - *npm install generator-speedseed -g*
-        - *yo speedseed*
-        - *npm install*
-
+    - Compila el proyecto en _deploy-dev y lo lanza
     - **npm run ss-deploy**
-        - Compila el proyecto en _deploy-dev y lo lanza
-        - *gulp deploy*
 
+    - Compila el proyecto minificado en _deploy-min y lo lanza
     - **npm run ss-dist**
-        - Compila el proyecto minificado en _deploy-min y lo lanza
-        - *gulp deploy --dist=true*
 
+    - Actualiza el generador, lo ejecuta e instala las dependencias
+    - **npm run ss-update**
+
+    - Compila el proyecto y lanza test de complejidad de código plato
+    - **npm run ss-check**
+
+    - Compila el proyecto y lanza los test unitarios
     - **npm run ss-test**
-        - Compila el proyecto y lanza los test unitarios
-        - *gulp test*
 
 ### Structure
 - **-ss** - *no cambiar el contenido de esta carpeta, es actualizado en futuras versiones de generator-speedseed*
