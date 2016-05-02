@@ -7,12 +7,12 @@ module.exports = ($) => {
         return $
         .gulp
         .src([
-            `${$.dev.dir}/**/*.styl`,
-            `!${$.dev.dir}/**/_*.styl`,
-            `!${$.dev.dir}/**/_**/**/*.styl`
+            `${$.dev.css}/**/*.styl`,
+            `!${$.dev.css}/**/_*.styl`,
+            `!${$.dev.css}/**/_**/**/*.styl`
         ])
         .pipe(styles($.config.css))
-        .pipe($.gulp.dest($.deploy.dir))
+        .pipe($.gulp.dest($.deploy.css))
         .on('error', (error) => console.log(error))
     })
 }
