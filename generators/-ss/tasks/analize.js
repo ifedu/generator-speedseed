@@ -1,28 +1,20 @@
 module.exports = ($) => {
-    // 'use strict'
+    'use strict'
 
-    $.gulp.task('clean-plato', (cb) => {
-    //     $.del([
-    //         $.plato
-    //     ], {
-    //         force: true
-    //     }, cb)
+    $.gulp.task('plato', (cb) => {
+        const plato = require('plato')
+
+        const FILES = [
+            `${$.deploy.js}/**/*.js`
+        ]
+
+        const OPTIONS = {}
+
+        $.config.port = 8003
+        $.deploy.dir = './_analysis/plato'
+
+        plato.inspect(FILES, $.plato, OPTIONS, () => $.runSequence('webserver'))
     })
-
-    $.gulp.task('plato', () => {
-    //     const plato = require('plato')
-
-    //     const FILES = [
-    //         `${$.deploy.js}/**/*.js`,
-    //         `${$.deploy.views}/**/*.js`
-    //     ]
-
-    //     const OPTIONS = {}
-
-    //     plato.inspect(FILES, $.plato, OPTIONS, () => $.runSequence('webserver-analize'))
-    })
-
-    // $.gulp.task('webserver-analize', () => require(`../${$.server}/server-analize.js`)($))
 
     $.gulp.task('analysis', () => $.runSequence('clean-plato', 'plato'))
 }

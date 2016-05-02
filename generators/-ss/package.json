@@ -1,8 +1,8 @@
 {
-  "description": "<%= projectDescription %>",
-  "name": "<%= projectName %>",
+  "description": "",
+  "name": "",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.0.0",
 
   "dependencies": {
     "browserify": "^10.2.4",
@@ -42,11 +42,11 @@
   },
 
   "scripts": {
-    "init": "yo speedseed && npm install",
-    "install": "npm install gulp -g && npm install yo -g && npm install generator-speedseed -g",
-    "update": "npm install generator-speedseed -g && yo speedseed && npm install",
+    "ss-update": "npm i generator-speedseed -g    &&    yo speedseed    &&    npm i",
 
-    "deploy": "gulp deploy",
-    "dist": "gulp deploy --dist=true"
+    "ss-check": "gulp check",
+    "ss-deploy": "gulp deploy",
+    "ss-dist": "gulp deploy --dist=true",
+    "ss-test": "gulp test"
   }
 }

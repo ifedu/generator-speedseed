@@ -1,46 +1,27 @@
-## v.0.3.4
-    - Corrige npm run update
+# English
+## v.0.5.0
+    - Add selection framework
+    - Add selection template
+    - Delete npm run ss-init
+    - Delete npm run ss-install
+    - Fix and update Readme
 
-## v.0.3.3
-    - Copia correctamente la carpeta mixins de -ss
+## v.0.4.1
+    - Fix copy karma.conf by karma.conf.js
 
-## v.0.3.2
-    - Añade dependencia gulp-util
-    - Corrige la varible en package nombre y descripción
+## v.0.4.0
+    - Restart changelog in 2 languages
 
-## v.0.3.0
-    - Alias para las tareas
-    - Plantilla de juego multi-tic-tac-toe
-    - Tareas de distribución
+# Español
+## v.0.5.0
+    - Añade selección de framework
+    - Añade selección de plantilla
+    - Arregla y actualiza el Readme
+    - Borra npm run ss-init
+    - Borra npm run ss-install
 
-## v.0.2.7
-    - Description files
+## v.0.4.1
+    - Arregla copiar karma.conf por karma.conf.js
 
-## v.0.2.6
-    - Add example component jade
-    - Copia vendors
-
-## v.0.2.5
-    - Crea carpeta dev sólo 1 vez
-
-## v.0.2.4
-    - Añade ejemplo de componentes jade
-
-## v.0.2.0
-    - compila js, jade y styl
-    - watch a js, jade y styl
-
-## v.0.1.4
-    - Pasa propiedades js a jade
-
-## v.0.1.3
-    - Añadidas tareas básicas de gulp
-
-## v.0.1.2
-    - Copia scraffolding basado en multi-tic-tac-toe
-
-## v.0.1.1
-    - Ejemplo básico
-
-## v.0.1.0
-    - Inicio
+## v.0.4.0
+    - Reinicia el changelog en 2 idiomas

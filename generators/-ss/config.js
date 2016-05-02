@@ -10,12 +10,12 @@ module.exports = {
     fs: require('fs'),
     path: require('path'),
 
-    // plato: './_analysis/plato',
-    // server: './server',
+    plato: './_analysis/plato',
     tasks: './tasks',
 
     config: {
         dist: false,
+        port: 8001,
 
         css: {
             linenos: true
@@ -27,24 +27,19 @@ module.exports = {
     },
 
     deploy: {
-    //     app: './_deploy-dev/app',
         assets: './_deploy-dev/assets',
+        css: './_deploy-dev/css',
         dir: './_deploy-dev',
-    //     guide: './_deploy-dev/guide',
-    //     guideIndex: './_deploy-dev/guide.html',
         index: './_deploy-dev/index.html',
         js: './_deploy-dev/js',
-        jsVendor: './_deploy-dev/js/vendor'
-    //     styles: './_deploy-dev/styles',
-    //     views: './_deploy-dev/views'
+        vendor: './_deploy-dev/vendor'
     },
 
     dev: {
         assets: './dev/assets',
+        css: './dev/css',
         dir: './dev',
-    //     guide: './dev/guide',
-    //     styles: './dev/styles',
-        jsVendor: './dev/js/_vendor'
+        vendor: './dev/_vendor'
     },
 
     propsHtml: {},
@@ -90,6 +85,7 @@ module.exports = {
         if (util.env.dist === 'true') {
             this.config = {
                 dist: true,
+                port: 8002,
 
                 css: {
                     compress: true

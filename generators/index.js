@@ -8,13 +8,31 @@ module.exports = config.base.extend({
 
     prompting() {
         config.prompting([{
-            default: this.config.get('projectName'),
-            message: 'project name',
-            name: 'projectName'
+            default: 0,
+            message: 'Template?',
+            name: 'template',
+            type: 'list',
+
+            choices: [{
+                name: 'No',
+                value: 'no'
+            }, {
+                name: 'multi-tic-tac-toe',
+                value: 'multi-tic-tac-toe'
+            }]
         }, {
-            default: this.config.get('projectDescription'),
-            message: 'project description',
-            name: 'projectDescription'
+            default: 0,
+            message: 'Library / Framework?',
+            name: 'libraryJS',
+            type: 'list',
+
+            choices: [{
+                name: 'AngularJS',
+                value: 'angularjs'
+            }, {
+                name: 'jQuery',
+                value: 'jquery'
+            }]
         }])
     },
 
@@ -25,6 +43,7 @@ module.exports = config.base.extend({
         config.create('-ss/eslintrc', './.eslintrc')
         config.create('-ss/gitignore', './.gitignore')
         config.create('-ss/gulpfile.js', './gulpfile.js')
+        config.create('-ss/karma.conf.js', '././-ss/karma.conf.js')
         config.create('-ss/package.json', './package.json')
 
         //-SS
@@ -32,12 +51,9 @@ module.exports = config.base.extend({
         config.create('-ss/tasks')
 
         //DEV
-        if (this.config.get('-ss_dev') !== true) {
-            this.config.set('-ss_dev', true)
-
-            config.del('dev')
-
+        if (this.config.get('template') !== 'no') {
             config.create('-ss/dev', './dev')
+            config.create(`-ss/${this.config.get('libraryJS')}`, './dev')
         }
     }
 })

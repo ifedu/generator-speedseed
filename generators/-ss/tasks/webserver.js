@@ -9,7 +9,7 @@ module.exports = ($) => {
 
         const app = express()
 
-        const PORT = 8001
+        const PORT = $.config.port
         const PORT_RELOAD = 35729
 
         // ROUTES
