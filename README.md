@@ -53,15 +53,19 @@
 - *In the project folder*
     - Compile project in _deploy-dev and launch project
     - **npm run ss-deploy**
+
     ---
     - Compile project minified in _deploy-min and launch project
     - **npm run ss-dist**
+
     ---
     - Update generator, install dependencies and launch generator
     - **npm run ss-update**
+
     ---
     - Compile project and launch complexity code test plato
     - **npm run ss-check**
+
     ---
     - Compile project and launch unit test
     - **npm run ss-test**
@@ -142,20 +146,16 @@
 - *En la carpeta del proyecto*
     - Compila el proyecto en _deploy-dev y lo lanza
     - **npm run ss-deploy**
----
--
+
     - Compila el proyecto minificado en _deploy-min y lo lanza
     - **npm run ss-dist**
----
--
+
     - Actualiza el generador, lo ejecuta e instala las dependencias
     - **npm run ss-update**
----
--
+
     - Compila el proyecto y lanza test de complejidad de código plato
     - **npm run ss-check**
----
--
+
     - Compila el proyecto y lanza los test unitarios
     - **npm run ss-test**
 ---
