@@ -53,22 +53,16 @@
 - *In the project folder*
     - Compile project in _deploy-dev and launch project
     - **npm run ss-deploy**
-
----
+    ---
     - Compile project minified in _deploy-min and launch project
     - **npm run ss-dist**
-
--
+    ---
     - Update generator, install dependencies and launch generator
     - **npm run ss-update**
-
----
--
+    ---
     - Compile project and launch complexity code test plato
     - **npm run ss-check**
-
----
--
+    ---
     - Compile project and launch unit test
     - **npm run ss-test**
 
