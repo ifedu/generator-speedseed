@@ -1,50 +1,62 @@
-# generator-speedseed
-## v.0.5.0
+## generator-speedseed v.0.5.1
 
-#English
-### Templates
-- https://github.com/ifedu/speedseed-multi-tic-tac-toe
+### English
+## Description: Speed Seed with multiple options for help your development
+- *Permite elegir*
+    - *Plantillas*
+        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
+    
+    ---
 
----
+    - *Framework/Libs*
+        - **AngularJS 1.5.5**
+        - **jQuery 2.2.3**
+    
+    ---
 
-### Seed for projects created with:
-- *Tasks*
-    - **BabelJs**
-    - **Gulp**
+- *Añade*
+    - *Automatizar tareas*
+        - **Gulp**
 
----
+    ---
 
-- *Lints*
-    - **Editorconfig**
-    - **EsLint**
+    - *JS*
+        - **BabelJs**
 
----
+    ---
 
-- *Html*
-    - **Jade**
+    - *Lints*
+        - **Editorconfig**
+        - **EsLint**
 
----
+    ---
 
-- *CSS*
-    - **Stylus**
+    - *Html*
+        - **Jade**
 
----
+    ---
 
-- *JavaScript*
-    - **AngularJS 1.5.5**
-    - **jQuery 2.2.3**
+    - *CSS*
+        - **Stylus**
 
----
+    ---
+    
+    - Files and folders start for _ no compile to deploy, perfect for includes
+    - Global properties for our jades with __global.js or a one file so name.jade _name.js
 
-### Use
-- *Once use in the Operating System* => Install libs in the Operating System
+    ---
+
+## Use
+- *Once use in the Operating System*
+    - Install libs in the Operating System
     - **npm install gulp -g**
     - **npm install yo -g**
     - **npm install generator-speedseed -g**
 
 ---
 
-- *Once use in the project folder* => Launch generator and install dependencies
+- *Once use in the project folder*
+    - Launch generator and install dependencies
     - **yo speedseed**
     - **npm install**
 
@@ -72,7 +84,7 @@
 
 ---
 
-### Structure
+## Structure
 - **-ss** => *don't change this content folder, is updated with generator-speedseed next versions*
 - **_deploy** => *code generated with gulp run, contain code of dev transpiled to html, css, es5. Folders and files _*are ignored*
 
@@ -96,38 +108,55 @@
 - **gulpfile.js** => *call gulp tasks of -ss*
 - **package.json** => *packages of npm and information of the project*
 
----
 
-#Español
-### Plantillas
-- https://github.com/ifedu/speedseed-multi-tic-tac-toe
 
----
+### Español
+## Descripción: Speed Seed con multiples opciones para ayudar al desarrollo
+- *Permite elegir*
+    - *Plantillas*
+        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
+    
+    ---
 
-### Seed for projects created with:
-- *Tareas*
-    - **BabelJs**
-    - **Gulp**
+    - *Framework/Libs*
+        - **AngularJS 1.5.5**
+        - **jQuery 2.2.3**
+    
+    ---
 
----
+- *Añade*
+    - *Automatizar tareas*
+        - **Gulp**
 
-- *Lints*
-    - **Editorconfig**
-    - **EsLint**
+    ---
 
----
+    - *JS*
+        - **BabelJs**
 
-- *Html*
-    - **Jade**
+    ---
 
----
+    - *Lints*
+        - **Editorconfig**
+        - **EsLint**
 
-- *CSS*
-    - **Stylus**
+    ---
 
----
+    - *Html*
+        - **Jade**
 
-### Uso
+    ---
+
+    - *CSS*
+        - **Stylus**
+
+    ---
+    
+    - Ficheros y carpetas que empiezan por _ no se compilan a deploy, perfecto para includes
+    - Propiedades globales para nuestros jades con __global.js o a un fichero así nombre.jade _nombre.js
+
+    ---
+
+## Uso
 - *Usar una vez en el Sistema Operativo*
     - Instala librerías en el Sistema Operativo
     - **npm install gulp -g**
@@ -162,9 +191,10 @@
     ---
     - Compila el proyecto y lanza los test unitarios
     - **npm run ss-test**
+    
 ---
 
-### Structure
+## Structure
 - **-ss** => *no cambiar el contenido de esta carpeta, es actualizado en futuras versiones de generator-speedseed*
 - **_deploy** => *código generado con gulp run, contiene código de dev transpilado a html, css, es5. Carpetas y ficheros _* son ignorados*
 

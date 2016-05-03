@@ -1,4 +1,7 @@
 # English
+## v.0.5.1
+    - Improvements in the README
+
 ## v.0.5.0
     - Add selection framework
     - Add selection template
@@ -13,6 +16,9 @@
     - Restart changelog in 2 languages
 
 # Español
+## v.0.5.1
+    - Mejoras en el README
+
 ## v.0.5.0
     - Añade selección de framework
     - Añade selección de plantilla
