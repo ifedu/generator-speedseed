@@ -1,4 +1,8 @@
 # English
+## v.0.5.2
+    - Add description of the properties speedseed
+    - Description only in package.json
+
 ## v.0.5.1
     - Improvements in the README
 
@@ -16,6 +20,10 @@
     - Restart changelog in 2 languages
 
 # Español
+## v.0.5.2
+    - Añade descripció de las propiedades de speedseed
+    - Descripción sólo en package.json
+
 ## v.0.5.1
     - Mejoras en el README
 

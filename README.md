@@ -1,7 +1,6 @@
-## generator-speedseed v.0.5.1
+### generator-speedseed v.0.5.2
 
 ### English
-## Description: Speed Seed builded with Yeoman. Allow choice template and lib AngularJS or jQuery. Add Gulp, BabelJS, Jade and Stylus.
 - *Permite elegir*
     - *Plantillas*
         - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
@@ -43,6 +42,7 @@
     
     - Files and folders start for _ no compile to deploy, perfect for includes
     - Global properties for our jades with __global.js or a one file so name.jade _name.js
+    - More than a simple seed, allow update the core of the project through npm run ss-update without affecting the development of the project
 
     ---
 
@@ -111,7 +111,6 @@
 
 
 ### Español
-## Descripción: Speed Seed construido con Yeoman. Permite elegir plantilla y librería AngularJS o jQuery. Añade Gulp, BabelJS, Jade y Stylus.
 - *Permite elegir*
     - *Plantillas*
         - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
@@ -152,6 +151,7 @@
     ---
     
     - Ficheros y carpetas que empiezan por _ no se compilan a deploy, perfecto para includes
+    - Mucho más que un simple seed, permite actualizar el núcleo del proyecto mediante npm run ss-update sin afectar al desarrollo del proyecto
     - Propiedades globales para nuestros jades con __global.js o a un fichero así nombre.jade _nombre.js
 
     ---
