@@ -1,7 +1,7 @@
 ## generator-speedseed v.0.5.1
 
 ### English
-## Description: Speed Seed with multiple options for help your development
+## Description: Speed Seed builded with Yeoman. Allow choice template and lib AngularJS or jQuery. Add Gulp, BabelJS, Jade and Stylus.
 - *Permite elegir*
     - *Plantillas*
         - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
@@ -111,7 +111,7 @@
 
 
 ### Español
-## Descripción: Speed Seed con multiples opciones para ayudar al desarrollo
+## Descripción: Speed Seed construido con Yeoman. Permite elegir plantilla y librería AngularJS o jQuery. Añade Gulp, BabelJS, Jade y Stylus.
 - *Permite elegir*
     - *Plantillas*
         - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
