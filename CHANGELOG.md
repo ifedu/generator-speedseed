@@ -1,4 +1,8 @@
 # English
+## v.0.5.3
+    - Change in Yeoman structure
+    - Yeoman no show question Library / Framework? if question Template? is No
+
 ## v.0.5.2
     - Add description of the properties speedseed
     - Description only in package.json
@@ -20,6 +24,10 @@
     - Restart changelog in 2 languages
 
 # Español
+## v.0.5.3
+    - Cambios en estructura de yeoman
+    - Yeoman no muestra pregunta Library / Framework? si la pregunta Template? es No
+
 ## v.0.5.2
     - Añade descripció de las propiedades de speedseed
     - Descripción sólo en package.json

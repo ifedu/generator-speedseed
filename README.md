@@ -1,4 +1,4 @@
-### generator-speedseed v.0.5.2
+### generator-speedseed v.0.5.3
 
 ### English
 - *Permite elegir*
