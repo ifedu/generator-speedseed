@@ -20,13 +20,16 @@ module.exports = require('yeoman-generator').Base.extend({
                 name: 'No',
                 value: 'no'
             }, {
-                name: 'multi-tic-tac-toe',
+                name: 'Multi-Tic-Tac-Toe',
                 value: 'multi-tic-tac-toe'
+            }, {
+                name: 'TodoMVC',
+                value: 'todomvc'
             }]
         }
 
         this.prompt(prompts, (answers) => {
-            this.config.set('-ss_version', 'generator-speedseed version 0.5.3')
+            this.config.set('-ss_version', 'generator-speedseed version 0.6.0')
 
             console.log(this.config.get('-ss_version'))
 

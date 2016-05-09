@@ -22,6 +22,12 @@ module.exports = require('yeoman-generator').Base.extend({
             }, {
                 name: 'jQuery',
                 value: 'jquery'
+            }, {
+                name: 'Polymer',
+                value: 'polymer'
+            }, {
+                name: 'React',
+                value: 'react'
             }]
         }
 
@@ -37,7 +43,6 @@ module.exports = require('yeoman-generator').Base.extend({
     writing() {
         const create = config.create.bind(this)
         // //DEV
-        create('-ss/dev', './dev')
-        create(`-ss/${this.config.get('libraryJS')}`, './dev')
+        create(`-ss/template/${this.config.get('template')}/lib/${this.config.get('libraryJS')}`, './dev', false)
     }
 })

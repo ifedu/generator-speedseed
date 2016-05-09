@@ -1,0 +1,28 @@
+include components/_main
+
+doctype html
+html(lang='es')
+    head
+        meta(charset='utf-8')
+        title
+        meta(content=''
+            name='description')
+        //- link(
+        //-     href='favicon.ico'
+        //-     rel='shortcut icon'
+        //- )
+        link(href='css/main.css'
+            rel='stylesheet')
+        link(href='components/box/main.html'
+            rel='import')
+
+    body
+        +table()
+
+        +script-min-ini()
+
+        +script-min('vendor/polymer/webcomponents-lite.min.js')
+
+        +script-min('components/box/main.js')
+
+        +script-min-end()

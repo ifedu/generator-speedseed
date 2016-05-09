@@ -1,0 +1,29 @@
+include components/_main
+
+doctype html
+html(lang='es'
+    ng-app='speedseed'
+    ng-controler='MainCtrl as mainCtrl')
+    head
+        meta(charset='utf-8')
+        title
+        meta(content=''
+            name='description')
+        //- link(href='favicon.ico'
+        //-     rel='shortcut icon')
+        link(href='css/main.css'
+            rel='stylesheet')
+
+    body
+        ss-table
+
+        +script-min-ini()
+
+        +script-min('vendor/angularjs/angular.min.js')
+
+        +script-min('js/main.js')
+
+        +script-min('components/box/main.js')
+        +script-min('components/table/main.js')
+
+        +script-min-end()

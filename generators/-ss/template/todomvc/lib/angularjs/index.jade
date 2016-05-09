@@ -1,0 +1,98 @@
+include components/_main
+
+doctype html
+html(data-framework='angularjs'
+    lang='en')
+    head
+        meta(charset='utf-8')
+        title AngularJS • TodoMVC
+        link(href='vendor/todomvc-app-css/index.css'
+            rel='stylesheet')
+        style.
+            [ng-cloak] { display: none; }
+
+    body(ng-app='todomvc')
+        ng-view/
+
+        script(id='todomvc-index.html' type='text/ng-template')
+            section#todoapp
+                header#header
+                    h1 todos
+                    form#todo-form(ng-submit='addTodo()')
+                        input#new-todo(autofocus=''
+                            ng-disabled='saving'
+                            ng-model='newTodo'
+                            placeholder='What needs to be done?')/
+
+                section#main(ng-show='todos.length' ng-cloak='')
+                    input#toggle-all(ng-click='markAll(allChecked)'
+                        ng-model='allChecked'
+                        type='checkbox' )
+                    label(for='toggle-all') Mark all as complete
+                    ul#todo-list
+                        li(ng-class='{completed: todo.completed, editing: todo == editedTodo}'
+                            ng-repeat='todo in todos | filter:statusFilter track by $index')
+                            .view
+                                input.toggle(ng-change='toggleCompleted(todo)'
+                                    ng-model='todo.completed'
+                                    type='checkbox')
+                                label(ng-dblclick='editTodo(todo)') {{todo.title}}
+                                button.destroy(ng-click='removeTodo(todo)')
+
+                            form(ng-submit='saveEdits(todo, "submit")')
+                                input.edit(ng-blur='saveEdits(todo, "blur")'
+                                    ng-model='todo.title'
+                                    ng-trim='false'
+                                    todo-escape='revertEdits(todo)'
+                                    todo-focus='todo == editedTodo')
+
+                footer#footer(ng-cloak=''
+                    ng-show='todos.length')
+                    span#todo-count
+                        strong {{remainingCount}}
+                        ng-pluralize(count='remainingCount'
+                            when='{ one: "item left", other: "items left" }')
+
+                    ul#filters
+                        li
+                            a(href='#/'
+                                ng-class='{selected: status == ""} ') All
+
+                        li
+                            a(href='#/active'
+                                ng-class='{selected: status == "active"}') Active
+
+                        li
+                            a(href='#/completed'
+                                ng-class='{selected: status == "completed"}') Completed
+
+                    button#clear-completed(
+                        ng-click='clearCompletedTodos()'
+                        ng-show='completedCount'
+                    ) Clear completed
+
+            footer#info
+                p Double-click to edit a todo
+                p Credits:
+                    a(href='http://twitter.com/cburgdorf') Christoph Burgdorf,
+                    a(href='http://ericbidelman.com') Eric Bidelman,
+                    a(href='http://jacobmumm.com') Jacob Mumm
+                        | and
+                    a(href='http://blog.igorminar.com') Igor Minar
+
+                p Part of
+                    a(href='http://todomvc.com')  TodoMVC
+
+        +script-min-ini()
+
+        +script-min('vendor/angular/angular.js')
+        +script-min('vendor/angular-route/angular-route.js')
+        +script-min('vendor/angular-resource/angular-resource.js')
+
+        +script-min('js/app.js')
+        +script-min('js/controllers/todoCtrl.js')
+        +script-min('js/services/todoStorage.js')
+        +script-min('js/directives/todoFocus.js')
+        +script-min('js/directives/todoEscape.js')
+
+        +script-min-end()

@@ -1,20 +1,23 @@
-### generator-speedseed v.0.5.3
+### v.0.6.0
 
 ### English
-- *Permite elegir*
-    - *Plantillas*
-        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
-    
-    ---
-
+- *Allow choice*
     - *Framework/Libs*
         - **AngularJS 1.5.5**
         - **jQuery 2.2.3**
+        - **Polymer 1.0**
+        - **React 15.0.2**
     
     ---
 
-- *Añade*
-    - *Automatizar tareas*
+    - *Templates*
+        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
+        - **https://github.com/ifedu/speedseed-todomvc**
+    
+    ---
+
+- *Add*
+    - *Automating tasks*
         - **Gulp**
 
     ---
@@ -41,6 +44,7 @@
     ---
     
     - Files and folders start for _ no compile to deploy, perfect for includes
+    - Files with ---.name.css ---.name.js ---.name.html precompile in deploy
     - Global properties for our jades with __global.js or a one file so name.jade _name.js
     - More than a simple seed, allow update the core of the project through npm run ss-update without affecting the development of the project
 
@@ -63,6 +67,10 @@
 ---
 
 - *In the project folder*
+    - Compile project in _deploy-dev
+    - **npm run ss-compile**
+
+    ---
     - Compile project in _deploy-dev and launch project
     - **npm run ss-deploy**
 
@@ -91,7 +99,7 @@
 ---
 
 - **dev** => *development template*
-    - **_components** => *components jade*
+    - **components** => *components*
     - **css** => *contain .styl files*
     - **js** => *contain .js files write with es6*
     - **views** => *contain .jade files*
@@ -112,14 +120,17 @@
 
 ### Español
 - *Permite elegir*
-    - *Plantillas*
-        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
-    
-    ---
-
     - *Framework/Libs*
         - **AngularJS 1.5.5**
         - **jQuery 2.2.3**
+        - **Polymer 1.0**
+        - **React 15.0.2**
+    
+    ---
+
+    - *Plantillas*
+        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
+        - **https://github.com/ifedu/speedseed-todomvc**
     
     ---
 
@@ -151,6 +162,7 @@
     ---
     
     - Ficheros y carpetas que empiezan por _ no se compilan a deploy, perfecto para includes
+    - Ficheros con ---.name.css ---.name.js ---.name.html precompilan en deploy
     - Mucho más que un simple seed, permite actualizar el núcleo del proyecto mediante npm run ss-update sin afectar al desarrollo del proyecto
     - Propiedades globales para nuestros jades con __global.js o a un fichero así nombre.jade _nombre.js
 
@@ -173,6 +185,10 @@
 ---
 
 - *En la carpeta del proyecto*
+    - Compila el proyecto en _deploy-dev y lo lanza
+    - **npm run ss-compile**
+
+    ---
     - Compila el proyecto en _deploy-dev y lo lanza
     - **npm run ss-deploy**
 
@@ -201,7 +217,7 @@
 ---
 
 - **dev** => *plantilla de desarrollo*
-    - **_components** => *componentes jade*
+    - **components** => *componentes*
     - **css** => *contiene  ficheros .styl*
     - **js** => *contiene ficheros .js escritos con es6*
     - **views** => *contiene ficheros .jade*

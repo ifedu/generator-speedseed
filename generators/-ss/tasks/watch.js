@@ -13,17 +13,34 @@ module.exports = ($) => {
                 })
             })
 
-            $.gulp.watch(`${$.dev.dir}/**/*.jade`, () => $.runSequence('html', 'templateCache'))
+            $.gulp.watch([
+                `${$.dev.dir}/**/*.jade`,
+                `!${$.dev.dir}/**/---*.jade`,
+                `!${$.dev.dir}/**/_*.jade`,
+                `!${$.dev.dir}/**/_**/**/*.jade`
+            ], () => $.runSequence('html', 'template-cache'))
 
             $.gulp.watch([
                 `${$.dev.dir}/**/*.js`,
+                `!${$.dev.dir}/**/---*.js`,
                 `!${$.dev.dir}/**/_*.js`,
-                `!${$.dev.dir}/**/*.spec.js`
+                `!${$.dev.dir}/**/_**/**/*.js`
             ], ['js'])
+
+            $.gulp.watch([
+                `${$.dev.dir}/**/*.jsx`,
+                `!${$.dev.dir}/**/_*.jsx`,
+                `!${$.dev.dir}/**/_**/**/*.jsx`
+            ], () => $.runSequence('html-dev', 'jsx', 'clean-dev'))
 
             $.gulp.watch(`${$.dev.dir}/**/_*.js`, ['html-js'])
 
-            $.gulp.watch(`${$.dev.dir}/**/*.styl`, ['css'])
+            $.gulp.watch([
+                `${$.dev.dir}/**/*.styl`,
+                `!${$.dev.dir}/**/---*.styl`,
+                `!${$.dev.dir}/**/_*.styl`,
+                `!${$.dev.dir}/**/_**/**/*.styl`
+            ], ['css'])
         }, 2000)
     })
 }

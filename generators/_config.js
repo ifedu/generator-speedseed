@@ -1,14 +1,21 @@
 'use strict'
 
 module.exports = {
-    create(fileTpl, fileDest) {
+    create(fileTpl, fileDest, props) {
         fileDest = fileDest || fileTpl
 
-        this.fs.copyTpl(
-            this.templatePath(fileTpl),
-            this.destinationPath(fileDest),
-            this.props
-        )
+        if (props === false) {
+            this.fs.copy(
+                this.templatePath(fileTpl),
+                this.destinationPath(fileDest)
+            )
+        } else {
+            this.fs.copyTpl(
+                this.templatePath(fileTpl),
+                this.destinationPath(fileDest),
+                this.props
+            )
+        }
     },
 
     paths() {

@@ -1,0 +1,14 @@
+footer(className='footer')
+    span(className='todo-count')
+        strong {this.props.count}
+            |  {activeTodoWord} left
+
+    ul(className='filters')
+        each todo, i in footer.todos
+            li
+                |<a href="#{todo.href}" #{todo.className}>#{todo.txt}</a>
+
+            if i < footer.todos.length
+                |{' '}
+
+    |{clearButton}

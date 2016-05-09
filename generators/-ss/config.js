@@ -53,9 +53,9 @@ module.exports = {
         extend(true, this.propsHtml, JSON_FILE)
     },
 
-    getJsOfHtml(file) {
+    getJsOfHtml(file, ext, sign) {
         const PATH_NAME = file.path
-        const FILE_NAME = this.path.basename(PATH_NAME, '.jade')
+        const FILE_NAME = this.path.basename(PATH_NAME, ext)
         const DIR_NAME = this.path.dirname(PATH_NAME)
 
         const ROUTE_LOCAL = this.path.resolve(__dirname, DIR_NAME, `_${FILE_NAME}.js`)
@@ -79,8 +79,12 @@ module.exports = {
         this.getJs(ROUTE_GLOBAL)
     },
 
-    setDist() {
+    setParams() {
         const util = require('gulp-util')
+
+        if (util.env.open === 'false') {
+            this.config.open = false
+        }
 
         if (util.env.dist === 'true') {
             this.config = {
