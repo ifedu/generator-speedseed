@@ -28,6 +28,8 @@ module.exports = ($) => {
         $.tinylr.listen(PORT_RELOAD, () => console.log('Listening on port %d', PORT_RELOAD))
 
         // LAUNCH
-        open(`http://localhost:${PORT}`)
+        if ($.config.open !== false) {
+            open(`http://localhost:${PORT}`)
+        }
     })
 }

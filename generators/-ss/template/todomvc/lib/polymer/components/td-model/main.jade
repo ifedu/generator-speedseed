@@ -1,0 +1,11 @@
+link(href='../../vendor/polymer/polymer.html' rel='import')
+link(href='../../vendor/iron-localstorage/iron-localstorage.html' rel='import')
+
+dom-module#td-model
+    template(strip-whitespace='')
+        iron-localstorage(name='todos-polymer'
+            on-iron-localstorage-load-empty='_initializeDefaultTodos'
+            value='{{items}}')
+
+    script
+        include ---main.es5.js

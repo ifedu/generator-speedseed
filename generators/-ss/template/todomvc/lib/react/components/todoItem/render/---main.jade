@@ -1,0 +1,10 @@
+|<li #{li}>
+
+div(className='view')
+    |<input className='toggle' type='checkbox' #{inputToggle}/>
+    |<label #{onDoubleClick}>{this.props.todo.title}</label>
+    |<button #{destroy}></button>
+
+|<input className='edit' ref='editField' #{inputEdit}/>
+
+</li>

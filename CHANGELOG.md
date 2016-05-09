@@ -1,4 +1,12 @@
 # English
+## v.0.6.0
+    - ---*.js ---*.html ---*.css for precompile files in dev
+    - Add Polymer and React
+    - Add template based TodoMVC
+    - Change in the Generator
+    - Fix translate English
+    - Rename files index to main
+
 ## v.0.5.3
     - Change in Yeoman structure
     - Yeoman no show question Library / Framework? if question Template? is No
@@ -24,6 +32,14 @@
     - Restart changelog in 2 languages
 
 # Español
+## v.0.6.0
+    - ---*.js ---*.html ---*.css para precompilar ficheros en dev
+    - Añade Polymer y React
+    - Aaña plantilla basada en TodoMVC
+    - Arregla traducción inglesa
+    - Cambios en el Generador
+    - Renombra ficheros index a main
+
 ## v.0.5.3
     - Cambios en estructura de yeoman
     - Yeoman no muestra pregunta Library / Framework? si la pregunta Template? es No

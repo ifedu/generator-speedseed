@@ -1,9 +1,9 @@
 {
-    "description": "Speed Seed builded with Yeoman. Allow choice template and lib AngularJS or jQuery. Add Gulp, BabelJS, Jade and Stylus.",
+    "description": "Built with Yeoman. Allow choice template and lib AngularJS/jQuery/Polymer/React. Add Gulp, BabelJS, Jade and Stylus.",
     "homepage": "https://github.com/ifedu/generator-speedseed",
     "main": "generators/index.js",
     "name": "generator-speedseed",
-    "version": "0.5.3",
+    "version": "0.6.0",
 
     "keywords": [
         "yeoman-generator"
@@ -18,6 +18,7 @@
     "dependencies": {
         "angular": "^1.5.5",
         "jquery": "^2.2.3",
+        "react": "^15.0.2",
         "yeoman-generator": "^0.20.3"
     },
 

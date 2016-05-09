@@ -1,7 +1,7 @@
 module.exports = ($) => {
     'use strict'
 
-    $.gulp.task('templateCache', (done) => {
+    $.gulp.task('template-cache', (done) => {
         const templateCache = require('gulp-angular-templatecache')
 
         return $
