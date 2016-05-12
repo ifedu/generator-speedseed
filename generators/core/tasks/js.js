@@ -10,6 +10,7 @@ module.exports = ($) => {
         .src([
             `${$.dev.dir}/**/*.js`,
             `!${$.dev.dir}/**/---*.js`,
+            `!${$.dev.dir}/**/*.test.js`,
             `!${$.dev.dir}/**/_*.js`,
             `!${$.dev.dir}/**/_**/**/*.js`
         ])
@@ -28,11 +29,10 @@ module.exports = ($) => {
         return $
         .gulp
         .src([
-            `${$.dev.dir}/**/---*.js`
+            `${$.dev.dir}/**/---*.js`,
+            `${$.dev.dir}/**/*.test.js`
         ])
-        .pipe(rename((path) => {
-            path.basename += '.es5'
-        }))
+        .pipe(rename((path) => path.basename += '.es5'))
         .pipe($.changed($.deploy.dir))
         .pipe(babel())
         .pipe($.gulp.dest($.dev.dir))

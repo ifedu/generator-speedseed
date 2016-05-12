@@ -5,11 +5,11 @@ module.exports = ($) => {
         ['css-dev', 'html-dev', 'js-dev'],
         'jsx',
         ['js', 'css', 'html', 'copy'],
-        ['clean-dev', 'template-cache'],
+        'template-cache',
         cb
     ))
 
-    $.gulp.task('check', (cb) => $.runSequence('build', 'analysis', cb))
-    $.gulp.task('deploy', (cb) => $.runSequence('build', 'minified', 'webserver', 'watch', cb))
-    $.gulp.task('test', (cb) => $.runSequence('build', 'js-test', 'karma', 'watch', cb))
+    $.gulp.task('check', (cb) => $.runSequence('build', 'analysis', 'clean-dev', cb))
+    $.gulp.task('deploy', (cb) => $.runSequence('build', 'minified', 'clean-dev', 'webserver', 'watch', cb))
+    $.gulp.task('test', (cb) => $.runSequence('build', 'js-test', 'clean-dev', 'watch', cb))
 }

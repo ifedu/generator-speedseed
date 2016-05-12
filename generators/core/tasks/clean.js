@@ -15,7 +15,7 @@ module.exports = ($) => {
         deleteFiles([
             `${$.dev.dir}/**/---*.css`,
             `${$.dev.dir}/**/---*.html`,
-            `${$.dev.dir}/**/---*.es5.js`,
+            `${$.dev.dir}/**/*.es5.js`,
             `!${$.dev.dir}/**/_**/**/*`
         ], cb)
     )

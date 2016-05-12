@@ -23,9 +23,14 @@ module.exports = ($) => {
             $.gulp.watch([
                 `${$.dev.dir}/**/*.js`,
                 `!${$.dev.dir}/**/---*.js`,
+                `!${$.dev.dir}/**/*.test.js`,
                 `!${$.dev.dir}/**/_*.js`,
                 `!${$.dev.dir}/**/_**/**/*.js`
             ], ['js'])
+
+            $.gulp.watch([
+                `${$.dev.dir}/**/*.test.js`
+            ], () => $.runSequence('js-dev', 'js-test', 'clean-dev'))
 
             $.gulp.watch([
                 `${$.dev.dir}/**/*.jsx`,
