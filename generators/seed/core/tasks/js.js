@@ -57,7 +57,10 @@ module.exports = ($) => {
         .gulp
         .src([
             `${$.app.dir}/**/.*.js`,
-            `${$.app.dir}/**/.*.spec.js`
+            `${$.app.dir}/**/.*.spec.js`,
+
+            `!${$.app.dir}/**/_*.js`,
+            `!${$.app.dir}/**/_**/**/*.js`
         ])
         .pipe(babel({
             presets: ['es2015']

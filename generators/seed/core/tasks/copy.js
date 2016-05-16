@@ -9,7 +9,12 @@ module.exports = ($) => {
 
     $.gulp.task('copy-assets', copy(`${$.app.assets}/**/*`, $.build.assets))
     $.gulp.task('copy-vendor', copy(`${$.app.vendor}/**/*`, $.build.vendor))
+
     $.gulp.task('copy-files', copy([
+        `${$.app.dir}/**/*.html`,
+        `!${$.app.dir}/**/_*.html`,
+        `!${$.app.dir}/**/_**/**/*.html`,
+
         `${$.app.dir}/**/*.json`,
         `!${$.app.dir}/**/_*.json`,
         `!${$.app.dir}/**/_**/**/*.json`

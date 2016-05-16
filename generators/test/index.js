@@ -40,6 +40,8 @@ module.exports = require('yeoman-generator').Base.extend({
     writing() {
         const create = config.create.bind(this)
         // TEST
-        create(`seed/test/${this.config.get('testJS')}/karma.conf.js`, './.core/karma.conf.js', false)
+        if (this.config.get('testJS') !== 'no') {
+            create(`seed/test/${this.config.get('testJS')}/karma.conf.js`, './.core/karma.conf.js', false)
+        }
     }
 })

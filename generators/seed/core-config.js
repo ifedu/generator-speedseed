@@ -41,17 +41,18 @@ module.exports = {
 
     test: {
         exclude: [
-            '**/_**/**/*.js',
-            '**/_*.js',
-            'vendor/**/*.js'
+            `${app}/**/_**/**/*.js`,
+            `${app}/**/_*.js`,
+            `${build}/**/_**/**/*.js`,
+            `${build}/**/_*.js`
         ],
 
         files: [
-            '**/*.js'
+            `${build}/**/*.js`
         ],
 
         preprocessors: {
-            '**/*.test.js': []
+            [`${app}/**/-*.test.js`]: []
         }
     }
 }
