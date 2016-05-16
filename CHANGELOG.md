@@ -1,5 +1,5 @@
 # English
-## v.0.7.0
+## v.0.7.1
     - Add Karma and allow choice Jasmine or Mocha
     - Allow work without jade
     - Change ---* to .*

@@ -29,7 +29,7 @@ module.exports = require('yeoman-generator').Base.extend({
         }
 
         this.prompt(prompts, (answers) => {
-            this.config.set('core-version', 'generator-speedseed version 0.7.0')
+            this.config.set('core-version', 'generator-speedseed version 0.7.1')
 
             console.log(this.config.get('core-version'))
 

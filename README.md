@@ -1,4 +1,4 @@
-### v.0.7.0
+### v.0.7.1
 
 ### English
 - *Allow choice*
@@ -102,12 +102,12 @@
 ---
 
 ## Structure
-- **-ss** => *don't change this content folder, is updated with generator-speedseed next versions*
-- **_deploy** => *code generated with gulp run, contain code of dev transpiled to html, css, es5. Folders and files _*are ignored*
+- **.core** => *don't change this content folder, is updated with generator-speedseed next versions*
+- **-build** => *code generated with gulp run, contain code of dev transpiled to html, css, es5. Folders and files _*are ignored*
 
 ---
 
-- **dev** => *development template*
+- **app** => *development template*
     - **components** => *components*
     - **css** => *contain .styl files*
     - **js** => *contain .js files write with es6*
@@ -229,12 +229,12 @@
 ---
 
 ## Structure
-- **-ss** => *no cambiar el contenido de esta carpeta, es actualizado en futuras versiones de generator-speedseed*
-- **_deploy** => *código generado con gulp run, contiene código de dev transpilado a html, css, es5. Carpetas y ficheros _* son ignorados*
+- **.core** => *no cambiar el contenido de esta carpeta, es actualizado en futuras versiones de generator-speedseed*
+- **-build** => *código generado con gulp run, contiene código de dev transpilado a html, css, es5. Carpetas y ficheros _* son ignorados*
 
 ---
 
-- **dev** => *plantilla de desarrollo*
+- **app** => *plantilla de desarrollo*
     - **components** => *componentes*
     - **css** => *contiene  ficheros .styl*
     - **js** => *contiene ficheros .js escritos con es6*
