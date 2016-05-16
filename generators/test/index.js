@@ -12,22 +12,19 @@ module.exports = require('yeoman-generator').Base.extend({
 
         const prompts = {
             default: 0,
-            message: 'Library / Framework?',
-            name: 'libraryJS',
+            message: 'Test?',
+            name: 'testJS',
             type: 'list',
 
             choices: [{
-                name: 'AngularJS',
-                value: 'angularjs'
+                name: 'No',
+                value: 'no'
             }, {
-                name: 'jQuery',
-                value: 'jquery'
+                name: 'Jasmine',
+                value: 'jasmine'
             }, {
-                name: 'Polymer',
-                value: 'polymer'
-            }, {
-                name: 'React',
-                value: 'react'
+                name: 'Mocha',
+                value: 'mocha'
             }]
         }
 
@@ -42,7 +39,7 @@ module.exports = require('yeoman-generator').Base.extend({
 
     writing() {
         const create = config.create.bind(this)
-        // APP
-        create(`seed/template/${this.config.get('template')}/lib/${this.config.get('libraryJS')}`, './app', false)
+        // TEST
+        create(`seed/test/${this.config.get('testJS')}/karma.conf.js`, './.core/karma.conf.js', false)
     }
 })

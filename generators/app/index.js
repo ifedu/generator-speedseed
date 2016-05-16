@@ -31,7 +31,7 @@ module.exports = require('yeoman-generator').Base.extend({
         this.prompt(prompts, (answers) => {
             this.config.set('core-version', 'generator-speedseed version 0.7.0')
 
-            console.log(this.config.get('-core-version'))
+            console.log(this.config.get('core-version'))
 
             for (let answer in answers) {
                 this.config.set(answer, answers[answer])
@@ -44,23 +44,24 @@ module.exports = require('yeoman-generator').Base.extend({
     writing() {
         const create = config.create.bind(this)
         // ROOTS
-        create('core/config.js', './.core/config.js')
-        create('core/core-config.js', './core-config.js')
-        create('core/editorconfig', './.editorconfig')
-        create('core/eslintrc', './.eslintrc')
-        create('core/gitignore', './.gitignore')
-        create('core/gulpfile.js', './gulpfile.js')
-        create('core/karma.conf.js', './.core/karma.conf.js')
-        create('core/package.json', './package.json')
+        create('seed/core', './.core', false)
 
-        // CORE
-        create('core/mixins')
-        create('core/tasks')
+        create('seed/babelrc', './.babelrc')
+        create('seed/core-config.js', './.core-config.js')
+        create('seed/editorconfig', './.editorconfig')
+        create('seed/eslintrc', './.eslintrc')
+        create('seed/gitignore', './.gitignore')
+
+        create('seed/gulpfile.js', './gulpfile.js')
+        create('seed/package.json', './package.json')
     },
 
     end() {
+        this.composeWith('speedseed:test')
+
         if (this.config.get('template') !== 'no') {
             this.composeWith('speedseed:framework')
         }
+
     }
 })

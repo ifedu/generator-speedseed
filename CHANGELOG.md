@@ -1,4 +1,6 @@
 # English
+## v.0.7.0
+
 ## v.0.6.0
     - ---*.js ---*.html ---*.css for precompile files in dev
     - Add Polymer and React
@@ -32,6 +34,8 @@
     - Restart changelog in 2 languages
 
 # Español
+## v.0.7.0
+
 ## v.0.6.0
     - ---*.js ---*.html ---*.css para precompilar ficheros en dev
     - Añade Polymer y React

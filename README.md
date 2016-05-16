@@ -1,4 +1,4 @@
-### v.0.6.0
+### v.0.7.0
 
 ### English
 - *Allow choice*

@@ -1,0 +1,33 @@
+include components/_main
+
+doctype html
+html(data-framework='react'
+    lang='en')
+    head
+        meta(charset='utf-8')
+        title React • TodoMVC
+        link(href='vendor/todomvc-app-css/index.css'
+            rel='stylesheet')
+
+    body
+        section.todoapp
+        footer.info
+            p Double-click to edit a todo
+            p Created by
+                a(href='http://github.com/petehunt/')  petehunt
+
+            p Part of
+                a(href='http://todomvc.com') TodoMVC
+
+        +script-dist()
+            script(src='vendor/react/dist/react-with-addons.js')
+            script(src='vendor/classnames/index.js')
+            script(src='vendor/director/build/director.js')
+
+            script(src='js/utils.js')
+            script(src='js/todoModel.js')
+
+            script(src='components/footer/main.js')
+            script(src='components/todoItem/main.js')
+
+            script(src='components/todoApp/main.js')
