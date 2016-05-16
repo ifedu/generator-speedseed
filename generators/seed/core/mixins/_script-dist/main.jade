@@ -1,0 +1,7 @@
+mixin script-dist(js)
+    - var js = js || 'js/all.js'
+
+    |<!---->
+    |<!--build:js #{js}-->
+    block
+    // endbuild

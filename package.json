@@ -1,9 +1,9 @@
 {
-    "description": "Built with Yeoman. Allow choice template and lib AngularJS/jQuery/Polymer/React. Add Gulp, BabelJS, Jade and Stylus.",
+    "description": "Built with Yeoman. Allow choice template Multi-Tic-Tac-Toe/TodoMVC AngularJS/jQuery/Polymer/React Mocha/Jasmine. Add Gulp, BabelJS, Jade and Stylus.",
     "homepage": "https://github.com/ifedu/generator-speedseed",
     "main": "generators/index.js",
     "name": "generator-speedseed",
-    "version": "0.6.0",
+    "version": "0.7.0",
 
     "keywords": [
         "yeoman-generator"

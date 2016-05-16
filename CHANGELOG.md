@@ -1,4 +1,13 @@
 # English
+## v.0.7.0
+    - Add Karma and allow choice Jasmine or Mocha
+    - Allow work without jade
+    - Change ---* to .*
+    - Change name tasks
+    - Change folder names
+    - Posibility change name folders
+    - Update README
+
 ## v.0.6.0
     - ---*.js ---*.html ---*.css for precompile files in dev
     - Add Polymer and React
@@ -32,6 +41,15 @@
     - Restart changelog in 2 languages
 
 # Español
+## v.0.7.0
+    - Actualiza README
+    - Añade Karma y permite elegir Jasmine o Mocha
+    - Cambia ---* por .*
+    - Cambia el nombre de las tareas
+    - Cambia nombres de carpetas
+    - Permite trabajar sin jade
+    - Posibilidad de cambiar el nombre de las carpetas
+
 ## v.0.6.0
     - ---*.js ---*.html ---*.css para precompilar ficheros en dev
     - Añade Polymer y React

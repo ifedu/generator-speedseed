@@ -1,4 +1,4 @@
-### v.0.6.0
+### v.0.7.0
 
 ### English
 - *Allow choice*
@@ -43,12 +43,17 @@
 
     ---
     
-    - Files and folders start for _ no compile to deploy, perfect for includes
-    - Files with ---.name.css ---.name.js ---.name.html precompile in deploy
+    - Files and folders start for _ no compile to deploy, perfect for includes properties
+    - Files with .name.css .name.js .name.html precompile in app, perfect for includes files
     - Global properties for our jades with __global.js or a one file so name.jade _name.js
     - More than a simple seed, allow update the core of the project through npm run ss-update without affecting the development of the project
 
     ---
+
+## Styleguide
+- https://github.com/ifedu/styleguide-web Guide in spanish for Jade, JS(ES6) and Stylus
+
+---
 
 ## Use
 - *Once use in the Operating System*
@@ -67,15 +72,15 @@
 ---
 
 - *In the project folder*
-    - Compile project in _deploy-dev
+    - Compile project in -build
     - **npm run ss-compile**
 
     ---
-    - Compile project in _deploy-dev and launch project
-    - **npm run ss-deploy**
+    - Compile project in -build and launch project
+    - **npm run ss-build**
 
     ---
-    - Compile project minified in _deploy-min and launch project
+    - Compile project minified in -dist and launch project
     - **npm run ss-dist**
 
     ---
@@ -83,12 +88,16 @@
     - **npm run ss-update**
 
     ---
-    - Compile project and launch complexity code test plato
-    - **npm run ss-check**
+    - Compile project in -reports and launch complexity code test plato
+    - **npm run ss-reports**
 
     ---
-    - Compile project and launch unit test
+    - Compile project in -build and launch unit test
     - **npm run ss-test**
+
+    ---
+    - Delete folders -build -dist -reports
+    - **npm run ss-clean**
 
 ---
 
@@ -161,12 +170,17 @@
 
     ---
     
-    - Ficheros y carpetas que empiezan por _ no se compilan a deploy, perfecto para includes
-    - Ficheros con ---.name.css ---.name.js ---.name.html precompilan en deploy
+    - Ficheros y carpetas que empiezan por _ no se compilan a build, perfecto para incluir propiedades
+    - Ficheros con .name.css .name.js .name.html precompilan en app, perfecto para incluir ficheros
     - Mucho más que un simple seed, permite actualizar el núcleo del proyecto mediante npm run ss-update sin afectar al desarrollo del proyecto
     - Propiedades globales para nuestros jades con __global.js o a un fichero así nombre.jade _nombre.js
 
     ---
+
+## Styleguide
+- https://github.com/ifedu/styleguide-web Guiía en español para Jade, JS(ES6) y Stylus
+
+---
 
 ## Uso
 - *Usar una vez en el Sistema Operativo*
@@ -185,15 +199,15 @@
 ---
 
 - *En la carpeta del proyecto*
-    - Compila el proyecto en _deploy-dev y lo lanza
+    - Compila el proyecto en -build
     - **npm run ss-compile**
 
     ---
-    - Compila el proyecto en _deploy-dev y lo lanza
+    - Compila el proyecto en -build y lo lanza
     - **npm run ss-deploy**
 
     ---
-    - Compila el proyecto minificado en _deploy-min y lo lanza
+    - Compila el proyecto minificado en -dist y lo lanza
     - **npm run ss-dist**
 
     ---
@@ -201,12 +215,16 @@
     - **npm run ss-update**
 
     ---
-    - Compila el proyecto y lanza test de complejidad de código plato
+    - Compila el proyecto en -reports y lanza test de complejidad de código plato
     - **npm run ss-check**
 
     ---
-    - Compila el proyecto y lanza los test unitarios
+    - Compila el proyecto en -build y lanza los test unitarios
     - **npm run ss-test**
+
+    ---
+    - Borra carpetas -build -dist -reports
+    - **npm run ss-clean**
     
 ---
 

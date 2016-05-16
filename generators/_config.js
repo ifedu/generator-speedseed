@@ -2,12 +2,14 @@
 
 module.exports = {
     create(fileTpl, fileDest, props) {
-        fileDest = fileDest || fileTpl
-
         if (props === false) {
             this.fs.copy(
                 this.templatePath(fileTpl),
-                this.destinationPath(fileDest)
+                this.destinationPath(fileDest), {
+                    globOptions: {
+                        dot: true
+                    }
+                }
             )
         } else {
             this.fs.copyTpl(

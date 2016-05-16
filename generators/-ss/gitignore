@@ -1,6 +1,0 @@
-*.sublime-project
-*.sublime-workspace
-_deploy-dev
-_deploy-min
-_server/
-node_modules
