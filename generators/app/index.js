@@ -11,7 +11,7 @@ module.exports = require('yeoman-generator').Base.extend({
         const done = this.async()
 
         const prompts = {
-            default: 0,
+            default: this.config.get('template') || 0,
             message: 'Template?',
             name: 'template',
             type: 'list',
@@ -33,15 +33,26 @@ module.exports = require('yeoman-generator').Base.extend({
 
             console.log(this.config.get('core-version'))
 
+            this.props = this.props || {}
+
             for (let answer in answers) {
                 this.config.set(answer, answers[answer])
+
+                this.props[answer] = answers[answer]
             }
 
             done()
         })
     },
 
-    writing() {
+    end() {
+        this.composeWith('speedseed:css')
+        this.composeWith('speedseed:test')
+
+        if (this.config.get('template') !== 'no') {
+            this.composeWith('speedseed:framework')
+        }
+
         const create = config.create.bind(this)
         // ROOTS
         create('seed/core', './.core', false)
@@ -54,14 +65,5 @@ module.exports = require('yeoman-generator').Base.extend({
 
         create('seed/gulpfile.js', './gulpfile.js')
         create('seed/package.json', './package.json')
-    },
-
-    end() {
-        this.composeWith('speedseed:test')
-
-        if (this.config.get('template') !== 'no') {
-            this.composeWith('speedseed:framework')
-        }
-
     }
 })

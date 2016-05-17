@@ -11,7 +11,7 @@ module.exports = require('yeoman-generator').Base.extend({
         const done = this.async()
 
         const prompts = {
-            default: 0,
+            default: this.config.get('libraryJS') || 0,
             message: 'Library / Framework?',
             name: 'libraryJS',
             type: 'list',

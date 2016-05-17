@@ -1,39 +1,62 @@
 module.exports = ($) => {
     'use strict'
 
-    $.gulp.task('css', () => {
-        const styles = require('gulp-stylus')
+    const css = {
+        less(files) {
+            const less = require('gulp-less')
 
+            return less($.config.less)
+        },
+
+        sass(files) {
+            const sass = require('gulp-sass')
+
+            return sass($.config.sass)
+        },
+
+        scss(files) {
+            const scss = require('gulp-sass')
+
+            return scss($.config.scss)
+        },
+
+        styl() {
+            const styles = require('gulp-stylus')
+
+            return styles($.config.styl)
+        }
+    }
+
+    $.gulp.task('css', () => {
         return $
         .gulp
         .src([
-            `${$.app.dir}/**/*.styl`,
+            `${$.app.dir}/**/*.${$.yo.preprocessorCSS}`,
 
-            `!${$.app.dir}/**/.*.styl`,
-            `!${$.app.dir}/**/.**/**/*.styl`,
+            `!${$.app.dir}/**/.*.${$.yo.preprocessorCSS}`,
+            `!${$.app.dir}/**/.**/**/*.${$.yo.preprocessorCSS}`,
 
-            `!${$.app.dir}/**/_*.styl`,
-            `!${$.app.dir}/**/_**/**/*.styl`,
+            `!${$.app.dir}/**/_*.${$.yo.preprocessorCSS}`,
+            `!${$.app.dir}/**/_**/**/*.${$.yo.preprocessorCSS}`,
 
-            `!${$.app.dir}/**/-*.styl`,
-            `!${$.app.dir}/**/-**/**/*.styl`
+            `!${$.app.dir}/**/-*.${$.yo.preprocessorCSS}`,
+            `!${$.app.dir}/**/-**/**/*.${$.yo.preprocessorCSS}`
         ])
         .pipe($.changed($.build.dir))
-        .pipe(styles($.config.css))
+        .pipe(css[$.yo.preprocessorCSS]())
         .pipe($.gulp.dest($.build.dir))
     })
 
     $.gulp.task('css-app', () => {
         const rename = require('gulp-rename')
-        const styles = require('gulp-stylus')
 
         return $
         .gulp
         .src([
-            `${$.app.dir}/**/.*.styl`
+            `${$.app.dir}/**/.*.${$.yo.preprocessorCSS}`
         ])
         .pipe($.changed($.app.dir, {extension: '.css'}))
-        .pipe(styles($.config.css))
+        .pipe(css[$.yo.preprocessorCSS]())
         .pipe(rename((path) => path.basename = `-${path.basename}`))
         .pipe($.gulp.dest($.app.dir))
     })

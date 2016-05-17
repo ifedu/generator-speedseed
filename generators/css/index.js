@@ -11,26 +11,33 @@ module.exports = require('yeoman-generator').Base.extend({
         const done = this.async()
 
         const prompts = {
-            default: this.config.get('testJS') || 0,
-            message: 'Test?',
-            name: 'testJS',
+            default: this.config.get('preprocessorCSS') || 0,
+            message: 'CSS?',
+            name: 'preprocessorCSS',
             type: 'list',
 
-            choices: [ {
-                name: 'Mocha',
-                value: 'mocha'
+            choices: [{
+                name: 'SaSS',
+                value: 'sass'
             }, {
-                name: 'Jasmine',
-                value: 'jasmine'
+                name: 'ScSS',
+                value: 'scss'
             }, {
-                name: 'No',
-                value: 'no'
+                name: 'Less',
+                value: 'less'
+            }, {
+                name: 'Stylus',
+                value: 'styl'
             }]
         }
 
         this.prompt(prompts, (answers) => {
+            this.props = this.props || {}
+
             for (let answer in answers) {
                 this.config.set(answer, answers[answer])
+
+                this.props[answer] = answers[answer]
             }
 
             done()
@@ -39,9 +46,7 @@ module.exports = require('yeoman-generator').Base.extend({
 
     writing() {
         const create = config.create.bind(this)
-        // TEST
-        if (this.config.get('testJS') !== 'no') {
-            create(`seed/test/${this.config.get('testJS')}/karma.conf.js`, './.core/karma.conf.js', false)
-        }
+        // CSS
+        create(`seed/config.js`, './.core/config.js')
     }
 })

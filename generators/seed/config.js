@@ -24,12 +24,25 @@ module.exports = {
         dist: false,
         port: coreConfig.build.port,
 
-        css: {
+        less: {
+        },
+
+        sass: {
+        },
+
+        scss: {
+        },
+
+        styl: {
             linenos: true
         }
     },
 
     propsHtml: {},
+
+    yo: {
+        preprocessorCSS: '<%= preprocessorCSS %>'
+    },
 
     getJs(route) {
         delete require.cache[route]
@@ -86,7 +99,19 @@ module.exports = {
                 dist: true,
                 port: this.dist.port,
 
-                css: {
+                less: {
+                    compress: true
+                },
+
+                sass: {
+                    outputStyle: 'compressed'
+                },
+
+                scss: {
+                    outputStyle: 'compressed'
+                },
+
+                styl: {
                     compress: true
                 }
             }

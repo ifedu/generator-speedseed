@@ -14,16 +14,26 @@ module.exports = ($) => {
             })
 
             $.gulp.watch([
-                `${$.app.dir}/**/*.styl`,
+                `${$.app.dir}/**/*.html`,
+                `!${$.app.dir}/**/_*.html`,
+                `!${$.app.dir}/**/_**/**/*.html`,
 
-                `!${$.app.dir}/**/.*.styl`,
-                `!${$.app.dir}/**/.**/**/*.styl`,
+                `${$.app.dir}/**/*.json`,
+                `!${$.app.dir}/**/_*.json`,
+                `!${$.app.dir}/**/_**/**/*.json`
+            ], ['copy-files'])
 
-                `!${$.app.dir}/**/_*.styl`,
-                `!${$.app.dir}/**/_**/**/*.styl`,
+            $.gulp.watch([
+                `${$.app.dir}/**/*.${$.yo.preprocessorCSS}`,
 
-                `!${$.app.dir}/**/-*.styl`,
-                `!${$.app.dir}/**/-**/**/*.styl`
+                `!${$.app.dir}/**/.*.${$.yo.preprocessorCSS}`,
+                `!${$.app.dir}/**/.**/**/*.${$.yo.preprocessorCSS}`,
+
+                `!${$.app.dir}/**/_*.${$.yo.preprocessorCSS}`,
+                `!${$.app.dir}/**/_**/**/*.${$.yo.preprocessorCSS}`,
+
+                `!${$.app.dir}/**/-*.${$.yo.preprocessorCSS}`,
+                `!${$.app.dir}/**/-**/**/*.${$.yo.preprocessorCSS}`
             ], ['css'])
 
             $.gulp.watch([

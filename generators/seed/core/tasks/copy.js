@@ -5,6 +5,7 @@ module.exports = ($) => {
         () =>
             $.gulp
             .src(src)
+            .pipe($.changed($.build.dir, {extension: '.html'}))
             .pipe($.gulp.dest(dest))
 
     $.gulp.task('copy-assets', copy(`${$.app.assets}/**/*`, $.build.assets))
