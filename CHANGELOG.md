@@ -1,5 +1,12 @@
 # English
+## v.0.8.0
+    - Allow choice SaSS, ScSS, LeSS or Stylus
+    - Values for default in yo speedseed
+
 ## v.0.7.1
+    - Update directories in README
+
+## v.0.7.0
     - Add Karma and allow choice Jasmine or Mocha
     - Allow work without jade
     - Change ---* to .*
@@ -41,6 +48,13 @@
     - Restart changelog in 2 languages
 
 # Español
+## v.0.8.0
+    - Permite elegir SaSS, ScSS, LeSS o Stylus
+    - Valores por defecto en yo speedseed
+
+## v.0.7.1
+    - Actualiza directorios en README
+
 ## v.0.7.0
     - Actualiza README
     - Añade Karma y permite elegir Jasmine o Mocha
