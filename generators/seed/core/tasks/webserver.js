@@ -10,18 +10,22 @@ module.exports = ($) => {
         const app = express()
 
         const PORT = $.config.port
-        const PORT_RELOAD = 35729
+        const PORT_RELOAD = $.server.portReload
 
         // ROUTES
         app
         .use(connect({port: PORT_RELOAD}))
         .use(express.static($.build.dir))
         .use('/*', (req, res) => res.sendFile($.path.resolve(__dirname, `../../${$.build.dir}`)))
-        .use('/api', (req, res) =>
+        .use(`/${$.server.request}`, (req, res) => {
             req
-            .pipe(request(`http://api${req.path}`))
+            .pipe(request(`${$.server.protocol}${$.server.request}${req.path}`)
+              .on('error', (err) => {
+                console.log(`${$.server.protocol}${$.server.request}${req.path} NOT FOUND`)
+              })
+            )
             .pipe(res)
-        )
+        })
         .listen(PORT, () => console.log('Listening on port %d', PORT))
 
         // LIVERELOAD

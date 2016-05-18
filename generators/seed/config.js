@@ -16,6 +16,7 @@ module.exports = {
     build: coreConfig.build,
     dist: coreConfig.dist,
     reports: coreConfig.reports,
+    server: coreConfig.server,
     test: coreConfig.test,
 
     tasks: './tasks',
@@ -75,11 +76,13 @@ module.exports = {
     resetPropsHtml() {
         this.propsHtml = {
             include(dir, file, ext) {
+                const sign = (ext === 'html') ? '' : '-.'
+
                 ext = ext || 'html'
 
                 const fs = require('fs')
 
-                return fs.readFileSync(`./${dir}/-.${file}.${ext}`)
+                return fs.readFileSync(`./${dir}/${sign}${file}.${ext}`)
             }
         }
 

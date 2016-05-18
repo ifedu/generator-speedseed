@@ -1,6 +1,9 @@
 # English
 ## v.0.8.0
     - Allow choice SaSS, ScSS, LeSS or Stylus
+    - Allow configure port reload and route api server
+    - Fix error in api when route not exist
+    - Fix include template html
     - Values for default in yo speedseed
 
 ## v.0.7.1
@@ -49,6 +52,9 @@
 
 # Español
 ## v.0.8.0
+    - Arregla error en api cuando ruta no existe
+    - Arregla incluir plantilla html
+    - Permite configurar puerto reload y ruta del servidor api
     - Permite elegir SaSS, ScSS, LeSS o Stylus
     - Valores por defecto en yo speedseed
 

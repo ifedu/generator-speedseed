@@ -1,8 +1,17 @@
 'use strict'
 
 const config = require('../_config.js')
+const generators = require('yeoman-generator')
 
-module.exports = require('yeoman-generator').Base.extend({
+module.exports = generators.Base.extend({
+    constructor: function () {
+        generators.Base.apply(this, arguments)
+
+        this.config.set('core-version', 'generator-speedseed version 0.8.0')
+
+        console.log(this.config.get('core-version'))
+    },
+
     paths() {
         config.paths.call(this)
     },
@@ -29,10 +38,6 @@ module.exports = require('yeoman-generator').Base.extend({
         }
 
         this.prompt(prompts, (answers) => {
-            this.config.set('core-version', 'generator-speedseed version 0.8.0')
-
-            console.log(this.config.get('core-version'))
-
             this.props = this.props || {}
 
             for (let answer in answers) {
@@ -54,7 +59,7 @@ module.exports = require('yeoman-generator').Base.extend({
         }
 
         const create = config.create.bind(this)
-        // ROOTS
+        // CORE
         create('seed/core', './.core', false)
 
         create('seed/babelrc', './.babelrc')
