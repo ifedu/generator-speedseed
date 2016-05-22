@@ -4,6 +4,7 @@ module.exports = ($) => {
     $.gulp.task('jsx', () => {
         const babel = require('gulp-babel')
         const data = require('gulp-data')
+        const gulpif = require('gulp-if')
         const react = require('gulp-react')
         const template = require('gulp-template')
 
@@ -12,16 +13,7 @@ module.exports = ($) => {
         return $
         .gulp
         .src([
-            `${$.app.dir}/**/*.jsx`,
-
-            `!${$.app.dir}/**/.*.jsx`,
-            `!${$.app.dir}/**/.**/**/*.jsx`,
-
-            `!${$.app.dir}/**/_*.jsx`,
-            `!${$.app.dir}/**/_**/**/*.jsx`,
-
-            `!${$.app.dir}/**/-*.jsx`,
-            `!${$.app.dir}/**/-**/**/*.jsx`
+            `${$.app.dir}/**/*.jsx`
         ])
         .pipe(data((file) => {
             const app = $.app.dir.replace('./', '')
@@ -35,7 +27,8 @@ module.exports = ($) => {
             return $
             .gulp
             .src(file.path)
-            .pipe($.changed(dir))
+            .pipe(gulpif($.if.notInclude, $.changed(dir)))
+            .pipe($.plumber())
             .pipe(template($.getJsProps(file, '.jsx'), { 'interpolate': /<%=([\s\S]+?)%>/g }))
             .pipe($.gulp.dest(dir))
             .pipe(react())

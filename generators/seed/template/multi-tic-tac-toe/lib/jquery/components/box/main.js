@@ -6,6 +6,7 @@
 
         $(this)
         .children()
+        .children()
         .text(mark)
     })
 })($('ss-box'))

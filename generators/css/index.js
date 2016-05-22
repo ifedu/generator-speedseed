@@ -10,7 +10,7 @@ module.exports = require('yeoman-generator').Base.extend({
     prompting() {
         const done = this.async()
 
-        const prompts = {
+        config.prompting.call(this, {
             default: this.config.get('preprocessorCSS') || 0,
             message: 'CSS?',
             name: 'preprocessorCSS',
@@ -29,24 +29,15 @@ module.exports = require('yeoman-generator').Base.extend({
                 name: 'Stylus',
                 value: 'styl'
             }]
-        }
-
-        this.prompt(prompts, (answers) => {
-            this.props = this.props || {}
-
-            for (let answer in answers) {
-                this.config.set(answer, answers[answer])
-
-                this.props[answer] = answers[answer]
-            }
-
-            done()
-        })
+        }, done)
     },
 
     writing() {
         const create = config.create.bind(this)
         // CSS
-        create(`seed/config.js`, './.core/config.js')
+        if (this.config.get('template') !== 'no') {
+            create(`seed/template/${this.config.get('template')}/css/${this.config.get('preprocessorCSS')}/all`, './app', false)
+            create(`seed/template/${this.config.get('template')}/css/${this.config.get('preprocessorCSS')}/${this.config.get('libraryJS')}`, './app', false)
+        }
     }
 })

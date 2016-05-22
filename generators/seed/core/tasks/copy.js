@@ -13,6 +13,10 @@ module.exports = ($) => {
 
     $.gulp.task('copy-files', copy([
         `${$.app.dir}/**/*.html`,
+
+        `!${$.app.dir}/**/-*.html`,
+        `!${$.app.dir}/**/-**/**/*.html`,
+
         `!${$.app.dir}/**/_*.html`,
         `!${$.app.dir}/**/_**/**/*.html`,
 

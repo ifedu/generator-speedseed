@@ -11,13 +11,15 @@ module.exports = ($) => {
 
     $.gulp.task('clean', (cb) => deleteFiles($.build.dir, cb))
 
-    $.gulp.task('clean-app', (cb) =>
-        deleteFiles([
+    $.gulp.task('clean-app', (cb) => {
+        $.if.notInclude = true
+
+        return deleteFiles([
             `${$.app.dir}/**/-*`,
             `${$.app.dir}/**/-**/*`,
             `!${$.app.dir}/**/_**/**/*`
         ], cb)
-    )
+    })
 
     $.gulp.task('clean-dist', (cb) =>
         deleteFiles([

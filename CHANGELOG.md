@@ -2,8 +2,11 @@
 ## v.0.8.0
     - Allow choice SaSS, ScSS, LeSS or Stylus
     - Allow configure port reload and route api server
+    - Error to compile no crash app
     - Fix error in api when route not exist
     - Fix include template html
+    - Fix watch a includes files
+    - No need recompile for new files
     - Values for default in yo speedseed
 
 ## v.0.7.1
@@ -54,6 +57,9 @@
 ## v.0.8.0
     - Arregla error en api cuando ruta no existe
     - Arregla incluir plantilla html
+    - Arregla watch a ficheros incluidos
+    - Error al compilar no rompe la app
+    - No necesita precompilar para nuevos ficheros
     - Permite configurar puerto reload y ruta del servidor api
     - Permite elegir SaSS, ScSS, LeSS o Stylus
     - Valores por defecto en yo speedseed

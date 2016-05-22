@@ -4,6 +4,7 @@ module.exports = ($) => {
     $.gulp.task('js', () => {
         const babel = require('gulp-babel')
         const data = require('gulp-data')
+        const gulpif = require('gulp-if')
         const ngAnnotate = require('gulp-ng-annotate')
         const react = require('gulp-react')
         const template = require('gulp-template')
@@ -13,17 +14,7 @@ module.exports = ($) => {
         return $
         .gulp
         .src([
-            `${$.app.dir}/**/*.js`,
-            `!${$.app.dir}/**/*.spec.js`,
-
-            `!${$.app.dir}/**/.*.js`,
-            `!${$.app.dir}/**/.**/**/*.js`,
-
-            `!${$.app.dir}/**/_*.js`,
-            `!${$.app.dir}/**/_**/**/*.js`,
-
-            `!${$.app.dir}/**/-*.js`,
-            `!${$.app.dir}/**/-**/**/*.js`
+            `${$.app.dir}/**/*.js`
         ])
         .pipe(data((file) => {
             const app = $.app.dir.replace('./', '')
@@ -33,10 +24,29 @@ module.exports = ($) => {
                 .dirname(file.path)
                 .replace(app, build)
 
+            const filter = $.filter([
+                `**/*`,
+                `!**/*.spec.js`,
+
+                `!**/.*.js`,
+                `!**/.**/**/*.js`,
+
+                `!**/_*.js`,
+                `!**/_**/**/*.js`,
+
+                `!**/-*.js`,
+                `!**/-**/**/*.js`
+            ])
+
+            let src = $.path.resolve(__dirname, $.path.dirname(file.path))
+            src = $.path.normalize(`${src}/**/${$.path.basename(file.path)}`)
+
             return $
             .gulp
-            .src(file.path)
-            .pipe($.changed(dir))
+            .src(src)
+            .pipe(gulpif($.if.notInclude, $.changed(dir)))
+            .pipe($.plumber())
+            .pipe(filter)
             .pipe(template($.getJsProps(file, '.js'), { 'interpolate': /<%=([\s\S]+?)%>/g }))
             .pipe($.gulp.dest(dir))
             .pipe(babel({
@@ -56,12 +66,9 @@ module.exports = ($) => {
         return $
         .gulp
         .src([
-            `${$.app.dir}/**/.*.js`,
-            `${$.app.dir}/**/.*.spec.js`,
-
-            `!${$.app.dir}/**/_*.js`,
-            `!${$.app.dir}/**/_**/**/*.js`
+            `${$.app.dir}/**/.*.js`
         ])
+        .pipe($.plumber())
         .pipe(babel({
             presets: ['es2015']
         }))

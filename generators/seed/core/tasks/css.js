@@ -28,21 +28,26 @@ module.exports = ($) => {
     }
 
     $.gulp.task('css', () => {
+        const gulpif = require('gulp-if')
+
+        const filter = $.filter([
+            `**/*`,
+
+            `!**/.*.${$.yo.preprocessorCSS}`,
+            `!**/.**/**/*.${$.yo.preprocessorCSS}`,
+
+            `!**/_*.${$.yo.preprocessorCSS}`,
+            `!**/_**/**/*.${$.yo.preprocessorCSS}`
+        ])
+
         return $
         .gulp
         .src([
             `${$.app.dir}/**/*.${$.yo.preprocessorCSS}`,
-
-            `!${$.app.dir}/**/.*.${$.yo.preprocessorCSS}`,
-            `!${$.app.dir}/**/.**/**/*.${$.yo.preprocessorCSS}`,
-
-            `!${$.app.dir}/**/_*.${$.yo.preprocessorCSS}`,
-            `!${$.app.dir}/**/_**/**/*.${$.yo.preprocessorCSS}`,
-
-            `!${$.app.dir}/**/-*.${$.yo.preprocessorCSS}`,
-            `!${$.app.dir}/**/-**/**/*.${$.yo.preprocessorCSS}`
         ])
-        .pipe($.changed($.build.dir))
+        .pipe(gulpif($.if.notInclude, $.changed($.build.dir, {extension: '.css'})))
+        .pipe($.plumber())
+        .pipe(filter)
         .pipe(css[$.yo.preprocessorCSS]())
         .pipe($.gulp.dest($.build.dir))
     })
@@ -56,6 +61,7 @@ module.exports = ($) => {
             `${$.app.dir}/**/.*.${$.yo.preprocessorCSS}`
         ])
         .pipe($.changed($.app.dir, {extension: '.css'}))
+        .pipe($.plumber())
         .pipe(css[$.yo.preprocessorCSS]())
         .pipe(rename((path) => path.basename = `-${path.basename}`))
         .pipe($.gulp.dest($.app.dir))

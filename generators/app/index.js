@@ -7,68 +7,16 @@ module.exports = generators.Base.extend({
     constructor: function () {
         generators.Base.apply(this, arguments)
 
-        this.config.set('core-version', 'generator-speedseed version 0.8.0')
+        this.config.set('coreVersion', 'generator-speedseed version 0.8.0')
+        global.ss.props.coreVersion = this.config.get('coreVersion')
 
-        console.log(this.config.get('core-version'))
-    },
-
-    paths() {
-        config.paths.call(this)
-    },
-
-    prompting() {
-        const done = this.async()
-
-        const prompts = {
-            default: this.config.get('template') || 0,
-            message: 'Template?',
-            name: 'template',
-            type: 'list',
-
-            choices: [{
-                name: 'No',
-                value: 'no'
-            }, {
-                name: 'Multi-Tic-Tac-Toe',
-                value: 'multi-tic-tac-toe'
-            }, {
-                name: 'TodoMVC',
-                value: 'todomvc'
-            }]
-        }
-
-        this.prompt(prompts, (answers) => {
-            this.props = this.props || {}
-
-            for (let answer in answers) {
-                this.config.set(answer, answers[answer])
-
-                this.props[answer] = answers[answer]
-            }
-
-            done()
-        })
+        console.log(this.config.get('coreVersion'))
     },
 
     end() {
+        this.composeWith('speedseed:template')
+        this.composeWith('speedseed:framework')
         this.composeWith('speedseed:css')
         this.composeWith('speedseed:test')
-
-        if (this.config.get('template') !== 'no') {
-            this.composeWith('speedseed:framework')
-        }
-
-        const create = config.create.bind(this)
-        // CORE
-        create('seed/core', './.core', false)
-
-        create('seed/babelrc', './.babelrc')
-        create('seed/core-config.js', './.core-config.js')
-        create('seed/editorconfig', './.editorconfig')
-        create('seed/eslintrc', './.eslintrc')
-        create('seed/gitignore', './.gitignore')
-
-        create('seed/gulpfile.js', './gulpfile.js')
-        create('seed/package.json', './package.json')
     }
 })

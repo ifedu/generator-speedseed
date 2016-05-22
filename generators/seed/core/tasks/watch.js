@@ -1,9 +1,11 @@
 module.exports = ($) => {
     'use strict'
 
+    const watch = require('gulp-watch')
+
     $.gulp.task('watch', () => {
         setTimeout(() => {
-            $.gulp.watch([`${$.build.dir}/**/*`], (event) => {
+            watch([`${$.build.dir}/**/*`], (event) => {
                 const FILE_NAME = $.path.relative(__dirname, event.path)
 
                 $.tinylr.changed({
@@ -13,61 +15,74 @@ module.exports = ($) => {
                 })
             })
 
-            $.gulp.watch([
+            // COPY
+            watch([
                 `${$.app.dir}/**/*.html`,
+                `!${$.app.dir}/**/-*.html`,
                 `!${$.app.dir}/**/_*.html`,
                 `!${$.app.dir}/**/_**/**/*.html`,
 
                 `${$.app.dir}/**/*.json`,
+                `!${$.app.dir}/**/-*.json`,
                 `!${$.app.dir}/**/_*.json`,
                 `!${$.app.dir}/**/_**/**/*.json`
-            ], ['copy-files'])
+            ], () => $.runSequence('copy-files'))
 
-            $.gulp.watch([
-                `${$.app.dir}/**/*.${$.yo.preprocessorCSS}`,
+            // CSS
+            watch([
+                `${$.app.dir}/**/*.${$.yo.preprocessorCSS}`
+            ], () => {
+                $.if.notInclude = false
+                return $.runSequence('css', 'clean-app')
+            })
 
-                `!${$.app.dir}/**/.*.${$.yo.preprocessorCSS}`,
-                `!${$.app.dir}/**/.**/**/*.${$.yo.preprocessorCSS}`,
+            // CSS INCLUDE
+            watch([
+                `${$.app.dir}/**/.*.${$.yo.preprocessorCSS}`
+            ], () => {
+                $.if.notInclude = false
+                return $.runSequence(['css-app', 'html-app', 'js-app'], 'html', 'clean-app')
+            })
 
-                `!${$.app.dir}/**/_*.${$.yo.preprocessorCSS}`,
-                `!${$.app.dir}/**/_**/**/*.${$.yo.preprocessorCSS}`,
+            // HTML
+            watch([
+                `${$.app.dir}/**/*.jade`
+            ], () => $.runSequence(['css-app', 'html-app', 'js-app'], 'html', 'clean-app'))
 
-                `!${$.app.dir}/**/-*.${$.yo.preprocessorCSS}`,
-                `!${$.app.dir}/**/-**/**/*.${$.yo.preprocessorCSS}`
-            ], ['css'])
+            // // HTML-INCLUDE
+            watch([
+                `${$.app.dir}/**/.*.jade`
+            ], () => {
+                $.if.notInclude = false
+                return $.runSequence(['css-app', 'html-app', 'js-app'], ['html', 'js', 'jsx'], 'clean-app')
+            })
 
-            $.gulp.watch([
-                `${$.app.dir}/**/*.jade`,
-
-                `!${$.app.dir}/**/.*.jade`,
-                `!${$.app.dir}/**/.**/**/*.jade`,
-
-                `!${$.app.dir}/**/_*.jade`,
-                `!${$.app.dir}/**/_**/**/*.jade`,
-
-                `!${$.app.dir}/**/-*.jade`,
-                `!${$.app.dir}/**/-**/**/*.jade`
-            ], () => $.runSequence(['css-app', 'html-app'], 'html', 'clean-app'))
-
-            $.gulp.watch([
+            // JS
+            watch([
                 `${$.app.dir}/**/*.js`,
                 `!${$.app.dir}/**/*.spec.js`,
 
-                `!${$.app.dir}/**/.*.js`,
-                `!${$.app.dir}/**/.**/**/*.js`,
-
                 `!${$.app.dir}/**/_*.js`,
                 `!${$.app.dir}/**/_**/**/*.js`,
+
+                `!${$.app.dir}/**/.*.js`,
+                `!${$.app.dir}/**/.**/**/*.js`,
 
                 `!${$.app.dir}/**/-*.js`,
                 `!${$.app.dir}/**/-**/**/*.js`
             ], () => $.runSequence('html-app', 'js', 'clean-app'))
 
-            $.gulp.watch([
-                `${$.app.dir}/**/*.jsx`,
+            // JS INCLUDE
+            watch([
+                `${$.app.dir}/**/.*.js`
+            ], () => {
+                $.if.notInclude = false
+                return $.runSequence(['css-app', 'html-app', 'js-app'], 'html', 'clean-app')
+            })
 
-                `!${$.app.dir}/**/.*.jsx`,
-                `!${$.app.dir}/**/.**/**/*.jsx`,
+            // JSX
+            watch([
+                `${$.app.dir}/**/*.jsx`,
 
                 `!${$.app.dir}/**/_*.jsx`,
                 `!${$.app.dir}/**/_**/**/*.jsx`,
@@ -76,11 +91,10 @@ module.exports = ($) => {
                 `!${$.app.dir}/**/-**/**/*.jsx`
             ], () => $.runSequence('html-app', 'jsx', 'clean-app'))
 
-            $.gulp.watch([
+            // TEST
+            watch([
                 `${$.app.dir}/**/.*.spec.js`
             ], () => $.runSequence('js-app', 'js-test', 'clean-app'))
-
-            $.gulp.watch(`${$.app.dir}/**/_*.js`, ['html-js'])
         }, 2000)
     })
 }
