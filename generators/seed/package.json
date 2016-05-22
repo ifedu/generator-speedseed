@@ -57,6 +57,7 @@
         "ss-build": "gulp build",
         "ss-clean": "gulp clean-dirs",
         "ss-compile": "gulp build --open=false",
+        "ss-component": "yo speedseed:component",
         "ss-dist": "gulp build --dist=true",
         "ss-reports": "gulp reports",
         "ss-test": "gulp test"

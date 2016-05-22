@@ -8,12 +8,12 @@ module.exports = generators.Base.extend({
         generators.Base.apply(this, arguments)
 
         this.config.set('coreVersion', 'generator-speedseed version 0.8.1')
-        global.ss.props.coreVersion = this.config.get('coreVersion')
 
         console.log(this.config.get('coreVersion'))
     },
 
     end() {
+        this.composeWith('speedseed:project')
         this.composeWith('speedseed:template')
         this.composeWith('speedseed:framework')
         this.composeWith('speedseed:css')
