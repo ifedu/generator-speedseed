@@ -4,7 +4,9 @@ const coreConfig = require('../.core-config.js')
 
 module.exports = {
     changed: require('gulp-changed'),
+    filter: require('gulp-filter'),
     gulp: require('gulp'),
+    plumber: require('gulp-plumber'),
     runSequence: require('run-sequence'),
     tinylr: require('tiny-lr')(),
 
@@ -16,6 +18,7 @@ module.exports = {
     build: coreConfig.build,
     dist: coreConfig.dist,
     reports: coreConfig.reports,
+    server: coreConfig.server,
     test: coreConfig.test,
 
     tasks: './tasks',
@@ -24,12 +27,27 @@ module.exports = {
         dist: false,
         port: coreConfig.build.port,
 
-        css: {
+        less: {
+        },
+
+        sass: {
+        },
+
+        scss: {
+        },
+
+        styl: {
             linenos: true
         }
     },
 
+    if: {
+        notInclude: true
+    },
+
     propsHtml: {},
+
+    yo: require('./props-tpl.js'),
 
     getJs(route) {
         delete require.cache[route]
@@ -41,9 +59,8 @@ module.exports = {
     },
 
     getJsProps(file, ext) {
-        const PATH_NAME = file.path
-        const FILE_NAME = this.path.basename(PATH_NAME, ext)
-        const DIR_NAME = this.path.dirname(PATH_NAME)
+        const FILE_NAME = this.path.basename(file.path, ext)
+        const DIR_NAME = this.path.dirname(file.path)
 
         const ROUTE_LOCAL = this.path.resolve(__dirname, DIR_NAME, `_${FILE_NAME}.js`)
         this.getJs(ROUTE_LOCAL)
@@ -62,11 +79,13 @@ module.exports = {
     resetPropsHtml() {
         this.propsHtml = {
             include(dir, file, ext) {
+                const sign = (ext === 'html') ? '' : '-.'
+
                 ext = ext || 'html'
 
                 const fs = require('fs')
 
-                return fs.readFileSync(`./${dir}/-.${file}.${ext}`)
+                return fs.readFileSync(`./${dir}/${sign}${file}.${ext}`)
             }
         }
 
@@ -86,7 +105,19 @@ module.exports = {
                 dist: true,
                 port: this.dist.port,
 
-                css: {
+                less: {
+                    compress: true
+                },
+
+                sass: {
+                    outputStyle: 'compressed'
+                },
+
+                scss: {
+                    outputStyle: 'compressed'
+                },
+
+                styl: {
                     compress: true
                 }
             }

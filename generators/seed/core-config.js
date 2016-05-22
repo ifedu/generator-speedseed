@@ -39,6 +39,12 @@ module.exports = {
         },
     },
 
+    server: {
+        protocol: 'http://',
+        request: 'api',
+        portReload: 35729
+    },
+
     test: {
         exclude: [
             `${app}/**/_**/**/*.js`,

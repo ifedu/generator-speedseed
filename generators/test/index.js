@@ -10,31 +10,23 @@ module.exports = require('yeoman-generator').Base.extend({
     prompting() {
         const done = this.async()
 
-        const prompts = {
-            default: 0,
+        config.prompting.call(this, {
+            default: this.config.get('testJS') || 0,
             message: 'Test?',
             name: 'testJS',
             type: 'list',
 
-            choices: [{
-                name: 'No',
-                value: 'no'
+            choices: [ {
+                name: 'Mocha',
+                value: 'mocha'
             }, {
                 name: 'Jasmine',
                 value: 'jasmine'
             }, {
-                name: 'Mocha',
-                value: 'mocha'
+                name: 'No',
+                value: 'no'
             }]
-        }
-
-        this.prompt(prompts, (answers) => {
-            for (let answer in answers) {
-                this.config.set(answer, answers[answer])
-            }
-
-            done()
-        })
+        }, done)
     },
 
     writing() {

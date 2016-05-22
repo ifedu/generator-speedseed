@@ -3,25 +3,31 @@ module.exports = ($) => {
 
     $.gulp.task('html', () => {
         const data = require('gulp-data')
+        const gulpif = require('gulp-if')
         const jade = require('gulp-jade')
+        const jadeInheritance  = require('gulp-jade-inheritance')
 
         $.resetPropsHtml()
+
+        const filter = $.filter([
+            `**/*`,
+
+            `!**/.*.jade`,
+            `!**/.**/**/*.jade`,
+
+            `!**/_*.jade`,
+            `!**/_**/**/*.jade`
+        ])
 
         return $
         .gulp
         .src([
-            `${$.app.dir}/**/*.jade`,
-
-            `!${$.app.dir}/**/.*.jade`,
-            `!${$.app.dir}/**/.**/**/*.jade`,
-
-            `!${$.app.dir}/**/_*.jade`,
-            `!${$.app.dir}/**/_**/**/*.jade`,
-
-            `!${$.app.dir}/**/-*.jade`,
-            `!${$.app.dir}/**/-**/**/*.jade`
+            `${$.app.dir}/**/*.jade`
         ])
-        .pipe($.changed($.build.dir, {extension: '.html'}))
+        .pipe(gulpif($.if.notInclude, $.changed($.build.dir, {extension: '.html'})))
+        .pipe($.plumber())
+        .pipe(jadeInheritance({basedir: $.app.dir}))
+        .pipe(filter)
         .pipe(data((file) => $.getJsProps(file, '.jade')))
         .pipe(jade({
             pretty: true
@@ -42,6 +48,7 @@ module.exports = ($) => {
             `${$.app.dir}/**/.*.jade`
         ])
         .pipe($.changed($.app.dir, {extension: '.html'}))
+        .pipe($.plumber())
         .pipe(data((file) => $.getJsProps(file, '.jade')))
         .pipe(jade($.config.html))
         .pipe(rename((path) => path.basename = `-${path.basename}`))
@@ -59,6 +66,7 @@ module.exports = ($) => {
         .gulp
         .src([`${$.app.dir}/**/_*.js`])
         .pipe($.changed($.build.dir))
+        .pipe($.plumber())
         .pipe(babel())
         .pipe($.gulp.dest($.build.dir))
         .pipe(data((fileJs) => {
@@ -76,6 +84,7 @@ module.exports = ($) => {
 
             $.gulp
             .src(FILE_JADE)
+            .pipe($.plumber())
             .pipe(data((file) => $.getJsProps(file, '.js')))
             .pipe(jade({
                 pretty: true

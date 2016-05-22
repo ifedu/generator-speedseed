@@ -1,5 +1,9 @@
 'use strict'
 
+global.ss = {
+    props: {}
+}
+
 module.exports = {
     create(fileTpl, fileDest, props) {
         if (props === false) {
@@ -15,7 +19,7 @@ module.exports = {
             this.fs.copyTpl(
                 this.templatePath(fileTpl),
                 this.destinationPath(fileDest),
-                this.props
+                global.ss.props
             )
         }
     },
@@ -24,12 +28,12 @@ module.exports = {
         this.sourceRoot(__dirname)
     },
 
-    prompting(prompts) {
-        const done = this.async()
-
+    prompting(prompts, done) {
         this.prompt(prompts, (answers) => {
             for (let answer in answers) {
                 this.config.set(answer, answers[answer])
+
+                global.ss.props[answer] = answers[answer]
             }
 
             done()

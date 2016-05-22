@@ -10,8 +10,8 @@ module.exports = require('yeoman-generator').Base.extend({
     prompting() {
         const done = this.async()
 
-        const prompts = {
-            default: 0,
+        config.prompting.call(this, {
+            default: this.config.get('libraryJS') || 0,
             message: 'Library / Framework?',
             name: 'libraryJS',
             type: 'list',
@@ -29,20 +29,14 @@ module.exports = require('yeoman-generator').Base.extend({
                 name: 'React',
                 value: 'react'
             }]
-        }
-
-        this.prompt(prompts, (answers) => {
-            for (let answer in answers) {
-                this.config.set(answer, answers[answer])
-            }
-
-            done()
-        })
+        }, done)
     },
 
     writing() {
         const create = config.create.bind(this)
-        // APP
-        create(`seed/template/${this.config.get('template')}/lib/${this.config.get('libraryJS')}`, './app', false)
+        // FRAMEWORK
+        if (this.config.get('template') !== 'no') {
+            create(`seed/template/${this.config.get('template')}/lib/${this.config.get('libraryJS')}`, './app', false)
+        }
     }
 })

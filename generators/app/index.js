@@ -1,67 +1,22 @@
 'use strict'
 
 const config = require('../_config.js')
+const generators = require('yeoman-generator')
 
-module.exports = require('yeoman-generator').Base.extend({
-    paths() {
-        config.paths.call(this)
-    },
+module.exports = generators.Base.extend({
+    constructor: function () {
+        generators.Base.apply(this, arguments)
 
-    prompting() {
-        const done = this.async()
+        this.config.set('coreVersion', 'generator-speedseed version 0.8.0')
+        global.ss.props.coreVersion = this.config.get('coreVersion')
 
-        const prompts = {
-            default: 0,
-            message: 'Template?',
-            name: 'template',
-            type: 'list',
-
-            choices: [{
-                name: 'No',
-                value: 'no'
-            }, {
-                name: 'Multi-Tic-Tac-Toe',
-                value: 'multi-tic-tac-toe'
-            }, {
-                name: 'TodoMVC',
-                value: 'todomvc'
-            }]
-        }
-
-        this.prompt(prompts, (answers) => {
-            this.config.set('core-version', 'generator-speedseed version 0.7.1')
-
-            console.log(this.config.get('core-version'))
-
-            for (let answer in answers) {
-                this.config.set(answer, answers[answer])
-            }
-
-            done()
-        })
-    },
-
-    writing() {
-        const create = config.create.bind(this)
-        // ROOTS
-        create('seed/core', './.core', false)
-
-        create('seed/babelrc', './.babelrc')
-        create('seed/core-config.js', './.core-config.js')
-        create('seed/editorconfig', './.editorconfig')
-        create('seed/eslintrc', './.eslintrc')
-        create('seed/gitignore', './.gitignore')
-
-        create('seed/gulpfile.js', './gulpfile.js')
-        create('seed/package.json', './package.json')
+        console.log(this.config.get('coreVersion'))
     },
 
     end() {
+        this.composeWith('speedseed:template')
+        this.composeWith('speedseed:framework')
+        this.composeWith('speedseed:css')
         this.composeWith('speedseed:test')
-
-        if (this.config.get('template') !== 'no') {
-            this.composeWith('speedseed:framework')
-        }
-
     }
 })
