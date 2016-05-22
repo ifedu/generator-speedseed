@@ -1,7 +1,7 @@
 angular
 .module('speedseed')
 .component('ssBox', {
-    template: `<%= include('app/components/box', 'tpl') %>`,
+    template: `{%= include('app/components/box', 'tpl') %}`,
 
     require: {
         'ssTable': '^ssTable',

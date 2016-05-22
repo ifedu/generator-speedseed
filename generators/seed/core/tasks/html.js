@@ -54,42 +54,4 @@ module.exports = ($) => {
         .pipe(rename((path) => path.basename = `-${path.basename}`))
         .pipe($.gulp.dest($.app.dir))
     })
-
-    $.gulp.task('html-js', () => {
-        const babel = require('gulp-babel')
-        const data = require('gulp-data')
-        const jade = require('gulp-jade')
-
-        $.resetPropsHtml()
-
-        return $
-        .gulp
-        .src([`${$.app.dir}/**/_*.js`])
-        .pipe($.changed($.build.dir))
-        .pipe($.plumber())
-        .pipe(babel())
-        .pipe($.gulp.dest($.build.dir))
-        .pipe(data((fileJs) => {
-            const app = $.app.dir.replace('./', '')
-            const build = $.build.dir.replace('./', '')
-
-            const FILE_JADE = fileJs.path
-                .replace(build, dir)
-                .replace(`${$.path.sep}_`, $.path.sep)
-                .replace('.js', '.jade')
-
-            let dirJade = fileJs.path.split($.path.sep)
-            dirJade.pop()
-            dirJade = dirJade.join($.path.sep)
-
-            $.gulp
-            .src(FILE_JADE)
-            .pipe($.plumber())
-            .pipe(data((file) => $.getJsProps(file, '.js')))
-            .pipe(jade({
-                pretty: true
-            }))
-            .pipe($.gulp.dest(dirJade))
-        }))
-    })
 }

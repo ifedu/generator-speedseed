@@ -1,4 +1,4 @@
-### v.0.8.1
+### v.0.9.0
 
 ### English
 - *Properties*
@@ -108,6 +108,10 @@
     ---
     - Compile project in -build and launch unit test
     - **npm run ss-test**
+
+    ---
+    - Create component in app/components
+    - **npm run ss-component**
 
     ---
     - Delete folders -build -dist -reports
@@ -249,6 +253,10 @@
     ---
     - Compila el proyecto en -build y lanza los test unitarios
     - **npm run ss-test**
+
+    ---
+    - Crea un componente en app/components
+    - **npm run ss-component**
 
     ---
     - Borra carpetas -build -dist -reports
