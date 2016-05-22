@@ -1,11 +1,11 @@
-### v.0.8.0
+### v.0.8.1
 
 ### English
 - *Properties*
     - Files and folders start for _ no compile to build, perfect for includes properties
     - Files with .name.css .name.js .name.html precompile in app, perfect for includes files
-        -In *.js <%= include('dir', 'nameFile', 'html') %> for files nameFile.html
-        -In *.js <%= include('dir', 'nameFile') %> for files .nameFile.jade 
+        - In *.js <%= include('dir', 'nameFile', 'html') %> for files nameFile.html
+        - In *.js <%= include('dir', 'nameFile') %> for files .nameFile.jade 
     
     - Allow update the core of the project through npm run ss-update without affecting the development of the project
     - Global properties for our jades with con __global.js
@@ -145,8 +145,8 @@
 - *Propiedades*
     - Ficheros y carpetas que empiezan por _ no se compilan a build, perfecto para incluir propiedades
     - Ficheros con .name.css .name.js .name.html precompilan en app, perfecto para incluir ficheros
-        -En *.js <%= include('dir', 'nombreFichero', 'html') %> para ficheros nombreFichero.html
-        -En *.js <%= include('dir', 'nombreFichero') %> para ficheros .nombreFichero.jade 
+        - En *.js <%= include('dir', 'nombreFichero', 'html') %> para ficheros nombreFichero.html
+        - En *.js <%= include('dir', 'nombreFichero') %> para ficheros .nombreFichero.jade 
     
     - Permite actualizar el núcleo del proyecto mediante npm run ss-update sin afectar al desarrollo del proyecto
     - Propiedades globales para nuestros jades con __global.js

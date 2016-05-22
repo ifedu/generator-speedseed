@@ -1,4 +1,7 @@
 # English
+## v.0.8.1
+    - Fix README
+
 ## v.0.8.0
     - Allow choice SaSS, ScSS, LeSS or Stylus
     - Allow configure port reload and route api server
@@ -54,6 +57,9 @@
     - Restart changelog in 2 languages
 
 # Español
+## v.0.8.1
+    - Arregla el README
+
 ## v.0.8.0
     - Arregla error en api cuando ruta no existe
     - Arregla incluir plantilla html
