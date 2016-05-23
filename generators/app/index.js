@@ -8,6 +8,7 @@ module.exports = generators.Base.extend({
         generators.Base.apply(this, arguments)
 
         this.config.set('coreVersion', 'generator-speedseed version 0.9.0')
+        this.config.set('component', '')
 
         console.log(this.config.get('coreVersion'))
     },

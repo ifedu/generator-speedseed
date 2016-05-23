@@ -1,6 +1,4 @@
 (() => {
-'use strict'
-
 let xo = 'O'
 
 Polymer({
