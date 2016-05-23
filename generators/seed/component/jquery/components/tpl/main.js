@@ -1,8 +1,5 @@
-angular
-.module('<%= project %>')
-.component('<%= component %>', {
-    template: `<= include('app/components/<%= component %>', 'tpl') >`,
-
-    controller() {
-    }
-})
+(($component) => {
+    $component.on('mousedown', function() {
+        $(this)
+    })
+})($('<%= component %>'))

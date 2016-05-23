@@ -36,7 +36,7 @@ module.exports = require('yeoman-generator').Base.extend({
         const create = config.create.bind(this)
         // FRAMEWORK
         if (this.config.get('template') !== 'no') {
-            create(`seed/template/${this.config.get('template')}/lib/${this.config.get('libraryJS')}`, './app', false)
+            create(`seed/template/${this.config.get('template')}/lib/${this.config.get('libraryJS')}`, './app')
         }
     }
 })

@@ -1,3 +1,3 @@
 module.exports = {
-    helloGlobal: 'hello world global'
+    txt: 'Hello Component <%= component %>'
 }

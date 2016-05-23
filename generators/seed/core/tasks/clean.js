@@ -14,6 +14,8 @@ module.exports = ($) => {
     $.gulp.task('clean-app', (cb) => {
         $.if.notInclude = true
 
+        $.reload && $.reload()
+
         return deleteFiles([
             `${$.app.dir}/**/-*`,
             `${$.app.dir}/**/-**/*`,

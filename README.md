@@ -4,8 +4,8 @@
 - *Properties*
     - Files and folders start for _ no compile to build, perfect for includes properties
     - Files with .name.css .name.js .name.html precompile in app, perfect for includes files
-        - In *.js <%= include('dir', 'nameFile', 'html') %> for files nameFile.html
-        - In *.js <%= include('dir', 'nameFile') %> for files .nameFile.jade 
+        - In *.js {%= include('dir', '_nameFile', 'html') %} for files _nameFile.html
+        - In *.js {%= include('dir', 'nameFile') %} for files .nameFile.jade 
     
     - Allow update the core of the project through npm run ss-update without affecting the development of the project
     - Global properties for our jades with con __global.js

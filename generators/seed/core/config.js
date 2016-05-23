@@ -8,7 +8,6 @@ module.exports = {
     gulp: require('gulp'),
     plumber: require('gulp-plumber'),
     runSequence: require('run-sequence'),
-    tinylr: require('tiny-lr')(),
 
     // NODE LIBS
     fs: require('fs'),
