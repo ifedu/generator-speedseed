@@ -18,32 +18,15 @@ module.exports = generators.Base.extend({
             type: 'list',
 
             choices: [{
-                name: 'No',
-                value: 'no'
-            }, {
                 name: 'Multi-Tic-Tac-Toe',
                 value: 'multi-tic-tac-toe'
             }, {
                 name: 'TodoMVC',
                 value: 'todomvc'
+            }, {
+                name: 'No',
+                value: 'no'
             }]
         }, done)
-    },
-
-    writing() {
-        const create = config.create.bind(this)
-        // CORE
-        create('seed/props-tpl.js', './.core/props-tpl.js')
-        create('seed/core', './.core', false)
-
-        // ROOT
-        create('seed/babelrc', './.babelrc')
-        create('seed/core-config.js', './.core-config.js')
-        create('seed/editorconfig', './.editorconfig')
-        create('seed/eslintrc', './.eslintrc')
-        create('seed/gitignore', './.gitignore')
-
-        create('seed/gulpfile.js', './gulpfile.js')
-        create('seed/package.json', './package.json')
     }
 })

@@ -20,9 +20,10 @@ module.exports = require('yeoman-generator').Base.extend({
     writing() {
         const create = config.create.bind(this)
 
-        create(`seed/component/${this.config.get('libraryJS')}/components/${this.config.get('preprocessorCSS')}`, `./app/components/${this.config.get('component')}`)
-        create(`seed/component/${this.config.get('libraryJS')}/components/${this.config.get('preprocessorCSS')}/.*`, `./app/components/${this.config.get('component')}`)
-        create(`seed/component/${this.config.get('libraryJS')}/components/tpl`, `./app/components/${this.config.get('component')}`)
-        create(`seed/component/${this.config.get('libraryJS')}/components/tpl/.*`, `./app/components/${this.config.get('component')}`)
+        create(`seed/template/multi-tic-tac-toe/${this.config.get('framework')}/component`, `./app/components/${this.config.get('component')}`)
+        create(`seed/template/multi-tic-tac-toe/${this.config.get('framework')}/component/.*`, `./app/components/${this.config.get('component')}`)
+
+        create(`seed/template/multi-tic-tac-toe/${this.config.get('framework')}/css/${this.config.get('css')}/component`, `./app/components/${this.config.get('component')}`)
+        create(`seed/template/multi-tic-tac-toe/${this.config.get('framework')}/css/${this.config.get('css')}/component/.*`, `./app/components/${this.config.get('component')}`)
     }
 })

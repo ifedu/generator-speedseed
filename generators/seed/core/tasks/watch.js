@@ -20,8 +20,8 @@ module.exports = ($) => {
 
             // CSS
             watch([
-                `${$.app.dir}/**/*.${$.yo.preprocessorCSS}`,
-                `!${$.app.dir}/**/.*.${$.yo.preprocessorCSS}`
+                `${$.app.dir}/**/*.${$.yo.css}`,
+                `!${$.app.dir}/**/.*.${$.yo.css}`
             ], () => {
                 $.if.notInclude = false
                 return $.runSequence('css', 'clean-app')
@@ -73,7 +73,7 @@ module.exports = ($) => {
             // INCLUDE
             watch([
                 `${$.app.dir}/**/_*.html`,
-                `${$.app.dir}/**/.*.${$.yo.preprocessorCSS}`,
+                `${$.app.dir}/**/.*.${$.yo.css}`,
                 `${$.app.dir}/**/.*.jade`
             ], () => {
                 $.if.notInclude = false
