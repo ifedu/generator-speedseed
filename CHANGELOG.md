@@ -1,4 +1,9 @@
 # English
+## v.0.9.0
+    - Add npm run ss-component for create component
+    - Change template <%= to {%=
+    - Use BrowserSync for livereload
+
 ## v.0.8.1
     - Fix README
 
@@ -57,6 +62,11 @@
     - Restart changelog in 2 languages
 
 # Español
+## v.0.9.0
+    - Add npm run ss-component para crear componente
+    - Change template <%= to {%=
+    - Use BrowserSync for livereload
+
 ## v.0.8.1
     - Arregla el README
 

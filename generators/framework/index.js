@@ -11,9 +11,9 @@ module.exports = require('yeoman-generator').Base.extend({
         const done = this.async()
 
         config.prompting.call(this, {
-            default: this.config.get('libraryJS') || 0,
+            default: this.config.get('framework') || 0,
             message: 'Library / Framework?',
-            name: 'libraryJS',
+            name: 'framework',
             type: 'list',
 
             choices: [{
@@ -36,7 +36,13 @@ module.exports = require('yeoman-generator').Base.extend({
         const create = config.create.bind(this)
         // FRAMEWORK
         if (this.config.get('template') !== 'no') {
-            create(`seed/template/${this.config.get('template')}/lib/${this.config.get('libraryJS')}`, './app', false)
+            create(`seed/template/${this.config.get('template')}/${this.config.get('framework')}/_vendor`, './app/_vendor', false)
+
+            create(`seed/template/${this.config.get('template')}/all/app`, './app')
+            create(`seed/template/${this.config.get('template')}/all/app/**/.*`, './app')
+
+            create(`seed/template/${this.config.get('template')}/${this.config.get('framework')}/app`, './app')
+            create(`seed/template/${this.config.get('template')}/${this.config.get('framework')}/app/**/.*`, './app')
         }
     }
 })

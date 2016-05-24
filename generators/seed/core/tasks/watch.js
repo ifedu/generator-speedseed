@@ -5,16 +5,6 @@ module.exports = ($) => {
 
     $.gulp.task('watch', () => {
         setTimeout(() => {
-            watch([`${$.build.dir}/**/*`], (event) => {
-                const FILE_NAME = $.path.relative(__dirname, event.path)
-
-                $.tinylr.changed({
-                    body: {
-                        files: [FILE_NAME]
-                    }
-                })
-            })
-
             // COPY
             watch([
                 `${$.app.dir}/**/*.html`,
@@ -26,36 +16,22 @@ module.exports = ($) => {
                 `!${$.app.dir}/**/-*.json`,
                 `!${$.app.dir}/**/_*.json`,
                 `!${$.app.dir}/**/_**/**/*.json`
-            ], () => $.runSequence('copy-files'))
+            ], () => $.runSequence('copy-files', 'clean-app'))
 
             // CSS
             watch([
-                `${$.app.dir}/**/*.${$.yo.preprocessorCSS}`
+                `${$.app.dir}/**/*.${$.yo.css}`,
+                `!${$.app.dir}/**/.*.${$.yo.css}`
             ], () => {
                 $.if.notInclude = false
                 return $.runSequence('css', 'clean-app')
             })
 
-            // CSS INCLUDE
-            watch([
-                `${$.app.dir}/**/.*.${$.yo.preprocessorCSS}`
-            ], () => {
-                $.if.notInclude = false
-                return $.runSequence(['css-app', 'html-app', 'js-app'], 'html', 'clean-app')
-            })
-
             // HTML
             watch([
-                `${$.app.dir}/**/*.jade`
+                `${$.app.dir}/**/*.jade`,
+                `!${$.app.dir}/**/.*.jade`
             ], () => $.runSequence(['css-app', 'html-app', 'js-app'], 'html', 'clean-app'))
-
-            // // HTML-INCLUDE
-            watch([
-                `${$.app.dir}/**/.*.jade`
-            ], () => {
-                $.if.notInclude = false
-                return $.runSequence(['css-app', 'html-app', 'js-app'], ['html', 'js', 'jsx'], 'clean-app')
-            })
 
             // JS
             watch([
@@ -74,7 +50,10 @@ module.exports = ($) => {
 
             // JS INCLUDE
             watch([
-                `${$.app.dir}/**/.*.js`
+                `${$.app.dir}/**/.*.js`,
+
+                `${$.app.dir}/**/_*.js`,
+                `${$.app.dir}/**/_**/**/*.js`
             ], () => {
                 $.if.notInclude = false
                 return $.runSequence(['css-app', 'html-app', 'js-app'], 'html', 'clean-app')
@@ -90,6 +69,16 @@ module.exports = ($) => {
                 `!${$.app.dir}/**/-*.jsx`,
                 `!${$.app.dir}/**/-**/**/*.jsx`
             ], () => $.runSequence('html-app', 'jsx', 'clean-app'))
+
+            // INCLUDE
+            watch([
+                `${$.app.dir}/**/_*.html`,
+                `${$.app.dir}/**/.*.${$.yo.css}`,
+                `${$.app.dir}/**/.*.jade`
+            ], () => {
+                $.if.notInclude = false
+                return $.runSequence(['css-app', 'html-app', 'js-app'], ['html', 'js', 'jsx'], 'clean-app')
+            })
 
             // TEST
             watch([

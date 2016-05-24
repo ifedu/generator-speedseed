@@ -47,7 +47,10 @@ module.exports = ($) => {
             .pipe(gulpif($.if.notInclude, $.changed(dir)))
             .pipe($.plumber())
             .pipe(filter)
-            .pipe(template($.getJsProps(file, '.js'), { 'interpolate': /<%=([\s\S]+?)%>/g }))
+            .pipe(template($.getJsProps(file, '.js'), {
+                'evaluate': /{%=([\s\S]+?)%}/g,
+                'interpolate': /{%=([\s\S]+?)%}/g
+            }))
             .pipe($.gulp.dest(dir))
             .pipe(babel({
                 presets: ['es2015']

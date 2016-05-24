@@ -11,9 +11,9 @@ module.exports = require('yeoman-generator').Base.extend({
         const done = this.async()
 
         config.prompting.call(this, {
-            default: this.config.get('testJS') || 0,
+            default: this.config.get('test') || 0,
             message: 'Test?',
-            name: 'testJS',
+            name: 'test',
             type: 'list',
 
             choices: [ {
@@ -32,8 +32,8 @@ module.exports = require('yeoman-generator').Base.extend({
     writing() {
         const create = config.create.bind(this)
         // TEST
-        if (this.config.get('testJS') !== 'no') {
-            create(`seed/test/${this.config.get('testJS')}/karma.conf.js`, './.core/karma.conf.js', false)
+        if (this.config.get('test') !== 'no') {
+            create(`seed/test/${this.config.get('test')}/karma.conf.js`, './.core/karma.conf.js', false)
         }
     }
 })

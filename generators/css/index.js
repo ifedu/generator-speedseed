@@ -11,9 +11,9 @@ module.exports = require('yeoman-generator').Base.extend({
         const done = this.async()
 
         config.prompting.call(this, {
-            default: this.config.get('preprocessorCSS') || 0,
+            default: this.config.get('css') || 0,
             message: 'CSS?',
-            name: 'preprocessorCSS',
+            name: 'css',
             type: 'list',
 
             choices: [{
@@ -36,8 +36,11 @@ module.exports = require('yeoman-generator').Base.extend({
         const create = config.create.bind(this)
         // CSS
         if (this.config.get('template') !== 'no') {
-            create(`seed/template/${this.config.get('template')}/css/${this.config.get('preprocessorCSS')}/all`, './app', false)
-            create(`seed/template/${this.config.get('template')}/css/${this.config.get('preprocessorCSS')}/${this.config.get('libraryJS')}`, './app', false)
+            create(`seed/template/${this.config.get('template')}/all/css/${this.config.get('css')}/app`, './app')
+            create(`seed/template/${this.config.get('template')}/all/css/${this.config.get('css')}/app/**/.*`, './app')
+
+            create(`seed/template/${this.config.get('template')}/${this.config.get('framework')}/css/${this.config.get('css')}/app`, './app')
+            create(`seed/template/${this.config.get('template')}/${this.config.get('framework')}/css/${this.config.get('css')}/app/**/.*`, './app')
         }
     }
 })

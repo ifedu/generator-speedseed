@@ -1,7 +1,8 @@
 module.exports = {
-    'coreVersion': '<%= coreVersion %>',
-    libraryJS: '<%= libraryJS %>',
-    preprocessorCSS: '<%= preprocessorCSS %>',
+    coreVersion: '<%= coreVersion %>',
+    css: '<%= css %>',
+    framework: '<%= framework %>',
+    project: '<%= project %>',
     template: '<%= template %>',
-    testJS: '<%= testJS %>'
+    test: '<%= test %>'
 }

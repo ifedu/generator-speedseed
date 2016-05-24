@@ -29,7 +29,10 @@ module.exports = ($) => {
             .src(file.path)
             .pipe(gulpif($.if.notInclude, $.changed(dir)))
             .pipe($.plumber())
-            .pipe(template($.getJsProps(file, '.jsx'), { 'interpolate': /<%=([\s\S]+?)%>/g }))
+            .pipe(template($.getJsProps(file, '.jsx'), {
+                'evaluate': /{%=([\s\S]+?)%}/g,
+                'interpolate': /{%=([\s\S]+?)%}/g
+            }))
             .pipe($.gulp.dest(dir))
             .pipe(react())
             .pipe($.gulp.dest(dir))
