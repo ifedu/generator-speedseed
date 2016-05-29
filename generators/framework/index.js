@@ -28,6 +28,9 @@ module.exports = require('yeoman-generator').Base.extend({
             }, {
                 name: 'React',
                 value: 'react'
+            }, {
+                name: 'VanillaJS',
+                value: 'vanillajs'
             }]
         }, done)
     },

@@ -1,13 +1,11 @@
 include components/_main
 
 doctype html
-html(data-framework='react'
-    lang='en')
+html(data-framework='react' lang='en')
     head
         meta(charset='utf-8')
         title React • TodoMVC
-        link(href='vendor/todomvc-app-css/index.css'
-            rel='stylesheet')
+        link(href='_vendor/todomvc-app-css/index.css' rel='stylesheet')
 
     body
         section.todoapp
@@ -20,9 +18,9 @@ html(data-framework='react'
                 a(href='http://todomvc.com') TodoMVC
 
         +script-dist()
-            script(src='vendor/react/dist/react-with-addons.js')
-            script(src='vendor/classnames/index.js')
-            script(src='vendor/director/build/director.js')
+            script(src='_vendor/react/dist/react-with-addons.js')
+            script(src='_vendor/classnames/index.js')
+            script(src='_vendor/director/build/director.js')
 
             script(src='js/utils.js')
             script(src='js/todoModel.js')

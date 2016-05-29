@@ -5,17 +5,13 @@ html(lang='es')
     head
         meta(charset='utf-8')
         title
-        meta(content=''
-            name='description')
-        //- link(href='favicon.ico'
-        //-     rel='shortcut icon')
-        link(href='css/main.css'
-            rel='stylesheet')
-        link(href='components/box/main.html'
-            rel='import')
+        meta(content='' name='description')
+        //- link(href='favicon.ico' rel='shortcut icon')
+        link(href='css/main.css' rel='stylesheet')
+        link(href='components/main.html' rel='import')
 
     body
-        +script-dist()
-            +table()
+        +table()
 
-            script(src='vendor/polymer/webcomponents-lite.min.js')
+        +script-dist()
+            script(src='_vendor/polymer/webcomponents-lite.min.js')

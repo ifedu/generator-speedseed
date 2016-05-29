@@ -1,4 +1,12 @@
 # English
+## v.0.10.0
+    - Add Bower
+    - Add Polymer Vulcanize, with external files minimizied!
+    - Add npm run ss-indent for indent files 
+    - Add VanillaJS
+    - In .build vendor to _vendor
+    - More config in core-config.js
+
 ## v.0.9.0
     - Add npm run ss-component for create component
     - Change template <%= to {%=
@@ -62,10 +70,18 @@
     - Restart changelog in 2 languages
 
 # Español
+## v.0.10.0
+    - Añade Bower
+    - Añade Polymer Vulcanize, ¡con ficheros externos minimizados!
+    - Añade npm run ss-indent para identar ficheros
+    - Añade VanillaJS
+    - En .build vendor a _vendor
+    - Más configuración en core-config.js
+
 ## v.0.9.0
-    - Add npm run ss-component para crear componente
-    - Change template <%= to {%=
-    - Use BrowserSync for livereload
+    - Añade npm run ss-component para crear componente
+    - Cambia template <%= a {%=
+    - Usa BrowserSync para livereload
 
 ## v.0.8.1
     - Arregla el README

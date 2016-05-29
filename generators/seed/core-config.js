@@ -5,26 +5,49 @@ const reports = './-reports'
 
 module.exports = {
     app: {
-        assets: `${app}/assets`,
-        css: `${app}/css`,
-        dir: app,
-        vendor: `${app}/_vendor`
+        copy: {
+            assets: `${app}/images`,
+            vendor: `${app}/_vendor`
+        },
+
+        dir: app
     },
 
     build: {
-        assets: `${build}/assets`,
-        css: `${build}/css`,
+        copy: {
+            assets: `${build}/images`,
+            vendor: `${build}/_vendor`
+        },
+
         dir: build,
-        index: `${build}/index.html`,
-        js: `${build}/js`,
-        jsAll: `${build}/js/all.js`,
-        port: 8001,
-        vendor: `${build}/vendor`
+        port: 8001
     },
 
     dist: {
+        copy: {
+            assets: `${dist}/images`,
+            vendor: `${dist}/_vendor`
+        },
+
         dir: dist,
-        port: 8002
+        index: `${dist}/index.html`,
+        jsAll: `${dist}/js/all.js`,
+        port: 8002,
+
+        vulcanize: {
+            dir: `${dist}/components`,
+            name: 'main.html'
+        }
+    },
+
+    indent: {
+        dest: app,
+        spacesBefore: 4,
+        spacesAfter: 2,
+
+        src: [
+            `${app}/**/*`
+        ]
     },
 
     reports: {

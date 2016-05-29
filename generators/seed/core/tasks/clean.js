@@ -25,8 +25,8 @@ module.exports = ($) => {
 
     $.gulp.task('clean-dist', (cb) =>
         deleteFiles([
-            $.build.vendor,
-            `${$.build.js}/**/*.js`,
+            $.build.copy.vendor,
+            `${$.build.dir}/**/*.js`,
             `${$.build.dir}/**/_*`,
             `${$.build.dir}/**/_**/**/*`,
             `!${$.build.jsAll}`

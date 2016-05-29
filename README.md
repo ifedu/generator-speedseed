@@ -1,4 +1,8 @@
-### v.0.9.0
+### v.0.10.0
+
+## Index
+- [English](#english)
+- [Español](#español)
 
 ### English
 - *Properties*
@@ -19,6 +23,7 @@
         - **jQuery 2.2.3**
         - **Polymer 1.0**
         - **React 15.0.2**
+        - **VanillaJS**
     
     ---
 
@@ -65,7 +70,7 @@
     ---
 
 ## Styleguide
-- https://github.com/ifedu/styleguide-web Guide in spanish for Jade, JS(ES6) and Stylus
+- https://github.com/ifedu/speedseed-styleguide Guide in spanish for Jade, JS(ES6) and Stylus
 
 ---
 
@@ -112,6 +117,10 @@
     ---
     - Create component in app/components
     - **npm run ss-component**
+
+    ---
+    - Ident all choice files, configurable in core-config.js
+    - **npm run ss-indent**
 
     ---
     - Delete folders -build -dist -reports
@@ -164,6 +173,7 @@
         - **jQuery 2.2.3**
         - **Polymer 1.0**
         - **React 15.0.2**
+        - **VanillaJS**
     
     ---
 
@@ -210,7 +220,7 @@
     ---
 
 ## Styleguide
-- https://github.com/ifedu/styleguide-web Guía en español para Jade, JS(ES6) y Stylus
+- https://github.com/ifedu/speedseed-styleguide Guía en español para Jade, JS(ES6) y Stylus
 
 ---
 
@@ -257,6 +267,10 @@
     ---
     - Crea un componente en app/components
     - **npm run ss-component**
+
+    ---
+    - Identa todos los ficheros elegidos, configurable en core-config.js
+    - **npm run ss-indent**
 
     ---
     - Borra carpetas -build -dist -reports

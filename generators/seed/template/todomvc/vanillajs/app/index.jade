@@ -1,0 +1,54 @@
+include components/_main
+
+doctype
+html(data-framework='javascript' lang='en')
+    head
+        meta(charset='utf-8')
+        title VanillaJS • TodoMVC
+        link(href='_vendor/todomvc-common/base.css' rel='stylesheet')
+        link(href='_vendor/todomvc-app-css/index.css' rel='stylesheet')
+
+    body
+        section.todoapp
+            header.header
+                h1 todos
+                input.new-todo(autofocus placeholder='What needs to be done?')
+
+            section.main
+                input.toggle-all(type='checkbox')
+                label(for='toggle-all') Mark all as complete
+                ul.todo-list
+
+            footer.footer
+                span.todo-count
+                ul.filters
+                    li
+                        a.selected(href='#/') All
+
+                    li
+                        a.selected(href='#/active') Active
+
+                    li
+                        a.selected(href='#/completed') Completed
+
+                button.clear-completed Clear completed
+
+        footer.info
+            p Double-click to edit a todo
+            p Created by
+                a(href='http://twitter.com/oscargodson')  Oscar Godson
+            p Refactored by
+                a(href='https://github.com/cburgmer')  Christoph Burgmer
+
+            p Part of
+                a(href='http://todomvc.com')  TodoMVC
+
+        +script-dist()
+            script(src='_vendor/todomvc-common/base.js')
+            script(src='js/helpers.js')
+            script(src='js/store.js')
+            script(src='js/model.js')
+            script(src='js/template.js')
+            script(src='js/view.js')
+            script(src='js/controller.js')
+            script(src='js/app.js')

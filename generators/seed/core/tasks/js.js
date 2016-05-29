@@ -56,15 +56,16 @@ module.exports = ($) => {
                 presets: ['es2015']
             }))
             .pipe($.gulp.dest(dir))
-            .pipe(ngAnnotate())
+            .pipe(gulpif(($.yo.framework === 'angularjs' && $.config.dist === true), ngAnnotate()))
             .pipe($.gulp.dest(dir))
         }))
     })
 
     $.gulp.task('js-app', () => {
         const babel = require('gulp-babel')
-        const ngAnnotate = require('gulp-ng-annotate')
+        const gulpif = require('gulp-if')
         const rename = require('gulp-rename')
+        const uglify = require('gulp-uglify')
 
         return $
         .gulp
@@ -77,6 +78,7 @@ module.exports = ($) => {
         }))
         .pipe(rename((path) => path.basename = `-${path.basename}`))
         .pipe($.changed($.app.dir))
+        .pipe(gulpif(($.yo.framework === 'polymer' && $.config.dist === true), uglify()))
         .pipe($.gulp.dest($.app.dir))
     })
 }

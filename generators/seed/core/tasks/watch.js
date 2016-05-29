@@ -6,7 +6,12 @@ module.exports = ($) => {
     $.gulp.task('watch', () => {
         setTimeout(() => {
             // COPY
-            watch([
+            watch([,
+                `${$.app.dir}/**/*.css`,
+                `!${$.app.dir}/**/-*.css`,
+                `!${$.app.dir}/**/_*.css`,
+                `!${$.app.dir}/**/_**/**/*.css`,
+
                 `${$.app.dir}/**/*.html`,
                 `!${$.app.dir}/**/-*.html`,
                 `!${$.app.dir}/**/_*.html`,

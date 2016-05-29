@@ -16,6 +16,7 @@ module.exports = {
     app: coreConfig.app,
     build: coreConfig.build,
     dist: coreConfig.dist,
+    indent: coreConfig.indent,
     reports: coreConfig.reports,
     server: coreConfig.server,
     test: coreConfig.test,
@@ -121,13 +122,7 @@ module.exports = {
                 }
             }
 
-            const buildDir = this.build.dir
-
-            for (let prop in this.build) {
-                let value = this.build[prop].toString().replace(buildDir, this.dist.dir)
-
-                this.build[prop] = value
-            }
+            this.build = this.dist
         }
     }
 }

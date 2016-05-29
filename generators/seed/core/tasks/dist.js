@@ -26,16 +26,37 @@ module.exports = ($) => {
 
         return $
         .gulp
-        .src(`${$.build.dir}/**/*.js`)
+        .src([
+            `${$.build.dir}/**/*.js`,
+            `!${$.build.dir}/**/-*.js`,
+            `!${$.build.dir}/**/.*.js`
+        ])
         .pipe(uglify())
         .pipe($.gulp.dest($.build.dir))
     })
 
+    $.gulp.task('vulcanize', (cb) => {
+        const size = require('gulp-size')
+        const rename = require('gulp-rename')
+        const vulcanize = require('gulp-vulcanize')
+
+        return $
+        .gulp
+        .src(`${$.dist.vulcanize.dir}/${$.dist.vulcanize.name}`)
+        .pipe(vulcanize({
+            inlineCss: true,
+            inlineScripts: true,
+            stripComments: true
+        }))
+        .pipe($.gulp.dest($.dist.vulcanize.dir))
+        .pipe(size({title: 'vulcanize'}))
+    })
+
     $.gulp.task('minified', (cb) => {
-        if ($.config.dist === true) {
+        if ($.yo.framework === 'polymer') {
+            return $.runSequence('vulcanize', 'oneJS', ['compress-html', 'compress-js'], cb)
+        } else {
             return $.runSequence('oneJS', ['compress-html', 'compress-js'], 'clean-dist', cb)
         }
-
-        cb()
     })
 }
