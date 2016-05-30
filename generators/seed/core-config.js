@@ -6,7 +6,7 @@ const reports = './-reports'
 module.exports = {
     app: {
         copy: {
-            assets: `${app}/images`,
+            assets: `${app}/assets`,
             vendor: `${app}/_vendor`
         },
 
@@ -15,7 +15,7 @@ module.exports = {
 
     build: {
         copy: {
-            assets: `${build}/images`,
+            assets: `${build}/assets`,
             vendor: `${build}/_vendor`
         },
 

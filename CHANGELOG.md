@@ -1,4 +1,7 @@
 # English
+## v.0.10.1
+    - Default folder multimedia files is assets
+
 ## v.0.10.0
     - Add Bower
     - Add Polymer Vulcanize, with external files minimizied!
@@ -70,6 +73,9 @@
     - Restart changelog in 2 languages
 
 # Español
+## v.0.10.1
+    - Por defecto la carpeta de archivos multimedia es assets
+
 ## v.0.10.0
     - Añade Bower
     - Añade Polymer Vulcanize, ¡con ficheros externos minimizados!
