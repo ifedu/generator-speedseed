@@ -3,11 +3,16 @@ const build = './-build'
 const dist = './-dist'
 const reports = './-reports'
 
+const assets = 'assets'
+const components = 'components'
+const js = 'js'
+const vendor = '_vendor'
+
 module.exports = {
     app: {
         copy: {
-            assets: `${app}/assets`,
-            vendor: `${app}/_vendor`
+            assets: `${app}/${assets}`,
+            vendor: `${app}/${vendor}`
         },
 
         dir: app
@@ -15,8 +20,8 @@ module.exports = {
 
     build: {
         copy: {
-            assets: `${build}/assets`,
-            vendor: `${build}/_vendor`
+            assets: `${build}/${assets}`,
+            vendor: `${build}/${vendor}`
         },
 
         dir: build,
@@ -25,28 +30,29 @@ module.exports = {
 
     dist: {
         copy: {
-            assets: `${dist}/images`,
-            vendor: `${dist}/_vendor`
+            assets: `${dist}/${assets}`,
+            vendor: `${dist}/${vendor}`
         },
 
         dir: dist,
         index: `${dist}/index.html`,
-        jsAll: `${dist}/js/all.js`,
+        jsAll: `${dist}/${js}/all.js`,
         port: 8002,
 
         vulcanize: {
-            dir: `${dist}/components`,
+            dir: `${dist}/${components}`,
             name: 'main.html'
         }
     },
 
     indent: {
         dest: app,
-        spacesBefore: 4,
-        spacesAfter: 2,
+        spacesBefore: 2,
+        spacesAfter: 4,
 
         src: [
-            `${app}/**/*`
+            `${app}/**/*`,
+            `!${app}/**/${vendor}/**/*`
         ]
     },
 
@@ -55,8 +61,8 @@ module.exports = {
         plato: {
             dir: `${reports}/plato`,
             files: [
-                `${build}/**/components/**/*.js`,
-                `${build}/**/js/**/*.js`
+                `${build}/**/${components}/**/*.js`,
+                `${build}/**/${js}/**/*.js`
             ],
             port: 8003
         },

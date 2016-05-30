@@ -1,4 +1,4 @@
-### v.0.10.1
+### v.0.10.2
 
 ## Index
 - [English](#english)

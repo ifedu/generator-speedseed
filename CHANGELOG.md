@@ -1,4 +1,9 @@
 # English
+## v.0.10.2
+    - More variables in core-config.js
+    - Default spacesBefore: 2 spacesAfter: 4
+    - Default folder multimedia files is assets in dist
+
 ## v.0.10.1
     - Default folder multimedia files is assets
 

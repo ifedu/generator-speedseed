@@ -17,7 +17,7 @@ module.exports = ($) => {
         return $
         .gulp
         .src(`${$.build.dir}/**/*.html`)
-        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(htmlmin({collapseWhitespace: true, removeComments: true}))
         .pipe($.gulp.dest($.build.dir))
     })
 
@@ -28,6 +28,7 @@ module.exports = ($) => {
         .gulp
         .src([
             `${$.build.dir}/**/*.js`,
+            `!${$.build.dir}/**/_**/**/*`,
             `!${$.build.dir}/**/-*.js`,
             `!${$.build.dir}/**/.*.js`
         ])
@@ -36,6 +37,8 @@ module.exports = ($) => {
     })
 
     $.gulp.task('vulcanize', (cb) => {
+        const htmlmin = require('gulp-htmlmin')
+        const minifyInline = require('gulp-minify-inline')
         const size = require('gulp-size')
         const rename = require('gulp-rename')
         const vulcanize = require('gulp-vulcanize')
@@ -48,6 +51,9 @@ module.exports = ($) => {
             inlineScripts: true,
             stripComments: true
         }))
+        .pipe($.gulp.dest($.dist.vulcanize.dir))
+        .pipe(htmlmin({collapseWhitespace: true, removeComments: true}))
+        .pipe(minifyInline())
         .pipe($.gulp.dest($.dist.vulcanize.dir))
         .pipe(size({title: 'vulcanize'}))
     })

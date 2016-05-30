@@ -21,6 +21,7 @@
         "gulp-jade": "^1.0.1",
         "gulp-jade-inheritance": "^0.5.5",
         "gulp-less": "^3.1.0",
+        "gulp-minify-inline": "^0.2.1",
         "gulp-ng-annotate": "^2.0.0",
         "gulp-plumber": "^1.1.0",
         "gulp-react": "^3.1.0",
