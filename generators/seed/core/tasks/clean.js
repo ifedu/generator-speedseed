@@ -37,7 +37,8 @@ module.exports = ($) => {
         deleteFiles([
             $.build.dir,
             $.dist.dir,
-            $.reports.dir
+            $.reports.dir,
+            './node_modules'
         ], cb)
     )
 

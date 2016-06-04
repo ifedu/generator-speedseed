@@ -13,13 +13,13 @@
         },
 
         render() {
-            return ({%= include('app/components/box', 'render') %})
+            return ({%= include(__dirname, '-render.html') %})
         }
     })
 
     for (let i = 0, l = document.getElementsByTagName('ss-box').length; i < l; i++) {
         React.render(
-            ({%= include('app/components/box', 'dom') %}),
+            ({%= include(__dirname, '-dom.html') %}),
             document.getElementsByTagName('ss-box')[i]
         )
     }

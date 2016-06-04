@@ -1,4 +1,22 @@
 # English
+## v.0.11.0
+    - Add documentation of folders and update includes in README
+    - package.json add core properties when update insead of overwrite the file
+    - package.json have only the plugins to use
+
+    - npm run ss-build compile and launch server in -build
+    - npm run ss-build-open compile, launch server and open navigator in -build
+    - npm run ss-dist compile minimizied in -dist
+    - npm run ss-dist-open compile minimizied, launch server and open navigator in -dist
+    
+    - Modifing includes in .js. Ej with template .name.html:
+        - Previous: {%= include('dir/relative', 'name', 'html') %}
+        - Now: {%= include(__dirname, '-name.html') %}
+
+    - Simplifing includes inline. Ej with file .tpl.jade:
+        - Previous: include -.tpl.html
+        - Now: include -tpl.hml 
+
 ## v.0.10.2
     - More variables in core-config.js
     - Default spacesBefore: 2 spacesAfter: 4
@@ -78,6 +96,24 @@
     - Restart changelog in 2 languages
 
 # Español
+## v.0.11.0
+    - Añade documentación de carpetas y actualiza includes en README
+    - package.json añade propiedades del core al actualizar en lugar de sobreescribir el archivo
+    - package.json sól tiene lo splugin a usar
+
+    - npm run ss-build compila y lanza el servidor en -build
+    - npm run ss-build-open compila, lanza el servidor y abre el navegador en -build
+    - npm run ss-dist compila minimizado en -dist
+    - npm run ss-dist-open compile minimizado, lanza el servidor y abre el navegador en -dist
+
+    - Modificando includes en .js. Ej con template .name.html:
+        - Antes: {%= include('dir/relative', 'name', 'html') %}
+        - Ahora: {%= include(__dirname, '-name.html') %}
+
+    - Simplificando includes enline. Ej con fichero .tpl.jade:
+        - Antes: include -.tpl.html
+        - Antes: include -tpl.hml 
+
 ## v.0.10.1
     - Por defecto la carpeta de archivos multimedia es assets
 

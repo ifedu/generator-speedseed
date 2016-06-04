@@ -1,4 +1,4 @@
-### v.0.10.2
+### v.0.11.0
 
 ## Index
 - [English](#english)
@@ -7,9 +7,9 @@
 ### English
 - *Properties*
     - Files and folders start for _ no compile to build, perfect for includes properties
-    - Files with .name.css .name.js .name.html precompile in app, perfect for includes files
-        - In *.js {%= include('dir', '_nameFile', 'html') %} for files _nameFile.html
-        - In *.js {%= include('dir', 'nameFile') %} for files .nameFile.jade 
+    - Files with .name.scss .name.js .name.jade precompile in app, perfect for includes files
+        - In *.jade include -name.css -name.js -name.html
+        - In *.js {%= include(__dirname, '-name.html') %} for files .name.jade
     
     - Allow update the core of the project through npm run ss-update without affecting the development of the project
     - Global properties for our jades with con __global.js
@@ -92,15 +92,19 @@
 
 - *In the project folder*
     - Compile project in -build
-    - **npm run ss-compile**
-
-    ---
-    - Compile project in -build and launch project
     - **npm run ss-build**
 
     ---
-    - Compile project minified in -dist and launch project
+    - Compile project in -build and launch project
+    - **npm run ss-build-server**
+
+    ---
+    - Compile project minified in -dist
     - **npm run ss-dist**
+
+    ---
+    - Compile project minified in -dist and launch project
+    - **npm run ss-dist-server**
 
     ---
     - Update generator, install dependencies and launch generator
@@ -123,7 +127,7 @@
     - **npm run ss-indent**
 
     ---
-    - Delete folders -build -dist -reports
+    - Delete generate folders -build -dist -reports node_modules
     - **npm run ss-clean**
 
 ---
@@ -157,9 +161,9 @@
 ### Español
 - *Propiedades*
     - Ficheros y carpetas que empiezan por _ no se compilan a build, perfecto para incluir propiedades
-    - Ficheros con .name.css .name.js .name.html precompilan en app, perfecto para incluir ficheros
-        - En *.js <%= include('dir', 'nombreFichero', 'html') %> para ficheros nombreFichero.html
-        - En *.js <%= include('dir', 'nombreFichero') %> para ficheros .nombreFichero.jade 
+    - Ficheros con .name.scss .name.js .name.jade precompilan en app, perfecto para incluir ficheros
+        - En *.jade include -name.css -name.js -name.html
+        - En *.js {%= include(__dirname, '-name.html') %} para ficheros .name.jade
     
     - Permite actualizar el núcleo del proyecto mediante npm run ss-update sin afectar al desarrollo del proyecto
     - Propiedades globales para nuestros jades con __global.js
@@ -242,15 +246,19 @@
 
 - *En la carpeta del proyecto*
     - Compila el proyecto en -build
-    - **npm run ss-compile**
+    - **npm run ss-build**
 
     ---
     - Compila el proyecto en -build y lo lanza
-    - **npm run ss-deploy**
+    - **npm run ss-build-server**
+
+    ---
+    - Compila el proyecto minificado en -dist
+    - **npm run ss-dist**
 
     ---
     - Compila el proyecto minificado en -dist y lo lanza
-    - **npm run ss-dist**
+    - **npm run ss-dist-server**
 
     ---
     - Actualiza el generador, lo ejecuta e instala las dependencias
@@ -273,7 +281,7 @@
     - **npm run ss-indent**
 
     ---
-    - Borra carpetas -build -dist -reports
+    - Borra carpetas generadas -build -dist -reports node_modules
     - **npm run ss-clean**
     
 ---

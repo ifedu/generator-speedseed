@@ -4,7 +4,7 @@ doctype html
 html(lang='es')
     head
         meta(charset='utf-8')
-        title
+        title <%= project %>
         meta(content='' name='description')
         //- link(href='favicon.ico' rel='shortcut icon')
         link(href='css/main.css' rel='stylesheet')
@@ -14,4 +14,4 @@ html(lang='es')
         +table()
 
         +script-dist()
-            script(src='_vendor/polymer/webcomponents-lite.min.js')
+            script(src='.vendor/polymer/webcomponents-lite.min.js')

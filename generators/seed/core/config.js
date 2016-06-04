@@ -41,20 +41,45 @@ module.exports = {
         }
     },
 
+    filterProps: [
+        `**/*`,
+        `!**/*.spec.js`,
+
+        `!**/.*.js`,
+        `!**/.**/**/*.js`,
+
+        `!**/_*.js`,
+        `!**/_**/**/*.js`,
+
+        `!**/-*.js`,
+        `!**/-**/**/*.js`
+    ],
+
     if: {
         notInclude: true
     },
 
+    options: {
+        css: require('./options/css.js'),
+        framework: require('./options/framework.js')
+    },
+
     propsHtml: {},
+
+    template: {
+        'evaluate': /{%=([\s\S]+?)%}/g,
+        'interpolate': /{%=([\s\S]+?)%}/g
+    },
 
     yo: require('./props-tpl.js'),
 
     getJs(route) {
+        const extend = require('extend')
+
         delete require.cache[route]
 
         const JSON_FILE = (this.fs.existsSync(route)) ? require(route) : {}
 
-        const extend = require('extend')
         extend(true, this.propsHtml, JSON_FILE)
     },
 
@@ -78,14 +103,13 @@ module.exports = {
 
     resetPropsHtml() {
         this.propsHtml = {
-            include(dir, file, ext) {
-                const sign = (ext === 'html') ? '' : '-.'
-
-                ext = ext || 'html'
-
+            include(dir, file) {
                 const fs = require('fs')
+                const path = require('path')
 
-                return fs.readFileSync(`./${dir}/${sign}${file}.${ext}`)
+                const fileNormalize = path.normalize(`${dir}/${file}`)
+
+                return fs.readFileSync(fileNormalize)
             }
         }
 
@@ -95,10 +119,6 @@ module.exports = {
 
     setParams() {
         const util = require('gulp-util')
-
-        if (util.env.open === 'false') {
-            this.config.open = false
-        }
 
         if (util.env.dist === 'true') {
             this.config = {
@@ -124,5 +144,8 @@ module.exports = {
 
             this.build = this.dist
         }
+
+        if (util.env.open === 'false') this.config.open = false
+        if (util.env.server === 'false') this.config.server = false
     }
 }

@@ -51,7 +51,11 @@ module.exports = ($) => {
         .pipe($.plumber())
         .pipe(data((file) => $.getJsProps(file, '.jade')))
         .pipe(jade($.config.html))
-        .pipe(rename((path) => path.basename = `-${path.basename}`))
+        .pipe(rename((path) => {
+            const basename = path.basename.substr(1)
+
+            path.basename = `-${basename}`
+        }))
         .pipe($.gulp.dest($.app.dir))
     })
 }

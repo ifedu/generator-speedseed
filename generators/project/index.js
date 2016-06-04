@@ -34,6 +34,7 @@ module.exports = require('yeoman-generator').Base.extend({
 
         create('seed/bower.json', './bower.json')
         create('seed/gulpfile.js', './gulpfile.js')
-        create('seed/package.json', './package.json')
+
+        require('./_package.js').call(this)
     }
 })
