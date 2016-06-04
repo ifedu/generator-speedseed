@@ -27,7 +27,6 @@ module.exports = require('yeoman-generator').Base.extend({
         // ROOT
         create('seed/babelrc', './.babelrc')
         create('seed/bowerrc', './.bowerrc')
-        create('seed/core-config.js', './.core-config.js')
         create('seed/editorconfig', './.editorconfig')
         create('seed/eslintrc', './.eslintrc')
         create('seed/gitignore', './.gitignore')
@@ -35,6 +34,7 @@ module.exports = require('yeoman-generator').Base.extend({
         create('seed/bower.json', './bower.json')
         create('seed/gulpfile.js', './gulpfile.js')
 
+        require('./_core-config.js').call(this)
         require('./_package.js').call(this)
     }
 })

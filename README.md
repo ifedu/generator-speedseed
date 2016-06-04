@@ -91,20 +91,20 @@
 ---
 
 - *In the project folder*
-    - Compile project in -build
+    - Compile project in -build and launch project
     - **npm run ss-build**
 
     ---
-    - Compile project in -build and launch project
-    - **npm run ss-build-server**
+    - Compile project in -build, launch project and open navigator
+    - **npm run ss-build-open**
 
     ---
     - Compile project minified in -dist
     - **npm run ss-dist**
 
     ---
-    - Compile project minified in -dist and launch project
-    - **npm run ss-dist-server**
+    - Compile project minified in -dist, launch project and open navigator
+    - **npm run ss-dist-open**
 
     ---
     - Update generator, install dependencies and launch generator
@@ -245,20 +245,20 @@
 ---
 
 - *En la carpeta del proyecto*
-    - Compila el proyecto en -build
+    - Compila el proyecto en -build y lo lanza
     - **npm run ss-build**
 
     ---
-    - Compila el proyecto en -build y lo lanza
-    - **npm run ss-build-server**
+    - Compila el proyecto en -build, lo lanza y abre el navegador
+    - **npm run ss-build-open**
 
     ---
     - Compila el proyecto minificado en -dist
     - **npm run ss-dist**
 
     ---
-    - Compila el proyecto minificado en -dist y lo lanza
-    - **npm run ss-dist-server**
+    - Compila el proyecto minificado en -dist, lo lanza y abre el navegador
+    - **npm run ss-dist-open**
 
     ---
     - Actualiza el generador, lo ejecuta e instala las dependencias
