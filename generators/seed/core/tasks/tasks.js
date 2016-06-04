@@ -1,17 +1,30 @@
 module.exports = ($) => {
     'use strict'
 
-    $.gulp.task('common', (cb) => $.runSequence(
-        ['clean', 'clean-app'],
-        ['css-app', 'html-app', 'js-app'],
-        'jsx',
-        ['js', 'css', 'html', 'copy'],
-        cb
-    ))
+    if ($.config.framework !== 'react') {
+        $.gulp.task('common', (cb) => $.runSequence(
+            ['clean', 'clean-app'],
+            ['css-app', 'html-app', 'js-app'],
+            ['js', 'css', 'html', 'copy'],
+            cb
+        ))
+    } else {
+        $.gulp.task('common', (cb) => $.runSequence(
+            ['clean', 'clean-app'],
+            ['css-app', 'html-app', 'js-app'],
+            'jsx',
+            ['js', 'css', 'html', 'copy'],
+            cb
+        ))
+    }
 
     if ($.config.dist !== true) {
         $.gulp.task('build', (cb) => $.runSequence('common', 'webserver', 'clean-app', 'watch', cb))
-    } else {
+    }
+    else if ($.config.server === false) {
+        $.gulp.task('build', (cb) => $.runSequence('common', 'minified', 'clean-app', cb))
+    }
+    else {
         $.gulp.task('build', (cb) => $.runSequence('common', 'minified', 'webserver', 'clean-app', 'watch', cb))
     }
 

@@ -2,29 +2,10 @@ module.exports = ($) => {
     'use strict'
 
     const css = {
-        less(files) {
-            const less = require('gulp-less')
-
-            return less($.config.less)
-        },
-
-        sass(files) {
-            const sass = require('gulp-sass')
-
-            return sass($.config.sass)
-        },
-
-        scss(files) {
-            const scss = require('gulp-sass')
-
-            return scss($.config.scss)
-        },
-
-        styl() {
-            const styles = require('gulp-stylus')
-
-            return styles($.config.styl)
-        }
+        less: () => require('gulp-less')($.config.less),
+        sass: () => require('gulp-sass')($.config.sass),
+        scss: () => require('gulp-sass')($.config.scss),
+        styl: () => require('gulp-styl')($.config.styl)
     }
 
     $.gulp.task('css', () => {
@@ -63,7 +44,11 @@ module.exports = ($) => {
         .pipe($.changed($.app.dir, {extension: '.css'}))
         .pipe($.plumber())
         .pipe(css[$.yo.css]())
-        .pipe(rename((path) => path.basename = `-${path.basename}`))
+        .pipe(rename((path) => {
+            const basename = path.basename.substr(1)
+
+            path.basename = `-${basename}`
+        }))
         .pipe($.gulp.dest($.app.dir))
     })
 }

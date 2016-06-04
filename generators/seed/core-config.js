@@ -6,7 +6,7 @@ const reports = './-reports'
 const assets = 'assets'
 const components = 'components'
 const js = 'js'
-const vendor = '_vendor'
+const vendor = '.vendor'
 
 module.exports = {
     app: {
@@ -52,7 +52,8 @@ module.exports = {
 
         src: [
             `${app}/**/*`,
-            `!${app}/**/${vendor}/**/*`
+            `!${app}/${assets}/**/*`,
+            `!${app}/${vendor}/**/*`
         ]
     },
 
