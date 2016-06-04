@@ -96,7 +96,6 @@ module.exports = function () {
             'gulp-plumber': '^1.1.0',
             'gulp-rename': '^1.2.2',
             'gulp-size': '^2.1.0',
-            'gulp-template': '^4.0.0',
             'gulp-transform-indent': '^0.3.0',
             'gulp-uglify': '^1.2.0',
             'gulp-useref': '^3.1.0',

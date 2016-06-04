@@ -1,45 +1,24 @@
-module.exports = ($) => {
+module.exports = ($, gulp) => {
     'use strict'
 
-    $.gulp.task('jsx', () => {
+    gulp.task('jsx', () => {
         const babel = require('gulp-babel')
         const data = require('gulp-data')
+        const extend = require('extend')
         const gulpif = require('gulp-if')
+        const plumber = require('gulp-plumber')
         const react = require('gulp-react')
         const template = require('gulp-template')
 
         $.resetPropsHtml()
 
-        return $
-        .gulp
-        .src([
-            `${$.app.dir}/**/*.jsx`
-        ])
-        .pipe(data((file) => {
-            const app = $.app.dir.replace('./', '')
-            const build = $.build.dir.replace('./', '')
-
-            const dir = $.path
-                .dirname(file.path)
-                .replace(app, build)
-                .replace('.jsx', '.js')
-
-            return $
-            .gulp
-            .src(file.path)
-            .pipe(gulpif($.if.notInclude, $.changed(dir)))
-            .pipe($.plumber())
-            .pipe(template($.getJsProps(file, '.jsx'), {
-                'evaluate': /{%=([\s\S]+?)%}/g,
-                'interpolate': /{%=([\s\S]+?)%}/g
-            }))
-            .pipe($.gulp.dest(dir))
-            .pipe(react())
-            .pipe($.gulp.dest(dir))
-            .pipe(babel({
-                presets: ['es2015']
-            }))
-            .pipe($.gulp.dest(dir))
-        }))
+        return gulp
+        .src(`${$.app.dir}/**/*.jsx`)
+        .pipe(gulpif($.if.notInclude, $.changed(dir)))
+        .pipe(plumber())
+        .pipe(modifyFile((content, route) => $.translateTpl(content, route, 'jsx')))
+        .pipe(react())
+        .pipe(babel({ presets: ['es2015'] }))
+        .pipe(gulp.dest(dir))
     })
 }

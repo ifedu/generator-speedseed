@@ -1,31 +1,28 @@
-module.exports = ($) => {
+module.exports = ($, gulp) => {
     'use strict'
 
-    $.gulp.task('oneJS', (done) => {
+    gulp.task('oneJS', (done) => {
         const useref = require('gulp-useref')
 
-        return $
-        .gulp
+        return gulp
         .src($.build.index)
-        .pipe(require('gulp-useref')())
-        .pipe($.gulp.dest($.build.dir))
+        .pipe(useref())
+        .pipe(gulp.dest($.build.dir))
     })
 
-    $.gulp.task('compress-html', () => {
+    gulp.task('compress-html', () => {
         const htmlmin = require('gulp-htmlmin')
 
-        return $
-        .gulp
+        return gulp
         .src(`${$.build.dir}/**/*.html`)
-        .pipe(htmlmin({collapseWhitespace: true, removeComments: true}))
-        .pipe($.gulp.dest($.build.dir))
+        .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
+        .pipe(gulp.dest($.build.dir))
     })
 
-    $.gulp.task('compress-js', () => {
+    gulp.task('compress-js', () => {
         const uglify = require('gulp-uglify')
 
-        return $
-        .gulp
+        return gulp
         .src([
             `${$.build.dir}/**/*.js`,
             `!${$.build.dir}/**/_**/**/*`,
@@ -33,36 +30,33 @@ module.exports = ($) => {
             `!${$.build.dir}/**/.*.js`
         ])
         .pipe(uglify())
-        .pipe($.gulp.dest($.build.dir))
+        .pipe(gulp.dest($.build.dir))
     })
 
-    $.gulp.task('vulcanize', (cb) => {
+    gulp.task('vulcanize', (cb) => {
         const htmlmin = require('gulp-htmlmin')
         const minifyInline = require('gulp-minify-inline')
         const size = require('gulp-size')
         const rename = require('gulp-rename')
         const vulcanize = require('gulp-vulcanize')
 
-        return $
-        .gulp
+        return gulp
         .src(`${$.dist.vulcanize.dir}/${$.dist.vulcanize.name}`)
         .pipe(vulcanize({
             inlineCss: true,
             inlineScripts: true,
             stripComments: true
         }))
-        .pipe($.gulp.dest($.dist.vulcanize.dir))
-        .pipe(htmlmin({collapseWhitespace: true, removeComments: true}))
+        .pipe(gulp.dest($.dist.vulcanize.dir))
+        .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
         .pipe(minifyInline())
-        .pipe($.gulp.dest($.dist.vulcanize.dir))
-        .pipe(size({title: 'vulcanize'}))
+        .pipe(gulp.dest($.dist.vulcanize.dir))
+        .pipe(size({ title: 'vulcanize' }))
     })
 
-    $.gulp.task('minified', (cb) => {
-        if ($.yo.framework === 'polymer') {
-            return $.runSequence('vulcanize', 'oneJS', ['compress-html', 'compress-js'], cb)
-        } else {
-            return $.runSequence('oneJS', ['compress-html', 'compress-js'], 'clean-dist', cb)
-        }
-    })
+    gulp.task('minified', (cb) =>
+        ($.yo.framework === 'polymer')
+            ? $.runSequence('vulcanize', 'oneJS', ['compress-html', 'compress-js'], cb)
+            : $.runSequence('oneJS', ['compress-html', 'compress-js'], 'clean-dist', cb)
+    )
 }
