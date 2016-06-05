@@ -1,4 +1,4 @@
-### v.0.11.1
+### v.0.12.0
 
 ## Index
 - [English](#english)
@@ -38,6 +38,13 @@
         - **ScSS**
         - **LeSS**
         - **Stylus**
+
+    ---
+
+    - *JS*
+        - **BabelJs**
+        - **CoffeeScript**
+        - **TypeScript**
     
     ---
 
@@ -49,12 +56,7 @@
 
 - *Add*
     - *Automating tasks*
-        - **Gulp**
-
-    ---
-
-    - *JS*
-        - **BabelJs**
+        - **Gulp**v
 
     ---
 
