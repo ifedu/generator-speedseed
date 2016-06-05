@@ -1,69 +1,32 @@
-module.exports = ($) => {
+module.exports = ($, gulp) => {
     'use strict'
 
-    const css = {
-        less(files) {
-            const less = require('gulp-less')
-
-            return less($.config.less)
-        },
-
-        sass(files) {
-            const sass = require('gulp-sass')
-
-            return sass($.config.sass)
-        },
-
-        scss(files) {
-            const scss = require('gulp-sass')
-
-            return scss($.config.scss)
-        },
-
-        styl() {
-            const styles = require('gulp-stylus')
-
-            return styles($.config.styl)
-        }
-    }
-
-    $.gulp.task('css', () => {
+    gulp.task('css', () => {
+        const changed = require('gulp-changed')
+        const filter = require('gulp-filter')
         const gulpif = require('gulp-if')
+        const plumber = require('gulp-plumber')
 
-        const filter = $.filter([
-            `**/*`,
-
-            `!**/.*.${$.yo.css}`,
-            `!**/.**/**/*.${$.yo.css}`,
-
-            `!**/_*.${$.yo.css}`,
-            `!**/_**/**/*.${$.yo.css}`
-        ])
-
-        return $
-        .gulp
-        .src([
-            `${$.app.dir}/**/*.${$.yo.css}`,
-        ])
-        .pipe(gulpif($.if.notInclude, $.changed($.build.dir, {extension: '.css'})))
-        .pipe($.plumber())
-        .pipe(filter)
-        .pipe(css[$.yo.css]())
-        .pipe($.gulp.dest($.build.dir))
+        return gulp
+        .src(`${$.app.dir}/**/*.${$.yo.css}`)
+        .pipe(gulpif($.if.notInclude, changed($.build.dir, {extension: '.css'})))
+        .pipe(plumber())
+        .pipe(filter($.filterProps('css')))
+        .pipe($.options.css.getPluginCss($)())
+        .pipe(gulp.dest($.build.dir))
     })
 
-    $.gulp.task('css-app', () => {
+    gulp.task('css-app', () => {
+        const changed = require('gulp-changed')
+        const plumber = require('gulp-plumber')
         const rename = require('gulp-rename')
 
-        return $
-        .gulp
-        .src([
-            `${$.app.dir}/**/.*.${$.yo.css}`
-        ])
-        .pipe($.changed($.app.dir, {extension: '.css'}))
-        .pipe($.plumber())
-        .pipe(css[$.yo.css]())
-        .pipe(rename((path) => path.basename = `-${path.basename}`))
-        .pipe($.gulp.dest($.app.dir))
+        return gulp
+        .src(`${$.app.dir}/**/.*.${$.yo.css}`)
+        .pipe(changed($.app.dir, {extension: '.css'}))
+        .pipe(plumber())
+        .pipe($.options.css.getPluginCss($)())
+        .pipe(rename((path) => path.basename = `-${path.basename.substr(1)}`))
+        .pipe(gulp.dest($.app.dir))
     })
 }

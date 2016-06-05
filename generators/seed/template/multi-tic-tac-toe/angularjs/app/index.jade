@@ -1,12 +1,10 @@
 include components/_main
 
 doctype html
-html(lang='es'
-    ng-app='speedseed'
-    ng-controller='MainCtrl as mainCtrl')
+html(lang='es' ng-app='speedseed' ng-controller='MainCtrl as mainCtrl')
     head
         meta(charset='utf-8')
-        title
+        title <%= project %>
         meta(content='' description='')
         //- link(href='favicon.ico' rel='shortcut icon')
         link(href='css/main.css' rel='stylesheet')
@@ -15,7 +13,7 @@ html(lang='es'
         ss-table
 
         +script-dist()
-            script(src='_vendor/angularjs/angular.min.js')
+            script(src='.vendor/angularjs/angular.min.js')
 
             script(src='js/main.js')
 

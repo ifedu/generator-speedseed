@@ -3,7 +3,7 @@ angular
 .config(function ($routeProvider) {
     const routeConfig = {
         controller: 'TodoCtrl',
-        template: `{%= include('app/js', 'tpl') %}`,
+        template: `{%= include(__dirname, '-tpl.html') %}`,
 
         resolve: {
             store(todoStorage) {

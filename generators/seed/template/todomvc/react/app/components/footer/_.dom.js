@@ -1,8 +1,6 @@
 'use strict'
 
-const className = (todo) => `
-    className = {classNames({selected: nowShowing === app.${todo}})}
-`
+const className = (todo) => `{classNames({selected: nowShowing === app.${todo}})}`
 
 module.exports = {
     footer: {

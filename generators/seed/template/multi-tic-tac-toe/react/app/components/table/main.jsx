@@ -1,12 +1,12 @@
 (() => {
     const Table = React.createClass({
         render() {
-            return ({%= include('app/components/table', 'render') %})
+            return ({%= include(__dirname, '-render.html') %})
         }
     })
 
     React.render(
-        ({%= include('app/components/table', 'dom') %}),
+        ({%= include(__dirname, '-dom.html') %}),
         document.getElementsByTagName('ss-table')[0]
     )
 })()

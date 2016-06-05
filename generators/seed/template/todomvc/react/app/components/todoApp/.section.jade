@@ -1,4 +1,6 @@
 section(className='main')
-    |<input className='toggle-all' type='checkbox' #{section.input}/>
-    ul(className='todo-list')
-        |{todoItems}
+    input(type='checkbox' className='toggle-all'
+        checked!='{activeTodoCount === 0}'
+        onChange!='{this.toggleAll}')/
+
+    ul(className='todo-list') {todoItems}

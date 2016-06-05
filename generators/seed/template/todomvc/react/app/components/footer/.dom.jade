@@ -6,7 +6,7 @@ footer(className='footer')
     ul(className='filters')
         each todo, i in footer.todos
             li
-                |<a href="#{todo.href}" #{todo.className}>#{todo.txt}</a>
+                a(href=todo.href className!=todo.className)= todo.txt
 
             if i < footer.todos.length
                 |{' '}

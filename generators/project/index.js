@@ -21,19 +21,19 @@ module.exports = require('yeoman-generator').Base.extend({
     writing() {
         const create = config.create.bind(this)
         // CORE
-        create('seed/props-tpl.js', './.core/props-tpl.js')
         create('seed/core', './.core', false)
 
         // ROOT
         create('seed/babelrc', './.babelrc')
         create('seed/bowerrc', './.bowerrc')
-        create('seed/core-config.js', './.core-config.js')
         create('seed/editorconfig', './.editorconfig')
         create('seed/eslintrc', './.eslintrc')
         create('seed/gitignore', './.gitignore')
 
         create('seed/bower.json', './bower.json')
         create('seed/gulpfile.js', './gulpfile.js')
-        create('seed/package.json', './package.json')
+
+        require('./_core-config.js').call(this)
+        require('./_package.js').call(this)
     }
 })
