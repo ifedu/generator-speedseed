@@ -31,6 +31,7 @@ const $ = {
 
     options: {
         css: require('./options/css.js'),
+        compiler: require('./options/compiler.js'),
         framework: require('./options/framework.js')
     },
 
