@@ -97,7 +97,7 @@ var app = app || {};
                 return (showing[this.state.nowShowing] || showing.default)()
             })
 
-            let todoItems = shownTodos.map((todo) => ({%= include('app/components/todoApp', 'items') %}))
+            let todoItems = shownTodos.map((todo) => ({%= include(__dirname, '-items.html') %}))
 
             let activeTodoCount = todos.reduce((accum, todo) => {
                 return todo.completed ? accum : accum + 1
@@ -106,14 +106,14 @@ var app = app || {};
             let completedCount = todos.length - activeTodoCount
 
             if (activeTodoCount || completedCount) {
-                footer = {%= include('app/components/todoApp', 'footer') %}
+                footer = {%= include(__dirname, '-footer.html') %}
             }
 
             if (todos.length) {
-                main = ({%= include('app/components/todoApp', 'section') %})
+                main = ({%= include(__dirname, '-section.html') %})
             }
 
-            return ({%= include('app/components/todoApp', 'header') %})
+            return ({%= include(__dirname, '-header.html') %})
         }
     })
 
@@ -121,7 +121,7 @@ var app = app || {};
 
     function render() {
         React.render(
-            {%= include('app/components/todoApp', 'dom') %},
+            {%= include(__dirname, '-dom.html') %},
             document.getElementsByClassName('todoapp')[0]
         )
     }

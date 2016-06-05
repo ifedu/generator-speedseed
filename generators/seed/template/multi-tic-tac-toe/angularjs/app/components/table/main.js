@@ -1,7 +1,7 @@
 angular
 .module('speedseed')
 .component('ssTable', {
-    template: `{%= include('app/components/table', 'tpl') %}`,
+    template: `{%= include(__dirname, '-tpl.html') %}`,
 
     controller() {
         this.xo = ''

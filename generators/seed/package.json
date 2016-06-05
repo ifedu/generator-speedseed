@@ -1,6 +1,6 @@
 {
-    "description": "",
-    "name": "",
+    "description": "<%= project %> with <%= framework %>",
+    "name": "<%= project %>",
     "private": true,
     "version": "0.0.0",
 
@@ -58,7 +58,8 @@
         "ss-clean": "gulp clean-dirs",
         "ss-compile": "gulp build --open=false",
         "ss-component": "yo speedseed:component",
-        "ss-dist": "gulp build --dist=true",
+        "ss-dist": "gulp build --dist=true --server=false",
+        "ss-dist-server": "gulp build --dist=true",
         "ss-indent": "gulp indent",
         "ss-reports": "gulp reports",
         "ss-test": "gulp test"

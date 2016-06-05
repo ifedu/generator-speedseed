@@ -1,7 +1,7 @@
 angular
 .module('<%= project %>')
 .component('<%= component %>', {
-    template: `{%= include('app/components/<%= component %>', 'tpl') %}`,
+    template: `{%= include(__dirname, '-tpl.html') %}`,
 
     controller() {
     }

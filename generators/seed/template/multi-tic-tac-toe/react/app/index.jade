@@ -4,7 +4,7 @@ doctype html
 html(lang='es')
     head
         meta(charset='utf-8')
-        title
+        title <%= project %>
         meta(content='' description='')
         //- link(href='favicon.ico' rel='shortcut icon')
         link(href='css/main.css' rel='stylesheet')
@@ -13,7 +13,7 @@ html(lang='es')
         ss-table
 
         +script-dist()
-            script(src='_vendor/react/react-with-addons.js')
+            script(src='.vendor/react/react-with-addons.js')
 
             script(src='components/table/main.js')
             script(src='components/box/main.js')

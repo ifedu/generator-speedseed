@@ -6,7 +6,7 @@ html(data-framework='angularjs'
     head
         meta(charset='utf-8')
         title AngularJS • TodoMVC
-        link(href='_vendor/todomvc-app-css/index.css' rel='stylesheet')
+        link(href='.vendor/todomvc-app-css/index.css' rel='stylesheet')
         style.
             [ng-cloak] { display: none; }
 
@@ -14,9 +14,9 @@ html(data-framework='angularjs'
         ng-view/
 
         +script-dist()
-            script(src='_vendor/angular/angular.js')
-            script(src='_vendor/angular-route/angular-route.js')
-            script(src='_vendor/angular-resource/angular-resource.js')
+            script(src='.vendor/angular/angular.js')
+            script(src='.vendor/angular-route/angular-route.js')
+            script(src='.vendor/angular-resource/angular-resource.js')
 
             script(src='js/app.js')
             script(src='js/controllers/todoCtrl.js')

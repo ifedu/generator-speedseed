@@ -1,5 +1,3 @@
 *.sublime-project
 *.sublime-workspace
-_deploy
-_server/
 node_modules
