@@ -3,6 +3,8 @@ module.exports = ($, gulp) => {
 
     const watch = require('gulp-watch')
 
+    const ext = $.options.compiler.getExtCompiler($)
+
     gulp.task('reload', () => {
         $.if.notInclude = true
 
@@ -50,25 +52,25 @@ module.exports = ($, gulp) => {
 
             // JS
             watch([
-                `${$.app.dir}/**/*.js`,
-                `!${$.app.dir}/**/*.spec.js`,
+                `${$.app.dir}/**/*.${ext}`,
+                `!${$.app.dir}/**/*.spec.${ext}`,
 
-                `!${$.app.dir}/**/_*.js`,
-                `!${$.app.dir}/**/_**/**/*.js`,
+                `!${$.app.dir}/**/_*.${ext}`,
+                `!${$.app.dir}/**/_**/**/*.${ext}`,
 
-                `!${$.app.dir}/**/.*.js`,
-                `!${$.app.dir}/**/.**/**/*.js`,
+                `!${$.app.dir}/**/.*.${ext}`,
+                `!${$.app.dir}/**/.**/**/*.${ext}`,
 
-                `!${$.app.dir}/**/-*.js`,
-                `!${$.app.dir}/**/-**/**/*.js`
+                `!${$.app.dir}/**/-*.${ext}`,
+                `!${$.app.dir}/**/-**/**/*.${ext}`
             ], () => $.runSequence('html-app', 'js', 'clean-app', 'reload'))
 
             // JS INCLUDE
             watch([
-                `${$.app.dir}/**/.*.js`,
+                `${$.app.dir}/**/.*.${ext}`,
 
-                `${$.app.dir}/**/_*.js`,
-                `${$.app.dir}/**/_**/**/*.js`
+                `${$.app.dir}/**/_*.${ext}`,
+                `${$.app.dir}/**/_**/**/*.${ext}`
             ], () => {
                 $.if.notInclude = false
                 return $.runSequence(['css-app', 'html-app', 'js-app'], 'html', 'clean-app', 'reload')
@@ -99,7 +101,7 @@ module.exports = ($, gulp) => {
             })
             // TEST
             watch(
-                `${$.app.dir}/**/.*.spec.js`,
+                `${$.app.dir}/**/.*.spec.${ext}`,
                 () => $.runSequence('js-app', 'js-test', 'clean-app', 'reload')
             )
         }, 2000)

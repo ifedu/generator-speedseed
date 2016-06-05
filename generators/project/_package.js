@@ -1,6 +1,19 @@
 module.exports = function () {
     const fs = require('fs')
 
+    const getCompiler = {
+        babeljs: {
+        },
+
+        coffeescript: {
+            'gulp-coffee': '^2.3.2',
+        },
+
+        typescript: {
+            'gulp-typescript': '^2.13.6'
+        }
+    }
+
     const getCss = {
         less: {
             'gulp-less': '^3.1.0',
@@ -126,6 +139,7 @@ module.exports = function () {
     extend(
         true,
         packDefault.dependencies,
+        getCompiler[this.config.get('compiler')],
         getCss[this.config.get('css')],
         getFramework[this.config.get('framework')],
         getTest[this.config.get('test')]

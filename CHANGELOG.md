@@ -1,4 +1,12 @@
+## Index
+- [English](#english)
+- [Español](#español)
+
 # English
+## v.0.12.0
+    - Add CoffeeScript
+    - Add TypeScript
+    
 ## v.0.11.1
     - Fix Polymer includes
 

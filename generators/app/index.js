@@ -16,6 +16,7 @@ module.exports = generators.Base.extend({
     end() {
         this.composeWith('speedseed:project')
         this.composeWith('speedseed:template')
+        this.composeWith('speedseed:compiler')
         this.composeWith('speedseed:framework')
         this.composeWith('speedseed:css')
         this.composeWith('speedseed:test')

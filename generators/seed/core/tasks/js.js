@@ -1,8 +1,9 @@
 module.exports = ($, gulp) => {
     'use strict'
 
+    const ext = $.options.compiler.getExtCompiler($)
+
     gulp.task('js', () => {
-        const babel = require('gulp-babel')
         const changed = require('gulp-changed')
         const extend = require('extend')
         const filter = require('gulp-filter')
@@ -13,12 +14,12 @@ module.exports = ($, gulp) => {
         $.resetPropsHtml()
 
         return gulp
-        .src(`${$.app.dir}/**/*.js`)
+        .src(`${$.app.dir}/**/*.${ext}`)
         .pipe(gulpif($.if.notInclude, changed($.build.dir)))
         .pipe(plumber())
-        .pipe(filter($.filterProps('js')))
-        .pipe(modifyFile((content, route) => $.translateTpl(content, route, '.js')))
-        .pipe(babel({ presets: ['es2015'] }))
+        .pipe(filter($.filterProps(`${ext}`)))
+        .pipe(modifyFile((content, route) => $.translateTpl(content, route, `.${ext}`)))
+        .pipe($.options.compiler.getPluginCompiler($)())
         .pipe(gulpif(
             ($.yo.framework === 'angularjs' && $.config.dist === true),
             $.options.framework.ngAnnotate($)()
@@ -35,9 +36,9 @@ module.exports = ($, gulp) => {
         const uglify = require('gulp-uglify')
 
         return gulp
-        .src(`${$.app.dir}/**/.*.js`)
+        .src(`${$.app.dir}/**/.*.${ext}`)
         .pipe(plumber())
-        .pipe(babel({ presets: ['es2015'] }))
+        .pipe($.options.compiler.getPluginCompiler($)())
         .pipe(rename((path) => path.basename = `-${path.basename.substr(1)}`))
         .pipe(changed($.app.dir))
         .pipe(gulpif(($.yo.framework === 'polymer' && $.config.dist === true), uglify()))
