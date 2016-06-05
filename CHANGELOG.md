@@ -1,8 +1,13 @@
 # English
 ## v.0.11.0
+    - .core-config.json add properties when update insead of overwrite the file
     - Add documentation of folders and update includes in README
+    - Many changes in core for add cleaning and perfomance
     - package.json add core properties when update insead of overwrite the file
     - package.json have only the plugins to use
+    - with in little fix .jsx allow inject props object in attributes jade
+        - div(lala!='{this.lolo}') 
+        - <div lala={this.lolo}></div>
 
     - npm run ss-build compile and launch server in -build
     - npm run ss-build-open compile, launch server and open navigator in -build
@@ -97,9 +102,15 @@
 
 # Español
 ## v.0.11.0
+    - .core-config.json añade propiedades cuando actualizas en lugar de sobreescribir el archivo
     - Añade documentación de carpetas y actualiza includes en README
+    - Con un pequeño arreglo .jsx permiten inyectar propiedades de objetos en atributos jade
+        - div(lala!='{this.lolo}') 
+        - <div lala={this.lolo}></div>
+
+    - Multiples cambios en núcleo para añadir limpieza y rendimiento
     - package.json añade propiedades del core al actualizar en lugar de sobreescribir el archivo
-    - package.json sól tiene lo splugin a usar
+    - package.json sólo tiene los plugins a usar
 
     - npm run ss-build compila y lanza el servidor en -build
     - npm run ss-build-open compila, lanza el servidor y abre el navegador en -build

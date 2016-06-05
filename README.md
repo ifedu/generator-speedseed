@@ -22,7 +22,7 @@
         - **AngularJS 1.5.5**
         - **jQuery 2.2.3**
         - **Polymer 1.0**
-        - **React 15.0.2**
+        - **React 15.0.2** (Read IMPORTANT.txt)
         - **VanillaJS**
     
     ---
@@ -176,7 +176,7 @@
         - **AngularJS 1.5.5**
         - **jQuery 2.2.3**
         - **Polymer 1.0**
-        - **React 15.0.2**
+        - **React 15.0.2** (Read IMPORTANT.txt)
         - **VanillaJS**
     
     ---

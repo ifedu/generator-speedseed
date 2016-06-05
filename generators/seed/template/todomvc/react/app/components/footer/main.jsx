@@ -7,12 +7,12 @@ let app = app || {};
             let clearButton = null
 
             if (this.props.completedCount > 0) {
-                clearButton = ({%= include('app/components/footer', 'clearButton') %})
+                clearButton = ({%= include(__dirname, '-clearButton.html') %})
             }
 
             const nowShowing = this.props.nowShowing
 
-            return ({%= include('app/components/footer', 'dom') %})
+            return ({%= include(__dirname, '-dom.html') %})
         }
     })
 })()

@@ -17,6 +17,10 @@ module.exports = ($, gulp) => {
             ui: {
               port: $.server.portReload
             }
+        }, () => {
+            setTimeout(() => {
+                $.reload()
+            }, 500)
         })
 
         const express = require('express')

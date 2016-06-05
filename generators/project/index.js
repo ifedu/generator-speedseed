@@ -21,7 +21,6 @@ module.exports = require('yeoman-generator').Base.extend({
     writing() {
         const create = config.create.bind(this)
         // CORE
-        create('seed/props-tpl.js', './.core/props-tpl.js')
         create('seed/core', './.core', false)
 
         // ROOT

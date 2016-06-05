@@ -1,7 +1,7 @@
 module.exports = ($, gulp) => {
     'use strict';
 
-    ($.config.framework !== 'react')
+    ($.yo.framework !== 'react')
         ? gulp.task('common', (cb) => $.runSequence(
             ['clean', 'clean-app'],
             ['css-app', 'html-app', 'js-app'],

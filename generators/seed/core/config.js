@@ -2,7 +2,7 @@
 
 const fs = require('fs')
 
-const coreConfig = JSON.parse(String(fs.readFileSync('./.core-config.js')))
+const coreConfig = JSON.parse(fs.readFileSync('./.core-config.js', 'utf8'))
 const extend = require('extend')
 
 const $ = {
