@@ -134,26 +134,33 @@
 
 ## Structure
 - **.core** => *don't change this content folder, is updated with generator-speedseed next versions*
-- **-build** => *code generated with gulp run, contain code of dev transpiled to html, css, es5. Folders and files _*are ignored*
+- **-build** => *code generated with npm run ss-build, contain code of app/ transpiled to html, css, es5. Folders and files _*are ignored*
+- **-dist** => *code generated with npm run ss-dist, contain code minimizied of app/ transpiled to html, css, es5. Folders and files _*are ignored*
 
 ---
 
 - **app** => *development template*
+    - **.vendor** => *libs external*
     - **components** => *components*
-    - **css** => *contain .styl files*
-    - **js** => *contain .js files write with es6*
-    - **views** => *contain .jade files*
+        - **_main.jade** => *include all mixins*
+        - **components** => *include all css*
+    - **css** => *contain css files*
+    - **js** => *contain js files*
     - **__global.js** => *properties inyects to all files .jade*
     - **_index.js** => *properties inyects to file index.jade*
     - **index.jade** => *index of the app*
 
 ---
 
+- **.babelrc** => *used for babeljs for compile to ES5*
+- **.bowerrc** => *bower folder destination*
+- **.core-config** => *project routes*
 - **.editorconfig** => *list of code rules for the IDE*
 - **.eslintrc** => *list of code rules*
 - **.gitignore** => *ignore files for git*
 - **.yo-rc.json** => *created for yeoman for future updates*
-- **gulpfile.js** => *call gulp tasks of -ss*
+- **bower.json** => *bower dependencies*
+- **gulpfile.js** => *call gulp tasks of .core*
 - **package.json** => *packages of npm and information of the project*
 
 
@@ -288,24 +295,30 @@
 
 ## Structure
 - **.core** => *no cambiar el contenido de esta carpeta, es actualizado en futuras versiones de generator-speedseed*
-- **-build** => *código generado con gulp run, contiene código de dev transpilado a html, css, es5. Carpetas y ficheros _* son ignorados*
-
+- **-build** => *código generado con npm run ss-build, contiene código de app/ transpilado a html, css, es5. Carpetas y ficheros _* son ignorados*
+- **-dist** => *código generado con npm run ss-dist, contiene código minificado de app/ transpilado a html, css, es5. Carpetas y ficheros _* son ignorados*
 ---
 
 - **app** => *plantilla de desarrollo*
+    - **.vendor** => *libs externas*
     - **components** => *componentes*
-    - **css** => *contiene  ficheros .styl*
-    - **js** => *contiene ficheros .js escritos con es6*
-    - **views** => *contiene ficheros .jade*
+        - **_main.jade** => *incluye todos los mixins*
+        - **components** => *incluye todos los css*
+    - **css** => *contiene ficheros css*
+    - **js** => *contiene ficheros js*
     - **__global.js** => *propiedades inyectadas a ficheros .jade*
     - **_index.js** => *propiedades inyectadas al fichero index.jade*
     - **index.jade** => *indice de la app*
 
 ---
 
+- **.babelrc** => *usado por babeljs para compilar a ES5*
+- **.bowerrc** => *carpeta de destino de bower*
+- **.core-config** => *rutas del proyecto*
 - **.editorconfig** => *lista de reglas de código para el IDE*
 - **.eslintrc** => *lista de reglas de código*
-- **.gitignore** => *ignora ficheros para git*
+- **.gitignore** => *ignora ficheros de git*
 - **.yo-rc.json** => *creado por yeoman para futuras actualizaciones*
+- **bower.json** => *dependencias de bower*
 - **gulpfile.js** => *llama a las tareas de gulp de -ss*
 - **package.json** => *paquetes de npm e información del proyecto*
