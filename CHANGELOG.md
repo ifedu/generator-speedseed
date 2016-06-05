@@ -1,4 +1,7 @@
 # English
+## v.0.11.1
+    - Fix Polymer includes
+
 ## v.0.11.0
     - .core-config.json add properties when update insead of overwrite the file
     - Add documentation of folders and update includes in README
@@ -101,6 +104,9 @@
     - Restart changelog in 2 languages
 
 # Español
+## v.0.11.1
+    - Arregla los includes de Polymer
+
 ## v.0.11.0
     - .core-config.json añade propiedades cuando actualizas en lugar de sobreescribir el archivo
     - Añade documentación de carpetas y actualiza includes en README
