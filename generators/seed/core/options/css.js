@@ -6,7 +6,7 @@ module.exports = {
             less: () => require('gulp-less')($.config.less),
             sass: () => require('gulp-sass')($.config.sass),
             scss: () => require('gulp-sass')($.config.scss),
-            styl: () => require('gulp-styl')($.config.styl)
+            styl: () => require('gulp-stylus')($.config.styl)
         }
 
         return plugins[$.yo.css]

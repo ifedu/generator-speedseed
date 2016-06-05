@@ -93,7 +93,7 @@ module.exports = ($, gulp) => {
             ], () => {
                 $.if.notInclude = false
 
-                return ($.config.framework !== 'react')
+                return ($.yo.framework !== 'react')
                     ? $.runSequence(['css-app', 'html-app', 'js-app'], ['html', 'js'], 'clean-app', 'reload')
                     : $.runSequence(['css-app', 'html-app', 'js-app'], ['html', 'js', 'jsx'], 'clean-app', 'reload')
             })

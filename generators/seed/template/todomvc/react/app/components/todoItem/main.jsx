@@ -71,7 +71,7 @@ let app = app || {};
         },
 
         render() {
-            return ({%= include('app/components/todoItem', 'dom') %})
+            return ({%= include(__dirname, '-dom.html') %})
         }
     })
 })()
