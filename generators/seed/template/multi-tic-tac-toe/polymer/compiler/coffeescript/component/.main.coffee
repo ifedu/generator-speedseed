@@ -1,8 +1,6 @@
-(() => {
 Polymer({
     is: '<%= component %>',
 
     properties: {
     }
 })
-})()

@@ -1,5 +1,4 @@
-(() => {
-let xo = 'O'
+xo = 'O'
 
 Polymer({
     is: 'ss-box',
@@ -10,10 +9,8 @@ Polymer({
         }
     },
 
-    push (e) {
-        xo = (xo === 'O') ? 'X' : 'O'
+    push: (e) ->
+        xo = if (xo == 'O') then 'X' else 'O'
 
         this.xo = xo
-    }
 })
-})()
