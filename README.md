@@ -28,8 +28,8 @@
     ---
 
     - *Templates*
-        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
-        - **https://github.com/ifedu/speedseed-todomvc**
+        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe** Use v.0.12.0
+        - **https://github.com/ifedu/speedseed-todomvc** Use v.0.11.0
 
     ---
 
@@ -142,7 +142,7 @@
 ---
 
 - **app** => *development template*
-    - **.vendor** => *libs external*
+    - **_vendor** => *libs external*
     - **components** => *components*
         - **_main.jade** => *include all mixins*
         - **components** => *include all css*
@@ -191,8 +191,8 @@
     ---
 
     - *Plantillas*
-        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
-        - **https://github.com/ifedu/speedseed-todomvc**
+        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe** Us1 v.0.12.0
+        - **https://github.com/ifedu/speedseed-todomvc** Usa v.0.11.0
     
     ---
 
@@ -302,7 +302,7 @@
 ---
 
 - **app** => *plantilla de desarrollo*
-    - **.vendor** => *libs externas*
+    - **_vendor** => *libs externas*
     - **components** => *componentes*
         - **_main.jade** => *incluye todos los mixins*
         - **components** => *incluye todos los css*

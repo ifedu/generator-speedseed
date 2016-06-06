@@ -5,13 +5,15 @@ html(lang='es')
     head
         meta(charset='utf-8')
         title <%= project %>
-        meta(content='' name='description')
+        meta(content='' description='')
         //- link(href='favicon.ico' rel='shortcut icon')
         link(href='css/main.css' rel='stylesheet')
-        link(href='components/main.html' rel='import')
 
     body
-        +table()
+        ss-table
 
         +script-dist()
-            script(src='_vendor/polymer/webcomponents-lite.min.js')
+            script(src='_vendor/react/react-with-addons.js')
+
+            script(src='components/table/main.js')
+            script(src='components/box/main.js')

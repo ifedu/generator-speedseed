@@ -126,6 +126,7 @@ const $ = {
         const dataTpl = extend(true, {}, this.getJsProps(route, ext))
 
         dataTpl.__dirname = path.dirname(route)
+
         return _.template(content, {
             'evaluate': /{%=([\s\S]+?)%}/g,
             'interpolate': /{%=([\s\S]+?)%}/g

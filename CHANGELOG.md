@@ -4,13 +4,15 @@
 
 # English
 ## v.0.12.0
+    - .vendor to _vendor
     - Add CoffeeScript
     - Add TypeScript
-    
+
 ## v.0.11.1
     - Fix Polymer includes
 
 ## v.0.11.0
+    - _vendor to .vendor
     - .core-config.json add properties when update insead of overwrite the file
     - Add documentation of folders and update includes in README
     - Many changes in core for add cleaning and perfomance
@@ -112,6 +114,11 @@
     - Restart changelog in 2 languages
 
 # Español
+## v.0.12.0
+    - .vendor a _vendor
+    - Añadido CoffeeScript
+    - Añadido TypeScript
+
 ## v.0.11.1
     - Arregla los includes de Polymer
 

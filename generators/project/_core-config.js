@@ -9,7 +9,7 @@ module.exports = function () {
     const assets = 'assets'
     const components = 'components'
     const js = 'js'
-    const vendor = '.vendor'
+    const vendor = '_vendor'
 
     const coreConfig = {
         app: {
