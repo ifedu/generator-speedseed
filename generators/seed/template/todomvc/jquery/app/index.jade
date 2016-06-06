@@ -6,15 +6,14 @@ html(data-framework='jquery'
     head
         meta(charset='utf-8')
         title jQuery • TodoMVC
-        link(href='.vendor/todomvc-app-css/index.css' rel='stylesheet')
+        link(href='_vendor/todomvc-app-css/index.css' rel='stylesheet')
         link(href='css/main.css' rel='stylesheet')
 
     body
         section#todoapp
             header#header
                 h1 todos
-                input#new-todo(autofocus
-                    placeholder='What needs to be done?')
+                input#new-todo(autofocus placeholder='What needs to be done?')
 
             section#main
                 input#toggle-all(type='checkbox')
@@ -59,8 +58,8 @@ html(data-framework='jquery'
             {{#if completedTodos}}<button id='clear-completed'>Clear completed</button>{{/if}}
 
         +script-dist()
-            script(src='.vendor/jquery/dist/jquery.js')
-            script(src='.vendor/handlebars/dist/handlebars.js')
-            script(src='.vendor/director/build/director.js')
+            script(src='_vendor/jquery/dist/jquery.js')
+            script(src='_vendor/handlebars/dist/handlebars.js')
+            script(src='_vendor/director/build/director.js')
 
             script(src='js/main.js')

@@ -7,7 +7,7 @@ module.exports = generators.Base.extend({
     constructor: function () {
         generators.Base.apply(this, arguments)
 
-        this.config.set('coreVersion', 'generator-speedseed version 0.11.1')
+        this.config.set('coreVersion', 'generator-speedseed version 0.12.0')
         this.config.set('component', '')
 
         console.log(this.config.get('coreVersion'))
@@ -16,8 +16,8 @@ module.exports = generators.Base.extend({
     end() {
         this.composeWith('speedseed:project')
         this.composeWith('speedseed:template')
-        this.composeWith('speedseed:compiler')
         this.composeWith('speedseed:framework')
+        this.composeWith('speedseed:compiler')
         this.composeWith('speedseed:css')
         this.composeWith('speedseed:test')
     }

@@ -20,6 +20,9 @@ module.exports = require('yeoman-generator').Base.extend({
     writing() {
         const create = config.create.bind(this)
 
+        create(`seed/template/multi-tic-tac-toe/${this.config.get('framework')}/compiler/all/component`, `./app/components/${this.config.get('component')}`)
+        create(`seed/template/multi-tic-tac-toe/${this.config.get('framework')}/compiler/all/component/.*`, `./app/components/${this.config.get('component')}`)
+
         create(`seed/template/multi-tic-tac-toe/${this.config.get('framework')}/compiler/${this.config.get('compiler')}/component`, `./app/components/${this.config.get('component')}`)
         create(`seed/template/multi-tic-tac-toe/${this.config.get('framework')}/compiler/${this.config.get('compiler')}/component/.*`, `./app/components/${this.config.get('component')}`)
 

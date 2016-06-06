@@ -1,8 +1,5 @@
 (() => {
-    const Component = React.createClass({
-        click() {
-        },
-
+    const Table = React.createClass({
         render() {
             return ({%= include(__dirname, '-render.html') %})
         }
@@ -10,6 +7,6 @@
 
     React.render(
         ({%= include(__dirname, '-dom.html') %}),
-        document.getElementsByTagName('<%= component %>')[0]
+        document.getElementsByTagName('ss-table')[0]
     )
 })()

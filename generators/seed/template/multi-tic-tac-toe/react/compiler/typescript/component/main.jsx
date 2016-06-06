@@ -4,12 +4,12 @@
         },
 
         render() {
-            return ({%= include('app/components/<%= component %>', 'render') %})
+            return ({%= include(__dirname, '-render.html') %})
         }
     })
 
     React.render(
-        ({%= include('app/components/<%= component %>', 'dom') %}),
+        ({%= include(__dirname, '-dom.html') %}),
         document.getElementsByTagName('<%= component %>')[0]
     )
 })()
