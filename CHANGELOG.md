@@ -1,17 +1,19 @@
-## Index
 - [English](#english)
 - [Español](#español)
 
-# English
-## v.0.12.0
+## English
+### v.0.12.1
+    - Fix for Node >6
+
+### v.0.12.0
     - .vendor to _vendor
     - Add CoffeeScript
     - Add TypeScript
 
-## v.0.11.1
+### v.0.11.1
     - Fix Polymer includes
 
-## v.0.11.0
+### v.0.11.0
     - _vendor to .vendor
     - .core-config.json add properties when update insead of overwrite the file
     - Add documentation of folders and update includes in README
@@ -35,15 +37,15 @@
         - Previous: include -.tpl.html
         - Now: include -tpl.hml 
 
-## v.0.10.2
+### v.0.10.2
     - More variables in core-config.js
     - Default spacesBefore: 2 spacesAfter: 4
     - Default folder multimedia files is assets in dist
 
-## v.0.10.1
+### v.0.10.1
     - Default folder multimedia files is assets
 
-## v.0.10.0
+### v.0.10.0
     - Add Bower
     - Add Polymer Vulcanize, with external files minimizied!
     - Add npm run ss-indent for indent files 
@@ -51,15 +53,15 @@
     - In .build vendor to _vendor
     - More config in core-config.js
 
-## v.0.9.0
+### v.0.9.0
     - Add npm run ss-component for create component
     - Change template <%= to {%=
     - Use BrowserSync for livereload
 
-## v.0.8.1
+### v.0.8.1
     - Fix README
 
-## v.0.8.0
+### v.0.8.0
     - Allow choice SaSS, ScSS, LeSS or Stylus
     - Allow configure port reload and route api server
     - Error to compile no crash app
@@ -69,10 +71,10 @@
     - No need recompile for new files
     - Values for default in yo speedseed
 
-## v.0.7.1
+### v.0.7.1
     - Update directories in README
 
-## v.0.7.0
+### v.0.7.0
     - Add Karma and allow choice Jasmine or Mocha
     - Allow work without jade
     - Change ---* to .*
@@ -81,7 +83,7 @@
     - Posibility change name folders
     - Update README
 
-## v.0.6.0
+### v.0.6.0
     - ---*.js ---*.html ---*.css for precompile files in dev
     - Add Polymer and React
     - Add template based TodoMVC
@@ -89,40 +91,43 @@
     - Fix translate English
     - Rename files index to main
 
-## v.0.5.3
+### v.0.5.3
     - Change in Yeoman structure
     - Yeoman no show question Library / Framework? if question Template? is No
 
-## v.0.5.2
+### v.0.5.2
     - Add description of the properties speedseed
     - Description only in package.json
 
-## v.0.5.1
+### v.0.5.1
     - Improvements in the README
 
-## v.0.5.0
+### v.0.5.0
     - Add selection framework
     - Add selection template
     - Delete npm run ss-init
     - Delete npm run ss-install
     - Fix and update Readme
 
-## v.0.4.1
+### v.0.4.1
     - Fix copy karma.conf by karma.conf.js
 
-## v.0.4.0
+### v.0.4.0
     - Restart changelog in 2 languages
 
-# Español
-## v.0.12.0
+## Español
+### v.0.12.1
+    - Corrige error en Node >6
+
+### v.0.12.0
     - .vendor a _vendor
     - Añadido CoffeeScript
     - Añadido TypeScript
 
-## v.0.11.1
+### v.0.11.1
     - Arregla los includes de Polymer
 
-## v.0.11.0
+### v.0.11.0
     - .core-config.json añade propiedades cuando actualizas en lugar de sobreescribir el archivo
     - Añade documentación de carpetas y actualiza includes en README
     - Con un pequeño arreglo .jsx permiten inyectar propiedades de objetos en atributos jade
@@ -146,10 +151,10 @@
         - Antes: include -.tpl.html
         - Antes: include -tpl.hml 
 
-## v.0.10.1
+### v.0.10.1
     - Por defecto la carpeta de archivos multimedia es assets
 
-## v.0.10.0
+### v.0.10.0
     - Añade Bower
     - Añade Polymer Vulcanize, ¡con ficheros externos minimizados!
     - Añade npm run ss-indent para identar ficheros
@@ -157,15 +162,15 @@
     - En .build vendor a _vendor
     - Más configuración en core-config.js
 
-## v.0.9.0
+### v.0.9.0
     - Añade npm run ss-component para crear componente
     - Cambia template <%= a {%=
     - Usa BrowserSync para livereload
 
-## v.0.8.1
+### v.0.8.1
     - Arregla el README
 
-## v.0.8.0
+### v.0.8.0
     - Arregla error en api cuando ruta no existe
     - Arregla incluir plantilla html
     - Arregla watch a ficheros incluidos
@@ -175,10 +180,10 @@
     - Permite elegir SaSS, ScSS, LeSS o Stylus
     - Valores por defecto en yo speedseed
 
-## v.0.7.1
+### v.0.7.1
     - Actualiza directorios en README
 
-## v.0.7.0
+### v.0.7.0
     - Actualiza README
     - Añade Karma y permite elegir Jasmine o Mocha
     - Cambia ---* por .*
@@ -187,7 +192,7 @@
     - Permite trabajar sin jade
     - Posibilidad de cambiar el nombre de las carpetas
 
-## v.0.6.0
+### v.0.6.0
     - ---*.js ---*.html ---*.css para precompilar ficheros en dev
     - Añade Polymer y React
     - Aaña plantilla basada en TodoMVC
@@ -195,26 +200,26 @@
     - Cambios en el Generador
     - Renombra ficheros index a main
 
-## v.0.5.3
+### v.0.5.3
     - Cambios en estructura de yeoman
     - Yeoman no muestra pregunta Library / Framework? si la pregunta Template? es No
 
-## v.0.5.2
+### v.0.5.2
     - Añade descripció de las propiedades de speedseed
     - Descripción sólo en package.json
 
-## v.0.5.1
+### v.0.5.1
     - Mejoras en el README
 
-## v.0.5.0
+### v.0.5.0
     - Añade selección de framework
     - Añade selección de plantilla
     - Arregla y actualiza el Readme
     - Borra npm run ss-init
     - Borra npm run ss-install
 
-## v.0.4.1
+### v.0.4.1
     - Arregla copiar karma.conf por karma.conf.js
 
-## v.0.4.0
+### v.0.4.0
     - Reinicia el changelog en 2 idiomas

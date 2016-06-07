@@ -1,8 +1,11 @@
-### v.0.12.0
+### v.0.12.1
 
 ## Index
 - [English](#english)
 - [Español](#español)
+
+### Changelog
+- [Changelog](https://github.com/ifedu/generator-speedseed/blob/master/CHANGELOG.md)
 
 ### English
 - *Properties*
@@ -28,7 +31,7 @@
     ---
 
     - *Templates*
-        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe** Use v.0.12.0
+        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe** Use v.latest
         - **https://github.com/ifedu/speedseed-todomvc** Use v.0.11.0
 
     ---
@@ -191,7 +194,7 @@
     ---
 
     - *Plantillas*
-        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe** Us1 v.0.12.0
+        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe** Usa v.latest
         - **https://github.com/ifedu/speedseed-todomvc** Usa v.0.11.0
     
     ---
@@ -299,6 +302,7 @@
 - **.core** => *no cambiar el contenido de esta carpeta, es actualizado en futuras versiones de generator-speedseed*
 - **-build** => *código generado con npm run ss-build, contiene código de app/ transpilado a html, css, es5. Carpetas y ficheros _* son ignorados*
 - **-dist** => *código generado con npm run ss-dist, contiene código minificado de app/ transpilado a html, css, es5. Carpetas y ficheros _* son ignorados*
+
 ---
 
 - **app** => *plantilla de desarrollo*
