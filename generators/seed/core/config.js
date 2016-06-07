@@ -48,8 +48,10 @@ const $ = {
     getJsProps(file, ext) {
         const path = require('path')
 
-        const DIR_NAME = path.dirname(file.path)
-        const FILE_NAME = path.basename(file.path, ext)
+        const route = file.path || file
+
+        const DIR_NAME = path.dirname(route)
+        const FILE_NAME = path.basename(route, ext)
 
         const ROUTE_LOCAL = path.resolve(__dirname, DIR_NAME, `_${FILE_NAME}.js`)
         this.getJs(ROUTE_LOCAL)
