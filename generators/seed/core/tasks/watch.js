@@ -63,7 +63,7 @@ module.exports = ($, gulp) => {
 
                 `!${$.app.dir}/**/-*.${ext}`,
                 `!${$.app.dir}/**/-**/**/*.${ext}`
-            ], () => $.runSequence('html-app', 'js', 'clean-app', 'reload'))
+            ], () => $.runSequence(['css-app', 'html-app'], 'js', 'clean-app', 'reload'))
 
             // JS INCLUDE
             watch([

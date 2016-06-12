@@ -27,5 +27,14 @@ module.exports = require('yeoman-generator').Base.extend({
                 value: 'typescript'
             }]
         }, done)
+    },
+
+    writing() {
+        const create = config.create.bind(this)
+
+        if (this.config.get('compiler') === 'typescript') {
+            create(`seed/template/${this.config.get('template')}/all/compiler/${this.config.get('compiler')}/typings`, './typings')
+            create(`seed/template/${this.config.get('template')}/all/compiler/${this.config.get('compiler')}/typings.json`, './typings.json')
+        }
     }
 })

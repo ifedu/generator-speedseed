@@ -15,7 +15,7 @@ module.exports = ($, gulp) => {
         .src(`${$.app.dir}/**/*.jsx`)
         .pipe(gulpif($.if.notInclude, changed($.build.dir)))
         .pipe(plumber())
-        .pipe(modifyFile((content, route) => $.translateTpl(content, route, 'jsx')))
+        .pipe(modifyFile((content, route) => $.translateTpl(content, route, '.jsx')))
         .pipe(react())
         .pipe(babel({ presets: ['es2015'] }))
         .pipe(gulp.dest($.build.dir))

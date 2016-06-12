@@ -18,7 +18,7 @@
     })
 
     for (let i = 0, l = document.getElementsByTagName('ss-box').length; i < l; i++) {
-        React.render(
+        ReactDOM.render(
             ({%= include(__dirname, '-dom.html') %}),
             document.getElementsByTagName('ss-box')[i]
         )

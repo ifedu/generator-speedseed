@@ -1,3 +1,5 @@
+/// <reference path="../../../typings/index.d.ts" />
+
 (($component) => {
     let mark = 'X'
 

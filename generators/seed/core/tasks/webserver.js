@@ -3,6 +3,7 @@ module.exports = ($, gulp) => {
 
     gulp.task('webserver', () => {
         const browserSync = require('browser-sync').create()
+        const proxyMiddleware = require('http-proxy-middleware')
 
         $.reload = browserSync.reload
 
@@ -11,7 +12,11 @@ module.exports = ($, gulp) => {
             port: $.config.port,
 
             server: {
-                baseDir: $.build.dir
+                baseDir: $.build.dir,
+                middleware: [
+                    proxyMiddleware($.server.auth, { target: $.server.routeApi }),
+                    proxyMiddleware($.server.request, { target: $.server.routeApi })
+                ]
             },
 
             ui: {
@@ -21,23 +26,6 @@ module.exports = ($, gulp) => {
             setTimeout(() => {
                 $.reload()
             }, 500)
-        })
-
-        const express = require('express')
-        const path = require('path')
-        const request = require('request')
-
-        const app = express()
-
-        app
-        .use(express.static($.build.dir))
-        .use('/*', (req, res) => res.sendFile(path.resolve(__dirname, `../../${$.build.dir}`)))
-        .use(`/${$.server.request}`, (req, res) => {
-            req
-            .pipe(request(`${$.server.protocol}${$.server.request}${req.path}`)
-                .on('error', (err) => console.log(`${$.server.protocol}${$.server.request}${req.path} NOT FOUND`))
-            )
-            .pipe(res)
         })
     })
 }

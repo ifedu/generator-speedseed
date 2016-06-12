@@ -1,0 +1,21 @@
+include components/_main
+
+doctype html
+html(lang='es' ng-app='speedseed')
+    head
+        meta(charset='utf-8')
+        title <%= project %>
+        meta(content='' description='')
+        //- link(href='favicon.ico' rel='shortcut icon')
+        link(href='css/main.css' rel='stylesheet')
+
+    body
+        ss-table
+
+        +script-dist()
+            script(src='vendor/core-js/client/shim.min.js')
+            script(src='vendor/zone.js/dist/zone.js')
+            script(src='vendor/reflect-metadata/Reflect.js')
+            script(src='vendor/systemjs/dist/system.src.js')
+
+            script(src='index.js')

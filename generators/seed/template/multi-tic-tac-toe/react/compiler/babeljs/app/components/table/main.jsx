@@ -5,7 +5,7 @@
         }
     })
 
-    React.render(
+    ReactDOM.render(
         ({%= include(__dirname, '-dom.html') %}),
         document.getElementsByTagName('ss-table')[0]
     )
