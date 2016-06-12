@@ -1,4 +1,4 @@
-### v.0.12.1
+### v.0.13.0
 
 ## Index
 - [English](#english)
@@ -14,7 +14,7 @@
         - In *.jade include -name.css -name.js -name.html
         - In *.js {%= include(__dirname, '-name.html') %} for files .name.jade
     
-    - Allow update the core of the project through npm run ss-update without affecting the development of the project
+    - Allow update the core of the project through npm run update without affecting the development of the project
     - Global properties for our jades with con __global.js
     - Local properties for our jades with nombre.jade _nombre.js
 
@@ -22,10 +22,11 @@
     
 - *Allow choice*
     - *Framework/Libs*
-        - **AngularJS 1.5.5**
-        - **jQuery 2.2.3**
-        - **Polymer 1.0**
-        - **React 15.0.2** (Read IMPORTANT.txt)
+        - **AngularJS 1.5.6**
+        - **Angular2 2.0.0-rc.1** (Only with TypeScript compiler)
+        - **jQuery 3.0.0**
+        - **Polymer 1.4.0**
+        - **React 15.1.0** (Only with BabelJS compiler) (Read IMPORTANT.txt for experimental use with jade templates)
         - **VanillaJS**
     
     ---
@@ -59,7 +60,7 @@
 
 - *Add*
     - *Automating tasks*
-        - **Gulp**v
+        - **Gulp**
 
     ---
 
@@ -97,50 +98,54 @@
 
 - *In the project folder*
     - Compile project in -build and launch project
-    - **npm run ss-build**
+    - **npm run build**
 
     ---
     - Compile project in -build, launch project and open navigator
-    - **npm run ss-build-open**
+    - **npm run build-open**
 
     ---
     - Compile project minified in -dist
-    - **npm run ss-dist**
+    - **npm run dist**
 
     ---
     - Compile project minified in -dist, launch project and open navigator
-    - **npm run ss-dist-open**
+    - **npm run dist-open**
 
     ---
     - Update generator, install dependencies and launch generator
-    - **npm run ss-update**
-
-    ---
-    - Compile project in -reports and launch complexity code test plato
-    - **npm run ss-reports**
-
-    ---
-    - Compile project in -build and launch unit test
-    - **npm run ss-test**
+    - **npm run update**
 
     ---
     - Create component in app/components
-    - **npm run ss-component**
+    - **npm run component**
+
+    ---
+    - Compile project in -build and launch unit test
+    - **npm run spec**
+
+    ---
+    - Create typings for TypeScript based in typings.json
+    - **npm run typings**
 
     ---
     - Ident all choice files, configurable in core-config.js
-    - **npm run ss-indent**
+    - **npm run indent**
+
+    ---
+    - Compile project in -reports and launch complexity code test plato
+    - **npm run reports**
 
     ---
     - Delete generate folders -build -dist -reports node_modules
-    - **npm run ss-clean**
+    - **npm run clean**
 
 ---
 
 ## Structure
 - **.core** => *don't change this content folder, is updated with generator-speedseed next versions*
-- **-build** => *code generated with npm run ss-build, contain code of app/ transpiled to html, css, es5. Folders and files _*are ignored*
-- **-dist** => *code generated with npm run ss-dist, contain code minimizied of app/ transpiled to html, css, es5. Folders and files _*are ignored*
+- **-build** => *code generated with npm run build, contain code of app/ transpiled to html, css, es5. Folders and files _*are ignored*
+- **-dist** => *code generated with npm run dist, contain code minimizied of app/ transpiled to html, css, es5. Folders and files _*are ignored*
 
 ---
 
@@ -177,7 +182,7 @@
         - En *.jade include -name.css -name.js -name.html
         - En *.js {%= include(__dirname, '-name.html') %} para ficheros .name.jade
     
-    - Permite actualizar el núcleo del proyecto mediante npm run ss-update sin afectar al desarrollo del proyecto
+    - Permite actualizar el núcleo del proyecto mediante npm run update sin afectar al desarrollo del proyecto
     - Propiedades globales para nuestros jades con __global.js
     - Propiedades locales para nuestros jades con nombre.jade _nombre.js
 
@@ -185,18 +190,19 @@
 
 - *Permite elegir*
     - *Framework/Libs*
-        - **AngularJS 1.5.5**
-        - **jQuery 2.2.3**
-        - **Polymer 1.0**
-        - **React 15.0.2** (Read IMPORTANT.txt)
+        - **AngularJS 1.5.6**
+        - **Angular2 2.0.0-rc.1** (Sólo con compilador TypeScript)
+        - **jQuery 3.0.0**
+        - **Polymer 1.4.0**
+        - **React 15.1.0** (Sólo con compilador BabelJS) (Leer IMPORTANT.txt para uso experimental con plantillas jade)
         - **VanillaJS**
-    
+
     ---
 
     - *Plantillas*
         - **https://github.com/ifedu/speedseed-multi-tic-tac-toe** Usa v.latest
         - **https://github.com/ifedu/speedseed-todomvc** Usa v.0.11.0
-    
+
     ---
 
     - *CSS*
@@ -258,50 +264,54 @@
 
 - *En la carpeta del proyecto*
     - Compila el proyecto en -build y lo lanza
-    - **npm run ss-build**
+    - **npm run build**
 
     ---
     - Compila el proyecto en -build, lo lanza y abre el navegador
-    - **npm run ss-build-open**
+    - **npm run build-open**
 
     ---
     - Compila el proyecto minificado en -dist
-    - **npm run ss-dist**
+    - **npm run dist**
 
     ---
     - Compila el proyecto minificado en -dist, lo lanza y abre el navegador
-    - **npm run ss-dist-open**
+    - **npm run dist-open**
 
     ---
     - Actualiza el generador, lo ejecuta e instala las dependencias
-    - **npm run ss-update**
-
-    ---
-    - Compila el proyecto en -reports y lanza test de complejidad de código plato
-    - **npm run ss-check**
-
-    ---
-    - Compila el proyecto en -build y lanza los test unitarios
-    - **npm run ss-test**
+    - **npm run update**
 
     ---
     - Crea un componente en app/components
-    - **npm run ss-component**
+    - **npm run component**
+
+    ---
+    - Compila el proyecto en -build y lanza los test unitarios
+    - **npm run spec**
+
+    ---
+    - Crea typings para TypeScript basado en typings.json
+    - **npm run typings**
 
     ---
     - Identa todos los ficheros elegidos, configurable en core-config.js
-    - **npm run ss-indent**
+    - **npm run indent**
+
+    ---
+    - Compila el proyecto en -reports y lanza test de complejidad de código plato
+    - **npm run reports**
 
     ---
     - Borra carpetas generadas -build -dist -reports node_modules
-    - **npm run ss-clean**
+    - **npm run clean**
     
 ---
 
 ## Structure
 - **.core** => *no cambiar el contenido de esta carpeta, es actualizado en futuras versiones de generator-speedseed*
-- **-build** => *código generado con npm run ss-build, contiene código de app/ transpilado a html, css, es5. Carpetas y ficheros _* son ignorados*
-- **-dist** => *código generado con npm run ss-dist, contiene código minificado de app/ transpilado a html, css, es5. Carpetas y ficheros _* son ignorados*
+- **-build** => *código generado con npm run build, contiene código de app/ transpilado a html, css, es5. Carpetas y ficheros _* son ignorados*
+- **-dist** => *código generado con npm run dist, contiene código minificado de app/ transpilado a html, css, es5. Carpetas y ficheros _* son ignorados*
 
 ---
 

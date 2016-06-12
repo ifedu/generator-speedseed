@@ -2,7 +2,7 @@
 
 const fs = require('fs')
 
-const coreConfig = JSON.parse(fs.readFileSync('./.core-config.js', 'utf8'))
+const coreConfig = JSON.parse(fs.readFileSync('./.core-config.json', 'utf8'))
 const extend = require('extend')
 
 const $ = {
@@ -13,6 +13,11 @@ const $ = {
     config: {
         dist: false,
         port: coreConfig.build.port,
+
+        html: {
+            doctype: 'html',
+            pretty: true
+        },
 
         less: {},
 
@@ -109,6 +114,7 @@ const $ = {
         if (util.env.dist === 'true') {
             this.config.dist = true
             this.config.port = coreConfig.dist.port
+
             this.config.less.compress = true
             this.config.sass.outputStyle = 'compressed'
             this.config.scss.outputStyle = 'compressed'

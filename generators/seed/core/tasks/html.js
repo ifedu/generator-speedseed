@@ -19,7 +19,7 @@ module.exports = ($, gulp) => {
         .pipe(jadeInheritance({ basedir: $.app.dir }))
         .pipe(filter($.filterProps('jade')))
         .pipe(data((file) => $.getJsProps(file, '.jade')))
-        .pipe(jade({ pretty: true }))
+        .pipe(jade($.config.html))
         .pipe(gulp.dest($.build.dir))
     })
 

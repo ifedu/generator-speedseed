@@ -19,7 +19,7 @@ module.exports = ($, gulp) => {
         .pipe(plumber())
         .pipe(filter($.filterProps(`${ext}`)))
         .pipe(modifyFile((content, route) => $.translateTpl(content, route, `.${ext}`)))
-        .pipe($.options.compiler.getPluginCompiler($)())
+        .pipe($.options.compiler.getPluginCompiler($))
         .pipe(gulpif(
             ($.yo.framework === 'angularjs' && $.config.dist === true),
             $.options.framework.ngAnnotate($)()
@@ -38,7 +38,7 @@ module.exports = ($, gulp) => {
         return gulp
         .src(`${$.app.dir}/**/.*.${ext}`)
         .pipe(plumber())
-        .pipe($.options.compiler.getPluginCompiler($)())
+        .pipe($.options.compiler.getPluginCompiler($))
         .pipe(rename((path) => path.basename = `-${path.basename.substr(1)}`))
         .pipe(changed($.app.dir))
         .pipe(gulpif(($.yo.framework === 'polymer' && $.config.dist === true), uglify()))

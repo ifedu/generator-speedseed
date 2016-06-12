@@ -8,7 +8,7 @@
         }
     })
 
-    React.render(
+    ReactDOM.render(
         ({%= include(__dirname, '-dom.html') %}),
         document.getElementsByTagName('<%= component %>')[0]
     )

@@ -2,6 +2,18 @@
 - [Español](#español)
 
 ## English
+### v.0.13.0
+    - _vendor rename to -vendor and only use with bower, no pushed to git
+    - _vendor in -build rename to vendor
+    - Add Angular2 in multi-tic-tac-toe template
+    - Add npm run typings for create typings for TypeScript
+    - Add typings in TypeScript
+    - Copy the node_modules selected a -build/vendor, configure in .core-config.json, property copy.node_modules: []
+    - Delete ss- in tasks
+    - Rename .core-config.js to .core.config.json
+    - Rename npm run ss-test to npm run spec 
+    - Use browsersync for api test, confgure en .core-config.js, property server
+
 ### v.0.12.1
     - Fix for Node >6
 
@@ -116,6 +128,18 @@
     - Restart changelog in 2 languages
 
 ## Español
+### v.0.13.0
+    - _vendor renombreado a -vendor y sólo se usa con bower, no se sube a git
+    - _vendor en -build renombrado a vendor
+    - Añade Angular2 en template multi-tic-tac-toe
+    - Añade npm run typings para crear typings para TypeScript
+    - Añade typings en TypeScript
+    - Borra ss- in tasks
+    - Copia los node_modules seleccionados en -build/vendor, configurable en .core-config.json, propiedad copy.node_modules: []
+    - Renombra .core-config.js a .core.config.json
+    - Renombra npm run ss-test a npm run spec 
+    - Usa browsersync para api de pruebas, configurable en .core-config.js, propiedad server
+
 ### v.0.12.1
     - Corrige error en Node >6
 

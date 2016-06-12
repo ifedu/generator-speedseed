@@ -9,13 +9,13 @@ module.exports = function () {
     const assets = 'assets'
     const components = 'components'
     const js = 'js'
-    const vendor = '_vendor'
+    const vendor = 'vendor'
 
     const coreConfig = {
         app: {
             copy: {
                 assets: `${app}/${assets}`,
-                vendor: `${app}/${vendor}`
+                vendor: `${app}/-${vendor}`
             },
 
             dir: app
@@ -29,6 +29,10 @@ module.exports = function () {
 
             dir: build,
             port: 8001
+        },
+
+        copy: {
+            node_modules: []
         },
 
         dist: {
@@ -73,8 +77,9 @@ module.exports = function () {
         },
 
         server: {
-            protocol: 'http://',
-            request: 'api',
+            auth: '/auth',
+            request: '/api',
+            routeApi: 'http://',
             portReload: 35729
         },
 
@@ -96,6 +101,38 @@ module.exports = function () {
         }
     }
 
+    const getFramework = {
+        angularjs: [
+            'angular'
+        ],
+
+        angular2: [
+            '@angular',
+            'angular2-in-memory-web-api',
+            'bootstrap',
+            'core-js',
+            'reflect-metadata',
+            'rxjs',
+            'systemjs',
+            'zone.js'
+        ],
+
+        jquery: [
+            'jquery'
+        ],
+
+        polymer: [
+            'Polymer'
+        ],
+
+        react: [
+            'react',
+            'react-dom'
+        ],
+
+        vanillajs: []
+    }
+
     const extend = require('extend')
 
     const file = (fs.existsSync('./.core-config.js') === true)
@@ -108,5 +145,11 @@ module.exports = function () {
         file
     )
 
-    fs.writeFileSync('.core-config.js', JSON.stringify(coreConfig, null, 4))
+    extend(
+        true,
+        coreConfig.copy.node_modules,
+        getFramework[this.config.get('framework')]
+    )
+
+    fs.writeFileSync('.core-config.json', JSON.stringify(coreConfig, null, 4))
 }

@@ -15,9 +15,11 @@ module.exports = {
         const plugins =  {
             babeljs: () => require('gulp-babel')({ presets: ['es2015'] }),
             coffeescript: () => require('gulp-coffee')(),
-            typescript: () => require('gulp-typescript')()
+            typescript: () => require('gulp-typescript')({
+                experimentalDecorators: true
+            })
         }
 
-        return plugins[$.yo.compiler]
+        return plugins[$.yo.compiler]()
     }
 }

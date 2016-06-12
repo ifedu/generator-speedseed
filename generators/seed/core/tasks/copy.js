@@ -12,7 +12,24 @@ module.exports = ($, gulp) => {
         }
 
     gulp.task('copy-assets', copy({}, `${$.app.copy.assets}/**`, $.build.copy.assets))
-    gulp.task('copy-vendor', copy({}, `${$.app.copy.vendor}/**`, $.build.copy.vendor))
+    gulp.task('copy-vendor', copy({}, `${$.app.copy.vendor}/**`, `${$.build.copy.vendor}/@angular`))
+
+    $.copy.node_modules.forEach((file) =>
+        gulp.task(file, (cb) =>
+            copy({}, `node_modules/${file}/**/*`, `${$.build.copy.vendor}/${file}`)()
+        )
+    )
+
+    gulp.task('copy-node_modules', (cb) => {
+        if ($.copy.node_modules.length === 0) {
+            cb()
+
+            return
+        }
+
+        $.runSequence($.copy.node_modules, cb)
+    })
+
 
     gulp.task('copy-css', copy({extension: '.css'}, [
         `${$.app.dir}/**/*.css`,
@@ -44,5 +61,5 @@ module.exports = ($, gulp) => {
         `!${$.app.dir}/**/_**/**/*.json`
     ], $.build.dir))
 
-    gulp.task('copy', (cb) => $.runSequence(['copy-assets', 'copy-css', 'copy-html', 'copy-json', 'copy-vendor'], cb))
+    gulp.task('copy', (cb) => $.runSequence(['copy-assets', 'copy-css', 'copy-html', 'copy-json', 'copy-node_modules', 'copy-vendor'], cb))
 }
