@@ -13,4 +13,4 @@ html(lang='es')
         +table()
 
         +script-dist()
-            script(src='components/box/main.js')
+            {%= getRoutes('components', '<%= compilerExt %>', false, `script(src='$TPL$')`, '            ') %}

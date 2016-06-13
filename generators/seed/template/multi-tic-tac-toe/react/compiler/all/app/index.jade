@@ -16,5 +16,4 @@ html(lang='es')
             script(src='vendor/react/dist/react-with-addons.min.js')
             script(src='vendor/react-dom/dist/react-dom.min.js')
 
-            script(src='components/table/main.js')
-            script(src='components/box/main.js')
+            {%= getRoutes('components', '<%= compilerExt %>', false, `script(src='$TPL$')`, '            ') %}

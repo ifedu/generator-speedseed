@@ -4,4 +4,4 @@
 body
     margin: 0
 
-@import '../components/_main.sass'
+{%= getRoutes('../components', '.sass', true, `@import '$TPL$';`) %}

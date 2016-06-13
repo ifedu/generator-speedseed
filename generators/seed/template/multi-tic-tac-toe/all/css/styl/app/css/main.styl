@@ -4,4 +4,4 @@
 body
     margin 0
 
-@import '../components/_main'
+{%= getRoutes('../components', '.styl', true, `@import '$TPL$'`) %}

@@ -4,10 +4,16 @@ module.exports = ($, gulp) => {
     const copy = (ext, src, dest) =>
         () => {
             const changed = require('gulp-changed')
+            const gulpif = require('gulp-if')
+            const modifyFile = require('gulp-modify-file')
 
             return gulp
             .src(src)
             .pipe(changed($.build.dir, ext))
+            .pipe(gulpif(
+                (ext.extension === '.html'),
+                modifyFile((content, route) => $.translateTpl(content, route, ext.extension))
+            ))
             .pipe(gulp.dest(dest))
         }
 

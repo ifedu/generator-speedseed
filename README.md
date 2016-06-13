@@ -1,4 +1,4 @@
-### v.0.13.0
+### v.0.14.0
 
 ## Index
 - [English](#english)
@@ -13,6 +13,11 @@
     - Files with .name.scss .name.js .name.jade precompile in app, perfect for includes files
         - In *.jade include -name.css -name.js -name.html
         - In *.js {%= include(__dirname, '-name.html') %} for files .name.jade
+
+    - Allow include routes, perfect for includes all components
+        - Syntax: {%= getRoutes(folderRoute, ext, (Boolean include _files), `$TPL$ replace for route`, 'indent') %}
+        - Example: {%= getRoutes('components', '.js', true, `script(src='$TPL$')`, '            ') %}
+        - Example: {%= getRoutes('../components', '.styl', true, `@import '$TPL$'`) %}
     
     - Allow update the core of the project through npm run update without affecting the development of the project
     - Global properties for our jades with con __global.js
@@ -150,7 +155,7 @@
 ---
 
 - **app** => *development template*
-    - **_vendor** => *libs external*
+    - **-vendor** => *libs external*
     - **components** => *components*
         - **_main.jade** => *include all mixins*
         - **components** => *include all css*
@@ -172,6 +177,7 @@
 - **bower.json** => *bower dependencies*
 - **gulpfile.js** => *call gulp tasks of .core*
 - **package.json** => *packages of npm and information of the project*
+- **typings.json** => *typings of libs for TypeScript*
 
 
 
@@ -181,6 +187,11 @@
     - Ficheros con .name.scss .name.js .name.jade precompilan en app, perfecto para incluir ficheros
         - En *.jade include -name.css -name.js -name.html
         - En *.js {%= include(__dirname, '-name.html') %} para ficheros .name.jade
+
+    - Permite incluir rutas, perfecto para incluir todos los componentes
+        - Sintaxis: {%= getRoutes(rutaCarpeta, ext, (Boolean incluye _files), `$TPL$ reemplazado por ruta`, 'identación') %}
+        - Ejemplo: {%= getRoutes('components', '.js', false, `script(src='$TPL$')`, '            ') %}
+        - Ejemplo: {%= getRoutes('../components', '.styl', true, `@import '$TPL$'`) %}
     
     - Permite actualizar el núcleo del proyecto mediante npm run update sin afectar al desarrollo del proyecto
     - Propiedades globales para nuestros jades con __global.js
@@ -316,7 +327,7 @@
 ---
 
 - **app** => *plantilla de desarrollo*
-    - **_vendor** => *libs externas*
+    - **-vendor** => *libs externas*
     - **components** => *componentes*
         - **_main.jade** => *incluye todos los mixins*
         - **components** => *incluye todos los css*
@@ -338,3 +349,4 @@
 - **bower.json** => *dependencias de bower*
 - **gulpfile.js** => *llama a las tareas de gulp de -ss*
 - **package.json** => *paquetes de npm e información del proyecto*
+- **typings.json** => *typings de librerías para TypeScript*

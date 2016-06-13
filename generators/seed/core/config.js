@@ -133,12 +133,59 @@ const $ = {
 
         const dataTpl = extend(true, {}, this.getJsProps(route, ext))
 
+        let filesTpl = ''
+        let newLine = ''
+        let i = 0
+
+        const readFolder = (dir, ext, underscore, txt, spaces, file) => {
+            const dirFile = `${dir}/${file}`
+
+            if (fs.lstatSync(dirFile).isDirectory() === true) {
+                fs.readdirSync(dirFile).forEach((fileSon) => readFolder(dirFile, ext, underscore, txt, spaces, fileSon))
+            }
+            else if (path.extname(dirFile) === ext) {
+                if (
+                    (underscore === false && file.substring(0, 1) === '_') ||
+                    file.substring(0, 1) === '.'
+                ) {
+                    return
+                }
+
+                let routeFile = path.dirname(route)
+                routeFile = path.relative(routeFile, dirFile)
+                routeFile = routeFile.replace(/\\/g, '/')
+
+                const routeFileTpl = txt.replace('$TPL$', routeFile).replace('.ts', '.js').replace('.coffee', '.js')
+
+                let space = (i > 0) ? spaces : ''
+                newLine = (i > 0) ? '\n' : ''
+                i++
+
+                filesTpl += `${newLine}${space}${routeFileTpl}`
+            }
+        }
+
+        dataTpl.getRoutes = (dir, ext, underscore, txt, spaces) => {
+            const dirNormal = path.normalize(path.dirname(route))
+            const directory = `${dirNormal}/${dir}`
+
+            spaces = spaces || ''
+
+            fs.readdirSync(directory).forEach((file) => readFolder(directory, ext, underscore, txt, spaces, file))
+
+            return filesTpl
+        }
+
         dataTpl.__dirname = path.dirname(route)
 
-        return _.template(content, {
-            'evaluate': /{%=([\s\S]+?)%}/g,
-            'interpolate': /{%=([\s\S]+?)%}/g
-        })(dataTpl)
+        try {
+            return _.template(content, {
+                'evaluate': /{%=([\s\S]+?)%}/g,
+                'interpolate': /{%=([\s\S]+?)%}/g
+            })(dataTpl)
+        } catch (e) {
+            return content
+        }
     }
 }
 

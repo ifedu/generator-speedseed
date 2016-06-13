@@ -15,4 +15,4 @@ html(lang='es')
         +script-dist()
             script(src='vendor/jquery/dist/jquery.min.js')
 
-            script(src='components/box/main.js')
+            {%= getRoutes('components', '<%= compilerExt %>', false, `script(src='$TPL$')`, '            ') %}

@@ -1,0 +1,6 @@
+{
+  "globalDependencies": {
+    "core-js": "registry:dt/core-js",
+    "polymer": "registry:dt/polymer"
+  }
+}

@@ -8,6 +8,7 @@ module.exports = ($, gulp) => {
         const gulpif = require('gulp-if')
         const jade = require('gulp-jade')
         const jadeInheritance  = require('gulp-jade-inheritance')
+        const modifyFile = require('gulp-modify-file')
         const plumber = require('gulp-plumber')
 
         $.resetPropsHtml()
@@ -19,6 +20,7 @@ module.exports = ($, gulp) => {
         .pipe(jadeInheritance({ basedir: $.app.dir }))
         .pipe(filter($.filterProps('jade')))
         .pipe(data((file) => $.getJsProps(file, '.jade')))
+        .pipe(modifyFile((content, route) => $.translateTpl(content, route, '.jade')))
         .pipe(jade($.config.html))
         .pipe(gulp.dest($.build.dir))
     })

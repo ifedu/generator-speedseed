@@ -6,4 +6,4 @@ body {
     margin: 0;
 }
 
-@import '../components/_main';
+{%= getRoutes('../components', '.less', true, `@import '$TPL$';`) %}

@@ -2,6 +2,11 @@
 - [Español](#español)
 
 ## English
+### v.0.14.0
+    - Add templating for includes all routes
+    - Fix no copy all typings, only framework selected
+    - Update structure folders in README
+
 ### v.0.13.0
     - _vendor rename to -vendor and only use with bower, no pushed to git
     - _vendor in -build rename to vendor
@@ -128,6 +133,11 @@
     - Restart changelog in 2 languages
 
 ## Español
+### v.0.14.0
+    - Añadida plantilla para incluir todas las rutas
+    - Arreglado no copiar todos los typings, sólo los de el framework seleccionado
+    - Actualiza estructura de carpetas en README
+
 ### v.0.13.0
     - _vendor renombreado a -vendor y sólo se usa con bower, no se sube a git
     - _vendor en -build renombrado a vendor

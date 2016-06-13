@@ -17,5 +17,4 @@ html(lang='es' ng-app='speedseed' ng-controller='MainCtrl as mainCtrl')
 
             script(src='js/main.js')
 
-            script(src='components/box/main.js')
-            script(src='components/table/main.js')
+            {%= getRoutes('components', '<%= compilerExt %>', false, `script(src='$TPL$')`, '            ') %}
