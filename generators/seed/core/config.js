@@ -133,9 +133,9 @@ const $ = {
 
         const dataTpl = extend(true, {}, this.getJsProps(route, ext))
 
-        let filesTpl = ''
-        let newLine = ''
-        let i = 0
+        let filesTpl
+        let newLine
+        let i
 
         const readFolder = (dir, ext, underscore, txt, spaces, file) => {
             const dirFile = `${dir}/${file}`
@@ -168,6 +168,10 @@ const $ = {
         dataTpl.getRoutes = (dir, ext, underscore, txt, spaces) => {
             const dirNormal = path.normalize(path.dirname(route))
             const directory = `${dirNormal}/${dir}`
+
+            filesTpl = ''
+            newLine = ''
+            i = 0
 
             spaces = spaces || ''
 

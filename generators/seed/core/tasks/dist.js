@@ -14,7 +14,10 @@ module.exports = ($, gulp) => {
         const htmlmin = require('gulp-htmlmin')
 
         return gulp
-        .src(`${$.build.dir}/**/*.html`)
+        .src([
+            `${$.build.dir}/**/*.html`,
+            `!${$.build.copy.vendor}/**/*`
+        ])
         .pipe(htmlmin({ collapseWhitespace: true, removeComments: true }))
         .pipe(gulp.dest($.build.dir))
     })
@@ -27,7 +30,8 @@ module.exports = ($, gulp) => {
             `${$.build.dir}/**/*.js`,
             `!${$.build.dir}/**/_**/**/*`,
             `!${$.build.dir}/**/-*.js`,
-            `!${$.build.dir}/**/.*.js`
+            `!${$.build.dir}/**/.*.js`,
+            `!${$.build.copy.vendor}/**/*`
         ])
         .pipe(uglify())
         .pipe(gulp.dest($.build.dir))
@@ -56,7 +60,7 @@ module.exports = ($, gulp) => {
 
     gulp.task('minified', (cb) =>
         ($.yo.framework === 'polymer')
-            ? $.runSequence('vulcanize', 'oneJS', ['compress-html', 'compress-js'], cb)
-            : $.runSequence('oneJS', ['compress-html', 'compress-js'], 'clean-dist', cb)
+            ? $.runSequence('vulcanize', 'oneJS', 'compress-js', 'compress-html', 'clean-dist', cb)
+            : $.runSequence('oneJS', 'compress-js', 'compress-html', 'clean-dist', cb)
     )
 }

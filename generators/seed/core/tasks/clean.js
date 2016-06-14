@@ -7,14 +7,14 @@ module.exports = ($, gulp) => {
         }, cb)
 
     gulp.task('clean', (cb) => deleteFiles($.build.dir, cb))
-
-    gulp.task('clean-app', (cb) =>
-        deleteFiles([
-            `${$.app.dir}/**/-*`,
+    gulp.task('clean-app', (cb) => {
+        return deleteFiles([
+            `${$.app.dir}/**/-*.*`,
             `${$.app.dir}/**/-**/*`,
-            `!${$.app.dir}/**/_**/**/*`
+            `!${$.app.dir}/**/_**/**/*`,
+            `!${$.app.copy.vendor}/**/*`
         ], cb)
-    )
+    })
 
     gulp.task('clean-dist', (cb) =>
         deleteFiles([

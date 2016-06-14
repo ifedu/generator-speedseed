@@ -12,7 +12,10 @@ module.exports = ($, gulp) => {
         $.resetPropsHtml()
 
         return gulp
-        .src(`${$.app.dir}/**/*.jsx`)
+        .src([
+            `${$.app.dir}/**/*.jsx`,
+            `!${$.app.copy.vendor}/**/*`
+        ])
         .pipe(gulpif($.if.notInclude, changed($.build.dir)))
         .pipe(plumber())
         .pipe(modifyFile((content, route) => $.translateTpl(content, route, '.jsx')))

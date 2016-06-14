@@ -2,6 +2,12 @@
 - [Español](#español)
 
 ## English
+### v.0.14.1
+    - Fix allow includes several templates in a same file
+    - Fix tasks no read vendor folder
+    - Fix tasks dist
+    - Requeriments in README
+
 ### v.0.14.0
     - Add templating for includes all routes
     - Fix no copy all typings, only framework selected
@@ -133,6 +139,12 @@
     - Restart changelog in 2 languages
 
 ## Español
+### v.0.14.1
+    - Arregla permitir incluir varias plantillas en un mismo fichero
+    - Arregla tareas para que no lean la carpeta vendor
+    - Arregla tareas dist
+    - Requerimientos en README
+
 ### v.0.14.0
     - Añadida plantilla para incluir todas las rutas
     - Arreglado no copiar todos los typings, sólo los de el framework seleccionado

@@ -9,7 +9,10 @@ module.exports = ($, gulp) => {
         const plumber = require('gulp-plumber')
 
         return gulp
-        .src(`${$.app.dir}/**/*.${$.yo.css}`)
+        .src([
+            `${$.app.dir}/**/*.${$.yo.css}`,
+            `!${$.app.copy.vendor}/**/*`
+        ])
         .pipe(gulpif($.if.notInclude, changed($.build.dir, {extension: '.css'})))
         .pipe(plumber())
         .pipe(filter($.filterProps('css')))
@@ -24,7 +27,10 @@ module.exports = ($, gulp) => {
         const rename = require('gulp-rename')
 
         return gulp
-        .src(`${$.app.dir}/**/.*.${$.yo.css}`)
+        .src([
+            `${$.app.dir}/**/.*.${$.yo.css}`,
+            `!${$.app.copy.vendor}/**/*`
+        ])
         .pipe(changed($.app.dir, {extension: '.css'}))
         .pipe(plumber())
         .pipe($.options.css.getPluginCss($)())

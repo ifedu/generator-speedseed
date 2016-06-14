@@ -14,7 +14,10 @@ module.exports = ($, gulp) => {
         $.resetPropsHtml()
 
         return gulp
-        .src(`${$.app.dir}/**/*.${ext}`)
+        .src([
+            `${$.app.dir}/**/*.${ext}`,
+            `!${$.app.copy.vendor}/**/*`
+        ])
         .pipe(gulpif($.if.notInclude, changed($.build.dir)))
         .pipe(plumber())
         .pipe(filter($.filterProps(`${ext}`)))
@@ -36,7 +39,10 @@ module.exports = ($, gulp) => {
         const uglify = require('gulp-uglify')
 
         return gulp
-        .src(`${$.app.dir}/**/.*.${ext}`)
+        .src([
+            `${$.app.dir}/**/.*.${ext}`,
+            `!${$.app.copy.vendor}/**/*`
+        ])
         .pipe(plumber())
         .pipe($.options.compiler.getPluginCompiler($))
         .pipe(rename((path) => path.basename = `-${path.basename.substr(1)}`))

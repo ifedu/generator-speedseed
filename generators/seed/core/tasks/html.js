@@ -14,7 +14,10 @@ module.exports = ($, gulp) => {
         $.resetPropsHtml()
 
         return gulp
-        .src(`${$.app.dir}/**/*.jade`)
+        .src([
+            `${$.app.dir}/**/*.jade`,
+            `!${$.app.copy.vendor}/**/*`
+        ])
         .pipe(gulpif($.if.notInclude, changed($.build.dir, { extension: '.html' })))
         .pipe(plumber())
         .pipe(jadeInheritance({ basedir: $.app.dir }))
@@ -35,7 +38,10 @@ module.exports = ($, gulp) => {
         $.resetPropsHtml()
 
         return gulp
-        .src(`${$.app.dir}/**/.*.jade`)
+        .src([
+            `${$.app.dir}/**/.*.jade`,
+            `!${$.app.copy.vendor}/**/*`
+        ])
         .pipe(changed($.app.dir, { extension: '.html' }))
         .pipe(plumber())
         .pipe(data((file) => $.getJsProps(file, '.jade')))
