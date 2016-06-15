@@ -2,6 +2,13 @@
 - [Español](#español)
 
 ## English
+### v.0.14.2
+    - Delete previuos .core when npm run update or yo speedseed
+    - Fix copy node_modules in vendor instead of vendor/@angular
+    - Fix ignore folder -vendor in npm run indent
+    - Fix npm run dist not delete files vendor
+    - Fix search previous props .core-config.json instead of .core-config.js
+
 ### v.0.14.1
     - Fix allow includes several templates in a same file
     - Fix tasks no read vendor folder
@@ -139,6 +146,13 @@
     - Restart changelog in 2 languages
 
 ## Español
+### v.0.14.2
+    - Arregla copiar node_modules en vendor en vez de en vendor/@angular
+    - Arregla ignora carpeta -vendor en npm run indent
+    - Arregla npm run dist no borra ficheros vendor
+    - Arregla buscar propiedades previas en .core-config.json en vez de .core-config.js
+    - Borra anterior .core cuando npm run update o yo speedseed
+
 ### v.0.14.1
     - Arregla permitir incluir varias plantillas en un mismo fichero
     - Arregla tareas para que no lean la carpeta vendor
