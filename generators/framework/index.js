@@ -36,20 +36,5 @@ module.exports = require('yeoman-generator').Base.extend({
                 value: 'vanillajs'
             }]
         }, done)
-    },
-
-    end() {
-        const create = config.create.bind(this)
-        // FRAMEWORK
-        if (this.config.get('template') !== 'no') {
-            create(`seed/template/${this.config.get('template')}/all/compiler/${this.config.get('compiler')}/app`, './app')
-            create(`seed/template/${this.config.get('template')}/all/compiler/${this.config.get('compiler')}/app/**/.*`, './app')
-
-            create(`seed/template/${this.config.get('template')}/${this.config.get('framework')}/compiler/all/app`, './app')
-            create(`seed/template/${this.config.get('template')}/${this.config.get('framework')}/compiler/all/app/**/.*`, './app')
-
-            create(`seed/template/${this.config.get('template')}/${this.config.get('framework')}/compiler/${this.config.get('compiler')}/app`, './app')
-            create(`seed/template/${this.config.get('template')}/${this.config.get('framework')}/compiler/${this.config.get('compiler')}/app/**/.*`, './app')
-        }
     }
 })

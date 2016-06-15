@@ -20,13 +20,19 @@ module.exports = require('yeoman-generator').Base.extend({
     writing() {
         const create = config.create.bind(this)
 
-        create(`seed/template/multi-tic-tac-toe/${this.config.get('framework')}/compiler/all/component`, `./app/components/${this.config.get('component')}`)
-        create(`seed/template/multi-tic-tac-toe/${this.config.get('framework')}/compiler/all/component/.*`, `./app/components/${this.config.get('component')}`)
+        const css = this.config.get('css')
+        const compiler = this.config.get('compiler')
+        const component = this.config.get('component')
+        const framework = this.config.get('framework')
 
-        create(`seed/template/multi-tic-tac-toe/${this.config.get('framework')}/compiler/${this.config.get('compiler')}/component`, `./app/components/${this.config.get('component')}`)
-        create(`seed/template/multi-tic-tac-toe/${this.config.get('framework')}/compiler/${this.config.get('compiler')}/component/.*`, `./app/components/${this.config.get('component')}`)
+        const route = `seed/template/multi-tic-tac-toe/${framework}`
+        const routeDest = `./app/components/${component}`
 
-        create(`seed/template/multi-tic-tac-toe/${this.config.get('framework')}/css/${this.config.get('css')}/component`, `./app/components/${this.config.get('component')}`)
-        create(`seed/template/multi-tic-tac-toe/${this.config.get('framework')}/css/${this.config.get('css')}/component/.*`, `./app/components/${this.config.get('component')}`)
+        create(`${route}/compiler/all/component`, routeDest)
+        create(`${route}/compiler/all/component/.*`, routeDest)
+        create(`${route}/compiler/${compiler}/component`, routeDest)
+        create(`${route}/compiler/${compiler}/component/.*`, routeDest)
+        create(`${route}/css/${css}/component`, routeDest)
+        create(`${route}/css/${css}/component/.*`, routeDest)
     }
 })

@@ -60,7 +60,7 @@ module.exports = function () {
             src: [
                 `${app}/**/*`,
                 `!${app}/${assets}/**/*`,
-                `!${app}/${vendor}/**/*`
+                `!${app}/-${vendor}/**/*`
             ]
         },
 
@@ -135,8 +135,8 @@ module.exports = function () {
 
     const extend = require('extend')
 
-    const file = (fs.existsSync('./.core-config.js') === true)
-        ? JSON.parse(fs.readFileSync('./.core-config.js', 'utf8'))
+    const file = (fs.existsSync('./.core-config.json') === true)
+        ? JSON.parse(fs.readFileSync('./.core-config.json', 'utf8'))
         : {}
 
     extend(

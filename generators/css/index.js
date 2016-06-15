@@ -30,17 +30,5 @@ module.exports = require('yeoman-generator').Base.extend({
                 value: 'styl'
             }]
         }, done)
-    },
-
-    writing() {
-        const create = config.create.bind(this)
-        // CSS
-        if (this.config.get('template') !== 'no') {
-            create(`seed/template/${this.config.get('template')}/all/css/${this.config.get('css')}/app`, './app')
-            create(`seed/template/${this.config.get('template')}/all/css/${this.config.get('css')}/app/**/.*`, './app')
-
-            create(`seed/template/${this.config.get('template')}/${this.config.get('framework')}/css/${this.config.get('css')}/app`, './app')
-            create(`seed/template/${this.config.get('template')}/${this.config.get('framework')}/css/${this.config.get('css')}/app/**/.*`, './app')
-        }
     }
 })

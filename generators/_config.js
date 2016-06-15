@@ -1,23 +1,27 @@
 'use strict'
 
 module.exports = {
-    create(fileTpl, fileDest, props) {
-        if (props === false) {
-            this.fs.copy(
-                this.templatePath(fileTpl),
-                this.destinationPath(fileDest), {
-                    globOptions: {
-                        dot: true
-                    }
-                }
-            )
-        } else {
-            this.fs.copyTpl(
-                this.templatePath(fileTpl),
+    create(fileTpl, fileDest, option) {
+        const copy = (option === false) ? 'copy' : 'copyTpl'
+        const options = (option === false) ? { globOptions: { dot: true } } : this.config.getAll()
+
+        this.fs[copy](
+            this.templatePath(fileTpl),
+            this.destinationPath(fileDest),
+            options
+        )
+
+        if (option === true) {
+            this.fs[copy](
+                this.templatePath(`${fileTpl}/**/.*`),
                 this.destinationPath(fileDest),
-                this.config.getAll()
+                options
             )
         }
+    },
+
+    del(file) {
+        this.fs.delete(file)
     },
 
     paths() {
