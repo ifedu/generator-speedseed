@@ -27,22 +27,5 @@ module.exports = require('yeoman-generator').Base.extend({
                 value: 'typescript'
             }]
         }, done)
-    },
-
-    writing() {
-        const create = config.create.bind(this)
-
-        if (this.config.get('compiler') === 'typescript') {
-            create(`seed/template/${this.config.get('template')}/${this.config.get('framework')}/compiler/${this.config.get('compiler')}/typings`, './typings')
-            create(`seed/template/${this.config.get('template')}/${this.config.get('framework')}/compiler/${this.config.get('compiler')}/typings.json`, './typings.json')
-        }
-
-        const ext = {
-            babeljs: '.js',
-            coffeescript: '.coffee',
-            typescript: '.ts'
-        }
-
-        this.config.set('compilerExt', ext[this.config.get('compiler')])
     }
 })

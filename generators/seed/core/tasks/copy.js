@@ -18,7 +18,7 @@ module.exports = ($, gulp) => {
         }
 
     gulp.task('copy-assets', copy({}, `${$.app.copy.assets}/**`, $.build.copy.assets))
-    gulp.task('copy-vendor', copy({}, `${$.app.copy.vendor}/**`, `${$.build.copy.vendor}/@angular`))
+    gulp.task('copy-vendor', copy({}, `${$.app.copy.vendor}/**`, $.build.copy.vendor))
 
     $.copy.node_modules.forEach((file) =>
         gulp.task(file, (cb) =>
