@@ -185,7 +185,7 @@
 
 
 ### Español
-- *Propiedades*
+- *Características y convenciones*
     - Ficheros y carpetas que empiezan por _ no se compilan a build, perfecto para incluir propiedades
     - Ficheros con .name.scss .name.js .name.jade precompilan en app, perfecto para incluir ficheros
         - En *.jade include -name.css -name.js -name.html
@@ -202,7 +202,7 @@
 
 ---
 
-- *Permite elegir*
+- *Opciones de personalización*
     - *Framework/Libs*
         - **AngularJS 1.5.6**
         - **Angular2 2.0.0-rc.1** (Sólo con compilador TypeScript)
@@ -233,13 +233,13 @@
     
     ---
 
-- *Añade*
-    - *Automatizar tareas*
+- *Extras*
+    - *Automatización de tareas*
         - **Gulp**
 
     ---
 
-    - *JS*
+    - *Compilación/Transpiler a JS/ECMAScript5 estándar*
         - **BabelJs**
 
     ---
@@ -250,17 +250,17 @@
 
     ---
 
-    - *Html*
+    - *HTML*
         - **Jade**
 
     ---
 
-## Styleguide
+## Guía de estilos
 - https://github.com/ifedu/speedseed-styleguide Guía en español para Jade, JS(ES6) y Stylus
 
 ---
 
-## Uso
+## Instrucciones de uso
 - *Usar una vez en el Sistema Operativo*
     - Instala librerías en el Sistema Operativo
     - **npm i gulp -g**
