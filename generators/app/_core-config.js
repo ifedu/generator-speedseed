@@ -79,7 +79,8 @@ module.exports = function () {
         server: {
             auth: '/auth',
             request: '/api',
-            routeApi: 'http://',
+            route: 'http://localhost',
+            port: 8080,
             portReload: 35729
         },
 

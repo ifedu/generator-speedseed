@@ -1,5 +1,5 @@
 - [English](#english)
-- [Español](#español)
+- [Spanish](#spanish)
 
 ## English
 ### v.0.14.2
@@ -145,7 +145,7 @@
 ### v.0.4.0
     - Restart changelog in 2 languages
 
-## Español
+## Spanish
 ### v.0.14.2
     - Arregla copiar node_modules en vendor en vez de en vendor/@angular
     - Arregla ignora carpeta -vendor en npm run indent

@@ -119,8 +119,8 @@ module.exports = function () {
             'babel-preset-es2015': '^6.6.0',
             'browser-sync': '^2.12.8',
             'del': '^2.2.0',
+            'express': '^4.14.0',
             'extend': '^3.0.0',
-            'http-proxy-middleware': '^0.15.2',
             'gulp': '^3.9.0',
             'gulp-babel': '^6.1.2',
             'gulp-changed': '^1.2.1',
@@ -140,6 +140,7 @@ module.exports = function () {
             'gulp-useref': '^3.1.0',
             'gulp-util': '^3.0.7',
             'gulp-watch': '^4.3.5',
+            'http-proxy-middleware': '^0.15.2',
             'lodash': '^4.13.1',
             'plato': '^1.5.0',
             'run-sequence': '^1.1.1'
@@ -159,6 +160,7 @@ module.exports = function () {
             'indent': 'gulp indent',
             'spec': 'gulp test',
             'reports': 'gulp reports',
+            'server': 'node .core/server',
             'typings': 'typings install',
             'update': 'npm i generator-speedseed -g    &&    yo speedseed    &&    npm i'
         }

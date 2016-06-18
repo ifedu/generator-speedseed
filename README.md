@@ -5,13 +5,13 @@
 
 ### Index
 - [English](#english)
-- [Español](#español)
+- [Spanish](#spanish)
 
 ### Changelog
 - [Changelog](https://github.com/ifedu/generator-speedseed/blob/master/CHANGELOG.md)
 
 ### English
-- *Properties*
+- *Characteristics and conventions*
     - Files and folders start for _ no compile to build, perfect for includes properties
     - Files with .name.scss .name.js .name.jade precompile in app, perfect for includes files
         - In *.jade include -name.css -name.js -name.html
@@ -28,7 +28,7 @@
 
 ---
     
-- *Allow choice*
+- *Personalization options*
     - *Framework/Libs*
         - **AngularJS 1.5.6**
         - **Angular2 2.0.0-rc.1** (Only with TypeScript compiler)
@@ -53,7 +53,7 @@
 
     ---
 
-    - *JS*
+    - *Compiler/Transpiler to JS/ECMAScript5 standard*
         - **BabelJs**
         - **CoffeeScript**
         - **TypeScript**
@@ -66,7 +66,7 @@
     
     ---
 
-- *Add*
+- *Extras*
     - *Automating tasks*
         - **Gulp**
 
@@ -184,7 +184,7 @@
 
 
 
-### Español
+### Spanish
 - *Características y convenciones*
     - Ficheros y carpetas que empiezan por _ no se compilan a build, perfecto para incluir propiedades
     - Ficheros con .name.scss .name.js .name.jade precompilan en app, perfecto para incluir ficheros
@@ -224,6 +224,13 @@
         - **ScSS**
         - **LeSS**
         - **Stylus**
+
+    ---
+
+    - *Compilación/Transpiler a JS/ECMAScript5 estándar*
+        - **BabelJs**
+        - **CoffeeScript**
+        - **TypeScript**
     
     ---
 
@@ -236,11 +243,6 @@
 - *Extras*
     - *Automatización de tareas*
         - **Gulp**
-
-    ---
-
-    - *Compilación/Transpiler a JS/ECMAScript5 estándar*
-        - **BabelJs**
 
     ---
 

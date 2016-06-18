@@ -70,13 +70,15 @@ module.exports = generators.Base.extend({
         }
 
         if (template !== 'no') {
-            // CSS
-            create(`${route}/all/css/${css}/app`, './app', true)
-            create(`${route}/${framework}/css/${css}/app`, './app', true)
             // FRAMEWORK
             create(`${route}/all/compiler/${compiler}/app`, './app', true)
             create(`${route}/${framework}/compiler/all/app`, './app', true)
             create(`${route}/${framework}/compiler/${compiler}/app`, './app', true)
+            // CSS
+            create(`${route}/all/css/${css}/app`, './app', true)
+            create(`${route}/${framework}/css/${css}/app`, './app', true)
+            // SERVER
+            create(`${route}/all/server/**/*`, './server', true)
         }
 
         // TEST

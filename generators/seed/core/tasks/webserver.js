@@ -14,8 +14,8 @@ module.exports = ($, gulp) => {
             server: {
                 baseDir: $.build.dir,
                 middleware: [
-                    proxyMiddleware($.server.auth, { target: $.server.routeApi }),
-                    proxyMiddleware($.server.request, { target: $.server.routeApi })
+                    proxyMiddleware($.server.auth, { target: `${$.server.route}:${$.server.port}` }),
+                    proxyMiddleware($.server.request, { target: `${$.server.route}:${$.server.port}` })
                 ]
             },
 
