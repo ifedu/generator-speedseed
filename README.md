@@ -40,7 +40,7 @@
     ---
 
     - *Templates*
-        - **npm i generator-speedseed-multi-tic-tac-toe**
+        - **npm i generator-speedseed-multi-tic-tac-toe -g**
         - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
 
     ---
@@ -94,7 +94,7 @@
     - **npm i gulp -g**
     - **npm i yo -g**
     - **npm i generator-speedseed -g**
-    - **npm i generator-speedseed-multi-tic-tac-toe** (template multi-tic-tac-toe)
+    - **npm i generator-speedseed-multi-tic-tac-toe -g** (template multi-tic-tac-toe)
 
 ---
 
@@ -215,7 +215,7 @@
     ---
 
     - *Plantillas*
-        - **npm i generator-speedseed-multi-tic-tac-toe**
+        - **npm i generator-speedseed-multi-tic-tac-toe -g**
         - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
 
     ---
@@ -269,6 +269,7 @@
     - **npm i gulp -g**
     - **npm i yo -g**
     - **npm i generator-speedseed -g**
+    - **npm i generator-speedseed-multi-tic-tac-toe -g** (template multi-tic-tac-toe)
 
 ---
 
