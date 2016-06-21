@@ -2,6 +2,16 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.15.0
+    - Add npm run server for launch server node
+    - Copy dependencies in package.json to -build/vendor
+    - Delete property copy in .core-config.js
+    - Files .file.* compile in -tmp
+    - Fix task copy
+    - Modify {%= include(__dirname, '-name.html') %} to {%= include('name.html') %}
+    - npm run dist no delete files
+    - Templates separated of the generator
+
 ### v.0.14.2
     - Delete previuos .core when npm run update or yo speedseed
     - Fix copy node_modules in vendor instead of vendor/@angular
@@ -146,6 +156,16 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.15.0
+    - Añade npm run server para lanzar servidor node
+    - Arregla tarea de copiar
+    - Borra propiedad copiar en .core-config.js
+    - Copia dependencies en package.json a -build/vendor
+    - Ficheros .file.* compilan en -tmp
+    - Modifica {%= include(__dirname, '-nombre.html') %} a {%= include('nombre.html') %}
+    - npm run dist no borra ficheros
+    - Plantillas separadas de el generador
+
 ### v.0.14.2
     - Arregla copiar node_modules en vendor en vez de en vendor/@angular
     - Arregla ignora carpeta -vendor en npm run indent

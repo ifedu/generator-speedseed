@@ -1,7 +1,0 @@
-{
-    "name": "<%= project %>",
-    "private": true,
-
-    "dependencies": {
-    }
-}

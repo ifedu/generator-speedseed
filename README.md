@@ -1,4 +1,4 @@
-### v.0.14.2
+### v.0.15.0
 
 ### Requeriments
 - NodeJS > 4.0.0
@@ -11,11 +11,11 @@
 - [Changelog](https://github.com/ifedu/generator-speedseed/blob/master/CHANGELOG.md)
 
 ### English
-- *Characteristics and conventions*
+- *Features and conventions*
     - Files and folders start for _ no compile to build, perfect for includes properties
     - Files with .name.scss .name.js .name.jade precompile in app, perfect for includes files
         - In *.jade include -name.css -name.js -name.html
-        - In *.js {%= include(__dirname, '-name.html') %} for files .name.jade
+        - In *.js {%= include('name.html') %} for files .name.jade or name.html
 
     - Allow include routes, perfect for includes all components
         - Syntax: {%= getRoutes(folderRoute, ext, (Boolean include _files), `$TPL$ replace for route`, 'indent') %}
@@ -31,7 +31,7 @@
 - *Personalization options*
     - *Framework/Libs*
         - **AngularJS 1.5.6**
-        - **Angular2 2.0.0-rc.1** (Only with TypeScript compiler)
+        - **Angular2 2.0.0-rc.2** (No CoffeeScript)
         - **jQuery 3.0.0**
         - **Polymer 1.4.0**
         - **React 15.1.0** (Only with BabelJS compiler) (Read IMPORTANT.txt for experimental use with jade templates)
@@ -40,8 +40,8 @@
     ---
 
     - *Templates*
-        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe** Use v.latest
-        - **https://github.com/ifedu/speedseed-todomvc** Use v.0.11.0
+        - **npm i generator-speedseed-multi-tic-tac-toe**
+        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
 
     ---
 
@@ -94,6 +94,7 @@
     - **npm i gulp -g**
     - **npm i yo -g**
     - **npm i generator-speedseed -g**
+    - **npm i generator-speedseed-multi-tic-tac-toe** (template multi-tic-tac-toe)
 
 ---
 
@@ -187,9 +188,9 @@
 ### Spanish
 - *Características y convenciones*
     - Ficheros y carpetas que empiezan por _ no se compilan a build, perfecto para incluir propiedades
-    - Ficheros con .name.scss .name.js .name.jade precompilan en app, perfecto para incluir ficheros
-        - En *.jade include -name.css -name.js -name.html
-        - En *.js {%= include(__dirname, '-name.html') %} para ficheros .name.jade
+    - Ficheros con .nombre.scss .nombre.js .nombre.jade precompilan en app, perfecto para incluir ficheros
+        - En *.jade include -nombre.css -nombre.js -nombre.html
+        - En *.js {%= include('-nombre.html') %} para ficheros .nombre.jade o nombre.html
 
     - Permite incluir rutas, perfecto para incluir todos los componentes
         - Sintaxis: {%= getRoutes(rutaCarpeta, ext, (Boolean incluye _files), `$TPL$ reemplazado por ruta`, 'identación') %}
@@ -205,7 +206,7 @@
 - *Opciones de personalización*
     - *Framework/Libs*
         - **AngularJS 1.5.6**
-        - **Angular2 2.0.0-rc.1** (Sólo con compilador TypeScript)
+        - **Angular2 2.0.0-rc.2** (No CoffeeScript)
         - **jQuery 3.0.0**
         - **Polymer 1.4.0**
         - **React 15.1.0** (Sólo con compilador BabelJS) (Leer IMPORTANT.txt para uso experimental con plantillas jade)
@@ -214,8 +215,8 @@
     ---
 
     - *Plantillas*
-        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe** Usa v.latest
-        - **https://github.com/ifedu/speedseed-todomvc** Usa v.0.11.0
+        - **npm i generator-speedseed-multi-tic-tac-toe**
+        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
 
     ---
 

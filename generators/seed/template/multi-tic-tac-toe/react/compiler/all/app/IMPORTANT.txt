@@ -1,6 +1,0 @@
-// node_modules/jade/lib/runtime.js
-// line 140
-// add for use jade with jsx
-if (val.substr(0, 1) === '{' && val.substr(val.length - 1) === '}') {
-    return ' ' + key + '=' + val;
-}
