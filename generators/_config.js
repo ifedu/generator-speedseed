@@ -49,16 +49,22 @@ module.exports = {
         })
     },
 
-    updateFile(fileCore, config) {
+    updateFile(fileCore, spaces, config) {
         const extend = require('extend')
         const fs = require('fs')
 
-        const file = (fs.existsSync(`./${fileCore}`) === true)
-            ? JSON.parse(fs.readFileSync(`./${fileCore}`, 'utf8'))
-            : {}
+        let file = {}
+
+        if (fs.existsSync(`./${fileCore}`) === true) {
+            try {
+                file = JSON.parse(fs.readFileSync(`./${fileCore}`, 'utf8'))
+            } catch (e) {
+                console.log(`ERROR in ${fileCore}`)
+            }
+        }
 
         extend(true, config, file)
 
-        fs.writeFileSync(fileCore, JSON.stringify(config, null, 2))
+        fs.writeFileSync(fileCore, JSON.stringify(config, null, spaces))
     }
 }

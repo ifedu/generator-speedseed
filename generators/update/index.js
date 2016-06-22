@@ -12,6 +12,7 @@ module.exports = require('yeoman-generator').Base.extend({
             require('./files/_babelrc.js').call(this)
             require('./files/_bower.js').call(this)
             require('./files/_bowerrc.js').call(this)
+            require('./files/_core-config.js').call(this)
             require('./files/_eslintrc.js').call(this)
             require('./files/_package.js').call(this)
 

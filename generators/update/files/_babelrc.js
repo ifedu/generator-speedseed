@@ -1,7 +1,7 @@
 module.exports = function () {
     const $ = require('../../_config.js')
 
-    $.updateFile('.babelrc', {
+    $.updateFile('.babelrc', 4, {
         presets: ['es2015'],
         plugins: ['transform-decorators-legacy']
     })

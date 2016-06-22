@@ -1,4 +1,4 @@
-### v.0.15.0
+### v.0.15.1
 
 ### Requeriments
 - NodeJS > 4.0.0
@@ -31,7 +31,7 @@
 - *Personalization options*
     - *Framework/Libs*
         - **AngularJS 1.5.6**
-        - **Angular2 2.0.0-rc.2** (No CoffeeScript)
+        - **Angular2 2.0.0-rc.3** (No CoffeeScript)
         - **jQuery 3.0.0**
         - **Polymer 1.4.0**
         - **React 15.1.0** (Only with BabelJS compiler) (Read IMPORTANT.txt for experimental use with jade templates)
@@ -206,7 +206,7 @@
 - *Opciones de personalización*
     - *Framework/Libs*
         - **AngularJS 1.5.6**
-        - **Angular2 2.0.0-rc.2** (No CoffeeScript)
+        - **Angular2 2.0.0-rc.3** (No CoffeeScript)
         - **jQuery 3.0.0**
         - **Polymer 1.4.0**
         - **React 15.1.0** (Sólo con compilador BabelJS) (Leer IMPORTANT.txt para uso experimental con plantillas jade)

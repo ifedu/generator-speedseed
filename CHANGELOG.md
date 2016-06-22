@@ -2,6 +2,12 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.15.1
+    - All files to 4 spaces, package.json and bower.json 2 spaces
+    - Fix .core-config.js and package.json are generated correctly
+    - Fix template include for files.html
+    - Error message when npm run update import previous files and fail
+
 ### v.0.15.0
     - Add npm run server for launch server node
     - Copy dependencies in package.json to -build/vendor
@@ -156,6 +162,12 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.15.1
+    - Todos los ficheros a 4 espacios, package.json y bower.json 2 espacios
+    - Arregla .core-config.js y package.json son generados correctamente
+    - Arregla plantilla incluir para ficheros.html
+    - Mensaje de error cuando npm run update importa ficheros previos y falla
+
 ### v.0.15.0
     - Añade npm run server para lanzar servidor node
     - Arregla tarea de copiar

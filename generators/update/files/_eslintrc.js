@@ -1,7 +1,7 @@
 module.exports = function () {
     const $ = require('../../_config.js')
 
-    $.updateFile('.eslintrc', {
+    $.updateFile('.eslintrc', 4, {
         // 'extends': 'eslint:recommended',
         env: {
             es6: true

@@ -7,9 +7,9 @@ module.exports = generators.Base.extend({
     constructor: function () {
         generators.Base.apply(this, arguments)
 
-        global.ss = {}
+        const packageJson = require('../../package.json')
 
-        this.config.set('coreVersion', 'generator-speedseed version 0.15.0')
+        this.config.set('coreVersion', `${packageJson.name} version ${packageJson.version}`)
 
         console.log(this.config.get('coreVersion'))
     },

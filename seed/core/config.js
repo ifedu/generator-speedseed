@@ -98,7 +98,10 @@ const $ = {
                 const path = require('path')
 
                 let fileTmp = path.normalize(`${$.dirInclude}/${file}`)
-                fileTmp = fileTmp.replace($.app.dir.substring('2'), $.tmp.dir.substring('2'))
+
+                if (file.substring(0, 1) !== '_') {
+                    fileTmp = fileTmp.replace($.app.dir.substring('2'), $.tmp.dir.substring('2'))
+                }
 
                 return fs.readFileSync(fileTmp)
             }
