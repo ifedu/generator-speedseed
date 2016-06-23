@@ -20,10 +20,12 @@ module.exports = require('yeoman-generator').Base.extend({
 
         const css = this.config.get('css')
         const compiler = this.config.get('compiler')
-        const component = this.config.get('component')
+        const component = this.config.get('component').toLowerCase().replace(/[-_ ]/g, '')
         const framework = this.config.get('framework')
         const route = `../seed/template/all/${framework}`
         const routeDest = `./app/components/${component}`
+
+        this.config.set('component', component)
 
         create(`${route}/compiler/all/component`, routeDest)
         create(`${route}/compiler/all/component/.*`, routeDest)

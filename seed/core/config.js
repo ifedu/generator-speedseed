@@ -99,9 +99,9 @@ const $ = {
 
                 let fileTmp = path.normalize(`${$.dirInclude}/${file}`)
 
-                if (file.substring(0, 1) !== '_') {
-                    fileTmp = fileTmp.replace($.app.dir.substring('2'), $.tmp.dir.substring('2'))
-                }
+                fileTmp = (fs.existsSync(fileTmp))
+                    ? fileTmp
+                    : fileTmp.replace($.app.dir.substring('2'), $.tmp.dir.substring('2'))
 
                 return fs.readFileSync(fileTmp)
             }

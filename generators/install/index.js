@@ -75,6 +75,10 @@ module.exports = require('yeoman-generator').Base.extend({
     },
 
     write() {
+        let project = this.config.get('project').toLowerCase().replace(/[-_ ]/g, '')
+
+        this.config.set('project', project)
+
         this.composeWith('speedseed:update')
     },
 

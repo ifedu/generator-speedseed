@@ -2,6 +2,10 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.15.2
+    - Better check if file is .jade or .html in includes
+    - Names Project and Component to lower case and replace - _ and ' ' for avoid errors
+
 ### v.0.15.1
     - All files to 4 spaces, package.json and bower.json 2 spaces
     - Fix .core-config.js and package.json are generated correctly
@@ -162,6 +166,10 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.15.2
+    - Mejor comprobación si fichero es .jade o .html en includes
+    - Nombres Project y Component a minúsculas y reemplaza - _ y ' ' para evitar errores
+
 ### v.0.15.1
     - Todos los ficheros a 4 espacios, package.json y bower.json 2 espacios
     - Arregla .core-config.js y package.json son generados correctamente
