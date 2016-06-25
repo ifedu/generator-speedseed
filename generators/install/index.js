@@ -20,7 +20,7 @@ module.exports = require('yeoman-generator').Base.extend({
             type: 'list',
 
             choices: [
-                { name: 'Multi-Tic-Tac-Toe', value: 'multi-tic-tac-toe' },
+                { name: 'generator-speedseed-multi-tic-tac-toe', value: 'multi-tic-tac-toe' },
                 { name: 'No', value: 'no' }
             ]
         }, {

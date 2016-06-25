@@ -8,7 +8,7 @@ module.exports = ($, gulp) => {
         const modifyFile = require('gulp-modify-file')
         const plumber = require('gulp-plumber')
 
-        return gulp
+        gulp
         .src([
             `${$.app.dir}/**/*.${$.yo.css}`,
             `!${$.app.copy.vendor}/**/*`
@@ -26,7 +26,7 @@ module.exports = ($, gulp) => {
         const plumber = require('gulp-plumber')
         const rename = require('gulp-rename')
 
-        return gulp
+        gulp
         .src([
             `${$.app.dir}/**/.*.${$.yo.css}`,
             `!${$.app.copy.vendor}/**/*`

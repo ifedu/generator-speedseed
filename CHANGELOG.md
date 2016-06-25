@@ -2,6 +2,10 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.15.3
+    - Change template name in selection
+    - Css bad writer no break app
+
 ### v.0.15.2
     - Better check if file is .jade or .html in includes
     - Names Project and Component to lower case and replace - _ and ' ' for avoid errors
@@ -166,6 +170,10 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.15.3
+    - Cambia el nombre de la plantilla en selección
+    - Css mal escrito no rompe la app
+
 ### v.0.15.2
     - Mejor comprobación si fichero es .jade o .html en includes
     - Nombres Project y Component a minúsculas y reemplaza - _ y ' ' para evitar errores
