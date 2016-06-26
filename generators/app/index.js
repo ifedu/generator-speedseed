@@ -13,27 +13,6 @@ module.exports = class Yo extends speedseed.Yo {
         console.log(this.config.get('coreVersion'))
     }
 
-    // prompting() {
-        // const choicesRun = [{ name: 'Install', value: 'install' }]
-        // let runDefault
-
-        // if (this.config.get('install') === 'true') {
-        //     runDefault = 1
-        //     choicesRun.push({ name: 'Update', value: 'update' })
-        // } else {
-        //     runDefault = 0
-        // }
-
-        // super.prompting(this.async(), {
-        //     default: this.config.get('install') || runDefault,
-        //     message: 'Install or Update?',
-        //     name: 'run',
-        //     type: 'list',
-
-        //     choices: choicesRun
-        // })
-    // }
-
     write() {
         (this.config.get('isInstall') !== true)
             ? this.composeWith('speedseed:install')
