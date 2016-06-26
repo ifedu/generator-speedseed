@@ -1,7 +1,11 @@
-module.exports = function () {
+module.exports = (data) => {
+    const speedseed = require('speedseed')
+
+    const file = new speedseed.Files()
+
     const packageJson = {
-        description: `${this.config.get('project')} with ${this.config.get('template')}`,
-        name: this.config.get('project'),
+        description: `${data.project} with ${data.template}`,
+        name: data.project,
         private: true,
         version: '0.0.0',
         dependencies: {},
@@ -179,35 +183,24 @@ module.exports = function () {
         }
     }
 
+    file.readFile('./package.json', packageJson)
+
     const extend = require('extend')
-    const fs = require('fs')
-
-    let file = {}
-
-    if (fs.existsSync('./package.json') === true) {
-        try {
-            file = JSON.parse(fs.readFileSync('./package.json', 'utf8'))
-        } catch (e) {
-            console.log('ERROR in package.json')
-        }
-    }
-
-    extend(true, packageJson, file)
 
     extend(
         true,
         packageJson.dependencies,
-        getFramework[this.config.get('framework')]
+        getFramework[data.framework]
     )
 
     extend(
         true,
         packageJson.devDependencies,
-        getCompiler[this.config.get('compiler')],
-        getCss[this.config.get('css')],
-        getFrameworkDev[this.config.get('framework')],
-        getTest[this.config.get('test')]
+        getCompiler[data.compiler],
+        getCss[data.css],
+        getFrameworkDev[data.framework],
+        getTest[data.test]
     )
 
-    fs.writeFileSync('package.json', JSON.stringify(packageJson, null, 2))
+    file.writeFile('package.json', 2, packageJson)
 }

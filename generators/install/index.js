@@ -1,14 +1,18 @@
-'use strict'
+const generators = require('yeoman-generator')
 
-const $ = require('../_config.js')
+const speedseed = require('speedseed')
 
-module.exports = require('yeoman-generator').Base.extend({
+module.exports = class Yo extends speedseed.Yo {
+    constructor(...args) {
+        super(...args)
+    }
+
     paths() {
-        $.paths.call(this)
-    },
+        super.paths()
+    }
 
     prompting() {
-        $.prompting.call(this, this.async(), [{
+        super.prompting(this.async(), [{
             default: this.config.get('project') || '',
             message: 'Project Name?',
             name: 'project',
@@ -72,15 +76,23 @@ module.exports = require('yeoman-generator').Base.extend({
                 { name: 'No', value: 'no' }
             ]
         }])
-    },
+    }
 
     write() {
-        let project = this.config.get('project').toLowerCase().replace(/[-_ ]/g, '')
+        const compiler = this.config.get('compiler')
+        const project = this.config.get('project').toLowerCase().replace(/[-_ ]/g, '')
+
+        const ext = {
+            babeljs: '.js',
+            coffeescript: '.coffee',
+            typescript: '.ts'
+        }
 
         this.config.set('project', project)
+        this.config.set('compilerExt', ext[compiler])
 
         this.composeWith('speedseed:update')
-    },
+    }
 
     end() {
         const template = this.config.get('template')
@@ -88,5 +100,7 @@ module.exports = require('yeoman-generator').Base.extend({
         if (template !== 'no') {
             this.composeWith(`speedseed-${template}`, { options: this.config.getAll() })
         }
+
+        this.config.set('isInstall', true)
     }
-})
+}

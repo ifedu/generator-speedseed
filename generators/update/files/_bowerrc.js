@@ -1,7 +1,9 @@
-module.exports = function () {
-    const $ = require('../../_config.js')
+module.exports = (data) => {
+    const speedseed = require('speedseed')
 
-    $.updateFile('.bowerrc', 4, {
+    const file = new speedseed.Files()
+
+    file.updateFile('.bowerrc', 4, {
         directory: 'app/-vendor'
     })
 }
