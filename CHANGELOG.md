@@ -2,6 +2,9 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.15.5
+    - Fix no break app when selection test is no
+
 ### v.0.15.4
     - Fix add requests post put patch and delete to mocks server
     - Fix copy karma-config.js without template
@@ -175,10 +178,13 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.15.5
+    - Arregla: no romper la app cuando seleccion de test es no
+
 ### v.0.15.4
-    - Arregla añade peticiones post put patch y delete al servidor de mocks
-    - Arregla copiar karma-config.js sin plantilla
-    - Arregla livereload para css
+    - Arregla: añade peticiones post put patch y delete al servidor de mocks
+    - Arregla: copiar karma-config.js sin plantilla
+    - Arregla: livereload para css
 
 ### v.0.15.3
     - Cambia el nombre de la plantilla en selección

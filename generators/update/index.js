@@ -25,7 +25,9 @@ module.exports = require('yeoman-generator').Base.extend({
             create(`${seed}/gitignore`, './.gitignore')
             create(`${seed}/gulpfile.js`, './gulpfile.js')
 
-            create(`${seed}/template/test/${this.config.get('test')}/karma.conf.js`, './.core/karma.conf.js')
+            try {
+                create(`${seed}/template/test/${this.config.get('test')}/karma.conf.js`, './.core/karma.conf.js')
+            } catch (e) {}
         })
     }
 })
