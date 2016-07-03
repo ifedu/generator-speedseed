@@ -4,7 +4,10 @@ module.exports = ($, gulp) => {
             force: true
         }, cb)
 
-    gulp.task('clean', (cb) => deleteFiles($.build.dir, cb))
+    gulp.task('clean', (cb) => deleteFiles([
+        $.build.dir,
+        $.tmp.dir
+    ], cb))
 
     gulp.task('clean-dirs', (cb) =>
         deleteFiles([

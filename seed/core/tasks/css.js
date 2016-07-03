@@ -16,7 +16,6 @@ module.exports = ($, gulp) => {
         .pipe($.options.css.getPluginCss($))
         .on('error', cb)
         .pipe(gulp.dest($.build.dir))
-        .on('end', cb)
     })
 
     gulp.task('css-app', (cb) => {
@@ -33,6 +32,5 @@ module.exports = ($, gulp) => {
         .on('error', cb)
         .pipe(rename((path) => path.basename = `-${path.basename.substr(1)}`))
         .pipe(gulp.dest($.app.dir))
-        .on('end', cb)
     })
 }

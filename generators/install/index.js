@@ -7,9 +7,9 @@ module.exports = class Yo extends speedseed.Yo {
         super(...args)
     }
 
-    // paths() {
-    //     this.pathsSet()
-    // }
+    paths() {
+        this.pathsSet()
+    }
 
     prompting() {
         const prompting = [{

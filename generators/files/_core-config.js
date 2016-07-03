@@ -7,6 +7,7 @@ module.exports = (data) => {
     const build = './-build'
     const dist = './-dist'
     const reports = './-reports'
+    const tmp = './-tmp'
 
     const assets = 'assets'
     const components = 'components'
@@ -75,7 +76,7 @@ module.exports = (data) => {
         },
 
         tmp: {
-            dir: './-tmp'
+            dir: tmp
         },
 
         server: {
@@ -88,18 +89,15 @@ module.exports = (data) => {
 
         test: {
             exclude: [
-                `${app}/**/_**/**/*.js`,
-                `${app}/**/_*.js`,
-                `${build}/**/_**/**/*.js`,
-                `${build}/**/_*.js`
             ],
 
             files: [
-                `${build}/**/*.js`
+                `${build}/js/**/*.js`,
+                `${build}/components/**/*.js`,
+                `${tmp}/**/*.spec.js`
             ],
 
             preprocessors: {
-                [`${app}/**/*.test.js`]: []
             }
         }
     })

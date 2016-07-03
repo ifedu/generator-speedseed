@@ -14,6 +14,7 @@ module.exports = ($, gulp) => {
         return gulp
         .src([
             `${$.app.dir}/**/*.${ext}`,
+            `!${$.app.dir}/**/*.spec.${ext}`,
             `!${$.app.copy.vendor}/**/*`
         ])
         .pipe(gulpif($.if.notInclude, changed($.build.dir)))
@@ -26,6 +27,25 @@ module.exports = ($, gulp) => {
             $.options.framework.ngAnnotate($)()
         ))
         .pipe(gulp.dest($.build.dir))
+    })
+
+    gulp.task('js-spec', () => {
+        const changed = require('gulp-changed')
+        const extend = require('extend')
+        const filter = require('gulp-filter')
+        const gulpif = require('gulp-if')
+        const modifyFile = require('gulp-modify-file')
+        const plumber = require('gulp-plumber')
+
+        $.resetPropsHtml()
+
+        return gulp
+        .src([
+            `${$.app.dir}/**/*.spec.${ext}`
+        ])
+        .pipe(plumber())
+        .pipe($.options.compiler.getPluginCompiler($))
+        .pipe(gulp.dest($.tmp.dir))
     })
 
     gulp.task('js-app', () => {

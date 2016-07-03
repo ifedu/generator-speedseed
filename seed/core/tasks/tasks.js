@@ -25,5 +25,5 @@ module.exports = ($, gulp) => {
     }
 
     gulp.task('reports', (cb) => $.runSequence('common', 'analysis', 'webserver', cb))
-    gulp.task('test', (cb) => $.runSequence('common', 'js-test', 'watch', cb))
+    gulp.task('test', (cb) => $.runSequence('common', 'js-spec', 'js-test', 'watch', cb))
 }

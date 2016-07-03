@@ -192,7 +192,7 @@ module.exports = (data) => {
         packageJson.dependencies,
         getFramework[data.framework]
     )
-    console.log(data.test)
+
     extend(
         true,
         packageJson.devDependencies,

@@ -99,8 +99,8 @@ module.exports = ($, gulp) => {
             })
             // TEST
             watch(
-                `${$.app.dir}/**/.*.spec.${ext}`,
-                () => $.runSequence('js-app', 'js-test', 'reload')
+                `${$.app.dir}/**/*.spec.${ext}`,
+                () => $.runSequence('js-spec', 'js-test', 'reload')
             )
         }, 2000)
     })

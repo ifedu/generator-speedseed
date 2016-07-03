@@ -150,7 +150,8 @@ const $ = {
             else if (path.extname(dirFile) === ext) {
                 if (
                     (underscore === false && file.substring(0, 1) === '_') ||
-                    file.substring(0, 1) === '.'
+                    file.substring(0, 1) === '.' ||
+                    file.indexOf('.spec') > -1
                 ) {
                     return
                 }
