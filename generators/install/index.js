@@ -1,14 +1,18 @@
-'use strict'
+const generators = require('yeoman-generator')
 
-const $ = require('../_config.js')
+const speedseed = require('speedseed')
 
-module.exports = require('yeoman-generator').Base.extend({
+module.exports = class Yo extends speedseed.Yo {
+    constructor(...args) {
+        super(...args)
+    }
+
     paths() {
-        $.paths.call(this)
-    },
+        this.pathsSet()
+    }
 
     prompting() {
-        $.prompting.call(this, this.async(), [{
+        const prompting = [{
             default: this.config.get('project') || '',
             message: 'Project Name?',
             name: 'project',
@@ -20,73 +24,25 @@ module.exports = require('yeoman-generator').Base.extend({
             type: 'list',
 
             choices: [
-                { name: 'generator-speedseed-multi-tic-tac-toe', value: 'multi-tic-tac-toe' },
-                { name: 'No', value: 'no' }
+                { name: 'generator-speedseed-multi-tic-tac-toe', value: 'multi-tic-tac-toe' }
             ]
-        }, {
-            default: this.config.get('framework') || 0,
-            message: 'Library / Framework?',
-            name: 'framework',
-            type: 'list',
+        }]
 
-            choices: [
-                { name: 'AngularJS', value: 'angularjs' },
-                { name: 'Angular2', value: 'angular2' },
-                { name: 'jQuery', value: 'jquery' },
-                { name: 'Polymer', value: 'polymer' },
-                { name: 'React', value: 'react' },
-                { name: 'VanillaJS', value: 'vanillajs' }
-            ]
-        }, {
-            default: this.config.get('compiler') || 0,
-            message: 'JavaScript Compiler?',
-            name: 'compiler',
-            type: 'list',
-
-            choices: [
-                { name: 'BabelJS', value: 'babeljs' },
-                { name: 'Coffeescript', value: 'coffeescript' },
-                { name: 'TypeScript', value: 'typescript' }
-            ]
-        }, {
-            default: this.config.get('css') || 0,
-            message: 'CSS?',
-            name: 'css',
-            type: 'list',
-
-            choices: [
-                { name: 'SaSS', value: 'sass' },
-                { name: 'ScSS', value: 'scss' },
-                { name: 'Less', value: 'less' },
-                { name: 'Stylus', value: 'styl' }
-            ]
-        }, {
-            default: this.config.get('test') || 0,
-            message: 'Test?',
-            name: 'test',
-            type: 'list',
-
-            choices: [
-                { name: 'Mocha', value: 'mocha' },
-                { name: 'Jasmine', value: 'jasmine' },
-                { name: 'No', value: 'no' }
-            ]
-        }])
-    },
+        this.promptingYo(prompting, this.async())
+    }
 
     write() {
-        let project = this.config.get('project').toLowerCase().replace(/[-_ ]/g, '')
+        const project = this.config.get('project').toLowerCase().replace(/[-_ ]/g, '')
 
         this.config.set('project', project)
-
-        this.composeWith('speedseed:update')
-    },
+    }
 
     end() {
         const template = this.config.get('template')
 
-        if (template !== 'no') {
-            this.composeWith(`speedseed-${template}`, { options: this.config.getAll() })
-        }
+        const options = this.config.getAll()
+        options.speedseed = this
+
+        this.composeWith(`speedseed-${template}`, { options })
     }
-})
+}

@@ -1,6 +1,4 @@
 module.exports = ($, gulp) => {
-    'use strict'
-
     gulp.task('css', (cb) => {
         const changed = require('gulp-changed')
         const filter = require('gulp-filter')

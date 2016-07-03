@@ -2,7 +2,7 @@ module.exports = function (config) {
     const $ = require('./config.js')
 
     const configKarma = {
-        basePath: $.app.dir,
+        basePath: '../',
         exclude: $.test.exclude,
         files: $.test.files,
         preprocessors: $.test.preprocessors,

@@ -1,7 +1,7 @@
-### v.0.15.5
+### v.0.16.0
 
 ### Requeriments
-- NodeJS > 4.0.0
+- NodeJS >= 6.0.0
 
 ### Index
 - [English](#english)
