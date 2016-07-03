@@ -6,6 +6,14 @@
     - Require Node >= 6.0.0
     - Update README
 
+### v.0.15.5
+    - Fix no break app when selection test is no
+
+### v.0.15.4
+    - Fix add requests post put patch and delete to mocks server
+    - Fix copy karma-config.js without template
+    - Fix livereload for css
+
 ### v.0.15.3
     - Change template name in selection
     - Css bad writer no break app
@@ -174,6 +182,14 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.15.5
+    - Arregla: no romper la app cuando seleccion de test es no
+
+### v.0.15.4
+    - Arregla: añade peticiones post put patch y delete al servidor de mocks
+    - Arregla: copiar karma-config.js sin plantilla
+    - Arregla: livereload para css
+
 ### v.0.15.3
     - Cambia el nombre de la plantilla en selección
     - Css mal escrito no rompe la app

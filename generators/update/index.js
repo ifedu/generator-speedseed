@@ -28,6 +28,7 @@ module.exports = class Yo extends speedseed.Yo {
             this.create('seed/editorconfig', './.editorconfig')
             this.create('seed/gitignore', './.gitignore')
             this.create('seed/gulpfile.js', './gulpfile.js')
+            this.create(`seed/template/test/${this.config.get('test')}/karma.conf.js`, './.core/karma.conf.js')
 
             this.config.set('isInstall', true)
         })
