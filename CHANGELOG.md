@@ -2,6 +2,14 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.16.0
+    - Fix: npm run test 
+    - Allow choice options to show in templates
+    - First time "yo speedseed" install template, following times "yo speedseed" update
+    - Require Node >= 6.0.0
+    - Simplifies creating templates 
+    - Use lib speedseed common all templates
+
 ### v.0.15.5
     - Fix no break app when selection test is no
 
@@ -178,6 +186,14 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.16.0
+    - Arregla: npm run test 
+    - Permite elegir opciones a mostrar en plantillas
+    - Primera vez "yo speedseed" instala plantilla, siguientes veces "yo speedseed" actualiza
+    - Requiere Node >= 6.0.0
+    - Simplifica la creación de plantillas 
+    - Usa lib speedseed común a todas las plantillas
+
 ### v.0.15.5
     - Arregla: no romper la app cuando seleccion de test es no
 

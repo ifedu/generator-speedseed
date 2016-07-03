@@ -1,15 +1,20 @@
-module.exports = function () {
+module.exports = (data) => {
+    const speedseed = require('speedseed')
+
+    const file = new speedseed.Files()
+
     const app = './app'
     const build = './-build'
     const dist = './-dist'
     const reports = './-reports'
+    const tmp = './-tmp'
 
     const assets = 'assets'
     const components = 'components'
     const js = 'js'
     const vendor = 'vendor'
 
-    const coreConfig = {
+    file.updateFile('.core-config.json', 4, {
         app: {
             copy: {
                 assets: `${app}/${assets}`,
@@ -71,7 +76,7 @@ module.exports = function () {
         },
 
         tmp: {
-            dir: './-tmp'
+            dir: tmp
         },
 
         server: {
@@ -84,40 +89,16 @@ module.exports = function () {
 
         test: {
             exclude: [
-                `${app}/**/_**/**/*.js`,
-                `${app}/**/_*.js`,
-                `${build}/**/_**/**/*.js`,
-                `${build}/**/_*.js`
             ],
 
             files: [
-                `${build}/**/*.js`
+                `${build}/js/**/*.js`,
+                `${build}/components/**/*.js`,
+                `${tmp}/**/*.spec.js`
             ],
 
             preprocessors: {
-                [`${app}/**/-*.test.js`]: []
             }
         }
-    }
-
-    const extend = require('extend')
-    const fs = require('fs')
-
-    let file = {}
-
-    if (fs.existsSync('./.core-config.json') === true) {
-        try {
-            file = JSON.parse(fs.readFileSync('./.core-config.json', 'utf8'))
-        } catch (e) {
-            console.log('ERROR in .core-config.json')
-        }
-    }
-
-    extend(
-        true,
-        coreConfig,
-        file
-    )
-
-    fs.writeFileSync('.core-config.json', JSON.stringify(coreConfig, null, 4))
+    })
 }

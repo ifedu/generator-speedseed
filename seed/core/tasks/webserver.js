@@ -1,6 +1,4 @@
 module.exports = ($, gulp) => {
-    'use strict'
-
     gulp.task('webserver', () => {
         const browserSync = require('browser-sync').create()
         const proxyMiddleware = require('http-proxy-middleware')

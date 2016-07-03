@@ -1,6 +1,4 @@
 module.exports = ($, gulp) => {
-    'use strict'
-
     gulp.task('indent', () => {
         const indent = require('gulp-transform-indent')
 

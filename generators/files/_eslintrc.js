@@ -1,7 +1,9 @@
-module.exports = function () {
-    const $ = require('../../_config.js')
+module.exports = (data) => {
+    const speedseed = require('speedseed')
 
-    $.updateFile('.eslintrc', 4, {
+    const file = new speedseed.Files()
+
+    file.updateFile('.eslintrc', 4, {
         // 'extends': 'eslint:recommended',
         env: {
             es6: true

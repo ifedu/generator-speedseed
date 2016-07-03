@@ -1,6 +1,4 @@
 module.exports = ($, gulp) => {
-    'use strict'
-
     const copy = (ext, src, dest) =>
         () => {
             const changed = require('gulp-changed')

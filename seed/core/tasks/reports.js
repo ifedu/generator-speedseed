@@ -1,6 +1,4 @@
 module.exports = ($, gulp) => {
-    'use strict'
-
     gulp.task('plato', (cb) => {
         const plato = require('plato')
 
