@@ -1,6 +1,4 @@
 module.exports = ($, gulp) => {
-    'use strict'
-
     const ext = $.options.compiler.getExtCompiler($)
 
     gulp.task('js', () => {

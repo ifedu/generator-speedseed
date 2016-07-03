@@ -7,12 +7,12 @@ module.exports = class Yo extends speedseed.Yo {
         super(...args)
     }
 
-    paths() {
-        super.paths()
-    }
+    // paths() {
+    //     this.pathsSet()
+    // }
 
     prompting() {
-        super.prompting(this.async(), [{
+        const prompting = [{
             default: this.config.get('project') || '',
             message: 'Project Name?',
             name: 'project',
@@ -26,32 +26,23 @@ module.exports = class Yo extends speedseed.Yo {
             choices: [
                 { name: 'generator-speedseed-multi-tic-tac-toe', value: 'multi-tic-tac-toe' }
             ]
-        }])
+        }]
+
+        this.promptingYo(prompting, this.async())
     }
 
     write() {
-        const compiler = this.config.get('compiler')
         const project = this.config.get('project').toLowerCase().replace(/[-_ ]/g, '')
 
-        const ext = {
-            babeljs: '.js',
-            coffeescript: '.coffee',
-            typescript: '.ts'
-        }
-
         this.config.set('project', project)
-        this.config.set('compilerExt', ext[compiler])
-
-        this.composeWith('speedseed:update')
     }
 
     end() {
         const template = this.config.get('template')
 
-        if (template !== 'no') {
-            this.composeWith(`speedseed-${template}`, { options: this.config.getAll() })
-        }
+        const options = this.config.getAll()
+        options.speedseed = this
 
-        this.config.set('isInstall', true)
+        this.composeWith(`speedseed-${template}`, { options })
     }
 }

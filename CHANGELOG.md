@@ -3,7 +3,7 @@
 
 ## English
 ### v.0.16.0
-    - Fix support Node 4 & 5
+    - Require Node >= 6.0.0
     - Update README
 
 ### v.0.15.3

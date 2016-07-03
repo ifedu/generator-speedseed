@@ -1,6 +1,4 @@
 module.exports = ($, gulp) => {
-    'use strict'
-
     const watch = require('gulp-watch')
 
     const ext = $.options.compiler.getExtCompiler($)

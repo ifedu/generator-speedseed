@@ -1,14 +1,12 @@
 module.exports = ($, gulp) => {
-    'use strict'
-
-    gulp.task('css', () => {
+    gulp.task('css', (cb) => {
         const changed = require('gulp-changed')
         const filter = require('gulp-filter')
         const gulpif = require('gulp-if')
         const modifyFile = require('gulp-modify-file')
         const plumber = require('gulp-plumber')
 
-        gulp
+        return gulp
         .src([
             `${$.app.dir}/**/*.${$.yo.css}`,
             `!${$.app.copy.vendor}/**/*`
@@ -19,14 +17,15 @@ module.exports = ($, gulp) => {
         .pipe(modifyFile((content, route) => $.translateTpl(content, route, `.${$.yo.css}`)))
         .pipe($.options.css.getPluginCss($))
         .pipe(gulp.dest($.build.dir))
+        .on('end', cb)
     })
 
-    gulp.task('css-app', () => {
+    gulp.task('css-app', (cb) => {
         const changed = require('gulp-changed')
         const plumber = require('gulp-plumber')
         const rename = require('gulp-rename')
 
-        gulp
+        return gulp
         .src([
             `${$.app.dir}/**/.*.${$.yo.css}`,
             `!${$.app.copy.vendor}/**/*`
@@ -36,5 +35,6 @@ module.exports = ($, gulp) => {
         .pipe($.options.css.getPluginCss($))
         .pipe(rename((path) => path.basename = `-${path.basename.substr(1)}`))
         .pipe(gulp.dest($.app.dir))
+        .on('end', cb)
     })
 }

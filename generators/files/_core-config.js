@@ -99,7 +99,7 @@ module.exports = (data) => {
             ],
 
             preprocessors: {
-                [`${app}/**/-*.test.js`]: []
+                [`${app}/**/*.test.js`]: []
             }
         }
     })

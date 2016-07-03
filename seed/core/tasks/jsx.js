@@ -1,6 +1,4 @@
 module.exports = ($, gulp) => {
-    'use strict'
-
     gulp.task('jsx', () => {
         const babel = require('gulp-babel')
         const changed = require('gulp-changed')

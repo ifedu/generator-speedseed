@@ -1,6 +1,4 @@
 module.exports = ($, gulp) => {
-    'use strict'
-
     const deleteFiles = (files, cb) =>
         require('del')(files, {
             force: true

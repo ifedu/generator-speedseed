@@ -1,6 +1,4 @@
 module.exports = ($, gulp) => {
-    'use strict'
-
     gulp.task('oneJS', (done) => {
         const useref = require('gulp-useref')
 

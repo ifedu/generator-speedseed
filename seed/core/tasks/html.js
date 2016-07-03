@@ -1,6 +1,4 @@
 module.exports = ($, gulp) => {
-    'use strict'
-
     gulp.task('html', () => {
         const changed = require('gulp-changed')
         const data = require('gulp-data')
