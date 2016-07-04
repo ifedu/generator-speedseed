@@ -135,6 +135,7 @@ module.exports = (data) => {
 
     const getFrameworkDev = {
         angularjs: {
+            'angular-mocks': '^1.5.6',
             'gulp-ng-annotate': '^2.0.0'
         },
 
@@ -160,11 +161,9 @@ module.exports = (data) => {
         jasmine: {
             'jasmine': '^2.3.1',
             'karma': '^0.13.22',
-            'karma-chai': '^0.1.0',
             'karma-chrome-launcher': '^1.0.1',
             'karma-coverage': '^1.0.0',
             'karma-jasmine': '^1.0.2',
-            'karma-mocha': '^1.0.1',
             'karma-phantomjs-launcher': '^1.0.0',
             'phantomjs-prebuilt': '^2.1.7'
         },
@@ -176,7 +175,6 @@ module.exports = (data) => {
             'karma-chai': '^0.1.0',
             'karma-chrome-launcher': '^1.0.1',
             'karma-coverage': '^1.0.0',
-            'karma-jasmine': '^1.0.2',
             'karma-mocha': '^1.0.1',
             'karma-phantomjs-launcher': '^1.0.0',
             'phantomjs-prebuilt': '^2.1.7'

@@ -82,9 +82,5 @@ module.exports = ($) => ({
         dir: tmp
     },
 
-    test: {
-        exclude: $.test.exclude,
-        files: $.test.files,
-        preprocessors: $.test.preprocessors
-    }
+    test: $.test
 })

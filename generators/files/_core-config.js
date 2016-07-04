@@ -24,6 +24,10 @@ module.exports = (data) => {
         },
 
         "test": {
+            "singleRun": true,
+
+            "browsers": ["PhantomJS"],
+
             "exclude": [],
 
             "files": [
@@ -38,7 +42,8 @@ module.exports = (data) => {
 
     const getFramework = {
         angularjs: [
-            './-build/vendor/angular/angular.min.js'
+            './-build/vendor/angular/angular.min.js',
+            './node_modules/angular-mocks/angular-mocks.js',
         ],
 
         angular2: [

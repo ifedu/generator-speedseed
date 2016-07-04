@@ -2,6 +2,12 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.17.0
+    - .core-config.json to core-config.js
+    - Add Tests example
+    - Add vendor in property test.files of core-config.js
+    - Simplifies core-config.js
+
 ### v.0.16.0
     - Fix: npm run test 
     - Allow choice options to show in templates
@@ -186,6 +192,12 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.17.0
+    - .core-config.json a core-config.js
+    - Añade ejemplo de Tests
+    - Añade vendor en propiedad test.files de core-config.js
+    - Simplifica core-config.js
+
 ### v.0.16.0
     - Arregla: npm run test 
     - Permite elegir opciones a mostrar en plantillas

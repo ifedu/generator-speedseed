@@ -7,9 +7,9 @@ module.exports = function (config) {
         files: $.test.files,
         preprocessors: $.test.preprocessors,
 
-        singleRun: true,
+        singleRun: $.test.singleRun,
 
-        browsers: ['PhantomJS'],
+        browsers: $.test.browsers,
 
         frameworks: [
             'jasmine'
@@ -17,6 +17,7 @@ module.exports = function (config) {
 
         plugins: [
             'karma-jasmine',
+            'karma-chrome-launcher',
             'karma-phantomjs-launcher'
         ]
     }

@@ -6,5 +6,9 @@ module.exports = ($, gulp) => {
         new Server({
             configFile: path.resolve(__dirname, '../karma.conf.js')
         }, () => cb()).start()
+
+        if ($.test.singleRun === false) {
+            cb()
+        }
     })
 }
