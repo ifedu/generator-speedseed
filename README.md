@@ -12,6 +12,7 @@
 
 ### English
 - *Features and conventions*
+    - Test must be called *.spec.js 
     - Files and folders start for _ no compile to build, perfect for includes properties
     - Files with .name.scss .name.js .name.jade precompile in app, perfect for includes files
         - In *.jade include -name.css -name.js -name.html
@@ -24,7 +25,7 @@
     
     - Allow update the core of the project through npm run update without affecting the development of the project
     - Global properties for our jades with con __global.js
-    - Local properties for our jades with nombre.jade _nombre.js
+    - Local properties for our jades with name.jade _name.js
 
 ---
     
@@ -187,6 +188,7 @@
 
 ### Spanish
 - *Características y convenciones*
+    - Test deben llamarse *.spec.js 
     - Ficheros y carpetas que empiezan por _ no se compilan a build, perfecto para incluir propiedades
     - Ficheros con .nombre.scss .nombre.js .nombre.jade precompilan en app, perfecto para incluir ficheros
         - En *.jade include -nombre.css -nombre.js -nombre.html

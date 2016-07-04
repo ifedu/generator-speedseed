@@ -1,8 +1,7 @@
-'use strict'
-
 const fs = require('fs')
 
-const coreConfig = JSON.parse(fs.readFileSync('./.core-config.json', 'utf8'))
+const coreConfigUser = JSON.parse(fs.readFileSync('./core-config.json', 'utf8'))
+const coreConfig = require('./core-config.js')(coreConfigUser)
 const extend = require('extend')
 
 const $ = {
