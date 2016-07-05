@@ -3,102 +3,79 @@ module.exports = (data) => {
 
     const file = new speedseed.Files()
 
-    const app = './app'
-    const build = './-build'
-    const dist = './-dist'
-    const reports = './-reports'
-    const tmp = './-tmp'
-
-    const assets = 'assets'
-    const components = 'components'
-    const js = 'js'
-    const vendor = 'vendor'
-
-    file.updateFile('.core-config.json', 4, {
-        app: {
-            copy: {
-                assets: `${app}/${assets}`,
-                vendor: `${app}/-${vendor}`
-            },
-
-            dir: app
+    const coreConfigJson = {
+        "ports": {
+            "build": 8001,
+            "dist": 8002,
+            "plato": 8003,
+            "server": 8080,
+            "serverReload": 35729
         },
 
-        build: {
-            copy: {
-                assets: `${build}/${assets}`,
-                vendor: `${build}/${vendor}`
-            },
-
-            dir: build,
-            port: 8001
+        "indent": {
+            "spacesBefore": 2,
+            "spacesAfter": 4
         },
 
-        dist: {
-            copy: {
-                assets: `${dist}/${assets}`,
-                vendor: `${dist}/${vendor}`
-            },
-
-            dir: dist,
-            index: `${dist}/index.html`,
-            jsAll: `${dist}/${js}/all.js`,
-            port: 8002,
-
-            vulcanize: {
-                dir: `${dist}/${components}`,
-                name: 'main.html'
-            }
+        "server": {
+            "auth": "/auth",
+            "request": "/api",
+            "route": "http://localhost"
         },
 
-        indent: {
-            dest: app,
-            spacesBefore: 2,
-            spacesAfter: 4,
+        "test": {
+            "singleRun": true,
 
-            src: [
-                `${app}/**/*`,
-                `!${app}/${assets}/**/*`,
-                `!${app}/-${vendor}/**/*`
-            ]
-        },
+            "browsers": ["PhantomJS"],
 
-        reports: {
-            dir: reports,
-            plato: {
-                dir: `${reports}/plato`,
-                files: [
-                    `${build}/**/${components}/**/*.js`,
-                    `${build}/**/${js}/**/*.js`
-                ],
-                port: 8003
-            },
-        },
+            "exclude": [],
 
-        tmp: {
-            dir: tmp
-        },
-
-        server: {
-            auth: '/auth',
-            request: '/api',
-            route: 'http://localhost',
-            port: 8080,
-            portReload: 35729
-        },
-
-        test: {
-            exclude: [
+            "files": [
+                "./-build/js/**/*.js",
+                "./-build/components/**/*.js",
+                "./-tmp/**/*.spec.js"
             ],
 
-            files: [
-                `${build}/js/**/*.js`,
-                `${build}/components/**/*.js`,
-                `${tmp}/**/*.spec.js`
-            ],
-
-            preprocessors: {
-            }
+            "preprocessors": {}
         }
-    })
+    }
+
+    const getFramework = {
+        angularjs: [
+            './-build/vendor/angular/angular.min.js',
+            './node_modules/angular-mocks/angular-mocks.js',
+        ],
+
+        angular2: [
+            './-build/vendor/core-js/client/shim.min.js',
+            './-build/vendor/zone.js/dist/zone.js',
+            './-build/vendor/reflect-metadata/Reflect.js',
+            './-build/vendor/systemjs/dist/system.src.js'
+        ],
+
+        jquery: [
+            './-build/vendor/jquery/dist/jquery.min.js'
+        ],
+
+        polymer: [],
+
+        react: [
+            './-build/vendor/react/dist/react-with-addons.min.js',
+            './-build/vendor/react-dom/dist/react-dom.min.js'
+        ],
+
+        vanillajs: []
+    }
+
+    const vendors = getFramework[data.framework]
+    const testFiles = coreConfigJson.test.files
+
+    coreConfigJson.test.files = []
+
+    vendors.forEach((vendor) => coreConfigJson.test.files.push(vendor))
+    testFiles.forEach((testFile) => coreConfigJson.test.files.push(testFile))
+
+    file.readFile('core-config.json', coreConfigJson)
+
+    file.writeFile('core-config.json', 4, coreConfigJson)
 }
