@@ -3,9 +3,11 @@
 
 ## English
 ### v.0.17.0
+    - Fix: npm run component
     - .core-config.json to core-config.js
-    - Add Tests example
+    - Add Component example Tests with AngularJS
     - Add vendor in property test.files of core-config.js
+    - Allow use Chrome or PhantomJS in Karma
     - Simplifies core-config.js
 
 ### v.0.16.0
