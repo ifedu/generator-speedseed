@@ -18,7 +18,7 @@ module.exports = class Yo extends speedseed.Yo {
             type: 'input'
         }
 
-        this.setPrompting(prompt, this.async())
+        this.promptingYo(prompt, this.async())
     }
 
     writing() {
@@ -26,6 +26,7 @@ module.exports = class Yo extends speedseed.Yo {
         const compiler = this.config.get('compiler')
         const component = this.config.get('component').toLowerCase().replace(/[-_ ]/g, '')
         const framework = this.config.get('framework')
+        const test = this.config.get('test')
 
         const route = `./seed/template/all/${framework}`
         const routeDest = `./app/components/${component}`
@@ -35,5 +36,7 @@ module.exports = class Yo extends speedseed.Yo {
         this.create(`${route}/compiler/all/component`, routeDest, true)
         this.create(`${route}/compiler/${compiler}/component`, routeDest, true)
         this.create(`${route}/css/${css}/component`, routeDest, true)
+
+        this.create(`${route}/compiler/${compiler}/${test}/component`, routeDest, true)
     }
 }
