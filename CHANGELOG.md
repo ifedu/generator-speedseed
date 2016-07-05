@@ -4,8 +4,9 @@
 ## English
 ### v.0.17.0
     - Fix: npm run component
+    - Fix: watch in *.spec.js
     - .core-config.json to core-config.js
-    - Add Component example Tests with AngularJS
+    - Add Tests in npm run component with AngularJS
     - Add vendor in property test.files of core-config.js
     - Allow use Chrome or PhantomJS in Karma
     - Simplifies core-config.js
@@ -195,9 +196,12 @@
 
 ## Spanish
 ### v.0.17.0
+    - Arregla: npm run component
+    - Arregla: watch en *.spec.js
     - .core-config.json a core-config.js
-    - Añade ejemplo de Tests
+    - Añade Test en npm run component con AngularJS
     - Añade vendor en propiedad test.files de core-config.js
+    - Permite usar Chrome o PhantomJS en Karma
     - Simplifica core-config.js
 
 ### v.0.16.0
