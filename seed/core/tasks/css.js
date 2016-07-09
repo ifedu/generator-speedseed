@@ -28,9 +28,9 @@ module.exports = ($, gulp) => {
             `!${$.app.copy.vendor}/**/*`
         ])
         .pipe(changed($.app.dir, {extension: '.css'}))
-        .pipe($.options.css.getPluginCss($))
+        .pipe($.options.css.getPluginCssMin($))
         .on('error', cb)
-        .pipe(rename((path) => path.basename = `-${path.basename.substr(1)}`))
-        .pipe(gulp.dest($.app.dir))
+        .pipe(rename((path) => path.basename = path.basename.substr(1)))
+        .pipe(gulp.dest($.tmp.dir))
     })
 }

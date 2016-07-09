@@ -57,7 +57,7 @@ module.exports = (data) => {
             'reports': 'gulp reports',
             'server': 'node .core/server',
             'typings': 'typings install',
-            'update': 'npm i generator-speedseed -g    &&    yo speedseed:update    &&    npm i'
+            'update': 'npm i generator-speedseed -g    &&    yo speedseed:update    &&    npm i    &&    bower i'
         }
     }
 
@@ -121,9 +121,7 @@ module.exports = (data) => {
             'jquery': '^3.0.0'
         },
 
-        polymer: {
-            'Polymer': '^1.4.0'
-        },
+        polymer: {},
 
         react: {
             'react': '^15.1.0',

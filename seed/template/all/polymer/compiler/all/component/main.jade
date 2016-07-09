@@ -1,6 +1,8 @@
-dom-module<%= component %>
+dom-module#<%= component %>
     template
         include _tpl
 
-    link(href='main.css' rel='stylesheet')
+        style.
+            {%= include('css.css') %}
+
     script(src='main.js')
