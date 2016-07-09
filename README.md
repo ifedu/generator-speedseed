@@ -1,4 +1,4 @@
-### v.0.17.0
+### v.0.18.0
 
 ### Requeriments
 - NodeJS >= 6.0.0
@@ -13,8 +13,8 @@
 ### English
 - *Features and conventions*
     - Test must be called *.spec.js 
-    - Files and folders start for _ no compile to build, perfect for includes properties
-    - Files with .name.scss .name.js .name.jade precompile in app, perfect for includes files
+    - Files and folders start for _ no compile to build, used for includes properties or native includes
+    - Files with .name.scss .name.js .name.jade compile in .tmp, used for includes files
         - In *.jade include -name.css -name.js -name.html
         - In *.js {%= include('name.html') %} for files .name.jade or name.html
 
@@ -43,6 +43,7 @@
     - *Templates*
         - **npm i generator-speedseed-multi-tic-tac-toe -g**
         - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
+        - **https://github.com/ifedu/speedseed-polymer-whitespace**
 
     ---
 
@@ -92,6 +93,7 @@
 ## Use
 - *Once use in the Operating System*
     - Install libs in the Operating System
+    - **npm i bower -g**
     - **npm i gulp -g**
     - **npm i yo -g**
     - **npm i generator-speedseed -g**
@@ -103,6 +105,7 @@
     - Launch generator and install dependencies
     - **yo speedseed**
     - **npm i**
+    - **bower i**
 
 ---
 
@@ -189,8 +192,8 @@
 ### Spanish
 - *Características y convenciones*
     - Test deben llamarse *.spec.js 
-    - Ficheros y carpetas que empiezan por _ no se compilan a build, perfecto para incluir propiedades
-    - Ficheros con .nombre.scss .nombre.js .nombre.jade precompilan en app, perfecto para incluir ficheros
+    - Ficheros y carpetas que empiezan por _ no se compilan a build, usado para incluir propiedades o includes nativos
+    - Ficheros con .nombre.scss .nombre.js .nombre.jade precompilan en .tmp, usado para incluir ficheros
         - En *.jade include -nombre.css -nombre.js -nombre.html
         - En *.js {%= include('-nombre.html') %} para ficheros .nombre.jade o nombre.html
 
@@ -219,6 +222,7 @@
     - *Plantillas*
         - **npm i generator-speedseed-multi-tic-tac-toe -g**
         - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
+        - **https://github.com/ifedu/speedseed-polymer-whitespace**
 
     ---
 
@@ -268,6 +272,7 @@
 ## Instrucciones de uso
 - *Usar una vez en el Sistema Operativo*
     - Instala librerías en el Sistema Operativo
+    - **npm i bower -g**
     - **npm i gulp -g**
     - **npm i yo -g**
     - **npm i generator-speedseed -g**
@@ -279,6 +284,7 @@
     - Lanza el generador e instalas las dependencias
     - **yo speedseed**
     - **npm i**
+    - **bower i**
 
 ---
 
