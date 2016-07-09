@@ -46,18 +46,18 @@ module.exports = (data) => {
         },
 
         scripts: {
-            'build': 'gulp build --open=false',
-            'build-open': 'gulp build',
-            'clean': 'gulp clean-dirs',
+            'build': './node_modules/gulp/bin/gulp.js build --open=false',
+            'build-open': './node_modules/gulp/bin/gulp.js build',
+            'clean': './node_modules/gulp/bin/gulp.js clean-dirs',
             'component': 'yo speedseed:component',
-            'dist': 'gulp build --dist=true --server=false',
-            'dist-open': 'gulp build --dist=true',
-            'indent': 'gulp indent',
-            'spec': 'gulp test',
-            'reports': 'gulp reports',
+            'dist': './node_modules/gulp/bin/gulp.js build --dist=true --server=false',
+            'dist-open': './node_modules/gulp/bin/gulp.js build --dist=true',
+            'indent': './node_modules/gulp/bin/gulp.js indent',
+            'spec': './node_modules/gulp/bin/gulp.js test',
+            'reports': './node_modules/gulp/bin/gulp.js reports',
             'server': 'node .core/server',
-            'typings': 'typings install',
-            'update': 'npm i generator-speedseed -g    &&    yo speedseed:update    &&    npm i    &&    bower i'
+            'typings': './node_modules/typings/dist/bin.js install',
+            'update': 'npm i generator-speedseed -g && yo speedseed && npm i && bower i'
         }
     }
 

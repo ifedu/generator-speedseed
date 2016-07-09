@@ -94,7 +94,6 @@
 - *Once use in the Operating System*
     - Install libs in the Operating System
     - **npm i bower -g**
-    - **npm i gulp -g**
     - **npm i yo -g**
     - **npm i generator-speedseed -g**
     - **npm i generator-speedseed-multi-tic-tac-toe -g** (template multi-tic-tac-toe)
@@ -273,7 +272,6 @@
 - *Usar una vez en el Sistema Operativo*
     - Instala librerías en el Sistema Operativo
     - **npm i bower -g**
-    - **npm i gulp -g**
     - **npm i yo -g**
     - **npm i generator-speedseed -g**
     - **npm i generator-speedseed-multi-tic-tac-toe -g** (template multi-tic-tac-toe)
