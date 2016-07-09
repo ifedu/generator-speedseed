@@ -125,6 +125,14 @@
     - **npm run dist-open**
 
     ---
+    - Launch server -build
+    - **npm run serve**
+
+    ---
+    - Launch server -dist
+    - **npm run serve-dist**
+
+    ---
     - Update generator, install dependencies and launch generator
     - **npm run update**
 
@@ -301,6 +309,14 @@
     ---
     - Compila el proyecto minificado en -dist, lo lanza y abre el navegador
     - **npm run dist-open**
+
+    ---
+    - Lanza el server -build
+    - **npm run serve**
+
+    ---
+    - Lanza el server -dist
+    - **npm run serve-dist**
 
     ---
     - Actualiza el generador, lo ejecuta e instala las dependencias

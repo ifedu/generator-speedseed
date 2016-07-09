@@ -4,7 +4,10 @@
 ## English
 ### v.0.18.0
     - Fix: .css compile to .tmp, include minified to jade
+    - Fix: No need global gulp
     - Fix: npm run component in Polymer
+    - Add npm run serve
+    - Add npm run serve-dist
     - Add template polymer-whitespace
     - Allow configure the update of the templates: babelrc, bower.json, bowerrc, eslintrc, package.json
     - Get https://storage.googleapis.com/generators.yeoman.io/cache.json for search templates speedseed
@@ -205,8 +208,17 @@
 
 ## Spanish
 ### v.0.18.0
+    - Arregla: .css compila a .tmp, include minificado a jade
+    - Arregla: No necesita global gulp
     - Arregla: npm run component en Polymer
-    - Añade plantilla polymer-whitespace
+    - Añade npm run serve
+    - Añade npm run serve-dist
+    - Añade template polymer-whitespace
+    - Permite configurar el actualizar de los templates: babelrc, bower.json, bowerrc, eslintrc, package.json
+    - Toma https://storage.googleapis.com/generators.yeoman.io/cache.json para buscar en plantillas speedseed
+    - npm run update también instala bower
+    - yo speedseed también obtiene dependencias de la plantilla
+
 
 ### v.0.17.0
     - Arregla: npm run component

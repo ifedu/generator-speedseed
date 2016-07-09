@@ -53,8 +53,10 @@ module.exports = (data) => {
             'dist': './node_modules/gulp/bin/gulp.js build --dist=true --server=false',
             'dist-open': './node_modules/gulp/bin/gulp.js build --dist=true',
             'indent': './node_modules/gulp/bin/gulp.js indent',
-            'spec': './node_modules/gulp/bin/gulp.js test',
             'reports': './node_modules/gulp/bin/gulp.js reports',
+            'spec': './node_modules/gulp/bin/gulp.js test',
+            'serve': './node_modules/gulp/bin/gulp.js webserver',
+            'serve-dist': './node_modules/gulp/bin/gulp.js webserver --dist=true',
             'server': 'node .core/server',
             'typings': './node_modules/typings/dist/bin.js install',
             'update': 'npm i generator-speedseed -g && yo speedseed && npm i && bower i'
