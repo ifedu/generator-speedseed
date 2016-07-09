@@ -2,6 +2,15 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.18.0
+    - Fix: .css compile to .tmp, include minified to jade
+    - Fix: npm run component in Polymer
+    - Add template polymer-whitespace
+    - Allow configure the update of the templates: babelrc, bower.json, bowerrc, eslintrc, package.json
+    - Get https://storage.googleapis.com/generators.yeoman.io/cache.json for search templates speedseed
+    - npm run update also install bower
+    - yo speedseed also get dependencies of the template
+
 ### v.0.17.0
     - Fix: npm run component
     - Fix: watch in *.spec.js
@@ -195,6 +204,10 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.18.0
+    - Arregla: npm run component en Polymer
+    - Añade plantilla polymer-whitespace
+
 ### v.0.17.0
     - Arregla: npm run component
     - Arregla: watch en *.spec.js
