@@ -5,31 +5,33 @@ const speedseed = require('speedseed')
 const searchGenerators = () => {
     const request = require('sync-request')
 
-    const res = request('GET', 'https://storage.googleapis.com/generators.yeoman.io/cache.json')
-
     const choices = [
         { name: 'generator-speedseed-multi-tic-tac-toe', value: 'multi-tic-tac-toe' },
         { name: 'generator-speedseed-polymer-whitespace', value: 'polymer-whitespace' }
     ]
 
-    for (let data of JSON.parse(res.getBody('utf8'))) {
-        if (data.name.substring(0, 10) === 'speedseed-') {
-            let isFinded = false
+    try {
+        const res = request('GET', 'https://storage.googleapis.com/generators.yeoman.io/cache.json')
 
-            for (let choice of choices) {
-                if (choice.name === `generator-${data.name}`) {
-                    isFinded = true
+        for (let data of JSON.parse(res.getBody('utf8'))) {
+            if (data.name.substring(0, 10) === 'speedseed-') {
+                let isFinded = false
+
+                for (let choice of choices) {
+                    if (choice.name === `generator-${data.name}`) {
+                        isFinded = true
+                    }
                 }
+
+                if (isFinded === true) continue
+
+                choices.push({
+                    name: `generator-${data.name}`,
+                    value: data.name.substring(10)
+                })
             }
-
-            if (isFinded === true) continue
-
-            choices.push({
-                name: `generator-${data.name}`,
-                value: data.name.substring(10)
-            })
         }
-    }
+    } catch (e) {}
 
     return choices
 }

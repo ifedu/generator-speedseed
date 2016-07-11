@@ -2,6 +2,9 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.18.1
+    - Fix: call to local gulp since npm run: ./node_modules/gulp/bin/gulp.js to gulp
+
 ### v.0.18.0
     - Fix: .css compile to .tmp, include minified to jade
     - Fix: No need global gulp
@@ -207,6 +210,9 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.18.1
+    - Arregla: llamada a gulp local desde npm run: ./node_modules/gulp/bin/gulp.js a gulp
+
 ### v.0.18.0
     - Arregla: .css compila a .tmp, include minificado a jade
     - Arregla: No necesita global gulp

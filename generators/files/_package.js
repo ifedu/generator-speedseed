@@ -42,23 +42,23 @@ module.exports = (data) => {
         },
 
         engines : {
-            node : ">=4.0.0"
+            node : ">=6.0.0"
         },
 
         scripts: {
-            'build': './node_modules/gulp/bin/gulp.js build --open=false',
-            'build-open': './node_modules/gulp/bin/gulp.js build',
-            'clean': './node_modules/gulp/bin/gulp.js clean-dirs',
+            'build': 'gulp build --open=false',
+            'build-open': 'gulp build',
+            'clean': 'gulp clean-dirs',
             'component': 'yo speedseed:component',
-            'dist': './node_modules/gulp/bin/gulp.js build --dist=true --server=false',
-            'dist-open': './node_modules/gulp/bin/gulp.js build --dist=true',
-            'indent': './node_modules/gulp/bin/gulp.js indent',
-            'reports': './node_modules/gulp/bin/gulp.js reports',
-            'spec': './node_modules/gulp/bin/gulp.js test',
-            'serve': './node_modules/gulp/bin/gulp.js webserver',
-            'serve-dist': './node_modules/gulp/bin/gulp.js webserver --dist=true',
+            'dist': 'gulp build --dist=true --server=false',
+            'dist-open': 'gulp build --dist=true',
+            'indent': 'gulp indent',
+            'reports': 'gulp reports',
+            'spec': 'gulp test',
+            'serve': 'gulp webserver',
+            'serve-dist': 'gulp webserver --dist=true',
             'server': 'node .core/server',
-            'typings': './node_modules/typings/dist/bin.js install',
+            'typings': 'typings install',
             'update': 'npm i generator-speedseed -g && yo speedseed && npm i && bower i'
         }
     }
@@ -101,16 +101,16 @@ module.exports = (data) => {
         },
 
         angular2: {
-            '@angular/common': '2.0.0-rc.3',
-            '@angular/compiler': '2.0.0-rc.3',
-            '@angular/core': '2.0.0-rc.3',
-            "@angular/forms": "0.1.1",
-            '@angular/http': '2.0.0-rc.3',
-            '@angular/platform-browser': '2.0.0-rc.3',
-            '@angular/platform-browser-dynamic': '2.0.0-rc.3',
-            '@angular/router': '3.0.0-alpha.7',
-            '@angular/upgrade': '2.0.0-rc.3',
-            'angular2-in-memory-web-api': '0.0.12',
+            '@angular/common': '2.0.0-rc.4',
+            '@angular/compiler': '2.0.0-rc.4',
+            '@angular/core': '2.0.0-rc.4',
+            "@angular/forms": "0.2.0",
+            '@angular/http': '2.0.0-rc.4',
+            '@angular/platform-browser': '2.0.0-rc.4',
+            '@angular/platform-browser-dynamic': '2.0.0-rc.4',
+            '@angular/router': '3.0.0-beta.1',
+            '@angular/upgrade': '2.0.0-rc.4',
+            'angular2-in-memory-web-api': '0.0.14',
             'bootstrap': '^3.3.6',
             'core-js': '^2.4.0',
             'reflect-metadata': '^0.1.3',
