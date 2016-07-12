@@ -2,6 +2,15 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.19.0
+    - Add template speedseed-angular2-whitespace
+    - More flexibility and ease to change the core-config.json 
+    - Update http-proxy-middleware to 0.17.0
+    - Update AngularJS to 1.5.7
+    - Update Angular2 to 2.0.0-rc.4
+    - Update Polymer to 1.6.0
+    - Update React to 15.2.1
+
 ### v.0.18.1
     - Fix: call to local gulp since npm run: ./node_modules/gulp/bin/gulp.js to gulp
 

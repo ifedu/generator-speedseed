@@ -1,4 +1,4 @@
-### v.0.18.1
+### v.0.19.0
 
 ### Requeriments
 - NodeJS >= 6.0.0
@@ -31,11 +31,11 @@
     
 - *Personalization options*
     - *Framework/Libs*
-        - **AngularJS 1.5.6**
-        - **Angular2 2.0.0-rc.3** (No CoffeeScript)
+        - **AngularJS 1.5.7**
+        - **Angular2 2.0.0-rc.4**
         - **jQuery 3.0.0**
-        - **Polymer 1.4.0**
-        - **React 15.1.0** (Only with BabelJS compiler) (Read IMPORTANT.txt for experimental use with jade templates)
+        - **Polymer 1.6.0**
+        - **React 15.2.1** (Read IMPORTANT.txt for experimental use with jade templates)
         - **VanillaJS**
     
     ---
@@ -43,6 +43,7 @@
     - *Templates*
         - **npm i generator-speedseed-multi-tic-tac-toe -g**
         - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
+        - **https://github.com/ifedu/speedseed-angular2-whitespace**
         - **https://github.com/ifedu/speedseed-polymer-whitespace**
 
     ---
@@ -217,18 +218,18 @@
 
 - *Opciones de personalización*
     - *Framework/Libs*
-        - **AngularJS 1.5.6**
-        - **Angular2 2.0.0-rc.3** (No CoffeeScript)
+        - **AngularJS 1.5.7**
+        - **Angular2 2.0.0-rc.4**
         - **jQuery 3.0.0**
-        - **Polymer 1.4.0**
-        - **React 15.1.0** (Sólo con compilador BabelJS) (Leer IMPORTANT.txt para uso experimental con plantillas jade)
-        - **VanillaJS**
+        - **Polymer 1.6.0**
+        - **React 15.2.1** (Leer IMPORTANT.txt para uso experimental con plantillas jade)
 
     ---
 
     - *Plantillas*
         - **npm i generator-speedseed-multi-tic-tac-toe -g**
         - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
+        - **https://github.com/ifedu/speedseed-angular2-whitespace**
         - **https://github.com/ifedu/speedseed-polymer-whitespace**
 
     ---
