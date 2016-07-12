@@ -219,6 +219,15 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.19.0
+    - Actualiza http-proxy-middleware a 0.17.0
+    - Actualiza AngularJS a 1.5.7
+    - Actualiza Angular2 a 2.0.0-rc.4
+    - Actualiza Polymer a 1.6.0
+    - Actualiza React a 15.2.1
+    - Añade plantilla speedseed-angular2-whitespace
+    - Más flexibilid y fácil de cambiar el core-config.json 
+
 ### v.0.18.1
     - Arregla: llamada a gulp local desde npm run: ./node_modules/gulp/bin/gulp.js a gulp
 
