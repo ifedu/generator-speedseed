@@ -1,86 +1,77 @@
-const app = './app'
-const build = './-build'
-const dist = './-dist'
-const reports = './-reports'
-const tmp = './-tmp'
+module.exports = ($) => {
+    const app = `./${$.app.folder}`
+    const build = `./-${$.build.folder}`
+    const dist = `./-${$.dist.folder}`
+    const indent = `./${$.indent.folder}`
+    const reports = `./-${$.reports.folder}`
+    const tmp = `./-${$.tmp.folder}`
 
-const assets = 'assets'
-const components = 'components'
-const js = 'js'
-const vendor = 'vendor'
+    const assets = $.app.inFolder.assets
+    const components = $.app.inFolder.components
+    const vendor = $.app.inFolder.vendor
 
-module.exports = ($) => ({
-    app: {
-        copy: {
-            assets: `${app}/${assets}`,
-            vendor: `${app}/-${vendor}`
+    return {
+        app: {
+            dir: app,
+
+            copy: {
+                assets: `${app}/${assets}`,
+                vendor: `${app}/-${vendor}`
+            }
         },
 
-        dir: app
-    },
+        build: {
+            dir: build,
+            port: $.build.port,
 
-    build: {
-        copy: {
-            assets: `${build}/${assets}`,
-            vendor: `${build}/${vendor}`
+            copy: {
+                assets: `${build}/${assets}`,
+                vendor: `${build}/${vendor}`
+            }
         },
 
-        dir: build,
-        port: $.ports.build
-    },
+        dist: {
+            dir: dist,
+            index: `${dist}/${$.dist.inFolder.index}`,
+            jsAll: `${dist}/${$.dist.inFolder.jsAll}`,
+            port: $.dist.port,
 
-    dist: {
-        copy: {
-            assets: `${dist}/${assets}`,
-            vendor: `${dist}/${vendor}`
+            copy: {
+                assets: `${dist}/${assets}`,
+                vendor: `${dist}/${vendor}`
+            },
+
+            vulcanize: {
+                dir: `${dist}/${components}`,
+                name: $.dist.inFolder.appInFolderComponents.vulcanizeFile
+            }
         },
 
-        dir: dist,
-        index: `${dist}/index.html`,
-        jsAll: `${dist}/${js}/all.js`,
-        port: $.ports.dist,
+        tmp: {
+            dir: tmp
+        },
 
-        vulcanize: {
-            dir: `${dist}/${components}`,
-            name: 'main.html'
+        server: $.server,
+
+        test: $.test,
+
+        reports: {
+            dir: reports,
+            plato: {
+                dir: `./${$.reports.inFolder.plato.folder}`,
+                files: [
+                    `${build}/**/${components}/**/*.js`,
+                    `${build}/**/${$.app.js}/**/*.js`
+                ],
+                port: $.reports.inFolder.plato.port
+            },
+        },
+
+        indent: {
+            dest: indent,
+            spacesBefore: $.indent.spacesBefore,
+            spacesAfter: $.indent.spacesAfter,
+            src: $.indent.src
         }
-    },
-
-    indent: {
-        dest: app,
-        spacesBefore: $.indent.spacesBefore,
-        spacesAfter: $.indent.spacesAfter,
-
-        src: [
-            `${app}/**/*`,
-            `!${app}/${assets}/**/*`,
-            `!${app}/-${vendor}/**/*`
-        ]
-    },
-
-    reports: {
-        dir: reports,
-        plato: {
-            dir: `${reports}/plato`,
-            files: [
-                `${build}/**/${components}/**/*.js`,
-                `${build}/**/${js}/**/*.js`
-            ],
-            port: $.ports.plato
-        },
-    },
-
-    server: {
-        auth: $.server.auth,
-        request: $.server.request,
-        route: $.server.route,
-        port: $.ports.server,
-        portReload: $.ports.serverReload
-    },
-
-    tmp: {
-        dir: tmp
-    },
-
-    test: $.test
-})
+    }
+}
