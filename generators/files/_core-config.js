@@ -4,39 +4,74 @@ module.exports = (data) => {
     const file = new speedseed.Files()
 
     const coreConfigJson = {
-        "ports": {
-            "build": 8001,
-            "dist": 8002,
-            "plato": 8003,
-            "server": 8080,
-            "serverReload": 35729
+        'app': {
+            'folder': 'app',
+            'inFolder': {
+                'assets': 'assets',
+                'components': 'components',
+                'vendor': 'vendor'
+            }
         },
-
-        "indent": {
-            "spacesBefore": 2,
-            "spacesAfter": 4
+        'build': {
+            'folder': 'build',
+            'port': 8001
         },
-
-        "server": {
-            "auth": "/auth",
-            "request": "/api",
-            "route": "http://localhost"
+        'dist': {
+            'folder': 'dist',
+            'inFolder': {
+                'index': 'index.html',
+                'jsAll': 'js/all.js',
+                'appInFolderComponents': {
+                    'vulcanizeFile': 'main.html'
+                }
+            },
+            'port': 8002
         },
-
-        "test": {
-            "singleRun": true,
-
-            "browsers": ["PhantomJS"],
-
-            "exclude": [],
-
-            "files": [
-                "./-build/js/**/*.js",
-                "./-build/components/**/*.js",
-                "./-tmp/**/*.spec.js"
+        'tmp': {
+            'folder': 'tmp'
+        },
+        'server': {
+            'auth': '/auth',
+            'request': '/api',
+            'route': 'http://localhost',
+            'port': 8080,
+            'portReload': 35729
+        },
+        'test': {
+            'singleRun': true,
+            'browsers': [
+                'PhantomJS'
             ],
-
-            "preprocessors": {}
+            'exclude': [],
+            'files': [
+                './-build/vendor/core-js/client/shim.min.js',
+                './-build/vendor/zone.js/dist/zone.js',
+                './-build/vendor/reflect-metadata/Reflect.js',
+                './-build/vendor/systemjs/dist/system.src.js',
+                './-build/js/**/*.js',
+                './-build/components/**/*.js',
+                './-tmp/**/*.spec.js'
+            ],
+            'preprocessors': {}
+        },
+        'reports': {
+            'folder': 'reports',
+            'inFolder': {
+                'plato': {
+                    'folder': 'plato',
+                    'port': 8003
+                }
+            }
+        },
+        'indent': {
+            'folder': 'app',
+            'spacesBefore': 2,
+            'spacesAfter': 4,
+            'src': [
+                './app/**/*',
+                '!./app/assets/**/*',
+                '!./app/-vendor/**/*'
+            ]
         }
     }
 

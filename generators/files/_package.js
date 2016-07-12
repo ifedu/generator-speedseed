@@ -35,7 +35,7 @@ module.exports = (data) => {
             'gulp-useref': '^3.1.0',
             'gulp-util': '^3.0.7',
             'gulp-watch': '^4.3.5',
-            'http-proxy-middleware': '^0.15.2',
+            'http-proxy-middleware': '^0.17.0',
             'lodash': '^4.13.1',
             'plato': '^1.5.0',
             'run-sequence': '^1.1.1'
@@ -59,7 +59,7 @@ module.exports = (data) => {
             'serve-dist': 'gulp webserver --dist=true',
             'server': 'node .core/server',
             'typings': 'typings install',
-            'update': 'npm i generator-speedseed -g && yo speedseed && npm i && bower i'
+            'update': `npm i generator-speedseed -g && generator-speedseed-${data.template} -g && yo speedseed && npm i && bower i`
         }
     }
 
@@ -108,14 +108,14 @@ module.exports = (data) => {
             '@angular/http': '2.0.0-rc.4',
             '@angular/platform-browser': '2.0.0-rc.4',
             '@angular/platform-browser-dynamic': '2.0.0-rc.4',
-            '@angular/router': '3.0.0-beta.1',
+            '@angular/router': '3.0.0-beta.2',
             '@angular/upgrade': '2.0.0-rc.4',
             'angular2-in-memory-web-api': '0.0.14',
             'bootstrap': '^3.3.6',
             'core-js': '^2.4.0',
             'reflect-metadata': '^0.1.3',
             'rxjs': '5.0.0-beta.6',
-            'systemjs': '0.19.27',
+            'systemjs': '0.19.31',
             'zone.js': '^0.6.12'
         },
 

@@ -7,6 +7,7 @@ const searchGenerators = () => {
 
     const choices = [
         { name: 'generator-speedseed-multi-tic-tac-toe', value: 'multi-tic-tac-toe' },
+        { name: 'generator-speedseed-angular2-whitespace', value: 'angular2-whitespace' },
         { name: 'generator-speedseed-polymer-whitespace', value: 'polymer-whitespace' }
     ]
 
