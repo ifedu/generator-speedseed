@@ -2,6 +2,14 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.20.0
+    - Add speedseed cli
+    - All files and libs core moved to templates
+    - Global refactor, more clean in app and templates
+    - Multiple changes in README
+    - Rename all tasks to speedseed *
+    - Rename templates whitespace to cleanly
+
 ### v.0.19.0
     - Add template speedseed-angular2-whitespace
     - More flexibility and ease to change the core-config.json 

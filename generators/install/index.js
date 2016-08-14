@@ -1,53 +1,65 @@
-const generators = require('yeoman-generator')
-
-const speedseed = require('speedseed')
-
 const searchGenerators = () => {
     const request = require('sync-request')
 
     const choices = [
         { name: 'generator-speedseed-multi-tic-tac-toe', value: 'multi-tic-tac-toe' },
-        { name: 'generator-speedseed-angular2-whitespace', value: 'angular2-whitespace' },
-        { name: 'generator-speedseed-polymer-whitespace', value: 'polymer-whitespace' }
+        { name: 'generator-speedseed-angular2-cleanly', value: 'angular2-cleanly' },
+        { name: 'generator-speedseed-polymer-cleanly', value: 'polymer-cleanly' }
     ]
 
     try {
         const res = request('GET', 'https://storage.googleapis.com/generators.yeoman.io/cache.json')
 
-        for (let data of JSON.parse(res.getBody('utf8'))) {
-            if (data.name.substring(0, 10) === 'speedseed-') {
-                let isFinded = false
+        const CHARACTERS_TEMPLATING = 'speedseed-'
+        const CHARACTERS_TEMPLATING_LENGTH = 'speedseed-'.length
 
-                for (let choice of choices) {
-                    if (choice.name === `generator-${data.name}`) {
-                        isFinded = true
-                    }
+        const searchGeneratorsIncludes = (data) => {
+            let isFinded = false
+
+            for (let choice of choices) {
+                if (choice.name === `generator-${data.name}`) {
+                    isFinded = true
                 }
+            }
 
-                if (isFinded === true) continue
+            return isFinded
+        }
 
+        const checkGeneratorSpeedSeed = (data) => {
+            const FIRST_CHARACTERS_DATA = data.name.substring(0, CHARACTERS_TEMPLATING_LENGTH)
+
+            if ((FIRST_CHARACTERS_DATA === CHARACTERS_TEMPLATING) &&
+                (searchGeneratorsIncludes(data) === false)) {
                 choices.push({
                     name: `generator-${data.name}`,
                     value: data.name.substring(10)
                 })
             }
         }
+
+        for (let data of JSON.parse(res.getBody('utf8'))) {
+            checkGeneratorSpeedSeed(data)
+        }
     } catch (e) {}
 
     return choices
 }
 
-module.exports = class Yo extends speedseed.Yo {
+const speedseed = require('speedseed')
+
+module.exports = class Yo extends speedseed.Config {
     constructor(...args) {
         super(...args)
     }
 
     paths() {
-        this.pathsSet()
+        const path = require('path')
+
+        this.sourceRoot(path.resolve(__dirname, '../../'))
     }
 
     prompting() {
-        const prompting = [{
+        const prompt = [{
             default: this.config.get('project') || '',
             message: 'Project Name?',
             name: 'project',
@@ -61,16 +73,14 @@ module.exports = class Yo extends speedseed.Yo {
             choices: searchGenerators()
         }]
 
-        this.promptingYo(prompting, this.async())
+        this._setPrompting(prompt, this.async())
     }
 
     write() {
         const project = this.config.get('project').toLowerCase().replace(/[-_ ]/g, '')
 
         this.config.set('project', project)
-    }
 
-    end() {
         const template = this.config.get('template')
 
         const options = this.config.getAll()

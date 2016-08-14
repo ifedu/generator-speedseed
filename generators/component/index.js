@@ -1,14 +1,14 @@
-const generators = require('yeoman-generator')
-
 const speedseed = require('speedseed')
 
-module.exports = class Yo extends speedseed.Yo {
+module.exports = class Yo extends speedseed.Config {
     constructor(...args) {
         super(...args)
     }
 
     paths() {
-        this.pathsSet()
+        const path = require('path')
+
+        this.sourceRoot(path.resolve(__dirname, '../../'))
     }
 
     prompting() {
@@ -18,25 +18,26 @@ module.exports = class Yo extends speedseed.Yo {
             type: 'input'
         }
 
-        this.promptingYo(prompt, this.async())
+        this._setPrompting(prompt, this.async())
     }
 
-    writing() {
-        const css = this.config.get('css')
-        const compiler = this.config.get('compiler')
+    write() {
+        const compilerExt = this.config.get('compilerExt')
         const component = this.config.get('component').toLowerCase().replace(/[-_ ]/g, '')
+        const css = this.config.get('css')
         const framework = this.config.get('framework')
         const test = this.config.get('test')
 
-        const route = `./seed/template/all/${framework}`
+        const route = `seed/template/${framework}`
         const routeDest = `./app/components/${component}`
 
         this.config.set('component', component)
 
-        this.create(`${route}/compiler/all/component`, routeDest, true)
-        this.create(`${route}/compiler/${compiler}/component`, routeDest, true)
-        this.create(`${route}/css/${css}/component`, routeDest, true)
+        this._create(`${route}/app/component/**/*.jade`, routeDest)
+        this._create(`${route}/app/component/**/*.jsx`, routeDest)
+        this._create(`${route}/app/component/**/*${compilerExt}`, routeDest)
+        this._create(`${route}/app/component/**/*${css}`, routeDest)
 
-        this.create(`${route}/compiler/${compiler}/${test}/component`, routeDest, true)
+        this._create(`${route}/test/${test}/app/component`, routeDest)
     }
 }
