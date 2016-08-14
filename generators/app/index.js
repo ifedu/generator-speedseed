@@ -1,8 +1,6 @@
 const generators = require('yeoman-generator')
 
-const speedseed = require('speedseed')
-
-module.exports = class Yo extends speedseed.Yo {
+module.exports = class Yo extends generators.Base {
     constructor(...args) {
         super(...args)
 
@@ -14,8 +12,6 @@ module.exports = class Yo extends speedseed.Yo {
     }
 
     write() {
-        (this.config.get('isInstall') !== true)
-            ? this.composeWith('speedseed:install')
-            : this.composeWith('speedseed:update')
+        this.composeWith('speedseed:install')
     }
 }

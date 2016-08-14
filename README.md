@@ -1,4 +1,4 @@
-### v.0.19.0
+### v.0.20.0
 
 ### Requeriments
 - NodeJS >= 6.0.0
@@ -94,72 +94,70 @@
 ## Use
 - *Once use in the Operating System*
     - Install libs in the Operating System
-    - **npm i bower -g**
-    - **npm i yo -g**
     - **npm i generator-speedseed -g**
+    - **speedseed install -g**
     - **npm i generator-speedseed-multi-tic-tac-toe -g** (template multi-tic-tac-toe)
 
 ---
 
 - *Once use in the project folder*
     - Launch generator and install dependencies
-    - **yo speedseed**
-    - **npm i**
-    - **bower i**
+    - **speedseed start**
+    - **speedseed install**
 
 ---
 
 - *In the project folder*
     - Compile project in -build and launch project
-    - **npm run build**
+    - **speedseed build**
 
     ---
     - Compile project in -build, launch project and open navigator
-    - **npm run build-open**
+    - **speedseed build open**
 
     ---
     - Compile project minified in -dist
-    - **npm run dist**
+    - **speedseed dist**
 
     ---
     - Compile project minified in -dist, launch project and open navigator
-    - **npm run dist-open**
+    - **speedseed dist open**
 
     ---
     - Launch server -build
-    - **npm run serve**
+    - **speedseed serve**
 
     ---
     - Launch server -dist
-    - **npm run serve-dist**
+    - **speedseed serve dist**
 
     ---
     - Update generator, install dependencies and launch generator
-    - **npm run update**
+    - **speedseed update**
 
     ---
     - Create component in app/components
-    - **npm run component**
+    - **speedseed component**
 
     ---
     - Compile project in -build and launch unit test
-    - **npm run spec**
+    - **speedseed spec**
 
     ---
     - Create typings for TypeScript based in typings.json
-    - **npm run typings**
+    - **speedseed typings**
 
     ---
     - Ident all choice files, configurable in core-config.js
-    - **npm run indent**
+    - **speedseed indent**
 
     ---
     - Compile project in -reports and launch complexity code test plato
-    - **npm run reports**
+    - **speedseed reports**
 
     ---
-    - Delete generate folders -build -dist -reports node_modules
-    - **npm run clean**
+    - Delete generate folders -build -dist -reports -tmp node_modules
+    - **speedseed clean**
 
 ---
 
@@ -280,72 +278,70 @@
 ## Instrucciones de uso
 - *Usar una vez en el Sistema Operativo*
     - Instala librerías en el Sistema Operativo
-    - **npm i bower -g**
-    - **npm i yo -g**
     - **npm i generator-speedseed -g**
+    - **speedseed global**
     - **npm i generator-speedseed-multi-tic-tac-toe -g** (template multi-tic-tac-toe)
 
 ---
 
 - *Usar una vez en la carpeta del proyecto*
     - Lanza el generador e instalas las dependencias
-    - **yo speedseed**
-    - **npm i**
-    - **bower i**
+    - **speedseed install**
+    - **speedseed local**
 
 ---
 
 - *En la carpeta del proyecto*
     - Compila el proyecto en -build y lo lanza
-    - **npm run build**
+    - **speedseed build**
 
     ---
     - Compila el proyecto en -build, lo lanza y abre el navegador
-    - **npm run build-open**
+    - **speedseed build open**
 
     ---
     - Compila el proyecto minificado en -dist
-    - **npm run dist**
+    - **speedseed dist**
 
     ---
     - Compila el proyecto minificado en -dist, lo lanza y abre el navegador
-    - **npm run dist-open**
+    - **speedseed dist open**
 
     ---
     - Lanza el server -build
-    - **npm run serve**
+    - **speedseed serve**
 
     ---
     - Lanza el server -dist
-    - **npm run serve-dist**
+    - **speedseed serve dist**
 
     ---
     - Actualiza el generador, lo ejecuta e instala las dependencias
-    - **npm run update**
+    - **speedseed update**
 
     ---
     - Crea un componente en app/components
-    - **npm run component**
+    - **speedseed component**
 
     ---
     - Compila el proyecto en -build y lanza los test unitarios
-    - **npm run spec**
+    - **speedseed spec**
 
     ---
     - Crea typings para TypeScript basado en typings.json
-    - **npm run typings**
+    - **speedseed typings**
 
     ---
     - Identa todos los ficheros elegidos, configurable en core-config.js
-    - **npm run indent**
+    - **speedseed indent**
 
     ---
     - Compila el proyecto en -reports y lanza test de complejidad de código plato
-    - **npm run reports**
+    - **speedseed reports**
 
     ---
-    - Borra carpetas generadas -build -dist -reports node_modules
-    - **npm run clean**
+    - Borra carpetas generadas -build -dist -reports -tmp node_modules
+    - **speedseed clean**
     
 ---
 

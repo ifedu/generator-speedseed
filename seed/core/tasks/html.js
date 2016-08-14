@@ -3,9 +3,9 @@ module.exports = ($, gulp) => {
         const changed = require('gulp-changed')
         const data = require('gulp-data')
         const filter = require('gulp-filter')
-        const gulpif = require('gulp-if')
+        // const gulpif = require('gulp-if')
         const jade = require('gulp-jade')
-        const jadeInheritance  = require('gulp-jade-inheritance')
+        // const jadeInheritance  = require('gulp-jade-inheritance')
         const modifyFile = require('gulp-modify-file')
         const plumber = require('gulp-plumber')
 
@@ -16,9 +16,9 @@ module.exports = ($, gulp) => {
             `${$.app.dir}/**/*.jade`,
             `!${$.app.copy.vendor}/**/*`
         ])
-        .pipe(gulpif($.if.notInclude, changed($.build.dir, { extension: '.html' })))
+        // .pipe(gulpif($.if.notInclude, changed($.build.dir, { extension: '.html' })))
         .pipe(plumber())
-        .pipe(jadeInheritance({ basedir: $.app.dir }))
+        // .pipe(jadeInheritance({ basedir: $.app.dir }))
         .pipe(filter($.filterProps('jade')))
         .pipe(data((file) => $.getJsProps(file, '.jade')))
         .pipe(modifyFile((content, route) => $.translateTpl(content, route, '.jade')))
