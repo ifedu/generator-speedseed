@@ -1,0 +1,89 @@
+#!/usr/bin/env node
+
+const arg = (process.argv[2]) ? process.argv[2] : ''
+
+const input = (str) => {
+    const spawn = require('child_process').spawn
+
+    const command = str.split(' ')
+
+    spawn(command[0], command.slice(1), {
+        shell: true,
+        stdio: 'inherit'
+    })
+}
+
+const options = {
+    // NPM
+    install() {
+        (process.argv[3] === '-g')
+            ? input('npm i bower -g && npm i yo -g')
+            : input('npm i && bower i')
+
+    },
+
+    // YO
+    component() {
+        input('yo speedseed:component')
+    },
+
+    start() {
+        input('yo speedseed')
+    },
+
+    // TASKS
+    build() {
+        const open = (process.argv[3] === 'open')
+
+        input(`node_modules\\.bin\\gulp build --open=${open}`)
+    },
+
+    dist() {
+        const server = (process.argv[3] === 'server')
+
+        input(`node_modules\\.bin\\gulp build --dist=true --server=${server}`)
+    },
+
+    indent() {
+        input('node_modules\\.bin\\gulp indent')
+    },
+
+    reports() {
+        input('node_modules\\.bin\\gulp reports')
+    },
+
+    serve() {
+        const dist = (process.argv[3] === 'dist')
+
+        input(`node_modules\\.bin\\gulp webserver --dist=${dist}`)
+    },
+
+    spec() {
+        input('node_modules\\.bin\\gulp test')
+    },
+
+    update() {
+        input('npm i generator-speedseed -g && yo speedseed:update && npm i')
+    },
+
+    // OTHERS
+    clean() {
+        input('rmdir -build -dist -reports -tmp node_modules /s /q')
+    },
+
+    server() {
+        input('node .core\\server')
+    },
+
+    typings() {
+        input('typings install')
+    },
+
+    default() {
+        console.log(`Command ${arg} not found`)
+    }
+};
+
+(options[arg])
+    ? options[arg]()
+    : options.default()
