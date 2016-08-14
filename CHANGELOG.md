@@ -2,6 +2,11 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.20.1
+    - Fix: error when launch speedseed start
+    - Fix: README in spanish updated
+    - Template multi-tic-tac-toe updated
+
 ### v.0.20.0
     - Add speedseed cli
     - All files and libs core moved to templates
@@ -227,6 +232,19 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.20.1
+    - Arregla: error cuando lanzamos speedseed start
+    - Arregla: README en español actualizado
+    - Plantilla multi-tic-tac-toe actualizada
+
+### v.0.20.0
+    - Add speedseed cli
+    - All files and libs core moved to templates
+    - Global refactor, more clean in app and templates
+    - Multiple changes in README
+    - Rename all tasks to speedseed *
+    - Rename templates whitespace to cleanly
+
 ### v.0.19.0
     - Actualiza http-proxy-middleware a 0.17.0
     - Actualiza AngularJS a 1.5.7
