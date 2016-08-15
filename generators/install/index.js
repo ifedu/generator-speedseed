@@ -3,8 +3,8 @@ const searchGenerators = () => {
 
     const choices = [
         { name: 'generator-speedseed-multi-tic-tac-toe', value: 'multi-tic-tac-toe' },
-        { name: 'generator-speedseed-angular2-cleanly', value: 'angular2-cleanly' },
-        { name: 'generator-speedseed-polymer-cleanly', value: 'polymer-cleanly' }
+        { name: 'generator-speedseed-cleanly-angular2-tour-of-heroes', value: 'cleanly-angular2-tour-of-heroes' },
+        { name: 'generator-speedseed-cleanly-polymer-get-started', value: 'cleanly-polymer-get-started' },
     ]
 
     try {

@@ -2,6 +2,9 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.20.4
+    - Update templates default
+
 ### v.0.20.1
     - Fix: error when launch speedseed start
     - Fix: README in spanish updated
@@ -232,6 +235,9 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.20.4
+    - Actualiza plantillas por defecto
+
 ### v.0.20.1
     - Arregla: error cuando lanzamos speedseed start
     - Arregla: README en español actualizado
