@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 
+const path = require('path')
+
 const arg = (process.argv[2]) ? process.argv[2] : ''
+
+const gulp = path.normalize('node_modules/.bin/gulp')
 
 const input = (str) => {
     const spawn = require('child_process').spawn
@@ -18,56 +22,56 @@ const options = {
         (process.argv[3] === '-g')
             ? input('npm i bower -g && npm i yo -g')
             : input('npm i && bower i')
-
-    },
-
-    // YO
-    component() {
-        input('yo speedseed:component')
-    },
-
-    start() {
-        input('yo speedseed')
-    },
-
-    // TASKS
-    build() {
-        const open = (process.argv[3] === 'open')
-
-        input(`node_modules\\.bin\\gulp build --open=${open}`)
-    },
-
-    dist() {
-        const server = (process.argv[3] === 'server')
-
-        input(`node_modules\\.bin\\gulp build --dist=true --server=${server}`)
-    },
-
-    indent() {
-        input('node_modules\\.bin\\gulp indent')
-    },
-
-    reports() {
-        input('node_modules\\.bin\\gulp reports')
-    },
-
-    serve() {
-        const dist = (process.argv[3] === 'dist')
-
-        input(`node_modules\\.bin\\gulp webserver --dist=${dist}`)
-    },
-
-    spec() {
-        input('node_modules\\.bin\\gulp test')
     },
 
     update() {
         input('npm i generator-speedseed -g && yo speedseed:update && npm i')
     },
 
-    // OTHERS
+    start() {
+        input('yo speedseed')
+    },
+
+    build() {
+        const open = (process.argv[3] === 'open')
+
+        input(`${gulp} build --open=${open}`)
+    },
+
+    dist() {
+        const server = (process.argv[3] === 'server')
+
+        input(`${gulp} build --dist=true --server=${server}`)
+    },
+
+    serve() {
+        const dist = (process.argv[3] === 'dist')
+
+        input(`${gulp} webserver --dist=${dist}`)
+    },
+
+    component() {
+        input('yo speedseed:component')
+    },
+
+    vendor() {
+        input(`${gulp} copy-libs`)
+    },
+
+    indent() {
+        input(`${gulp} indent`)
+    },
+
+    reports() {
+        input(`${gulp} reports`)
+    },
+
+    spec() {
+        input(`${gulp} test`)
+    },
+
     clean() {
-        input('rmdir -build -dist -reports -tmp node_modules /s /q')
+        input(`rmdir ${process.argv[3]} /s /q`)
     },
 
     server() {
@@ -78,8 +82,35 @@ const options = {
         input('typings install')
     },
 
+    help() {
+        console.log(`
+    speedseed install [-g]
+    speedseed update
+
+    speedseed start
+    speedseed build [open]
+    speedseed dist [server]
+    speedseed serve [dist]
+
+    speedseed component
+    speedseed vendor
+
+    speedseed indent
+    speedseed reports
+    speedseed spec
+
+    speedseed clean [<dir>]
+    speedseed server
+    speedseed typings
+    speedseed help
+        `)
+    },
+
     default() {
-        console.log(`Command ${arg} not found`)
+        console.log(`Command ${arg} not found
+Try with:`)
+
+        this.help()
     }
 };
 

@@ -2,6 +2,10 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.20.6
+    - Fix: path gulp in Unix
+    - Add speedseed help
+
 ### v.0.20.5
     - Fix: In Unix error such file or directory in CLI speedseed
 
@@ -238,8 +242,12 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.20.6
+    - Arregla: ruta de gulp en Unix
+    - Añade speedseed help
+
 ### v.0.20.5
-    - Fix: En Unix error de fichero o directorio no enconrado en CLI speedseed
+    - Arregla: En Unix error de fichero o directorio no enconrado en CLI speedseed
 
 ### v.0.20.4
     - Actualiza plantillas por defecto
