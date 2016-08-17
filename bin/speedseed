@@ -14,7 +14,6 @@ const input = (str) => {
 }
 
 const options = {
-    // NPM
     install() {
         (process.argv[3] === '-g')
             ? input('npm i bower -g && npm i yo -g')

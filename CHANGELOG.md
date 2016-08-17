@@ -2,6 +2,9 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.20.5
+    - Fix: In Unix error such file or directory in CLI speedseed
+
 ### v.0.20.4
     - Update templates default
 
@@ -235,6 +238,9 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.20.5
+    - Fix: En Unix error de fichero o directorio no enconrado en CLI speedseed
+
 ### v.0.20.4
     - Actualiza plantillas por defecto
 
