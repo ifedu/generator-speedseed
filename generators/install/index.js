@@ -7,6 +7,15 @@ const searchGenerators = () => {
         { name: 'generator-speedseed-cleanly-polymer-get-started', value: 'cleanly-polymer-get-started' },
     ]
 
+    const isGeneratorSpeedseed = () => (choice.name === `generator-${data.name}`)
+
+    const isNotBlackList = (name) => {
+        if (name === 'generator-speedseed-angular2-whitespace') return false
+        if (name === 'generator-speedseed-polymer-whitespace') return false
+
+        return true
+    }
+
     try {
         const res = request('GET', 'https://storage.googleapis.com/generators.yeoman.io/cache.json')
 
@@ -17,7 +26,7 @@ const searchGenerators = () => {
             let isFinded = false
 
             for (let choice of choices) {
-                if (choice.name === `generator-${data.name}`) {
+                if (isGeneratorSpeedseed() && isNotBlackList(choice.name)) {
                     isFinded = true
                 }
             }

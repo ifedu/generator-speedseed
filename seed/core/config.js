@@ -5,7 +5,10 @@ const coreConfig = require('./core-config.js')(coreConfigUser)
 const extend = require('extend')
 
 const $ = {
+    coreConfig,
+
     runSequence: require('run-sequence'),
+    yo: require('../.yo-rc.json')['generator-speedseed'],
 
     tasks: './tasks',
 
@@ -38,8 +41,6 @@ const $ = {
         compiler: require('./options/compiler.js'),
         framework: require('./options/framework.js')
     },
-
-    yo: require('../.yo-rc.json')['generator-speedseed'],
 
     getJs(route) {
         delete require.cache[route]
@@ -109,25 +110,6 @@ const $ = {
         const ROUTE_GLOBAL = path.resolve(__dirname, '../', `${this.app.dir}/__global.js`)
 
         this.getJs(ROUTE_GLOBAL)
-    },
-
-    setParams() {
-        const util = require('gulp-util')
-
-        if (util.env.dist === 'true') {
-            this.config.dist = true
-            this.config.port = coreConfig.dist.port
-
-            this.config.less.compress = true
-            this.config.sass.outputStyle = 'compressed'
-            this.config.scss.outputStyle = 'compressed'
-            this.config.styl.compress = true
-
-            this.build = this.dist
-        }
-
-        if (util.env.open === 'false') this.config.open = false
-        if (util.env.server === 'false') this.config.server = false
     },
 
     translateTpl(content, route, ext) {

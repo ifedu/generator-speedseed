@@ -2,6 +2,12 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.21.0
+    - Assets and vendor read in app/ instead build/
+    - Modified speedseed clean [dir]
+    - Task copy only used in task dist
+    - Templates whitespace add to blacklist
+
 ### v.0.20.6
     - Fix: path gulp in Unix
     - Add speedseed help
@@ -242,6 +248,12 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.21.0
+    - Assets y vendor leídos en app/ en vez de en build/
+    - Modificado speedseed clean [dir]
+    - Plantillas whitespace añadidas a blacklist
+    - Tarea de copiar sólo usada en tarea dist
+
 ### v.0.20.6
     - Arregla: ruta de gulp en Unix
     - Añade speedseed help

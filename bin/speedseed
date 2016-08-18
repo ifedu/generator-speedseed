@@ -54,10 +54,6 @@ const options = {
         input('yo speedseed:component')
     },
 
-    vendor() {
-        input(`${gulp} copy-libs`)
-    },
-
     indent() {
         input(`${gulp} indent`)
     },
@@ -93,7 +89,6 @@ const options = {
     speedseed serve [dist]
 
     speedseed component
-    speedseed vendor
 
     speedseed indent
     speedseed reports
