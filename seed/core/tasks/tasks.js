@@ -3,25 +3,25 @@ module.exports = ($, gulp) => {
         ? gulp.task('common', (cb) => $.runSequence(
             'clean',
             ['css-app', 'html-app', 'js-app'],
-            ['js', 'css', 'html', 'copy'],
+            ['js', 'css', 'html'],
             cb
         ))
         : gulp.task('common', (cb) => $.runSequence(
             'clean',
             ['css-app', 'html-app', 'js-app'],
             'jsx',
-            ['js', 'css', 'html', 'copy'],
+            ['js', 'css', 'html'],
             cb
         ))
 
     if ($.config.dist !== true) {
-        gulp.task('build', (cb) => $.runSequence('common', 'webserver', 'watch', cb))
+        gulp.task('build', (cb) => $.runSequence('common', 'copy', 'webserver', 'watch', cb))
     }
-    else if ($.config.server === false) {
-        gulp.task('build', (cb) => $.runSequence('common', 'minified', cb))
+    else if ($.config.server !== true) {
+        gulp.task('build', (cb) => $.runSequence('common', 'copy', 'copy-libs', 'minified', cb))
     }
     else {
-        gulp.task('build', (cb) => $.runSequence('common', 'minified', 'webserver', 'watch', cb))
+        gulp.task('build', (cb) => $.runSequence('common', 'copy', 'copy-libs', 'minified', 'webserver', 'watch', cb))
     }
 
     gulp.task('reports', (cb) => $.runSequence('common', 'analysis', 'webserver', cb))

@@ -7,7 +7,7 @@ module.exports = {
             styl: () => require('gulp-stylus')($.config.styl)
         }
 
-        return plugins[$.yo.css]()
+        return plugins[$.yo.css]
     },
 
     getPluginCssMin($) {
@@ -18,6 +18,6 @@ module.exports = {
             styl: () => require('gulp-stylus')({ compress: true })
         }
 
-        return plugins[$.yo.css]()
+        return plugins[$.yo.css]
     }
 }

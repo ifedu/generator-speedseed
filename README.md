@@ -1,4 +1,4 @@
-### v.0.20.6
+### v.0.21.0
 
 ### Requeriments
 - NodeJS >= 6.0.0
@@ -197,13 +197,12 @@
 
 ### Spanish
 - *Características y convenciones*
-    - Test deben llamarse *.spec.js 
+    - Test Unitarios deben llamarse *.spec.js 
     - Ficheros y carpetas que empiezan por _ no se compilan a build, usado para incluir propiedades o includes nativos
-    - Ficheros con .nombre.scss .nombre.js .nombre.jade precompilan en .tmp, usado para incluir ficheros
-        - En *.jade include -nombre.css -nombre.js -nombre.html
-        - En *.js {%= include('-nombre.html') %} para ficheros .nombre.jade o nombre.html
+    - Ficheros con .nombre.scss .nombre.js .nombre.jade precompilan en .tmp, usado para incluir ficheros mediante el templating {%= %}
+        - {%= include('nombre.html') %} para ficheros .nombre.jade, .nombre.sass o sin punto si no tienen que compilarse como nombre.html, nombre.css
 
-    - Permite incluir rutas, perfecto para incluir todos los componentes
+    - Permite incluir rutas de componentes, perfecto para automatizar incluir todos los componentes
         - Sintaxis: {%= getRoutes(rutaCarpeta, ext, (Boolean incluye _files), `$TPL$ reemplazado por ruta`, 'identación') %}
         - Ejemplo: {%= getRoutes('components', '.js', false, `script(src='$TPL$')`, '            ') %}
         - Ejemplo: {%= getRoutes('../components', '.styl', true, `@import '$TPL$'`) %}
@@ -215,41 +214,16 @@
 ---
 
 - *Opciones de personalización*
-    - *Framework/Libs*
-        - **AngularJS 1.5.7**
-        - **Angular2 2.0.0-rc.4**
-        - **jQuery 3.0.0**
-        - **Polymer 1.6.0**
-        - **React 15.2.1** (Leer IMPORTANT.txt para uso experimental con plantillas jade)
+    - https://github.com/ifedu/generator-speedseed/docs/options.js
 
     ---
 
-    - *Plantillas*
-        - **npm i generator-speedseed-multi-tic-tac-toe -g**
-        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
-        - **https://github.com/ifedu/speedseed-angular2-whitespace**
-        - **https://github.com/ifedu/speedseed-polymer-whitespace**
+    - *Plantillas oficiales*
+        - **npm i [plantilla] -g**
+        - **https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe**
+        - **https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes**
+        - **https://www.npmjs.com/package/generator-speedseed-cleanly-polymer-get-started**
 
-    ---
-
-    - *CSS*
-        - **SaSS**
-        - **ScSS**
-        - **LeSS**
-        - **Stylus**
-
-    ---
-
-    - *Compilación/Transpiler a JS/ECMAScript5 estándar*
-        - **BabelJs**
-        - **CoffeeScript**
-        - **TypeScript**
-    
-    ---
-
-    - *Test*
-        - **Mocha**
-        - **Jasmine**
     
     ---
 

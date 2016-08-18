@@ -10,28 +10,16 @@ module.exports = ($, gulp) => {
     })
 
     gulp.task('watch', () => {
-        setTimeout(() => {
-            // COPY
+        const copy = () => {
             watch([
                 `${$.app.dir}/**/*.css`,
-                `!${$.app.dir}/**/-*.css`,
-                `!${$.app.dir}/**/_*.css`,
-                `!${$.app.dir}/**/_**/**/*.css`
-            ], () => $.runSequence('copy-css', 'reload'))
-
-            watch([
                 `${$.app.dir}/**/*.html`,
-                `!${$.app.dir}/**/-*.html`,
-                `!${$.app.dir}/**/_*.html`,
-                `!${$.app.dir}/**/_**/**/*.html`
-            ], () => $.runSequence('copy-html', 'reload'))
+                `${$.app.dir}/**/*.json`
+            ], () => $.runSequence('copy-files', 'reload'))
+        }
 
-            watch([
-                `${$.app.dir}/**/*.json`,
-                `!${$.app.dir}/**/-*.json`,
-                `!${$.app.dir}/**/_*.json`,
-                `!${$.app.dir}/**/_**/**/*.json`
-            ], () => $.runSequence('copy-json', 'reload'))
+        setTimeout(() => {
+            copy()
 
             // CSS
             watch([

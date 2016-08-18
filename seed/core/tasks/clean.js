@@ -1,23 +1,18 @@
 module.exports = ($, gulp) => {
-    const deleteFiles = (files, cb) =>
-        require('del')(files, {
+    const deleteFiles = (files, cb) => {
+        const del = require('del')
+
+        del.sync(files, {
             force: true
-        }, cb)
+        })
+
+        cb()
+    }
 
     gulp.task('clean', (cb) => deleteFiles([
-        $.build.dir,
+        `${$.build.dir}/**/*`,
         $.tmp.dir
     ], cb))
-
-    gulp.task('clean-dirs', (cb) =>
-        deleteFiles([
-            $.build.dir,
-            $.dist.dir,
-            $.reports.dir,
-            $.tmp.dir,
-            './node_modules'
-        ], cb)
-    )
 
     gulp.task('clean-plato', (cb) => deleteFiles($.reports.plato.dir, cb))
 }

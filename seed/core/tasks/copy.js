@@ -7,16 +7,9 @@ module.exports = ($, gulp) => {
 
             return gulp
             .src(src)
-            .pipe(changed(dest, ext))
-            .pipe(gulpif(
-                (ext.extension === '.html'),
-                modifyFile((content, route) => $.translateTpl(content, route, ext.extension))
-            ))
+            .pipe(modifyFile((content, route) => $.translateTpl(content, route, ext.extension)))
             .pipe(gulp.dest(dest))
         }
-
-    gulp.task('copy-assets', copy({}, `${$.app.copy.assets}/**`, $.build.copy.assets))
-    gulp.task('copy-vendor', copy({}, `${$.app.copy.vendor}/**`, $.build.copy.vendor))
 
     const dependencies = require('../../package.json').dependencies
     const nodeModules = []
@@ -35,35 +28,23 @@ module.exports = ($, gulp) => {
         $.runSequence(nodeModules, cb)
     })
 
-    gulp.task('copy-css', copy({extension: '.css'}, [
+    gulp.task('copy', copy({}, [
         `${$.app.dir}/**/*.css`,
+        `${$.app.dir}/**/*.html`,
+        `${$.app.dir}/**/*.json`,
 
         `!${$.app.dir}/**/-*.css`,
         `!${$.app.dir}/**/-**/**/*.css`,
 
-        `!${$.app.dir}/**/_*.css`,
-        `!${$.app.dir}/**/_**/**/*.css`
-    ], $.build.dir))
-
-    gulp.task('copy-html', copy({extension: '.html'}, [
-        `${$.app.dir}/**/*.html`,
-
         `!${$.app.dir}/**/-*.html`,
         `!${$.app.dir}/**/-**/**/*.html`,
 
-        `!${$.app.dir}/**/_*.html`,
-        `!${$.app.dir}/**/_**/**/*.html`
-    ], $.build.dir))
-
-    gulp.task('copy-json', copy({extension: '.json'}, [
-        `${$.app.dir}/**/*.json`,
-
         `!${$.app.dir}/**/-*.json`,
-        `!${$.app.dir}/**/-**/**/*.json`,
-
-        `!${$.app.dir}/**/_*.json`,
-        `!${$.app.dir}/**/_**/**/*.json`
+        `!${$.app.dir}/**/-**/**/*.json`
     ], $.build.dir))
 
-    gulp.task('copy', (cb) => $.runSequence(['copy-assets', 'copy-css', 'copy-html', 'copy-json', 'copy-node_modules', 'copy-vendor'], cb))
+    gulp.task('copy-assets', copy({}, `${$.app.copy.assets}/**`, $.build.copy.assets))
+    gulp.task('copy-vendor', copy({}, `${$.app.copy.vendor}/**`, $.build.copy.vendor))
+
+    gulp.task('copy-libs', (cb) => $.runSequence(['copy-assets', 'copy-node_modules', 'copy-vendor'], cb))
 }
