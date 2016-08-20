@@ -15,7 +15,7 @@ module.exports = ($, gulp) => {
             `${$.app.dir}/**/*.jade`,
             `!${$.app.copy.vendor}/**/*`
         ])
-        .pipe(gulpif($.if.notInclude, changed($.build.dir, { extension: '.html' })))
+        // .pipe(gulpif($.if.notInclude, changed($.build.dir, { extension: '.html' })))
         .pipe(plumber())
         .pipe(filter($.filterProps('jade')))
         .pipe(data((file) => $.getJsProps(file, '.jade')))
@@ -38,7 +38,7 @@ module.exports = ($, gulp) => {
             `${$.app.dir}/**/.*.jade`,
             `!${$.app.copy.vendor}/**/*`
         ])
-        .pipe(changed($.app.dir, { extension: '.html' }))
+        // .pipe(changed($.app.dir, { extension: '.html' }))
         .pipe(plumber())
         .pipe(data((file) => $.getJsProps(file, '.jade')))
         .pipe(jade($.config.html))

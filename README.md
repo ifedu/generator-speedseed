@@ -1,4 +1,4 @@
-### v.0.21.0
+### v.0.21.1
 
 ### Requeriments
 - NodeJS >= 6.0.0
@@ -12,11 +12,10 @@
 
 ### English
 - *Features and conventions*
-    - Test must be called *.spec.js 
+    - Unit Test must be called *.spec.js 
     - Files and folders start for _ no compile to build, used for includes properties or native includes
-    - Files with .name.scss .name.js .name.jade compile in .tmp, used for includes files
-        - In *.jade include -name.css -name.js -name.html
-        - In *.js {%= include('name.html') %} for files .name.jade or name.html
+    - Files with .name.scss .name.js .name.jade compile in .tmp, used for includes files with templating {%= %}
+        - {%= include('name.html') %} for files .name.jade, .name.sass or without a point if they do not have to be compiled as name.html, name.css
 
     - Allow include routes, perfect for includes all components
         - Syntax: {%= getRoutes(folderRoute, ext, (Boolean include _files), `$TPL$ replace for route`, 'indent') %}
@@ -28,45 +27,13 @@
     - Local properties for our jades with name.jade _name.js
 
 ---
-    
-- *Personalization options*
-    - *Framework/Libs*
-        - **AngularJS 1.5.7**
-        - **Angular2 2.0.0-rc.4**
-        - **jQuery 3.0.0**
-        - **Polymer 1.6.0**
-        - **React 15.2.1** (Read IMPORTANT.txt for experimental use with jade templates)
-        - **VanillaJS**
-    
-    ---
 
-    - *Templates*
-        - **npm i generator-speedseed-multi-tic-tac-toe -g**
-        - **https://github.com/ifedu/speedseed-multi-tic-tac-toe**
-        - **https://github.com/ifedu/speedseed-angular2-whitespace**
-        - **https://github.com/ifedu/speedseed-polymer-whitespace**
+- *Official Templates*
+    - **npm i [template] -g**
+    - **https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe**
+    - **https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes**
+    - **https://www.npmjs.com/package/generator-speedseed-cleanly-polymer-get-started**
 
-    ---
-
-    - *CSS*
-        - **SaSS**
-        - **ScSS**
-        - **LeSS**
-        - **Stylus**
-
-    ---
-
-    - *Compiler/Transpiler to JS/ECMAScript5 standard*
-        - **BabelJs**
-        - **CoffeeScript**
-        - **TypeScript**
-    
-    ---
-
-    - *Test*
-        - **Mocha**
-        - **Jasmine**
-    
     ---
 
 - *Extras*
@@ -171,7 +138,7 @@
 - **app** => *development template*
     - **-vendor** => *libs external*
     - **components** => *components*
-        - **_main.jade** => *include all mixins*
+        - **_mixins.jade** => *include all mixins*
         - **components** => *include all css*
     - **css** => *contain css files*
     - **js** => *contain js files*
@@ -197,7 +164,7 @@
 
 ### Spanish
 - *Características y convenciones*
-    - Test Unitarios deben llamarse *.spec.js 
+    - Test Unitarios deben llamarse *.spec.js
     - Ficheros y carpetas que empiezan por _ no se compilan a build, usado para incluir propiedades o includes nativos
     - Ficheros con .nombre.scss .nombre.js .nombre.jade precompilan en .tmp, usado para incluir ficheros mediante el templating {%= %}
         - {%= include('nombre.html') %} para ficheros .nombre.jade, .nombre.sass o sin punto si no tienen que compilarse como nombre.html, nombre.css
@@ -213,19 +180,13 @@
 
 ---
 
-- *Opciones de personalización*
-    - https://github.com/ifedu/generator-speedseed/docs/options.js
+- *Plantillas oficiales*
+    - **npm i [plantilla] -g**
+    - **https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe**
+    - **https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes**
+    - **https://www.npmjs.com/package/generator-speedseed-cleanly-polymer-get-started**
 
-    ---
-
-    - *Plantillas oficiales*
-        - **npm i [plantilla] -g**
-        - **https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe**
-        - **https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes**
-        - **https://www.npmjs.com/package/generator-speedseed-cleanly-polymer-get-started**
-
-    
-    ---
+---
 
 - *Extras*
     - *Automatización de tareas*
@@ -253,15 +214,15 @@
 - *Usar una vez en el Sistema Operativo*
     - Instala librerías en el Sistema Operativo
     - **npm i generator-speedseed -g**
-    - **speedseed global**
+    - **speedseed install -g**
     - **npm i generator-speedseed-multi-tic-tac-toe -g** (template multi-tic-tac-toe)
 
 ---
 
 - *Usar una vez en la carpeta del proyecto*
     - Lanza el generador e instalas las dependencias
+    - **speedseed start**
     - **speedseed install**
-    - **speedseed local**
 
 ---
 
@@ -329,7 +290,7 @@
 - **app** => *plantilla de desarrollo*
     - **-vendor** => *libs externas*
     - **components** => *componentes*
-        - **_main.jade** => *incluye todos los mixins*
+        - **_mixins.jade** => *incluye todos los mixins*
         - **components** => *incluye todos los css*
     - **css** => *contiene ficheros css*
     - **js** => *contiene ficheros js*

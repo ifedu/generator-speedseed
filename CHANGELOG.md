@@ -2,6 +2,10 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.21.1
+    - Fix: README
+    - Compile all jade files when save
+
 ### v.0.21.0
     - Assets and vendor read in app/ instead build/
     - Modified speedseed clean [dir]
@@ -248,6 +252,10 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.21.1
+    - Arregla: README
+    - Compila todos los ficheros jade cuando guardas
+
 ### v.0.21.0
     - Assets y vendor leídos en app/ en vez de en build/
     - Modificado speedseed clean [dir]
