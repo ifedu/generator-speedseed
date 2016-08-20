@@ -2,6 +2,10 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.21.2
+    - Fix: speedseed update
+    - Add speedseed in .gitattributes 
+
 ### v.0.21.1
     - Fix: README
     - Compile all jade files when save
@@ -252,6 +256,10 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.21.2
+    - Arregla: speedseed update
+    - Añade speedseed en .gitattributes 
+
 ### v.0.21.1
     - Arregla: README
     - Compila todos los ficheros jade cuando guardas
