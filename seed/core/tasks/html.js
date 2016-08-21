@@ -30,7 +30,6 @@ module.exports = ($, gulp) => {
     gulp.task('html-app', (cb) => {
         const changed = require('gulp-changed')
         const data = require('gulp-data')
-        const jade = require('gulp-jade')
         const plumber = require('gulp-plumber')
         const rename = require('gulp-rename')
 

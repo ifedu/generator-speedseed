@@ -260,6 +260,10 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.21.3
+    - Arregla: Copia assets en tarea dist
+    - Añade alias speedseed i como speedseed install
+
 ### v.0.21.2
     - Arregla: speedseed update
     - Añade speedseed en .gitattributes 
