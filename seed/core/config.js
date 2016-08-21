@@ -39,7 +39,8 @@ const $ = {
     options: {
         css: require('./options/css.js'),
         compiler: require('./options/compiler.js'),
-        framework: require('./options/framework.js')
+        framework: require('./options/framework.js'),
+        html: require('./options/html.js')
     },
 
     getJs(route) {
@@ -97,10 +98,11 @@ const $ = {
             include(file) {
                 const path = require('path')
 
+                let fileApp = path.normalize(`${$.dirInclude}/.${file}`)
                 let fileTmp = path.normalize(`${$.dirInclude}/${file}`)
 
-                fileTmp = (fs.existsSync(fileTmp))
-                    ? fileTmp
+                fileTmp = (fs.existsSync(fileApp))
+                    ? fileApp
                     : fileTmp.replace($.app.dir.substring('2'), $.tmp.dir.substring('2'))
 
                 return fs.readFileSync(fileTmp)

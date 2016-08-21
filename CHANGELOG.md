@@ -2,6 +2,10 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.21.3
+    - Fix: Copy Assets in dist task
+    - Add alias speedseed i as speedseed install
+
 ### v.0.21.2
     - Fix: speedseed update
     - Add speedseed in .gitattributes 

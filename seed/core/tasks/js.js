@@ -24,7 +24,7 @@ module.exports = ($, gulp) => {
         .pipe($.options.compiler.getPluginCompiler($))
         .pipe(gulpif(
             ($.yo.framework === 'angularjs' && $.config.dist === true),
-            $.options.framework.ngAnnotate($)()
+            require('gulp-ng-annotate')
         ))
         .pipe(gulp.dest($.build.dir))
     })
@@ -49,7 +49,6 @@ module.exports = ($, gulp) => {
     })
 
     gulp.task('js-app', () => {
-        const babel = require('gulp-babel')
         const changed = require('gulp-changed')
         const gulpif = require('gulp-if')
         const plumber = require('gulp-plumber')
