@@ -3,8 +3,9 @@
 
 ## English
 ### v.0.21.3
-    - Fix: Copy Assets in dist task
-    - Add alias speedseed i as speedseed install
+    - Fix: Copy assets dist task
+    - Fix: It is not required to always add the dependencies of Babel
+    - Added alias speedseed i like speedseed install
 
 ### v.0.21.2
     - Fix: speedseed update
@@ -262,6 +263,7 @@
 ## Spanish
 ### v.0.21.3
     - Arregla: Copia assets en tarea dist
+    - Arregla: No es requerido añadir siempre las dependencias de Babel
     - Añade alias speedseed i como speedseed install
 
 ### v.0.21.2
