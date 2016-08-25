@@ -1,60 +1,6 @@
-const searchGenerators = () => {
-    const request = require('sync-request')
-
-    const choices = [
-        { name: 'generator-speedseed-multi-tic-tac-toe', value: 'multi-tic-tac-toe' },
-        { name: 'generator-speedseed-cleanly-angular2-tour-of-heroes', value: 'cleanly-angular2-tour-of-heroes' },
-        { name: 'generator-speedseed-cleanly-polymer-get-started', value: 'cleanly-polymer-get-started' },
-    ]
-
-    const isGeneratorSpeedseed = () => (choice.name === `generator-${data.name}`)
-
-    const isNotBlackList = (name) => {
-        if (name === 'generator-speedseed-angular2-whitespace') return false
-        if (name === 'generator-speedseed-polymer-whitespace') return false
-
-        return true
-    }
-
-    try {
-        const res = request('GET', 'https://storage.googleapis.com/generators.yeoman.io/cache.json')
-
-        const CHARACTERS_TEMPLATING = 'speedseed-'
-        const CHARACTERS_TEMPLATING_LENGTH = 'speedseed-'.length
-
-        const searchGeneratorsIncludes = (data) => {
-            let isFinded = false
-
-            for (let choice of choices) {
-                if (isGeneratorSpeedseed() && isNotBlackList(choice.name)) {
-                    isFinded = true
-                }
-            }
-
-            return isFinded
-        }
-
-        const checkGeneratorSpeedSeed = (data) => {
-            const FIRST_CHARACTERS_DATA = data.name.substring(0, CHARACTERS_TEMPLATING_LENGTH)
-
-            if ((FIRST_CHARACTERS_DATA === CHARACTERS_TEMPLATING) &&
-                (searchGeneratorsIncludes(data) === false)) {
-                choices.push({
-                    name: `generator-${data.name}`,
-                    value: data.name.substring(10)
-                })
-            }
-        }
-
-        for (let data of JSON.parse(res.getBody('utf8'))) {
-            checkGeneratorSpeedSeed(data)
-        }
-    } catch (e) {}
-
-    return choices
-}
-
 const speedseed = require('speedseed')
+
+const searchGenerators = require('./searchGenerators.js')
 
 module.exports = class Yo extends speedseed.Config {
     constructor(...args) {
@@ -68,33 +14,36 @@ module.exports = class Yo extends speedseed.Config {
     }
 
     prompting() {
-        const prompt = [{
-            default: this.config.get('project') || '',
+        const general = this.config.get('general') || {}
+
+        const options = [{
+            default: general.project || '',
             message: 'Project Name?',
             name: 'project',
+            option: { general },
             type: 'input'
         }, {
-            default: this.config.get('template') || 0,
+            default: general.template || 0,
             message: 'Template?',
             name: 'template',
+            option: { general },
             type: 'list',
 
             choices: searchGenerators()
         }]
 
-        this._setPrompting(prompt, this.async())
+        this._setPromptings({ options }, this.async())
     }
 
     write() {
-        const project = this.config.get('project').toLowerCase().replace(/[-_ ]/g, '')
+        const general = this.config.get('general')
+        general.project = general.project.toLowerCase().replace(/[-_ ]/g, '')
 
-        this.config.set('project', project)
-
-        const template = this.config.get('template')
+        this.config.set('general', general)
 
         const options = this.config.getAll()
         options.speedseed = this
 
-        this.composeWith(`speedseed-${template}`, { options })
+        this.composeWith(`speedseed-${general.template}`, { options })
     }
 }

@@ -40,9 +40,9 @@
         "accessor-pairs": 0,
         "array-callback-return": 2,
         "block-scoped-var": 2,
-        "complexity": [3, 2],
+        "complexity": [1, 6],
         "consistent-return": 0,
-        "curly": 2,
+        "curly": 0,
         // "valid-typeof": 2, // RECOMMENDED
         // "valid-typeof": 2, // RECOMMENDED
         // "valid-typeof": 2, // RECOMMENDED
