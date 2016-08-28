@@ -1,6 +1,4 @@
 module.exports = ($, gulp) => {
-    const ext = $.options.compiler.getExtCompiler($)
-
     gulp.task('js', () => {
         const changed = require('gulp-changed')
         const extend = require('extend')
@@ -13,18 +11,18 @@ module.exports = ($, gulp) => {
 
         return gulp
         .src([
-            `${$.app.dir}/**/*.${ext}`,
-            `!${$.app.dir}/**/*.spec.${ext}`,
+            `${$.app.dir}/**/*.${$.yo.tpl['js-extra']}`,
+            `!${$.app.dir}/**/*.spec.${$.yo.tpl['js-extra']}`,
             `!${$.app.copy.vendor}/**/*`
         ])
         .pipe(gulpif($.if.notInclude, changed($.build.dir)))
         .pipe(plumber())
-        .pipe(filter($.filterProps(`${ext}`)))
-        .pipe(modifyFile((content, route) => $.translateTpl(content, route, `.${ext}`)))
-        .pipe($.options.compiler.getPluginCompiler($))
+        .pipe(filter($.filterProps(`${$.yo.tpl['js-extra']}`)))
+        .pipe(modifyFile((content, route) => $.translateTpl(content, route, `.${$.yo.tpl['js-extra']}`)))
+        .pipe($.options.js.getPluginCompiler($))
         .pipe(gulpif(
-            ($.yo.framework === 'angularjs' && $.config.dist === true),
-            require('gulp-ng-annotate')
+            ($.yo.tpl.framework === 'angularjs' && $.config.dist === true),
+            require('gulp-ng-annotate')()
         ))
         .pipe(gulp.dest($.build.dir))
     })
@@ -41,10 +39,10 @@ module.exports = ($, gulp) => {
 
         return gulp
         .src([
-            `${$.app.dir}/**/*.spec.${ext}`
+            `${$.app.dir}/**/*.spec.${$.yo.tpl['js-extra']}`
         ])
         .pipe(plumber())
-        .pipe($.options.compiler.getPluginCompiler($))
+        .pipe($.options.js.getPluginCompiler($))
         .pipe(gulp.dest($.tmp.dir))
     })
 
@@ -57,14 +55,14 @@ module.exports = ($, gulp) => {
 
         return gulp
         .src([
-            `${$.app.dir}/**/.*.${ext}`,
+            `${$.app.dir}/**/.*.${$.yo.tpl['js-extra']}`,
             `!${$.app.copy.vendor}/**/*`
         ])
         .pipe(plumber())
-        .pipe($.options.compiler.getPluginCompiler($))
+        .pipe($.options.js.getPluginCompiler($))
         .pipe(rename((path) => path.basename = `-${path.basename.substr(1)}`))
         .pipe(changed($.app.dir))
-        .pipe(gulpif(($.yo.framework === 'polymer' && $.config.dist === true), uglify()))
+        .pipe(gulpif(($.yo.tpl.framework === 'polymer' && $.config.dist === true), uglify()))
         .pipe(gulp.dest($.app.dir))
     })
 }

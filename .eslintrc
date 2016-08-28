@@ -9,7 +9,7 @@
         // POSSIBLE ERRORS
         "comma-dangle": 2, // RECOMMENDED
         "no-cond-assign": 2, // RECOMMENDED
-        "no-console": 1, // RECOMMENDED
+        "no-console": 0, // RECOMMENDED
         "no-constant-condition": 2, // RECOMMENDED
         "no-control-regex": 2, // RECOMMENDED
         "no-debugger": 1, // RECOMMENDED

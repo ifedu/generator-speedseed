@@ -57,7 +57,7 @@ module.exports = ($, gulp) => {
     })
 
     gulp.task('minified', (cb) =>
-        ($.yo.framework === 'polymer')
+        ($.yo.tpl.framework === 'polymer')
             ? $.runSequence('vulcanize', 'oneJS', 'compress-js', 'compress-html', cb)
             : $.runSequence('oneJS', 'compress-js', 'compress-html', cb)
     )

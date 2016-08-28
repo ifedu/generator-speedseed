@@ -1,7 +1,7 @@
 module.exports = ($, gulp) => {
     const watch = require('gulp-watch')
 
-    const ext = $.options.compiler.getExtCompiler($)
+    const ext = $.options.js.getExtCompiler($)
 
     gulp.task('reload', () => {
         $.if.notInclude = true
@@ -23,8 +23,8 @@ module.exports = ($, gulp) => {
 
             // CSS
             watch([
-                `${$.app.dir}/**/*.${$.yo.css}`,
-                `!${$.app.dir}/**/.*.${$.yo.css}`
+                `${$.app.dir}/**/*.${$.yo.tpl.css}`,
+                `!${$.app.dir}/**/.*.${$.yo.tpl.css}`
             ], () => {
                 $.if.notInclude = false
                 return $.runSequence('css', 'reload')
@@ -76,12 +76,12 @@ module.exports = ($, gulp) => {
             // INCLUDE
             watch([
                 `${$.app.dir}/**/_*.html`,
-                `${$.app.dir}/**/.*.${$.yo.css}`,
+                `${$.app.dir}/**/.*.${$.yo.tpl.css}`,
                 `${$.app.dir}/**/.*.jade`
             ], () => {
                 $.if.notInclude = false
 
-                return ($.yo.framework !== 'react')
+                return ($.yo.tpl.framework !== 'react')
                     ? $.runSequence(['css-app', 'html-app', 'js-app'], ['html', 'js'], 'reload')
                     : $.runSequence(['css-app', 'html-app', 'js-app'], ['html', 'js', 'jsx'], 'reload')
             })

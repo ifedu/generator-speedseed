@@ -1,5 +1,5 @@
 module.exports = ($, gulp) => {
-    ($.yo.framework !== 'react')
+    ($.yo.tpl.framework !== 'react')
         ? gulp.task('common', (cb) => $.runSequence(
             'clean',
             ['css-app', 'html-app', 'js-app'],

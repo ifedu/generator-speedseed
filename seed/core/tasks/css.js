@@ -11,12 +11,12 @@ module.exports = ($, gulp) => {
 
         return gulp
         .src([
-            `${$.app.dir}/**/*.${$.yo.css}`,
+            `${$.app.dir}/**/*.${$.yo.tpl['css-extra']}`,
             `!${$.app.copy.vendor}/**/*`
         ])
         .pipe(gulpif($.if.notInclude, changed($.build.dir, {extension: '.css'})))
         .pipe(filter($.filterProps('css')))
-        .pipe(modifyFile((content, route) => $.translateTpl(content, route, `.${$.yo.css}`)))
+        .pipe(modifyFile((content, route) => $.translateTpl(content, route, `.${$.yo.tpl.css}`)))
         .pipe(css())
         .on('error', cb)
         .pipe(gulp.dest($.build.dir))
@@ -32,7 +32,7 @@ module.exports = ($, gulp) => {
 
         return gulp
         .src([
-            `${$.app.dir}/**/.*.${$.yo.css}`,
+            `${$.app.dir}/**/.*.${$.yo.tpl['css-extra']}`,
             `!${$.app.copy.vendor}/**/*`
         ])
         .pipe(changed($.app.dir, {extension: '.css'}))

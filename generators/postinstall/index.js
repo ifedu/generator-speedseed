@@ -3,6 +3,8 @@ const speedseed = require('speedseed')
 module.exports = class Yo extends speedseed.Config {
     constructor(...args) {
         super(...args)
+
+        this._setConfig(this.options)
     }
 
     paths() {
@@ -13,5 +15,6 @@ module.exports = class Yo extends speedseed.Config {
 
     write() {
         this._create('seed/core', './.core')
+        this._create('seed/root/**/*', './')
     }
 }

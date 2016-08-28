@@ -1,6 +1,6 @@
 const $ = require('./config.js')
 
-const showCoreVersion = () => console.log($.yo.coreVersion)
+const showCoreVersion = () => console.log(`${$.yo.core.name} version ${$.yo.core.version}`)
 
 const setArguments = () => {
     $.argv = {}
