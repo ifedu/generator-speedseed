@@ -9,7 +9,11 @@ module.exports = ($, gulp) => {
         const modifyFile = require('gulp-modify-file')
         const plumber = require('gulp-plumber')
 
-        $.resetPropsHtml()
+        let ngAnnotate = plumber
+
+        try {
+            ngAnnotate = require('gulp-ng-annotate')
+        } catch (e) {e}
 
         return gulp
         .src([
@@ -24,7 +28,7 @@ module.exports = ($, gulp) => {
         .pipe($.options.compiler.getPluginCompiler($))
         .pipe(gulpif(
             ($.yo.framework === 'angularjs' && $.config.dist === true),
-            require('gulp-ng-annotate')
+            ngAnnotate()
         ))
         .pipe(gulp.dest($.build.dir))
     })
