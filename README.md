@@ -1,4 +1,4 @@
-### v.0.21.3
+### v.0.21.4
 
 ### Requeriments
 - NodeJS >= 6.0.0
@@ -12,7 +12,7 @@
 
 ### English
 - *Features and conventions*
-    - Unit Test must be called *.spec.js 
+    - Unit Test must be called *.spec.js
     - Files and folders start for _ no compile to build, used for includes properties or native includes
     - Files with .name.scss .name.js .name.jade compile in .tmp, used for includes files with templating {%= %}
         - {%= include('name.html') %} for files .name.jade, .name.sass or without a point if they do not have to be compiled as name.html, name.css
@@ -21,7 +21,7 @@
         - Syntax: {%= getRoutes(folderRoute, ext, (Boolean include _files), `$TPL$ replace for route`, 'indent') %}
         - Example: {%= getRoutes('components', '.js', true, `script(src='$TPL$')`, '            ') %}
         - Example: {%= getRoutes('../components', '.styl', true, `@import '$TPL$'`) %}
-    
+
     - Allow update the core of the project through npm run update without affecting the development of the project
     - Global properties for our jades with con __global.js
     - Local properties for our jades with name.jade _name.js
@@ -173,7 +173,7 @@
         - Sintaxis: {%= getRoutes(rutaCarpeta, ext, (Boolean incluye _files), `$TPL$ reemplazado por ruta`, 'identación') %}
         - Ejemplo: {%= getRoutes('components', '.js', false, `script(src='$TPL$')`, '            ') %}
         - Ejemplo: {%= getRoutes('../components', '.styl', true, `@import '$TPL$'`) %}
-    
+
     - Permite actualizar el núcleo del proyecto mediante npm run update sin afectar al desarrollo del proyecto
     - Propiedades globales para nuestros jades con __global.js
     - Propiedades locales para nuestros jades con nombre.jade _nombre.js
@@ -277,7 +277,7 @@
     ---
     - Borra carpetas generadas -build -dist -reports -tmp node_modules
     - **speedseed clean**
-    
+
 ---
 
 ## Structure
