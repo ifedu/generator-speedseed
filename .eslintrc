@@ -16,7 +16,7 @@
         "no-dupe-args": 2, // RECOMMENDED
         "no-dupe-keys": 2, // RECOMMENDED
         "no-duplicate-case": 2, // RECOMMENDED
-        "no-empty": 2, // RECOMMENDED
+        "no-empty": 0, // RECOMMENDED
         "no-empty-character-class": 2, // RECOMMENDED
         "no-ex-assign": 2, // RECOMMENDED
         "no-extra-boolean-cast": 2, // RECOMMENDED

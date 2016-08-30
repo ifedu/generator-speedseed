@@ -21,7 +21,9 @@ module.exports = class Yo extends speedseed.Config {
             message: 'Project Name?',
             name: 'project',
             option: { general },
-            type: 'input'
+            type: 'input',
+
+            choices: []
         }, {
             default: general.template || 0,
             message: 'Template?',

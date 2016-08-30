@@ -9,6 +9,12 @@ module.exports = ($, gulp) => {
 
         $.resetPropsHtml()
 
+        let ngAnnotate = plumber
+
+        try {
+            ngAnnotate = require('gulp-ng-annotate')
+        } catch (e) {e}
+
         return gulp
         .src([
             `${$.app.dir}/**/*.${$.yo.tpl['js-extra']}`,
@@ -21,8 +27,7 @@ module.exports = ($, gulp) => {
         .pipe(modifyFile((content, route) => $.translateTpl(content, route, `.${$.yo.tpl['js-extra']}`)))
         .pipe($.options.js.getPluginCompiler($))
         .pipe(gulpif(
-            ($.yo.tpl.framework === 'angularjs' && $.config.dist === true),
-            require('gulp-ng-annotate')()
+            ($.yo.tpl.framework === 'angularjs' && $.config.dist === true), ngAnnotate()
         ))
         .pipe(gulp.dest($.build.dir))
     })
