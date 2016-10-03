@@ -1,18 +1,10 @@
 module.exports = ($, gulp) => {
-    ($.yo.tpl.framework !== 'react')
-        ? gulp.task('common', (cb) => $.runSequence(
-            'clean',
-            ['css-app', 'html-app', 'js-app'],
-            ['js', 'css', 'html'],
-            cb
-        ))
-        : gulp.task('common', (cb) => $.runSequence(
-            'clean',
-            ['css-app', 'html-app', 'js-app'],
-            'jsx',
-            ['js', 'css', 'html'],
-            cb
-        ))
+    gulp.task('common', (cb) => $.runSequence(
+        'clean',
+        ['css-app', 'html-app', 'js-app'],
+        ['js', 'css', 'html'],
+        cb
+    ))
 
     if ($.config.dist !== true) {
         gulp.task('build', (cb) => $.runSequence('common', 'copy', 'webserver', 'watch', cb))
