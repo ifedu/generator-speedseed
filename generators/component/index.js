@@ -12,16 +12,20 @@ module.exports = class Yo extends speedseed.Config {
     }
 
     prompting() {
-        const prompt = {
+        const options = [{
             message: 'Component Name?',
             name: 'component',
-            type: 'input'
-        }
+            option: {},
+            type: 'input',
 
-        this._setPrompting(prompt, this.async())
+            choices: []
+        }]
+
+        this._setPromptings({ options }, this.async())
     }
 
     write() {
+        console.log('write')
         // const compilerExt = this.config.get('compilerExt')
         // const component = this.config.get('component').toLowerCase().replace(/[-_ ]/g, '')
         // const css = this.config.get('css')

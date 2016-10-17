@@ -41,8 +41,8 @@ module.exports = ($, gulp) => {
         .src([
             `${$.app.dir}/**/*.js`,
             `${$.app.dir}/**/*.jsx`,
-            `!${$.app.dir}/**/_*.jsx`,
             `${$.app.dir}/**/*.${$.yo.tpl['js-extra']}`,
+            `!${$.app.dir}/**/_*.jsx`,
             `!${$.app.dir}/**/*.spec.${$.yo.tpl['js-extra']}`,
             `!${$.app.copy.vendor}/**/*`
         ])
@@ -121,6 +121,7 @@ module.exports = ($, gulp) => {
 
                     gulp
                     .src(`${routeTmp}${path.sep}${path.basename(jsFile.route)}`)
+                    .pipe(plumber())
                     .pipe(modifyFile(() => jsFile.code))
                     .pipe(gulpif(
                         ($.yo.tpl.framework === 'angularjs' && $.config.dist === true), ngAnnotate()
@@ -141,7 +142,7 @@ module.exports = ($, gulp) => {
                                 test: /\.jsx$/,
 
                                 query: {
-                                    presets: ['es2015', 'stage-0', 'react']
+                                    presets: ['es2015', 'react']
                                 }
                             }]
                         },
@@ -186,22 +187,16 @@ module.exports = ($, gulp) => {
     })
 
     gulp.task('js-app', () => {
-        const changed = require('gulp-changed')
-        const gulpif = require('gulp-if')
-        const plumber = require('gulp-plumber')
-        const rename = require('gulp-rename')
-        const uglify = require('gulp-uglify')
+        const modifyFile = require('gulp-modify-file')
+
+        $.resetPropsHtml()
 
         return gulp
         .src([
-            `${$.app.dir}/**/.*.${$.yo.tpl['js-extra']}`,
-            `!${$.app.copy.vendor}/**/*`
+            `${$.app.dir}/**/_*.${$.yo.tpl['js-extra']}`,
+            `${$.app.dir}/**/_*.jsx`,
         ])
-        .pipe(plumber())
-        .pipe($.options.js.getPluginCompiler($))
-        .pipe(rename((path) => path.basename = `-${path.basename.substr(1)}`))
-        .pipe(changed($.app.dir))
-        .pipe(gulpif(($.yo.tpl.framework === 'polymer' && $.config.dist === true), uglify()))
-        .pipe(gulp.dest($.app.dir))
+        .pipe(modifyFile((content, route) => $.translateTpl(content, route, `.${$.yo.tpl['js-extra']}`)))
+        .pipe(gulp.dest($.tmp.dir))
     })
 }
