@@ -103,7 +103,7 @@ const options = {
     speedseed indent
     speedseed server
     speedseed typings
-    
+
     speedseed help
         `)
     },

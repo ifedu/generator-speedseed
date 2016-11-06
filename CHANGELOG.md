@@ -2,6 +2,9 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.22.1
+    - Fix: In Unix error such file or directory in CLI speedseed
+
 ### v.0.22.0
     - Add webpack for compilers JS
     - Add use of import ES6
@@ -275,6 +278,9 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.21.1
+    - Arregla: En Unix error de fichero o directorio no enconrado en CLI speedseed
+
 ### v.0.22.0
     - Añade webpack para compiladores de JS
     - Añade uso de import ES6
