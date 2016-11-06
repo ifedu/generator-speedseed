@@ -1,15 +1,17 @@
-(() => {
-    const Component = React.createClass({
-        click() {
-        },
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-        render() {
-            return ({%= include('render.html') %})
-        }
-    })
+class Component extends React.Component {
+    constructor() {
+        super()
+    }
 
-    ReactDOM.render(
-        ({%= include('dom.html') %}),
-        document.getElementsByTagName('<%= component %>')[0]
-    )
-})()
+    render() {
+        return ({%= include('render.html') %})
+    }
+}
+
+ReactDOM.render(
+    {%= include('dom.html') %},
+    document.getElementsByTagName('<%= tpl.component %>')[0]
+)

@@ -12,10 +12,13 @@ module.exports = class Yo extends speedseed.Config {
     }
 
     prompting() {
+        const tpl = this.config.get('tpl') || {}
+
         const options = [{
+            default: tpl.component || '',
             message: 'Component Name?',
             name: 'component',
-            option: {},
+            option: { tpl },
             type: 'input',
 
             choices: []
@@ -25,23 +28,14 @@ module.exports = class Yo extends speedseed.Config {
     }
 
     write() {
-        console.log('write')
-        // const compilerExt = this.config.get('compilerExt')
-        // const component = this.config.get('component').toLowerCase().replace(/[-_ ]/g, '')
-        // const css = this.config.get('css')
-        // const framework = this.config.get('framework')
-        // const test = this.config.get('test')
-        //
-        // const route = `seed/template/${framework}`
-        // const routeDest = `./app/components/${component}`
-        //
-        // this.config.set('component', component)
-        //
-        // this._create(`${route}/app/component/**/*.jade`, routeDest)
-        // this._create(`${route}/app/component/**/*.jsx`, routeDest)
-        // this._create(`${route}/app/component/**/*${compilerExt}`, routeDest)
-        // this._create(`${route}/app/component/**/*${css}`, routeDest)
-        //
-        // this._create(`${route}/test/${test}/app/component`, routeDest)
+        const tpl = this.config.get('tpl')
+        const component = this.config.get('tpl').component.toLowerCase().replace(/[-_ ]/g, '')
+
+        this.config.set('tpl', tpl)
+
+        const route = `seed/template/${tpl.framework}`
+        const routeDest = `./app/components/${tpl.component}`
+
+        this._create(`${route}/app/component/**/*`, routeDest)
     }
 }

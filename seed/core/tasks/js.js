@@ -32,18 +32,25 @@ module.exports = ($, gulp) => {
 
             return dirRoute
             .replace(
-                `${path.sep}${appDir}${path.sep}`,
-                `${path.sep}${typeDir}${path.sep}`
+                `${path.sep}${appDir}`,
+                `${path.sep}${typeDir}`
             )
         }
 
         gulp
         .src([
             `${$.app.dir}/**/*.js`,
+            `!${$.app.dir}/**/*.spec.js`,
+            `!${$.app.dir}/**/_*.js`,
+
             `${$.app.dir}/**/*.jsx`,
-            `${$.app.dir}/**/*.${$.yo.tpl['js-extra']}`,
+            `!${$.app.dir}/**/*.spec.jsx`,
             `!${$.app.dir}/**/_*.jsx`,
+
+            `${$.app.dir}/**/*.${$.yo.tpl['js-extra']}`,
             `!${$.app.dir}/**/*.spec.${$.yo.tpl['js-extra']}`,
+            `!${$.app.dir}/**/_*.${$.yo.tpl['js-extra']}`,
+
             `!${$.app.copy.vendor}/**/*`
         ])
         .pipe(gulpif($.if.notInclude, changed($.build.dir)))
@@ -59,52 +66,6 @@ module.exports = ($, gulp) => {
             })
 
             return content
-        //     // INCOMPLETE
-        //     jsPromises.push(() => ({
-        //         rollup.rollup({
-        //             entry: route,
-
-        //             plugins: [
-
-        //                 replace({
-        //                     'process.env.NODE_ENV': JSON.stringify( 'production' )
-        //                 }),
-
-        //                 // babel(),
-
-        //                 babel({
-        //                     babelrc: false,
-        //                     exclude: 'node_modules/**',
-        //                     presets: ['es2015-rollup', 'stage-0', 'react']
-        //                 }),
-
-        //                 resolve({
-        //                     jsnext: true,
-        //                     main: true,
-        //                 }),
-
-        //                 // alias({
-        //                 //     'react': 'node_modules/react/dist/react.min.js',
-        //                 //     // 'react-dom': 'node_modules/react-dom/dist/react-dom.min.js'
-        //                 // }),
-
-        //                 commonjs({
-        //                     include: 'node_modules/**',
-        //                     // 'node_modules/react/dist/react.min.js': ['React'],
-        //                 //     // 'node_modules/react-dom/dist/react-dom.min.js': ['ReactDOM']
-        //                 })
-        //             ]
-        //         })
-        //         .catch((err) => console.log(err))
-        //         .then((bundle) => {
-        //             const result = bundle.generate({ format: 'cjs' })
-
-        //             jsFiles.push({
-        //                 code: result.code,
-        //                 route
-        //             })
-        //         })
-        //     )
         }))
         .pipe(gulp.dest($.tmp.dir))
         .on('finish', () => {
@@ -112,7 +73,6 @@ module.exports = ($, gulp) => {
             .all(jsPromises)
             .then(() => {
                 let numJsFiles = 0
-
                 if (jsFiles.length === 0) cb()
 
                 jsFiles.forEach((jsFile) => {
@@ -130,11 +90,15 @@ module.exports = ($, gulp) => {
                         module: {
                             loaders: [{
                                 exclude: /node_modules/,
+                                loader: 'coffee-loader',
+                                test: /\.coffee$/
+                            }, {
+                                exclude: /node_modules/,
                                 loader: 'babel-loader',
                                 test: /\.js$/,
 
                                 query: {
-                                    presets: ['es2015']
+                                    presets: ['es2015', 'stage-0']
                                 }
                             }, {
                                 exclude: /node_modules/,
@@ -142,18 +106,27 @@ module.exports = ($, gulp) => {
                                 test: /\.jsx$/,
 
                                 query: {
-                                    presets: ['es2015', 'react']
+                                    presets: ['es2015', 'react', 'stage-0']
                                 }
+                            }, {
+                                exclude: /node_modules/,
+                                loader: 'ts-loader',
+                                test: /\.ts$/,
                             }]
                         },
 
                         output: {
                             filename: path.basename(jsFile.route)
+                        },
+
+                        resolve: {
+                            modulesDirectories: ['node_modules'],
+                            extensions: ['', '.js', '.jsx', '.ts']
                         }
                     }, null, (err, stats) => {
                         stats.chunks = false
                     }))
-                    .pipe(rename((path) => path.extname = path.extname.replace('jsx', 'js')))
+                    .pipe(rename((path) => path.extname = path.extname.replace('jsx', 'js').replace($.yo.tpl['js-extra'], 'js')))
                     .pipe(gulp.dest(routeBuild))
                     .on('finish', () => {
                         numJsFiles++
@@ -179,6 +152,8 @@ module.exports = ($, gulp) => {
 
         return gulp
         .src([
+            `${$.app.dir}/**/*.spec.js`,
+            `${$.app.dir}/**/*.spec.jsx`,
             `${$.app.dir}/**/*.spec.${$.yo.tpl['js-extra']}`
         ])
         .pipe(plumber())
@@ -188,15 +163,19 @@ module.exports = ($, gulp) => {
 
     gulp.task('js-app', () => {
         const modifyFile = require('gulp-modify-file')
+        const plumber = require('gulp-plumber')
 
         $.resetPropsHtml()
 
         return gulp
         .src([
-            `${$.app.dir}/**/_*.${$.yo.tpl['js-extra']}`,
+            `${$.app.dir}/**/_*.js`,
             `${$.app.dir}/**/_*.jsx`,
+            `${$.app.dir}/**/_*.${$.yo.tpl['js-extra']}`
         ])
+        .pipe(plumber())
         .pipe(modifyFile((content, route) => $.translateTpl(content, route, `.${$.yo.tpl['js-extra']}`)))
+        // .pipe($.options.js.getPluginCompiler($))
         .pipe(gulp.dest($.tmp.dir))
     })
 }

@@ -43,6 +43,11 @@ module.exports = ($, gulp) => {
         `!${$.app.dir}/**/-**/**/*.json`
     ], $.build.dir))
 
+    gulp.task('copy-app', copy({}, [
+        `${$.app.dir}/**/.*.css`,
+        `${$.app.dir}/**/.*.html`
+    ], $.tmp.dir))
+
     gulp.task('copy-assets', () =>
         gulp
         .src(`${$.app.copy.assets}/**`)
@@ -51,5 +56,5 @@ module.exports = ($, gulp) => {
 
     gulp.task('copy-vendor', copy({}, `${$.app.copy.vendor}/**`, $.build.copy.vendor))
 
-    gulp.task('copy-libs', (cb) => $.runSequence(['copy-assets', 'copy-node_modules', 'copy-vendor'], cb))
+    gulp.task('copy-libs', (cb) => $.runSequence(['copy-assets', 'copy-node_modules'], cb))
 }

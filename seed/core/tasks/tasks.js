@@ -1,7 +1,9 @@
 module.exports = ($, gulp) => {
     gulp.task('common', (cb) => $.runSequence(
         'clean',
-        ['css-app', 'html-app', 'js-app'],
+        'copy-vendor',
+        ['copy-app', 'css-app', 'html-app'],
+        'js-app',
         ['js', 'css', 'html'],
         cb
     ))
