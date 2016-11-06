@@ -1,4 +1,4 @@
-### v.0.21.4
+### v.0.22.0
 
 ### Requeriments
 - NodeJS >= 6.0.0
@@ -121,10 +121,6 @@
     ---
     - Compile project in -reports and launch complexity code test plato
     - **speedseed reports**
-
-    ---
-    - Delete generate folders -build -dist -reports -tmp node_modules
-    - **speedseed clean**
 
 ---
 
@@ -273,10 +269,6 @@
     ---
     - Compila el proyecto en -reports y lanza test de complejidad de código plato
     - **speedseed reports**
-
-    ---
-    - Borra carpetas generadas -build -dist -reports -tmp node_modules
-    - **speedseed clean**
 
 ---
 

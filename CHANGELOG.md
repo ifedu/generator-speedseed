@@ -2,6 +2,16 @@
 - [Spanish](#spanish)
 
 ## English
+### v.0.22.0
+    - Add webpack for compilers JS
+    - Add use of import ES6
+    - Create templates is now easier
+    - delete speedseed clean
+    - Files precompile to -tmp
+    - Improved use of jsx and ts
+    - speedseed cli now displays the internal command
+    - speedseed component it does not work correctly
+
 ### v.0.21.4
     - Fix: error in task js
     - Fix: eslint complexity
@@ -61,7 +71,7 @@
     - Fix: call to local gulp since npm run: ./node_modules/gulp/bin/gulp.js to gulp
 
 ### v.0.18.0
-    - Fix: .css compile to .tmp, include minified to jade
+    - Fix: .css compile to -tmp, include minified to jade
     - Fix: No need global gulp
     - Fix: npm run component in Polymer
     - Add npm run serve
@@ -265,6 +275,16 @@
     - Restart changelog in 2 languages
 
 ## Spanish
+### v.0.22.0
+    - Añade webpack para compiladores de JS
+    - Añade uso de import ES6
+    - Borra speedseed clean
+    - Crear plantillas es ahora más fácil
+    - Ficheros precompilan a -tmp
+    - Mejorado el uso de jsx y ts
+    - speedseed cli ahora muestra el comando interno
+    - speedseed component no funciona correctamente
+
 ### v.0.21.4
     - Arregla: error en tarea js
     - Arregla: eslint complexity
