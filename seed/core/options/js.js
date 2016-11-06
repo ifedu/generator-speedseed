@@ -6,7 +6,7 @@ module.exports = {
             typescript: 'ts'
         }
 
-        return ext[$.yo.compiler]
+        return ext[$.yo.tpl.js]
     },
 
     getPluginCompiler($) {
@@ -16,6 +16,6 @@ module.exports = {
             typescript: () => require('gulp-typescript')(require('../../tsconfig.json').compilerOptions)
         }
 
-        return plugins[$.yo.compiler]()
+        return plugins[$.yo.tpl.js]()
     }
 }

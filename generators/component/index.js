@@ -12,32 +12,30 @@ module.exports = class Yo extends speedseed.Config {
     }
 
     prompting() {
-        const prompt = {
+        const tpl = this.config.get('tpl') || {}
+
+        const options = [{
+            default: tpl.component || '',
             message: 'Component Name?',
             name: 'component',
-            type: 'input'
-        }
+            option: { tpl },
+            type: 'input',
 
-        this._setPrompting(prompt, this.async())
+            choices: []
+        }]
+
+        this._setPromptings({ options }, this.async())
     }
 
     write() {
-        const compilerExt = this.config.get('compilerExt')
-        const component = this.config.get('component').toLowerCase().replace(/[-_ ]/g, '')
-        const css = this.config.get('css')
-        const framework = this.config.get('framework')
-        const test = this.config.get('test')
+        const tpl = this.config.get('tpl')
+        const component = this.config.get('tpl').component.toLowerCase().replace(/[-_ ]/g, '')
 
-        const route = `seed/template/${framework}`
-        const routeDest = `./app/components/${component}`
+        this.config.set('tpl', tpl)
 
-        this.config.set('component', component)
+        const route = `seed/template/${tpl.framework}`
+        const routeDest = `./app/components/${tpl.component}`
 
-        this._create(`${route}/app/component/**/*.jade`, routeDest)
-        this._create(`${route}/app/component/**/*.jsx`, routeDest)
-        this._create(`${route}/app/component/**/*${compilerExt}`, routeDest)
-        this._create(`${route}/app/component/**/*${css}`, routeDest)
-
-        this._create(`${route}/test/${test}/app/component`, routeDest)
+        this._create(`${route}/app/component/**/*`, routeDest)
     }
 }

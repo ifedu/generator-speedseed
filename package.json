@@ -1,9 +1,9 @@
 {
-    "description": "Oriented to components, allow create/choice template - AngularJS/Angular2/jQuery/Polymer/React/VanillaJS - BabelJS/CoffeeScript/TypeScript - Mocha/Jasmine - SaSS/ScSS/LeSS/Stylus - Jade/HTML - Gulp + Yeoman",
+    "description": "Oriented to components, allow create/choice template - AngularJS/Angular2/jQuery/Polymer/React/VanillaJS - BabelJS/CoffeeScript/TypeScript - Mocha/Jasmine - SaSS/ScSS/LeSS/Stylus - Jade/HTML - Gulp + Webpack + Yeoman",
     "homepage": "https://github.com/ifedu/generator-speedseed",
     "main": "generators/app/index.js",
     "name": "generator-speedseed",
-    "version": "0.21.4",
+    "version": "0.22.0",
 
     "keywords": [
         "yeoman-generator"
@@ -20,7 +20,7 @@
     },
 
     "dependencies": {
-        "speedseed": "^0.18.0",
+        "speedseed": "^0.19.0",
         "sync-request": "^3.0.1",
         "yeoman-generator": "^0.23.4"
     },

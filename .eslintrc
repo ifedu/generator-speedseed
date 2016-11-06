@@ -9,14 +9,14 @@
         // POSSIBLE ERRORS
         "comma-dangle": 2, // RECOMMENDED
         "no-cond-assign": 2, // RECOMMENDED
-        "no-console": 1, // RECOMMENDED
+        "no-console": 0, // RECOMMENDED
         "no-constant-condition": 2, // RECOMMENDED
         "no-control-regex": 2, // RECOMMENDED
         "no-debugger": 1, // RECOMMENDED
         "no-dupe-args": 2, // RECOMMENDED
         "no-dupe-keys": 2, // RECOMMENDED
         "no-duplicate-case": 2, // RECOMMENDED
-        "no-empty": 2, // RECOMMENDED
+        "no-empty": 0, // RECOMMENDED
         "no-empty-character-class": 2, // RECOMMENDED
         "no-ex-assign": 2, // RECOMMENDED
         "no-extra-boolean-cast": 2, // RECOMMENDED
@@ -42,7 +42,7 @@
         "block-scoped-var": 2,
         "complexity": [1, 6],
         "consistent-return": 0,
-        "curly": 2,
+        "curly": 0,
         // "valid-typeof": 2, // RECOMMENDED
         // "valid-typeof": 2, // RECOMMENDED
         // "valid-typeof": 2, // RECOMMENDED

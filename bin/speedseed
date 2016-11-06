@@ -9,6 +9,10 @@ const gulp = path.normalize('node_modules/.bin/gulp')
 const input = (str) => {
     const spawn = require('child_process').spawn
 
+    console.log(`
+${str}
+`)
+
     const command = str.split(' ')
 
     spawn(command[0], command.slice(1), {
@@ -29,7 +33,9 @@ const options = {
     },
 
     update() {
-        input('npm i generator-speedseed -g && yo speedseed:postinstall && npm i && bower i')
+        (process.argv[3] === '-g')
+            ? input('npm i yo -g && npm i generator-speedseed -g')
+            : input('yo speedseed:postinstall && npm i && bower i')
     },
 
     start() {
@@ -70,10 +76,6 @@ const options = {
         input(`${gulp} test`)
     },
 
-    clean() {
-        input(`rmdir ${process.argv[3]} /s /q`)
-    },
-
     server() {
         input('node .core\\server')
     },
@@ -84,23 +86,24 @@ const options = {
 
     help() {
         console.log(`
-    speedseed install [-g]
-    speedseed update
-
     speedseed start
+
+    speedseed install [-g]
+    speedseed update [-g]
+
     speedseed build [open]
     speedseed dist [server]
     speedseed serve [dist]
 
     speedseed component
 
-    speedseed indent
     speedseed reports
     speedseed spec
 
-    speedseed clean [<dir>]
+    speedseed indent
     speedseed server
     speedseed typings
+    
     speedseed help
         `)
     },
