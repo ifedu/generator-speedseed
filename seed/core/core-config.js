@@ -64,7 +64,7 @@ module.exports = ($) => {
                     `${build}/**/${$.app.js}/**/*.js`
                 ],
                 port: $.reports.inFolder.plato.port
-            },
+            }
         },
 
         indent: {

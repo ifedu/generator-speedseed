@@ -98,6 +98,7 @@ module.exports = ($, gulp) => {
                                 test: /\.js$/,
 
                                 query: {
+                                    plugins: ['transform-decorators-legacy'],
                                     presets: ['es2015', 'stage-0']
                                 }
                             }, {
@@ -106,12 +107,13 @@ module.exports = ($, gulp) => {
                                 test: /\.jsx$/,
 
                                 query: {
+                                    plugins: ['transform-decorators-legacy'],
                                     presets: ['es2015', 'react', 'stage-0']
                                 }
                             }, {
                                 exclude: /node_modules/,
                                 loader: 'ts-loader',
-                                test: /\.ts$/,
+                                test: /\.ts$/
                             }]
                         },
 

@@ -80,31 +80,26 @@ const options = {
         input('node .core\\server')
     },
 
-    typings() {
-        input('typings install')
-    },
-
     help() {
         console.log(`
-    speedseed start
+    sd start
 
-    speedseed install [-g]
-    speedseed update [-g]
+    sd install [-g]
+    sd update [-g]
 
-    speedseed build [open]
-    speedseed dist [server]
-    speedseed serve [dist]
+    sd build [open]
+    sd dist [server]
+    sd serve [dist]
 
-    speedseed component
+    sd component
 
-    speedseed reports
-    speedseed spec
+    sd reports
+    sd spec
 
-    speedseed indent
-    speedseed server
-    speedseed typings
+    sd indent
+    sd server
 
-    speedseed help
+    sd help
         `)
     },
 

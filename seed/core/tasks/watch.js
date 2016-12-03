@@ -49,37 +49,8 @@ module.exports = ($, gulp) => {
                 `${$.app.dir}/**/.*.css`,
                 `${$.app.dir}/**/.*.html`,
 
-                `!${$.app.dir}/**/*.spec.${ext}`,
-
-                `!${$.app.dir}/**/_*.jsx`,
-                `!${$.app.dir}/**/_*.${ext}`,
-                `!${$.app.dir}/**/_**/**/*.jsx`,
-                `!${$.app.dir}/**/_**/**/*.${ext}`,
-
-                `!${$.app.dir}/**/.*.jsx`,
-                `!${$.app.dir}/**/.*.${ext}`,
-                `!${$.app.dir}/**/.**/**/*.jsx`,
-                `!${$.app.dir}/**/.**/**/*.${ext}`,
-
-                `!${$.app.dir}/**/-*.jsx`,
-                `!${$.app.dir}/**/-*.${ext}`,
-                `!${$.app.dir}/**/-**/**/*.jsx`,
-                `!${$.app.dir}/**/-**/**/*.${ext}`
-            ], () => $.runSequence(['css-app', 'html-app'], 'js', 'reload'))
-
-            // JS INCLUDE
-            watch([
-                `${$.app.dir}/**/.*.jsx`,
-                `${$.app.dir}/**/.*.${ext}`,
-
-                `${$.app.dir}/**/_*.jsx`,
-                `${$.app.dir}/**/_*.${ext}`,
-                `${$.app.dir}/**/_**/**/*.jsx`,
-                `${$.app.dir}/**/_**/**/*.${ext}`
-            ], () => {
-                $.if.notInclude = false
-                return $.runSequence(['css-app', 'html-app', 'js-app', 'html', 'reload'])
-            })
+                `!${$.app.dir}/**/*.spec.${ext}`
+            ], () => $.runSequence(['css-app', 'html-app', 'js-app'], 'js', 'html', 'reload'))
 
             // INCLUDE
             watch([
