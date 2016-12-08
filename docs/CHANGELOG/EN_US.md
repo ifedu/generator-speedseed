@@ -1,3 +1,11 @@
+### v.0.24.0
+    - Add template breakout
+    - Add template todomvc
+    - Changes in the README
+    - Fix: assets, do not evaluate them as templates
+    - Fix: js, no compile assets
+    - Fix: watch, reload in .jade
+
 ### v.0.23.0
     - Add plugin transform-decorator-legacy in webpack
     - Add shorthands sd and sdsd in CLI speedseed

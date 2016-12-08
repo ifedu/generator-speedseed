@@ -39,7 +39,7 @@ module.exports = ($, gulp) => {
             watch([
                 `${$.app.dir}/**/*.jade`,
                 `!${$.app.dir}/**/.*.jade`
-            ], () => $.runSequence(['css-app', 'html-app', 'html', 'reload']))
+            ], () => $.runSequence(['css-app', 'html-app', 'html'], 'reload'))
 
             // JS
             watch([

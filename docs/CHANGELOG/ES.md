@@ -1,3 +1,11 @@
+### v.0.24.0
+    - Añade plantilla breakout
+    - Añade plantilla todomvc
+    - Cambios en el README
+    - Arregla: assets, no evaluarlos como plantillas
+    - Arregla: js, no compila assets
+    - Arregla: watch, recarga en .jade
+
 ### v.0.23.0
     - Añade plugin transform-decorator-legacy en webpack
     - Añade abreviaturas sd y sdsd en CLI speedseed

@@ -1,10 +1,14 @@
 module.exports = () => {
     const request = require('sync-request')
 
+    const getChoice = (name, value) => ({ name, value })
+
     const choices = [
-        { name: 'generator-speedseed-multi-tic-tac-toe', value: 'multi-tic-tac-toe' },
-        { name: 'generator-speedseed-cleanly-angular2-tour-of-heroes', value: 'cleanly-angular2-tour-of-heroes' },
-        { name: 'generator-speedseed-cleanly-polymer-get-started', value: 'cleanly-polymer-get-started' },
+        getChoice('generator-speedseed-multi-tic-tac-toe', 'multi-tic-tac-toe'),
+        getChoice('generator-speedseed-cleanly-angular2-tour-of-heroes', 'cleanly-angular2-tour-of-heroes'),
+        getChoice('generator-speedseed-cleanly-polymer-get-started', 'cleanly-polymer-get-started'),
+        getChoice('generator-speedseed-cleanly-todomvc', 'cleanly-todomvc'),
+        getChoice('generator-speedseed-cleanly-breakouts', 'cleanly-breakouts')
     ]
 
     const isGeneratorSpeedseed = () => (choice.name === `generator-${data.name}`)
@@ -26,9 +30,8 @@ module.exports = () => {
             let isFinded = false
 
             for (let choice of choices) {
-                if (isGeneratorSpeedseed() && isNotBlackList(choice.name)) {
+                if (isGeneratorSpeedseed() && isNotBlackList(choice.name))
                     isFinded = true
-                }
             }
 
             return isFinded

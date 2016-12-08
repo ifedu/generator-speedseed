@@ -51,6 +51,7 @@ module.exports = ($, gulp) => {
             `!${$.app.dir}/**/*.spec.${$.yo.tpl['js-extra']}`,
             `!${$.app.dir}/**/_*.${$.yo.tpl['js-extra']}`,
 
+            `!${$.app.copy.assets}/**/*`,
             `!${$.app.copy.vendor}/**/*`
         ])
         .pipe(gulpif($.if.notInclude, changed($.build.dir)))
