@@ -55,28 +55,28 @@
 ---
 
 ### Structure
-- **.core** => *don't change this content folder, is updated with generator-speedseed next versions*
-- **-build** => *code generated with npm run build, contain code of app/ transpiled to html, css, js(es5). Folders and files _*are ignored*
-- **-dist** => *code generated with npm run dist, contain code minimizied of app/ transpiled to html, css, js(es5). Folders and files _*are ignored*
+- **.core** -> *don't change this content folder, is updated with generator-speedseed next versions*
+- **-build** -> *code generated with npm run build, contain code of app/ transpiled to html, css, js(es5). Folders and files _*are ignored*
+- **-dist** -> *code generated with npm run dist, contain code minimizied of app/ transpiled to html, css, js(es5). Folders and files _*are ignored*
 
 ---
 
-- **app** => *development template*
-    - **-vendor** => *libs external*
-    - **assets** => *files to copy, not compile*
-    - **components** => *components*
-        - **_mixins.jade** => *include all mixins*
-        - **components** => *include all css*
-    - **css** => *contain css files*
-    - **js** => *contain js files*
-    - **__global.js** => *properties inyects to all files .jade*
-    - **_index.js** => *properties inyects to file index.jade*
-    - **index.jade** => *index of the app*
+- **app** -> *development template*
+    - **-vendor** -> *libs external*
+    - **assets** -> *files to copy, not compile*
+    - **components** -> *components*
+        - **_mixins.jade** -> *include all mixins*
+        - **components** -> *include all css*
+    - **css** -> *contain css files*
+    - **js** -> *contain js files*
+    - **__global.js** -> *properties inyects to all files .jade*
+    - **_index.js** -> *properties inyects to file index.jade*
+    - **index.jade** -> *index of the app*
 
 ---
 
-- **.core-config** => *project routes*
-- **.yo-rc.json** => *created by yeoman for future updates*
+- **.core-config** -> *project routes*
+- **.yo-rc.json** -> *created by yeoman for future updates*
 
 ---
 

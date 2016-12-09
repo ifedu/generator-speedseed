@@ -55,28 +55,28 @@
 ---
 
 ### Estructura
-- **.core** => *no cambiar el contenido de esta carpeta, es actualizado en futuras versiones de generator-speedseed*
-- **-build** => *código generado con npm run build, contiene código de app/ transpilado a html, css, js(es5). Carpetas y ficheros _* son ignorados*
-- **-dist** => *código generado con npm run dist, contiene código minificado de app/ transpilado a html, css, js(es5). Carpetas y ficheros _* son ignorados*
+- **.core** -> *no cambiar el contenido de esta carpeta, es actualizado en futuras versiones de generator-speedseed*
+- **-build** -> *código generado con npm run build, contiene código de app/ transpilado a html, css, js(es5). Carpetas y ficheros _* son ignorados*
+- **-dist** -> *código generado con npm run dist, contiene código minificado de app/ transpilado a html, css, js(es5). Carpetas y ficheros _* son ignorados*
 
 ---
 
-- **app** => *plantilla de desarrollo*
-    - **-vendor** => *libs externas*
-    - **assets** => *ficheros a copiar, no a compilar*
-    - **components** => *componentes*
-        - **_mixins.jade** => *incluye todos los mixins*
-        - **components** => *incluye todos los css*
-    - **css** => *contiene ficheros css*
-    - **js** => *contiene ficheros js*
-    - **__global.js** => *propiedades inyectadas a ficheros .jade*
-    - **_index.js** => *propiedades inyectadas al fichero index.jade*
-    - **index.jade** => *indice de la app*
+- **app** -> *plantilla de desarrollo*
+    - **-vendor** -> *libs externas*
+    - **assets** -> *ficheros a copiar, no a compilar*
+    - **components** -> *componentes*
+        - **_mixins.jade** -> *incluye todos los mixins*
+        - **components** -> *incluye todos los css*
+    - **css** -> *contiene ficheros css*
+    - **js** -> *contiene ficheros js*
+    - **__global.js** -> *propiedades inyectadas a ficheros .jade*
+    - **_index.js** -> *propiedades inyectadas al fichero index.jade*
+    - **index.jade** -> *indice de la app*
 
 ---
 
-- **.core-config** => *rutas del proyectos*
-- **.yo-rc.json** => *creado por yeoman para futuras actualizaciones*
+- **.core-config** -> *rutas del proyectos*
+- **.yo-rc.json** -> *creado por yeoman para futuras actualizaciones*
 
 ---
 
