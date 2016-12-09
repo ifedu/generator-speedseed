@@ -1,4 +1,4 @@
-### v.0.24.0
+### v.0.24.1
 
 ### Requeriments
 - NodeJS >= 6.0.0
@@ -17,9 +17,8 @@
 - Webpack
 - Yeoman
 
-### Options
-- Templates
-    - [multi-tic-tac-toe](https://github.com/ifedu/generator-speedseed-multi-tic-tac-toe)
+### Templates
+    - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe)
         - AngularJS **v.1.5.6**
         - Angular2 **v.2.1.1**
         - jQuery **v.3.0.0**
@@ -27,16 +26,16 @@
         - React **v.15.1.0**
         - VanillaJS
 
-    - [angular2-tour-of-heroes](https://github.com/ifedu/generator-speedseed-cleanly-angular2-tour-of-heroes)
+    - [angular2-tour-of-heroes](https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes)
         - Angular2 **v.2.1.1**
 
-    - [polymer-get-started](https://github.com/ifedu/generator-speedseed-cleanly-polymer-get-started)
+    - [polymer-get-started](https://www.npmjs.com/package/generator-speedseed-cleanly-polymer-get-started)
         - Polymer **v.1.7.0**
 
-    - [todomvc](https://github.com/ifedu/generator-speedseed-cleanly-todomvc)
+    - [todomvc](https://www.npmjs.com/package/generator-speedseed-cleanly-todomvc)
         - Vue **v.1.0.1**
 
-    - [breakouts](https://github.com/ifedu/generator-speedseed-cleanly-breakouts)
+    - [breakouts](https://www.npmjs.com/package/generator-speedseed-cleanly-breakouts)
         - CraftyJS **v.0.6.3**
         - CreateJS **v.2014.12.12**
         - EnchantJS **v.0.8.2**

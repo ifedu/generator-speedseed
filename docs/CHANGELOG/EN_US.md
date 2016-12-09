@@ -1,3 +1,6 @@
+### v.0.24.1
+    - Changes in the README
+
 ### v.0.24.0
     - Add template breakout
     - Add template todomvc

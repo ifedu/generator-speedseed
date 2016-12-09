@@ -1,3 +1,6 @@
+### v.0.24.1
+    - Cambios en el README
+
 ### v.0.24.0
     - Añade plantilla breakout
     - Añade plantilla todomvc

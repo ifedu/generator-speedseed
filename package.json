@@ -3,7 +3,7 @@
     "homepage": "https://github.com/ifedu/generator-speedseed",
     "main": "generators/app/index.js",
     "name": "generator-speedseed",
-    "version": "0.24.0",
+    "version": "0.24.1",
 
     "keywords": [
         "yeoman-generator"
@@ -22,7 +22,7 @@
     },
 
     "dependencies": {
-        "speedseed": "^0.21.0",
+        "speedseed": "^0.21.1",
         "sync-request": "^3.0.1",
         "yeoman-generator": "^0.23.4"
     },
