@@ -42,21 +42,24 @@ module.exports = ($, gulp) => {
             `${$.app.dir}/**/*.js`,
             `!${$.app.dir}/**/*.spec.js`,
             `!${$.app.dir}/**/_*.js`,
+            `!${$.app.dir}/**/_**/**/*.js`,
 
             `${$.app.dir}/**/*.jsx`,
             `!${$.app.dir}/**/*.spec.jsx`,
             `!${$.app.dir}/**/_*.jsx`,
+            `!${$.app.dir}/**/_**/**/*.jsx`,
 
             `${$.app.dir}/**/*.${$.yo.tpl['js-extra']}`,
             `!${$.app.dir}/**/*.spec.${$.yo.tpl['js-extra']}`,
             `!${$.app.dir}/**/_*.${$.yo.tpl['js-extra']}`,
+            `!${$.app.dir}/**/_**/**/*.${$.yo.tpl['js-extra']}`,
 
             `!${$.app.copy.assets}/**/*`,
             `!${$.app.copy.vendor}/**/*`
         ])
         .pipe(gulpif($.if.notInclude, changed($.build.dir)))
         .pipe(plumber())
-        .pipe(filter($.filterProps(`${$.yo.tpl['js-extra']}`)))
+        // .pipe(filter($.filterProps(`${$.yo.tpl['js-extra']}`)))
         .pipe(modifyFile((content, route) => $.translateTpl(content, route, `.${$.yo.tpl['js-extra']}`)))
         .pipe(modifyFile((content, route) => {
             jsPromises.push(() => {})
@@ -118,10 +121,6 @@ module.exports = ($, gulp) => {
                             }]
                         },
 
-                        output: {
-                            filename: path.basename(jsFile.route)
-                        },
-
                         resolve: {
                             modulesDirectories: ['node_modules'],
                             extensions: ['', '.js', '.jsx', '.ts']
@@ -172,8 +171,11 @@ module.exports = ($, gulp) => {
 
         return gulp
         .src([
+            `${$.app.dir}/**/_**/**/*.js`,
             `${$.app.dir}/**/_*.js`,
+            `${$.app.dir}/**/_**/**/*.jsx`,
             `${$.app.dir}/**/_*.jsx`,
+            `${$.app.dir}/**/_**/**/*.${$.yo.tpl['js-extra']}`,
             `${$.app.dir}/**/_*.${$.yo.tpl['js-extra']}`
         ])
         .pipe(plumber())
