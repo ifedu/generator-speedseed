@@ -175,7 +175,7 @@ const $ = {
                 'interpolate': /{%=([\s\S]+?)%}/g
             })(dataTpl)
         } catch (e) {
-            console.log(`NOT FOUND ${route}`)
+            console.log(`NOT FOUND INCLUDE IN ${route}`)
 
             return content
         }
