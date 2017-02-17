@@ -121,6 +121,10 @@ module.exports = ($, gulp) => {
                             }]
                         },
 
+                        output: {
+                            filename: path.basename(jsFile.route)
+                        },
+
                         resolve: {
                             modulesDirectories: ['node_modules'],
                             extensions: ['', '.js', '.jsx', '.ts']
