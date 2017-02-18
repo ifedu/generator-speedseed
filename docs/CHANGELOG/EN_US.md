@@ -1,3 +1,8 @@
+### v.0.24.2
+    - Add .npmignore
+    - Fix: ignore folder scripts _*
+    - Displays error message when no include {% =%}
+
 ### v.0.24.1
     - Changes in the README
 

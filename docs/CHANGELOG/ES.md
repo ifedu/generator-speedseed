@@ -1,3 +1,8 @@
+### v.0.24.2
+    - Añade .npmignore
+    - Arregla: ignorar scripts de carpetas _*
+    - Muestra mensaje de error en la ruta cuando falla un include {%= %}
+
 ### v.0.24.1
     - Cambios en el README
 
