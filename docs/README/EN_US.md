@@ -11,7 +11,7 @@
         - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe)
 
 - *Use once in the project folder for launch generator and install dependencies*
-    - **sd start**
+    - **sd start [template name]** -> The third parameter is optional so that you can install local or private templates. Ex: sd start multi-tic-tac-toe-beta
     - **sd i**
 
 - *In the project folder*

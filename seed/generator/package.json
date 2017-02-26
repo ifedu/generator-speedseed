@@ -1,0 +1,31 @@
+{
+    "description": "Template generator-speedseed-<%= general.project %> for https://www.npmjs.com/package/generator-speedseed",
+    "homepage": "",
+    "main": "generators/app/index.js",
+    "name": "generator-speedseed-<%= general.project %>",
+    "version": "0.0.1",
+
+    "keywords": [
+        "yeoman-generator"
+    ],
+
+    "author": {
+        "name": "",
+        "email": "",
+        "url": ""
+    },
+
+    "dependencies": {
+        "speedseed": "^0.21.1",
+        "yeoman-generator": "^0.23.4"
+    },
+
+    "engines" : {
+        "node" : ">=6.0.0"
+    },
+
+    "repository": {
+        "type": "git",
+        "url": ""
+    }
+}

@@ -1,3 +1,8 @@
+### v.0.25.0
+    - Añade sd generator para crear una plantilla de plantillas
+    - Añade poder usar plantillas locales con sd start [plantilla]
+    - Elimina sd component
+
 ### v.0.24.3
     - Añade .npmignore
     - Arregla: ignorar scripts de carpetas _*

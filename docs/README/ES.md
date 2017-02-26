@@ -11,7 +11,7 @@
         - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe)
 
 - *Usar una vez en la carpeta del proyecto para lanzar el generador e instalas las dependencias*
-    - **sd start**
+    - **sd start [nombre de la plantilla]** -> El tercer parámetro es opcional para poder instalar plantillas locales o privadas. Ej: sd start multi-tic-tac-toe-beta
     - **sd i**
 
 - *En la carpeta del proyecto*

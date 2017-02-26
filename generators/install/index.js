@@ -14,7 +14,7 @@ module.exports = class Yo extends speedseed.Config {
     }
 
     prompting() {
-        const general = this.config.get('general') || {}
+        const general = this.config.get('general') || {};
 
         const options = [{
             default: general.project || '',
@@ -24,15 +24,34 @@ module.exports = class Yo extends speedseed.Config {
             type: 'input',
 
             choices: []
-        }, {
-            default: general.template || 0,
-            message: 'Template?',
-            name: 'template',
-            option: { general },
-            type: 'list',
-
-            choices: searchGenerators()
         }]
+
+        const param = process.argv[3].replace('-local_tpl=', '')
+
+        if (process.argv[3] === undefined) {
+            options.push({
+                default: general.template || 0,
+                message: 'Template?',
+                name: 'template',
+                option: { general },
+                type: 'list',
+
+                choices: searchGenerators()
+            })
+        } else {
+            options.push({
+                default: general.template || 0,
+                message: 'Template?',
+                name: 'template',
+                option: { general },
+                type: 'list',
+
+                choices: [{
+                    name: `generator-${param}`,
+                    value: param
+                }]
+            })
+        }
 
         this._setPromptings({ options }, this.async())
     }

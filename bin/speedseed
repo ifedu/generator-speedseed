@@ -5,6 +5,8 @@ const path = require('path')
 const arg = (process.argv[2]) ? process.argv[2] : ''
 const gulp = path.normalize('node_modules/.bin/gulp')
 
+const param = process.argv[3]
+
 const input = (str) => {
     const spawn = require('child_process').spawn
 
@@ -21,52 +23,50 @@ ${str}
 }
 
 const options = {
+    // INIT
+    start() {
+        (param === undefined)
+            ? input('yo speedseed')
+            : input(`yo speedseed -local_tpl=${param}`)
+    },
+
+    // INSTALLS
     i() {
         this.install()
     },
 
     install() {
-        (process.argv[3] === '-g')
+        (param === '-g')
             ? input('npm i bower -g && npm i yo -g')
             : input('npm i && bower i')
     },
 
     update() {
-        (process.argv[3] === '-g')
+        (param === '-g')
             ? input('npm i yo -g && npm i generator-speedseed -g')
             : input('yo speedseed:postinstall && npm i && bower i')
     },
 
-    start() {
-        input('yo speedseed')
-    },
-
+    // PROJECT BUILDS
     build() {
-        const open = (process.argv[3] === 'open')
+        const open = (param === 'open')
 
         input(`${gulp} build --open=${open}`)
     },
 
     dist() {
-        const server = (process.argv[3] === 'server')
+        const server = (param === 'server')
 
         input(`${gulp} build --dist=true --server=${server}`)
     },
 
     serve() {
-        const dist = (process.argv[3] === 'dist')
+        const dist = (param === 'dist')
 
         input(`${gulp} webserver --dist=${dist}`)
     },
 
-    component() {
-        input('yo speedseed:component')
-    },
-
-    indent() {
-        input(`${gulp} indent`)
-    },
-
+    // PROJECT INFO
     reports() {
         input(`${gulp} reports`)
     },
@@ -75,30 +75,48 @@ const options = {
         input(`${gulp} test`)
     },
 
+    // PROJECT ADDITIONAL TASKS
+    indent() {
+        input(`${gulp} indent`)
+    },
+
     server() {
         input('node .core\\server')
     },
 
+    // OTHERS
+    generator() {
+        input('yo speedseed:generator')
+    },
+
     help() {
         console.log(`
-    sd start
+    // INIT
+    sd start [template name]
 
+    // INSTALLS
+    sd i [-g]
     sd install [-g]
     sd update [-g]
 
+    // PROJECT BUILDS
     sd build [open]
     sd dist [server]
     sd serve [dist]
 
-    sd component
-
+    // PROJECT INFO
     sd reports
     sd spec
 
+    // PROJECT ADDITIONAL TASKS
     sd indent
     sd server
 
+    // OTHERS
+    sd generator
     sd help
+
+    // [] = OPTIONAL PARAM
         `)
     },
 

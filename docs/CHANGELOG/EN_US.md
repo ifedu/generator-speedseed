@@ -1,3 +1,8 @@
+### v.0.25.0
+    - Add sd generator to create a template for templates
+    - Add to use local templates with sd start [template]
+    - Delete sd component
+
 ### v.0.24.3
     - Add .npmignore
     - Fix: ignore folder scripts _*

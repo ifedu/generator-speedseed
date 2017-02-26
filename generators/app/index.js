@@ -11,7 +11,9 @@ module.exports = class Yo extends generators.Base {
             version: packageJson.version
         })
 
-        console.log(`${this.config.get('core').name} version ${this.config.get('core').version}`)
+        const {name, version} = packageJson
+
+        console.log(`${name} version ${version}`)
     }
 
     write() {
