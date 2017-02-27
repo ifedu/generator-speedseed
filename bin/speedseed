@@ -3,6 +3,7 @@
 const path = require('path')
 
 const arg = (process.argv[2]) ? process.argv[2] : ''
+
 const gulp = path.normalize('node_modules/.bin/gulp')
 
 const param = process.argv[3]
