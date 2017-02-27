@@ -34,6 +34,7 @@
 
     - **sd reports** -> Compila el proyecto en -reports y lanza test de complejidad de código plato
 
+    - **sd generator** -> Crea una plantilla de plantillas
 ---
 
 ### Características y convenciones

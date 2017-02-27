@@ -34,6 +34,8 @@
 
     - **sd reports** -> Compile project in -reports and launch complexity code test plato
 
+    - **sd generator** -> Create a template for templates
+
 ---
 
 ### Features and conventions
