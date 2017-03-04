@@ -1,3 +1,6 @@
+### v.0.25.1
+    - Arregla: sd start da error cuando no tiene 3 parametros
+
 ### v.0.25.0
     - Añade sd generator para crear una plantilla de plantillas
     - Añade poder usar plantillas locales con sd start [plantilla]

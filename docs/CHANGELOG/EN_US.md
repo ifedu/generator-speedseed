@@ -1,3 +1,6 @@
+### v.0.25.1
+    - Fix: sd start gives error when it does not have 3 parameters
+
 ### v.0.25.0
     - Add sd generator to create a template for templates
     - Add to use local templates with sd start [template]

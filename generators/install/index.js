@@ -26,8 +26,6 @@ module.exports = class Yo extends speedseed.Config {
             choices: []
         }]
 
-        const param = process.argv[3].replace('-local_tpl=', '')
-
         if (process.argv[3] === undefined) {
             options.push({
                 default: general.template || 0,
@@ -39,6 +37,8 @@ module.exports = class Yo extends speedseed.Config {
                 choices: searchGenerators()
             })
         } else {
+            const param = process.argv[3].replace('-local_tpl=', '')
+
             options.push({
                 default: general.template || 0,
                 message: 'Template?',
