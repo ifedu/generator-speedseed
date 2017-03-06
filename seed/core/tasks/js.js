@@ -4,12 +4,12 @@ module.exports = ($, gulp) => {
         const extend = require('extend')
         const filter = require('gulp-filter')
         const gulpif = require('gulp-if')
+        const gulpWebpack = require('webpack-stream')
         const modifyFile = require('gulp-modify-file')
         const path = require('path')
         const plumber = require('gulp-plumber')
         const rename = require('gulp-rename')
-
-        const webpack = require('webpack-stream')
+        const webpack = require('webpack')
 
         $.resetPropsHtml()
 
@@ -90,9 +90,12 @@ module.exports = ($, gulp) => {
                     .pipe(gulpif(
                         ($.yo.tpl.framework === 'angularjs' && $.config.dist === true), ngAnnotate()
                     ))
-                    .pipe(webpack({
+                    .pipe(gulpWebpack({
+                        cache: true,
+                        devtool: 'source-map',
+
                         module: {
-                            loaders: [{
+                            rules: [{
                                 exclude: /node_modules/,
                                 loader: 'coffee-loader',
                                 test: /\.coffee$/
@@ -116,7 +119,7 @@ module.exports = ($, gulp) => {
                                 }
                             }, {
                                 exclude: /node_modules/,
-                                loader: 'ts-loader',
+                                loader: 'awesome-typescript-loader',
                                 test: /\.ts$/
                             }]
                         },
@@ -126,12 +129,13 @@ module.exports = ($, gulp) => {
                         },
 
                         resolve: {
-                            modulesDirectories: ['node_modules'],
-                            extensions: ['', '.js', '.jsx', '.ts']
+                            modules: ['node_modules'],
+                            extensions: ['.js', '.jsx', '.ts']
                         }
-                    }, null, (err, stats) => {
-                        stats.chunks = false
-                    }))
+                    },
+                        webpack,
+                        (err, stats) => stats.chunks = false
+                    ))
                     .pipe(rename((path) => path.extname = path.extname.replace('jsx', 'js').replace($.yo.tpl['js-extra'], 'js')))
                     .pipe(gulp.dest(routeBuild))
                     .on('finish', () => {

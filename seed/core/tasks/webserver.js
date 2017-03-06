@@ -1,6 +1,7 @@
 module.exports = ($, gulp) => {
     gulp.task('webserver', () => {
         const browserSync = require('browser-sync').create()
+        const historyApiFallback = require('connect-history-api-fallback')
         const proxyMiddleware = require('http-proxy-middleware')
 
         $.reload = browserSync.reload
@@ -21,8 +22,13 @@ module.exports = ($, gulp) => {
                 },
 
                 middleware: [
-                    proxyMiddleware($.server.auth, { target: `${$.server.route}:${$.server.port}` }),
-                    proxyMiddleware($.server.request, { target: `${$.server.route}:${$.server.port}` })
+                    proxyMiddleware($.server.request, {
+                        target: `${$.server.route}:${$.server.port}`
+                    }),
+
+                    historyApiFallback({
+                        index: '/index.html'
+                    })
                 ]
             },
 

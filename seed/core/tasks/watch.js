@@ -61,8 +61,8 @@ module.exports = ($, gulp) => {
                 $.if.notInclude = false
 
                 return ($.yo.tpl.framework !== 'react')
-                    ? $.runSequence(['css-app', 'html-app', ['html', 'js'], 'reload'])
-                    : $.runSequence(['css-app', 'html-app', ['html', 'js', 'jsx'], 'reload'])
+                    ? $.runSequence(['css-app', 'html-app'], ['html', 'js'], 'reload')
+                    : $.runSequence(['css-app', 'html-app'], ['html', 'js', 'jsx'], 'reload')
             })
             // TEST
             watch(

@@ -1,3 +1,8 @@
+### v.0.26.0
+    - Actualiza a Webpack2
+    - Arregla: tarea watch con los *.css 
+    - Arregla: Rutas con routers
+
 ### v.0.25.1
     - Arregla: sd start da error cuando no tiene 3 parametros
 

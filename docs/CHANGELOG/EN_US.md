@@ -1,3 +1,8 @@
+### v.0.26.0
+    - Fix: task watch with *.css 
+    - Fix: Routes with routers
+    - Update to Webpack2
+
 ### v.0.25.1
     - Fix: sd start gives error when it does not have 3 parameters
 
