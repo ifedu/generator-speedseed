@@ -1,86 +1,62 @@
 ### Use
-- *Use once in the Operating System for install libs in the Operating System*
+- *Use once in the Operating System to install global libs*
     - **npm i generator-speedseed -g**
-    - **sd i -g**
-    - **npm i [TEMPLATE] -g** (template multi-tic-tac-toe, install the templates generator-speedseed you need)
+    - **npm i [TEMPLATE] -g** (ej: npm i generator-speedsee-multi-tic-tac-toe -g, install the generator-speedseed templates you need)
     - Official Templates
-        - [cleanly-angular2-tour-of-heroes](https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes)
-        - [cleanly-breakouts](https://www.npmjs.com/package/generator-speedseed-cleanly-breakouts)
-        - [cleanly-polymer-get-started](https://www.npmjs.com/package/generator-speedseed-cleanly-polymer-get-started)
-        - [cleanly-todomvc](https://www.npmjs.com/package/generator-speedseed-cleanly-todomvc)
-        - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe)
+        - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.27.0) (main template)*
+        - [cleanly-angular2-tour-of-heroes](https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes) *(updated to v.0.26.0) (main template)*
+        - [cleanly-breakouts](https://www.npmjs.com/package/generator-speedseed-cleanly-breakouts) *(updated to v.0.26.0) (main template)*
+        - [cleanly-polymer-get-started](https://www.npmjs.com/package/generator-speedseed-cleanly-polymer-get-started) *(updated to v.0.26.0) (main template)*
+        - [cleanly-todomvc](https://www.npmjs.com/package/generator-speedseed-cleanly-todomvc) *(updated to v.0.26.0) (main template)*
 
-- *Use once in the project folder for launch generator and install dependencies*
-    - **sd start [template name]** -> The third parameter is optional so that you can install local or private templates. Ex: sd start multi-tic-tac-toe-beta
-    - **sd i**
+- *Use once in the project folder to launch the generator and install dependencies*
+    - **sd start [template name]** -> The third parameter is optional in order to install local or private templates. Ex: sd start multi-tic-tac-toe-beta
+    - **npm i**
 
 - *In the project folder*
-    - **sd build** -> Compile project in -build and launch project
-    - **sd build open** -> Compile project in -build, launch project and open navigator
+    - **npm start** o **npm run build.dev** -> Compile the project in -build and create the local server
+    - **npm run build** -> Compile the project in -build
+    - **npm run build.dev.debug** -> Compila el proyecto en -build, crea el servidor local y activa el debugger de nodejs
+    - **npm run build.dev.open** -> Compila el proyecto en -build, crea el servidor local y abre el navegador
 
-    - **sd dist** -> Compile project minified in -dist
-    - **sd dist open** -> Compile project minified in -dist, launch project and open navigator
 
-    - **sd serve** -> Launch server -build
-    - **sd serve dist** -> Launch server -dist
+    - **npm run dist** -> Compile the project in -dist
+    - **npm run dist.dev** -> Compile the project in -dist and create the local server run dist
+    - **npm run dist.dev.debug** -> Compile the project in -build, create the local server and activate the nodejs debugger
+    - **npm run dist.dev.open** -> Compile the project in -build, create the local server and open the browser
 
-    - **sd update** -> Update generator, install dependencies and launch generator
+    - **npm test** -> Compile the project in -build and launch the unitary tests with PhantomJS
+    - **npm test.dev** -> Compile the project in -build, create the local server and launch the unitary tests with Chrome
 
-    - **sd component** -> Create component in app/components
-
-    - **sd spec** -> Compile project in -build and launch unit test
-
-    - **sd indent** -> Indent all choice files, configurable in core-config.js
-
-    - **sd reports** -> Compile project in -reports and launch complexity code test plato
-
-    - **sd generator** -> Create a template for templates
-
+    - **sd construct** -> Create files from. /core and. /config
+    - **sd update** -> Use after updating the generator with npm, deletes the core folder and creates the updated one
 ---
 
 ### Features and conventions
-- Unit Test must be called *.spec.js
-- Files and folders start for _ no compile to build, used for includes properties or native includes
-- Files with .*.* precompile in .tmp, used for includes files with templating {%= %}
-    - {%= include('name.html') %} for files .*.* or *.* if they do not have to be compiled as name.html, name.css
-
-- Allow include routes, perfect for includes all components
-    - Syntax: {%= getRoutes(folderRoute, ext, (Boolean include _files), `$TPL$ replace for route`, 'indent') %}
-    - Example: {%= getRoutes('components', '.js', true, `script(src='$TPL$')`, '            ') %}
-    - Example: {%= getRoutes('../components', '.styl', true, `@import '$TPL$'`) %}
-
-- Allow update the core of the project through npm run update without affecting the development of the project
-- Global properties for our jades with con __global.js
-- Local properties for our jades with name.jade _name.js
-- In command line you can use sd, sdsd or speedseed
+- Unitary tests should be called *. spec. js
+- JavaScript files that are compiled to -build should be called index. js, main. js or *. spec. js, the other files should be included in these since they will not be compiled individually to -build
+- Files can be included by templating with {%= include (' name. html') %}
+- Allows you to update the project kernel using sd update without affecting the development of the project
+- In the command line you can use sd, sdsd or speedseed
 
 ---
 
-### Structure
-- **.core** -> *don't change this content folder, is updated with generator-speedseed next versions*
-- **-build** -> *code generated with npm run build, contain code of app/ transpiled to html, css, js(es5). Folders and files _*are ignored*
-- **-dist** -> *code generated with npm run dist, contain code minimizied of app/ transpiled to html, css, js(es5). Folders and files _*are ignored*
-
----
-
-- **app** -> *development template*
-    - **-vendor** -> *libs external*
-    - **assets** -> *files to copy, not compile*
-    - **components** -> *components*
-        - **_mixins.jade** -> *include all mixins*
-        - **components** -> *include all css*
-    - **css** -> *contain css files*
-    - **js** -> *contain js files*
-    - **__global.js** -> *properties inyects to all files .jade*
-    - **_index.js** -> *properties inyects to file index.jade*
-    - **index.jade** -> *index of the app*
-
----
-
-- **.core-config** -> *project routes*
-- **.yo-rc.json** -> *created by yeoman for future updates*
+### File structure
+- **-build** -> *Generated with npm run build, it contains src/ code compiled to html, css, js (es5).*
+- **-dist** -> *Generated with npm run dist, contains src/ compiled to html, css, js (es5) mined code.*
+- **-tmp** -> *Generated intermediary as help before going to -build or -dist.*
+- **config** -> *Here you can add **tasks to gulp**, **packages to npm**, **change routes** or overwrite others .json of ./core*
+    **construct** -> *Add packages to npm or overwrite others .json of ./core*
+    **tasks** -> *Add tasks to gulp*
+    **paths** -> *Change core routes*
+- **core** -> *Do not change the contents of this folder, it is updated in future versions of generator-speedseed and its templates*
+- **src** -> *Here it develops*
+    - **assets** -> *These files are copied to -dist, under development are read directly from src without being copied to -build*
+    - **index.html** -> *Start of page*
+    - **main.js** -> *main script*
+- **package.json** -> *No modification, packages must be added in **config/construct/package.ts** and then make **sd construct** to generate this file*
 
 ---
 
 ### Styleguide
-- [Guide in spanish for Jade, JS(ES6) and Stylus](https://github.com/ifedu/cleanly-styleguide)
+- [Guide en español para Jade, JS(ES6) y Stylus](https://github.com/ifedu/cleanly-styleguide)

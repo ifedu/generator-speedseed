@@ -4,8 +4,6 @@ const path = require('path')
 
 const arg = (process.argv[2]) ? process.argv[2] : ''
 
-const gulp = path.normalize('node_modules/.bin/gulp')
-
 const param = process.argv[3]
 
 const input = (str) => {
@@ -24,97 +22,26 @@ ${str}
 }
 
 const options = {
-    // INIT
     start() {
         (param === undefined)
             ? input('yo speedseed')
-            : input(`yo speedseed -local_tpl=${param}`)
+            : input(`yo speedseed --tpl=${param}`)
     },
 
-    // INSTALLS
-    i() {
-        this.install()
-    },
-
-    install() {
-        (param === '-g')
-            ? input('npm i bower -g && npm i yo -g')
-            : input('npm i && bower i')
+    construct() {
+        input('yo speedseed:construct')
     },
 
     update() {
-        (param === '-g')
-            ? input('npm i yo -g && npm i generator-speedseed -g')
-            : input('yo speedseed:postinstall && npm i && bower i')
-    },
-
-    // PROJECT BUILDS
-    build() {
-        const open = (param === 'open')
-
-        input(`${gulp} build --open=${open}`)
-    },
-
-    dist() {
-        const server = (param === 'server')
-
-        input(`${gulp} build --dist=true --server=${server}`)
-    },
-
-    serve() {
-        const dist = (param === 'dist')
-
-        input(`${gulp} webserver --dist=${dist}`)
-    },
-
-    // PROJECT INFO
-    reports() {
-        input(`${gulp} reports`)
-    },
-
-    spec() {
-        input(`${gulp} test`)
-    },
-
-    // PROJECT ADDITIONAL TASKS
-    indent() {
-        input(`${gulp} indent`)
-    },
-
-    server() {
-        input('node .core\\server')
-    },
-
-    // OTHERS
-    generator() {
-        input('yo speedseed:generator')
+        input('yo speedseed:update')
     },
 
     help() {
         console.log(`
     // INIT
     sd start [template name]
-
-    // INSTALLS
-    sd i [-g]
-    sd install [-g]
-    sd update [-g]
-
-    // PROJECT BUILDS
-    sd build [open]
-    sd dist [server]
-    sd serve [dist]
-
-    // PROJECT INFO
-    sd reports
-    sd spec
-
-    // PROJECT ADDITIONAL TASKS
-    sd indent
-    sd server
-
-    // OTHERS
-    sd generator
+    sd construct
+    sd update
     sd help
 
     // [] = OPTIONAL PARAM

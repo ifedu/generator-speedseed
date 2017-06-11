@@ -1,3 +1,11 @@
+### v.0.27.0
+    - Change Jade for Pug
+    - Improved performance
+    - Multiple internal improvements and changes in README
+    - Updated to Webpack3
+    - Updated to the latest libraries
+    - Use of TypeScript throughout the core
+
 ### v.0.26.0
     - Fix: task watch with *.css 
     - Fix: Routes with routers

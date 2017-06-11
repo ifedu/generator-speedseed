@@ -1,0 +1,36 @@
+{
+    "compileOnSave": false,
+
+    "compilerOptions": {
+        "allowJs": true,
+        "baseUrl": ".",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "pretty": true,
+        "sourceMap": true,
+        "target": "es5",
+
+        "lib": ["es2016"],
+
+        "paths": {
+            "*": ["typings/*"],
+            "root/*": ["*"]
+        },
+
+        "typeRoots": [
+            "./node_modules/@types",
+            "./typings"
+        ],
+
+        "types": [
+            "node"
+        ]
+    },
+
+    "exclude": [
+        "node_modules"
+    ]
+}

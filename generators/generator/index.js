@@ -1,6 +1,6 @@
-const speedseed = require('speedseed')
+import { Config } from 'speedseed'
 
-module.exports = class Yo extends speedseed.Config {
+module.exports = class Yo extends Config {
     constructor(...args) {
         super(...args)
     }

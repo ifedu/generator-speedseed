@@ -1,8 +1,0 @@
-(() => {
-Polymer({
-    is: '<%= component %>',
-
-    properties: {
-    }
-})
-})()

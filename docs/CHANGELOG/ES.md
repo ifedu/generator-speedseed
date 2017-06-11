@@ -1,3 +1,11 @@
+### v.0.27.0
+    - Actualizado a las últimas librerías
+    - Actualizado a Webpack3
+    - Cambia Jade por Pug
+    - Mejorado el rendimiento
+    - Multiples mejoras internas y cambios en el README
+    - Uso de TypeScript en todo el core
+
 ### v.0.26.0
     - Actualiza a Webpack2
     - Arregla: tarea watch con los *.css 
