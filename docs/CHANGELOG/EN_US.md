@@ -1,3 +1,9 @@
+### v.0.27.3
+    - Fix: DevDependencies to Dependencies
+    
+### v.0.27.2
+    - Fix: Add npm i yo -g in README
+
 ### v.0.27.1
     - Fix: TypeScript error to starter
 

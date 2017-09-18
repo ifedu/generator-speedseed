@@ -2,7 +2,7 @@
 - *Use once in the Operating System to install global libs*
     - **npm i yo -g**
     - **npm i generator-speedseed -g**
-    - **npm i [TEMPLATE] -g** (ej: npm i generator-speedsee-multi-tic-tac-toe -g, install the generator-speedseed templates you need)
+    - **npm i [TEMPLATE] -g** (ej: npm i generator-speedseed-multi-tic-tac-toe -g, install the generator-speedseed templates you need)
     - Official Templates
         - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.27.1) (main template)*
         - [cleanly-angular2-tour-of-heroes](https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes) *(updated to v.0.26.0) (main template)*
