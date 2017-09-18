@@ -3,33 +3,28 @@
     - **npm i generator-speedseed -g**
     - **npm i [TEMPLATE] -g** (ej: npm i generator-speedsee-multi-tic-tac-toe -g, install the generator-speedseed templates you need)
     - Official Templates
-        - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.27.0) (main template)*
+        - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.27.1) (main template)*
         - [cleanly-angular2-tour-of-heroes](https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes) *(updated to v.0.26.0) (main template)*
         - [cleanly-breakouts](https://www.npmjs.com/package/generator-speedseed-cleanly-breakouts) *(updated to v.0.26.0) (main template)*
         - [cleanly-polymer-get-started](https://www.npmjs.com/package/generator-speedseed-cleanly-polymer-get-started) *(updated to v.0.26.0) (main template)*
         - [cleanly-todomvc](https://www.npmjs.com/package/generator-speedseed-cleanly-todomvc) *(updated to v.0.26.0) (main template)*
-
 - *Use once in the project folder to launch the generator and install dependencies*
     - **sd start [template name]** -> The third parameter is optional in order to install local or private templates. Ex: sd start multi-tic-tac-toe-beta
     - **npm i**
-
 - *In the project folder*
     - **npm start** o **npm run build.dev** -> Compile the project in -build and create the local server
     - **npm run build** -> Compile the project in -build
     - **npm run build.dev.debug** -> Compila el proyecto en -build, crea el servidor local y activa el debugger de nodejs
     - **npm run build.dev.open** -> Compila el proyecto en -build, crea el servidor local y abre el navegador
-
-
     - **npm run dist** -> Compile the project in -dist
     - **npm run dist.dev** -> Compile the project in -dist and create the local server run dist
     - **npm run dist.dev.debug** -> Compile the project in -build, create the local server and activate the nodejs debugger
     - **npm run dist.dev.open** -> Compile the project in -build, create the local server and open the browser
-
     - **npm test** -> Compile the project in -build and launch the unitary tests with PhantomJS
     - **npm test.dev** -> Compile the project in -build, create the local server and launch the unitary tests with Chrome
-
     - **sd construct** -> Create files from. /core and. /config
     - **sd update** -> Use after updating the generator with npm, deletes the core folder and creates the updated one
+
 ---
 
 ### Features and conventions
@@ -59,4 +54,4 @@
 ---
 
 ### Styleguide
-- [Guide en español para Jade, JS(ES6) y Stylus](https://github.com/ifedu/cleanly-styleguide)
+- [Guide in spanish for Jade, JS(ES6) and Stylus](https://github.com/ifedu/cleanly-styleguide)

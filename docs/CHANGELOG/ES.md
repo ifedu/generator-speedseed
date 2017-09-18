@@ -1,3 +1,6 @@
+### v.0.27.1
+    - Corrige: Error de TypeScript al iniciar
+
 ### v.0.27.0
     - Actualizado a las últimas librerías
     - Actualizado a Webpack3
@@ -8,11 +11,11 @@
 
 ### v.0.26.0
     - Actualiza a Webpack2
-    - Arregla: tarea watch con los *.css 
-    - Arregla: Rutas con routers
+    - Corrige: tarea watch con los *.css 
+    - Corrige: Rutas con routers
 
 ### v.0.25.1
-    - Arregla: sd start da error cuando no tiene 3 parametros
+    - Corrige: sd start da error cuando no tiene 3 parametros
 
 ### v.0.25.0
     - Añade sd generator para crear una plantilla de plantillas
@@ -21,7 +24,7 @@
 
 ### v.0.24.3
     - Añade .npmignore
-    - Arregla: ignorar scripts de carpetas _*
+    - Corrige: ignorar scripts de carpetas _*
     - Muestra mensaje de error cuando no encuentra un include {%= %}
 
 ### v.0.24.1
@@ -31,20 +34,20 @@
     - Añade plantilla breakout
     - Añade plantilla todomvc
     - Cambios en el README
-    - Arregla: assets, no evaluarlos como plantillas
-    - Arregla: js, no compila assets
-    - Arregla: watch, recarga en .jade
+    - Corrige: assets, no evaluarlos como plantillas
+    - Corrige: js, no compila assets
+    - Corrige: watch, recarga en .jade
 
 ### v.0.23.0
     - Añade plugin transform-decorator-legacy en webpack
     - Añade abreviaturas sd y sdsd en CLI speedseed
     - CHANGELOG dividido en ficheros de idioma
     - Borrado sd typings en CLI speedseed
-    - Arregla: Tarea Watch lanzada cuando guardas ficheros _*.*
+    - Corrige: Tarea Watch lanzada cuando guardas ficheros _*.*
     - README dividido en ficheros de idioma
 
 ### v.0.21.1
-    - Arregla: En Unix, error de fichero o directorio no enconrado en CLI speedseed
+    - Corrige: En Unix, error de fichero o directorio no enconrado en CLI speedseed
 
 ### v.0.22.0
     - Añade webpack para compiladores de JS
@@ -57,20 +60,20 @@
     - speedseed component no funciona correctamente
 
 ### v.0.21.4
-    - Arregla: error en tarea js
-    - Arregla: eslint complexity
+    - Corrige: error en tarea js
+    - Corrige: eslint complexity
 
 ### v.0.21.3
-    - Arregla: Copia assets en tarea dist
-    - Arregla: No es requerido añadir siempre las dependencias de Babel
+    - Corrige: Copia assets en tarea dist
+    - Corrige: No es requerido añadir siempre las dependencias de Babel
     - Añade alias speedseed i como speedseed install
 
 ### v.0.21.2
-    - Arregla: speedseed update
+    - Corrige: speedseed update
     - Añade speedseed en .gitattributes
 
 ### v.0.21.1
-    - Arregla: README
+    - Corrige: README
     - Compila todos los ficheros jade cuando guardas
 
 ### v.0.21.0
@@ -80,18 +83,18 @@
     - Tarea de copiar sólo usada en tarea dist
 
 ### v.0.20.6
-    - Arregla: ruta de gulp en Unix
+    - Corrige: ruta de gulp en Unix
     - Añade speedseed help
 
 ### v.0.20.5
-    - Arregla: En Unix error de fichero o directorio no enconrado en CLI speedseed
+    - Corrige: En Unix error de fichero o directorio no enconrado en CLI speedseed
 
 ### v.0.20.4
     - Actualiza plantillas por defecto
 
 ### v.0.20.1
-    - Arregla: error cuando lanzamos speedseed start
-    - Arregla: README en español actualizado
+    - Corrige: error cuando lanzamos speedseed start
+    - Corrige: README en español actualizado
     - Plantilla multi-tic-tac-toe actualizada
 
 ### v.0.20.0
@@ -112,12 +115,12 @@
     - Más flexibilid y fácil de cambiar el core-config.json
 
 ### v.0.18.1
-    - Arregla: llamada a gulp local desde npm run: ./node_modules/gulp/bin/gulp.js a gulp
+    - Corrige: llamada a gulp local desde npm run: ./node_modules/gulp/bin/gulp.js a gulp
 
 ### v.0.18.0
-    - Arregla: .css compila a .tmp, include minificado a jade
-    - Arregla: No necesita global gulp
-    - Arregla: npm run component en Polymer
+    - Corrige: .css compila a .tmp, include minificado a jade
+    - Corrige: No necesita global gulp
+    - Corrige: npm run component en Polymer
     - Añade npm run serve
     - Añade npm run serve-dist
     - Añade template polymer-whitespace
@@ -127,8 +130,8 @@
     - yo speedseed también obtiene dependencias de la plantilla
 
 ### v.0.17.0
-    - Arregla: npm run component
-    - Arregla: watch en *.spec.js
+    - Corrige: npm run component
+    - Corrige: watch en *.spec.js
     - .core-config.json a core-config.js
     - Añade Test en npm run component con AngularJS
     - Añade vendor en propiedad test.files de core-config.js
@@ -136,7 +139,7 @@
     - Simplifica core-config.js
 
 ### v.0.16.0
-    - Arregla: npm run test
+    - Corrige: npm run test
     - Permite elegir opciones a mostrar en plantillas
     - Primera vez "yo speedseed" instala plantilla, siguientes veces "yo speedseed" actualiza
     - Requiere Node >= 6.0.0
@@ -144,12 +147,12 @@
     - Usa lib speedseed común a todas las plantillas
 
 ### v.0.15.5
-    - Arregla: no romper la app cuando seleccion de test es no
+    - Corrige: no romper la app cuando seleccion de test es no
 
 ### v.0.15.4
-    - Arregla: añade peticiones post put patch y delete al servidor de mocks
-    - Arregla: copiar karma-config.js sin plantilla
-    - Arregla: livereload para css
+    - Corrige: añade peticiones post put patch y delete al servidor de mocks
+    - Corrige: copiar karma-config.js sin plantilla
+    - Corrige: livereload para css
 
 ### v.0.15.3
     - Cambia el nombre de la plantilla en selección
@@ -161,13 +164,13 @@
 
 ### v.0.15.1
     - Todos los ficheros a 4 espacios, package.json y bower.json 2 espacios
-    - Arregla .core-config.js y package.json son generados correctamente
-    - Arregla plantilla incluir para ficheros.html
+    - Corrige .core-config.js y package.json son generados correctamente
+    - Corrige plantilla incluir para ficheros.html
     - Mensaje de error cuando npm run update importa ficheros previos y falla
 
 ### v.0.15.0
     - Añade npm run server para lanzar servidor node
-    - Arregla tarea de copiar
+    - Corrige tarea de copiar
     - Borra propiedad copiar en .core-config.js
     - Copia dependencies en package.json a -build/vendor
     - Ficheros .file.* compilan en -tmp
@@ -176,21 +179,21 @@
     - Plantillas separadas de el generador
 
 ### v.0.14.2
-    - Arregla copiar node_modules en vendor en vez de en vendor/@angular
-    - Arregla ignora carpeta -vendor en npm run indent
-    - Arregla npm run dist no borra ficheros vendor
-    - Arregla buscar propiedades previas en .core-config.json en vez de .core-config.js
+    - Corrige copiar node_modules en vendor en vez de en vendor/@angular
+    - Corrige ignora carpeta -vendor en npm run indent
+    - Corrige npm run dist no borra ficheros vendor
+    - Corrige buscar propiedades previas en .core-config.json en vez de .core-config.js
     - Borra anterior .core cuando npm run update o yo speedseed
 
 ### v.0.14.1
-    - Arregla permitir incluir varias plantillas en un mismo fichero
-    - Arregla tareas para que no lean la carpeta vendor
-    - Arregla tareas dist
+    - Corrige permitir incluir varias plantillas en un mismo fichero
+    - Corrige tareas para que no lean la carpeta vendor
+    - Corrige tareas dist
     - Requerimientos en README
 
 ### v.0.14.0
     - Añadida plantilla para incluir todas las rutas
-    - Arreglado no copiar todos los typings, sólo los de el framework seleccionado
+    - Corrigedo no copiar todos los typings, sólo los de el framework seleccionado
     - Actualiza estructura de carpetas en README
 
 ### v.0.13.0
@@ -214,7 +217,7 @@
     - Añadido TypeScript
 
 ### v.0.11.1
-    - Arregla los includes de Polymer
+    - Corrige los includes de Polymer
 
 ### v.0.11.0
     - .core-config.json añade propiedades cuando actualizas en lugar de sobreescribir el archivo
@@ -262,12 +265,12 @@
     - Usa BrowserSync para livereload
 
 ### v.0.8.1
-    - Arregla el README
+    - Corrige el README
 
 ### v.0.8.0
-    - Arregla error en api cuando ruta no existe
-    - Arregla incluir plantilla html
-    - Arregla watch a ficheros incluidos
+    - Corrige error en api cuando ruta no existe
+    - Corrige incluir plantilla html
+    - Corrige watch a ficheros incluidos
     - Error al compilar no rompe la app
     - No necesita precompilar para nuevos ficheros
     - Permite configurar puerto reload y ruta del servidor api
@@ -290,7 +293,7 @@
     - ---*.js ---*.html ---*.css para precompilar ficheros en dev
     - Añade Polymer y React
     - Aaña plantilla basada en TodoMVC
-    - Arregla traducción inglesa
+    - Corrige traducción inglesa
     - Cambios en el Generador
     - Renombra ficheros index a main
 
@@ -308,12 +311,12 @@
 ### v.0.5.0
     - Añade selección de framework
     - Añade selección de plantilla
-    - Arregla y actualiza el Readme
+    - Corrige y actualiza el Readme
     - Borra npm run ss-init
     - Borra npm run ss-install
 
 ### v.0.4.1
-    - Arregla copiar karma.conf por karma.conf.js
+    - Corrige copiar karma.conf por karma.conf.js
 
 ### v.0.4.0
     - Reinicia el changelog en 2 idiomas

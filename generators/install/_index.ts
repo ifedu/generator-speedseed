@@ -31,6 +31,6 @@ export default class Yo extends Base {
         core.setProject()
         core.setOptions()
 
-        core.callTpl()
+        core.callTpl({})
     }
 }

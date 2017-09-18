@@ -1,4 +1,4 @@
-### v.0.27.0
+### v.0.27.1
 
 ### Requeriments
 - NodeJS >= 6.0.0
@@ -20,7 +20,7 @@
 - Yeoman
 
 ### Templates
-- [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.27.0) (main template)*
+- [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.27.1) (main template)*
     - AngularJS **v.1.5.6**
     - Angular2 **v.4.3.6**
     - jQuery **v.3.2.1**

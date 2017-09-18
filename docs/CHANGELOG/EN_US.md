@@ -1,3 +1,6 @@
+### v.0.27.1
+    - Fix: TypeScript error to starter
+
 ### v.0.27.0
     - Change Jade for Pug
     - Improved performance
