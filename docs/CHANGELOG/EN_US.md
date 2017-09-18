@@ -1,3 +1,6 @@
+### v.0.27.4
+    - Update: speedseed to v.022.4
+
 ### v.0.27.3
     - Fix: DevDependencies to Dependencies
     
