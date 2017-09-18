@@ -1,7 +1,8 @@
-### v.0.27.1
+### v.0.27.2
 
 ### Requeriments
 - NodeJS >= 6.0.0
+- **npm i yo -g**
 - **npm i generator-speedseed -g**
 - **npm i generator-speedseed-multi-tic-tac-toe -g**
 

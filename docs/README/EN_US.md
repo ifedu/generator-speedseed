@@ -1,5 +1,6 @@
 ### Use
 - *Use once in the Operating System to install global libs*
+    - **npm i yo -g**
     - **npm i generator-speedseed -g**
     - **npm i [TEMPLATE] -g** (ej: npm i generator-speedsee-multi-tic-tac-toe -g, install the generator-speedseed templates you need)
     - Official Templates
