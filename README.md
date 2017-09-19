@@ -1,4 +1,4 @@
-### v.0.27.4
+### v.0.27.5
 
 ### Requeriments
 - NodeJS >= 6.0.0
@@ -21,20 +21,20 @@
 - Yeoman
 
 ### Templates
-- [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.27.4) (main template)*
+- [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.27) (main template)*
     - AngularJS **v.1.5.6**
     - Angular2 **v.4.3.6**
     - jQuery **v.3.2.1**
     - Polymer **v.1.7.0**
     - React **v.15.6.1**
     - VanillaJS
-- [angular2-tour-of-heroes](https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes) *(updated to v.0.26.0) (main template)*
+- [angular2-tour-of-heroes](https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes) *(updated to v.0.26) (main template)*
     - Angular2 **v.2.1.1**
-- [polymer-get-started](https://www.npmjs.com/package/generator-speedseed-cleanly-polymer-get-started) *(updated to v.0.26.0) (main template)*
+- [polymer-get-started](https://www.npmjs.com/package/generator-speedseed-cleanly-polymer-get-started) *(updated to v.0.26) (main template)*
     - Polymer **v.1.7.0**
-- [todomvc](https://www.npmjs.com/package/generator-speedseed-cleanly-todomvc) *(updated to v.0.26.0) (main template)*
+- [todomvc](https://www.npmjs.com/package/generator-speedseed-cleanly-todomvc) *(updated to v.0.26) (main template)*
     - Vue **v.1.0.1**
-- [breakouts](https://www.npmjs.com/package/generator-speedseed-cleanly-breakouts) *(updated to v.0.26.0) (main template)*
+- [breakouts](https://www.npmjs.com/package/generator-speedseed-cleanly-breakouts) *(updated to v.0.26) (main template)*
     - CraftyJS **v.0.6.3**
     - CreateJS **v.2014.12.12**
     - EnchantJS **v.0.8.2**

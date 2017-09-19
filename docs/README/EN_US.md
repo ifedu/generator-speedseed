@@ -4,11 +4,11 @@
     - **npm i generator-speedseed -g**
     - **npm i [TEMPLATE] -g** (ej: npm i generator-speedseed-multi-tic-tac-toe -g, install the generator-speedseed templates you need)
     - Official Templates
-        - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.27.4) (main template)*
-        - [cleanly-angular2-tour-of-heroes](https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes) *(updated to v.0.26.0) (main template)*
-        - [cleanly-breakouts](https://www.npmjs.com/package/generator-speedseed-cleanly-breakouts) *(updated to v.0.26.0) (main template)*
+        - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.27) (main template)*
+        - [cleanly-angular2-tour-of-heroes](https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes) *(updated to v.0.26) (main template)*
+        - [cleanly-breakouts](https://www.npmjs.com/package/generator-speedseed-cleanly-breakouts) *(updated to v.0.26) (main template)*
         - [cleanly-polymer-get-started](https://www.npmjs.com/package/generator-speedseed-cleanly-polymer-get-started) *(updated to v.0.26.0) (main template)*
-        - [cleanly-todomvc](https://www.npmjs.com/package/generator-speedseed-cleanly-todomvc) *(updated to v.0.26.0) (main template)*
+        - [cleanly-todomvc](https://www.npmjs.com/package/generator-speedseed-cleanly-todomvc) *(updated to v.0.26) (main template)*
 - *Use once in the project folder to launch the generator and install dependencies*
     - **sd start [template name]** -> The third parameter is optional in order to install local or private templates. Ex: sd start multi-tic-tac-toe-beta
     - **npm i**

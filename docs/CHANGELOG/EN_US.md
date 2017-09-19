@@ -1,5 +1,10 @@
 ### v.0.27.4
+    - Update: speedseed to v.022.5
+    - Fix: Error in sd construct
+
+### v.0.27.4
     - Update: speedseed to v.022.4
+    - Fix: Improve speed when sd start is launched for the first time
 
 ### v.0.27.3
     - Fix: DevDependencies to Dependencies
