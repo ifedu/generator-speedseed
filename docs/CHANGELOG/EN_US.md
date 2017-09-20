@@ -1,4 +1,10 @@
-### v.0.27.4
+### v.0.27.6
+    - Fix: create .gitignore
+    - Update: speedseed to v.022.6
+    - Add .tscache
+    - bower_components add to .gitignore
+
+### v.0.27.5
     - Update: speedseed to v.022.5
     - Fix: Error in sd construct
 

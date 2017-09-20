@@ -1,4 +1,4 @@
-### v.0.27.5
+### v.0.27.6
 
 ### Requeriments
 - NodeJS >= 6.0.0
@@ -25,7 +25,7 @@
     - AngularJS **v.1.5.6**
     - Angular2 **v.4.3.6**
     - jQuery **v.3.2.1**
-    - Polymer **v.1.7.0**
+    - Polymer **v.1.7.0** *(require bower)*
     - React **v.15.6.1**
     - VanillaJS
 - [angular2-tour-of-heroes](https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes) *(updated to v.0.26) (main template)*
