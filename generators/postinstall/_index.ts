@@ -16,7 +16,7 @@ export default class Yo extends Base {
         if (core.options.templateFiles === true) {
             files.create(`${dir}/seed/copy`, './', false)
             files.create(`${dir}/seed/root`, './')
-            files.create(`${dir}/seed/gitignore`, './.gitignore')
+            files.create(`${dir}/seed/gitignore`, './.gitignore', false)
         }
 
         files.create(`${dir}/seed/core`, './core')

@@ -1,5 +1,9 @@
-### v.0.27.6
+### v.0.27.7
     - Corrige: crea .gitignore
+    - Actualiza: speedseed a v.022.7
+    - .tscache por defecto
+
+### v.0.27.6
     - Actualiza: speedseed a v.022.6
     - Añade .tscache
     - bower_components añadido a .gitignore
