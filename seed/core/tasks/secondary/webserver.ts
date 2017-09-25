@@ -36,6 +36,7 @@ class TaskFile extends Task {
 
     private getSyncInit(baseDir: string, routes: any): any {
         return {
+            localOnly: true,
             open: (core.args.open),
             port: paths.server.portBuild,
 

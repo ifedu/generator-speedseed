@@ -1,7 +1,8 @@
-import { lstat } from 'fs'
+import { lstatSync } from 'fs'
 import * as modifyFile from 'gulp-modify-file'
 import * as plumber from 'gulp-plumber'
 import * as rename from 'gulp-rename'
+import { merge } from 'lodash'
 import { basename, dirname, join, sep } from 'path'
 import * as webpack from 'webpack'
 
@@ -61,8 +62,20 @@ class TaskFile extends Task {
     }
 
     private getWebpackOptions(): any {
-        const watch = (core.args.dev)
+        const common = this.getWebpackCommonOptions()
 
+        if (core.args.dev) {
+            merge(common, this.getWebpackDevOptions())
+        }
+
+        if (core.args.dist) {
+            merge(common, this.getWebpackDistOptions())
+        }
+
+        return common
+    }
+
+    private getWebpackCommonOptions() {
         return {
             entry: this.getEntry(),
             output: {
@@ -71,8 +84,6 @@ class TaskFile extends Task {
             },
 
             context: this.root,
-            devtool: 'inline-source-map',
-            watch,
 
             module: {
                 rules: [
@@ -109,7 +120,20 @@ class TaskFile extends Task {
         }
     }
 
+    private getWebpackDevOptions() {
+        return {
+            devtool: 'cheap-module-eval-source-map',
+            watch: true,
+        }
+    }
+
+    private getWebpackDistOptions() {
+        return {}
+    }
+
     private getPlugins() {
+        if (core.args.one) return []
+
         const plugins: any = [
             new webpack.optimize.CommonsChunkPlugin({
                 filename: 'commons.js',
@@ -118,16 +142,17 @@ class TaskFile extends Task {
         ]
 
         const route = `${this.root}/${paths.tmp.vendor.dll}`
-        lstat(route, (err: any, stats: any) => {
-            if (stats) {
-                plugins.push(
-                    new webpack.DllReferencePlugin({
-                        context: this.root,
-                        manifest: require(`${this.root}/${paths.tmp.vendor.dll}`),
-                    })
-                )
-            }
-        })
+
+        try {
+            const stats = lstatSync(route)
+
+            plugins.push(
+                new webpack.DllReferencePlugin({
+                    context: this.root,
+                    manifest: require(route),
+                })
+            )
+        } catch(e) {}
 
         return this.getPluginsMin(plugins)
     }
@@ -164,7 +189,7 @@ class TaskFile extends Task {
         }
 
         if (Task.watch) {
-            return this.gulp.start('reload')
+            return this.gulp.start('watch.js')
         }
     }
 }

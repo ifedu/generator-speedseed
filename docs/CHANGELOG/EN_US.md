@@ -1,3 +1,10 @@
+### v.0.28.0
+    - Fix: improves speed by not including vendor.js in main.js
+    - Update: speedseed to v.022.8
+    - Add support for building applications with Electron
+    - Changes in templating <% to /*<
+    - Don't create sourcemaps in dist
+
 ### v.0.27.7
     - Fix: create .gitignore
     - Update: speedseed to v.022.7

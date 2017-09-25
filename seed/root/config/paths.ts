@@ -1,4 +1,3 @@
-import PathsCore from 'root/core/paths'
+const paths: any = {}
 
-export default class Paths extends PathsCore {
-}
+export default paths

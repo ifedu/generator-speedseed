@@ -1,4 +1,4 @@
-### v.0.27.7
+### v.0.28.0
 
 ### Requeriments
 - NodeJS >= 6.0.0
@@ -6,7 +6,7 @@
 - **npm i generator-speedseed -g**
 - **npm i generator-speedseed-multi-tic-tac-toe -g**
 
-### README
+### Readme
 - [English](https://github.com/ifedu/generator-speedseed/blob/master/docs/README/EN_US.md)
 - [Spanish](https://github.com/ifedu/generator-speedseed/blob/master/docs/README/ES.md)
 
@@ -16,14 +16,13 @@
 
 ### Use
 - Gulp
-- Karma
 - Webpack 3
 - Yeoman
 
 ### Templates
-- [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.27) (main template)*
-    - AngularJS **v.1.5.6**
-    - Angular2 **v.4.3.6**
+- [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.28) (main template)*
+    - AngularJS **v.1.6.6**
+    - Angular **v.4.4.3**
     - jQuery **v.3.2.1**
     - Polymer **v.1.7.0** *(require bower)*
     - React **v.15.6.1**
@@ -45,7 +44,9 @@
 ### Templates use
 - BabelJS 6
 - CoffeeScript 2
+- Electron
 - Jasmine
+- Karma
 - LeSS
 - Mocha
 - Pug (Jade)

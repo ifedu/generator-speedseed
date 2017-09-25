@@ -1,4 +1,3 @@
-import * as modifyFile from 'gulp-modify-file'
 import * as plumber from 'gulp-plumber'
 import { basename, dirname, sep } from 'path'
 
@@ -11,7 +10,6 @@ class TaskFile extends Task {
         `${paths.src.dir}/**/*.${paths.yo.jsExtra}`,
 
         `!${paths.src.assets.files}`,
-        `!${paths.src.vendor.files}`,
     ]
 
     constructor() {

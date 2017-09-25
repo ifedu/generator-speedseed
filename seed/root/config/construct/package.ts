@@ -1,4 +1,5 @@
 export default {
     "dependencies": {},
-    "devDependencies": {}
+    "devDependencies": {},
+    "scripts": {},
 }

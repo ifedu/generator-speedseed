@@ -7,15 +7,13 @@ class TaskFile extends Task {
 
     protected init(cb: any) {
         this.run(
-            'clean',
-            'bundle',
-            'tmp',
             [
-                'copy.css.tmp-to-build',
-                'copy.html.tmp-to-build',
-                'js.tmp-to-build',
+                'css.src-to-tmp',
+                'html.src-to-tmp',
+                'modify.css.src-to-tmp',
+                'modify.html.src-to-tmp',
             ],
-            'tpl.js',
+            'js.src-to-tmp',
             cb
         )
     }

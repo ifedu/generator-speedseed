@@ -4,6 +4,7 @@ export default class PathsCore {
     build: any = {
         assets: {
             dir: '-build/assets',
+            files: '-build/assets/**/*',
         },
 
         cache: [
@@ -12,6 +13,10 @@ export default class PathsCore {
         ],
 
         dir: '-build',
+
+        vendor: {
+            file: '-build/vendor.js'
+        }
     }
 
     dist: any = {
@@ -20,6 +25,10 @@ export default class PathsCore {
         },
 
         dir: '-dist',
+    }
+
+    electron: any = {
+        file: 'electron/index'
     }
 
     environments: any = {
@@ -53,10 +62,6 @@ export default class PathsCore {
         },
 
         dir: 'src',
-
-        vendor: {
-            files: 'src/vendor/**/*',
-        },
     }
 
     starterFiles: any = {

@@ -1,3 +1,5 @@
+import * as gulp from 'gulp'
+
 import { Task } from 'root/core/seed'
 
 class TaskFile extends Task {
@@ -10,6 +12,7 @@ class TaskFile extends Task {
             'build',
             'dist',
             'copy.assets',
+            'electron.run',
             cb
         )
     }

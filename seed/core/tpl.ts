@@ -27,9 +27,9 @@ export default class Tpl {
 
         try {
             return template(content, {
-                evaluate: /\{\%([\s\S]+?)\%\}/g,
-                interpolate: /\{\%=([\s\S]+?)\%\}/g,
-                escape: /\{\%-([\s\S]+?)\%\}/g,
+                evaluate: /\/\*\<([\s\S]+?)\>\*\//g,
+                interpolate: /\/\*\<=([\s\S]+?)\>\*\//g,
+                escape: /\/\*\<-([\s\S]+?)\>\*\//g,
             })(this)
         } catch (e) {
             console.log(`ERROR IN ${route}`)

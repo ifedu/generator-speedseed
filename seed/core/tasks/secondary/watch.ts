@@ -5,7 +5,6 @@ import { paths, Task } from 'root/core/seed'
 
 const ignoreFiles: any = [
     `!${paths.src.assets.files}`,
-    `!${paths.src.vendor.files}`,
 ]
 
 class Watch {

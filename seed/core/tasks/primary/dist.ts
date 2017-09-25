@@ -9,7 +9,6 @@ class TaskFile extends Task {
         'compress.css',
         'compress.html',
         'compress.js',
-        'copy.assets',
     ]
 
     protected init(cb: any) {

@@ -1,6 +1,6 @@
 import * as webpack from 'webpack'
 
-import { paths, Task } from 'root/core/seed'
+import { core, paths, Task } from 'root/core/seed'
 
 class TaskFile extends Task {
     pack: any = require('../../../package.json')
@@ -24,7 +24,10 @@ class TaskFile extends Task {
     }
 
     protected init(cb: any) {
-        if (!this.webpackOptions.entry.vendor.length) return cb()
+        if (
+            !this.webpackOptions.entry.vendor.length ||
+            core.args.one
+        ) return cb()
 
         webpack(this.webpackOptions, this.finish.bind(this, cb))
     }

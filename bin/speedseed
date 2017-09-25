@@ -7,7 +7,7 @@ const arg = (process.argv[2]) ? process.argv[2] : ''
 const param = process.argv[3]
 
 const input = (str) => {
-    const spawn = require('child_process').spawn
+    const { spawn } = require('child_process')
 
     console.log(`
 ${str}

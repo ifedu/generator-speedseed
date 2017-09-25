@@ -3,33 +3,27 @@
     "homepage": "https://github.com/ifedu/generator-speedseed",
     "main": "generators/app/index.js",
     "name": "generator-speedseed",
-    "version": "0.27.7",
-
+    "version": "0.28.0",
     "keywords": [
         "yeoman-generator"
     ],
-
     "author": {
         "name": "Eduardo Pérez-Bermejo",
         "email": "ifedu@outlook.com",
         "url": "http://www.github.com/ifedu/generator-speedseed"
     },
-
     "bin": {
         "sd": "./bin/speedseed",
         "speedseed": "./bin/speedseed"
     },
-
     "dependencies": {
         "@types/node": "8.0.28",
         "@types/yeoman-generator": "1.0.3",
-        "speedseed": "0.22.7"
+        "speedseed": "0.22.8"
     },
-
-    "engines" : {
+    "engines": {
         "node": ">=6.0.0"
     },
-
     "repository": {
         "type": "git",
         "url": "https://github.com/ifedu/generator-speedseed"
