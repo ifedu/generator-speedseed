@@ -4,8 +4,8 @@ import { paths, Task } from 'root/core/seed'
 
 class TaskFile extends Task {
     private files: any = [
-        `${paths.build.dir}/**/${paths.starterFiles.index}.html`,
-        `${paths.build.dir}/**/${paths.starterFiles.main}.html`,
+        `${paths.build.dir}/**/index.html`,
+        `${paths.build.dir}/**/main.html`,
     ]
 
     private options: any = {

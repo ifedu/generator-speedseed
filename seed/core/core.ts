@@ -1,8 +1,14 @@
+import { isArray } from 'lodash'
+
 export default class Core {
     args: any = {}
 
     constructor() {
         process.argv.forEach(this.argEach)
+    }
+
+    concatArr(objValue: any, srcValue: any): any {
+        if (isArray(objValue)) return objValue.concat(srcValue)
     }
 
     private argEach = (val: any) => {

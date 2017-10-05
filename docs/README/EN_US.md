@@ -4,7 +4,7 @@
     - **npm i generator-speedseed -g**
     - **npm i [TEMPLATE] -g** (ej: **npm i generator-speedseed-multi-tic-tac-toe -g**, install the generator-speedseed templates you need)
     - Official Templates
-        - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.28) (main template)*
+        - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.29) (main template)*
         - [cleanly-angular2-tour-of-heroes](https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes) *(updated to v.0.26) (main template)*
         - [cleanly-breakouts](https://www.npmjs.com/package/generator-speedseed-cleanly-breakouts) *(updated to v.0.26) (main template)*
         - [cleanly-polymer-get-started](https://www.npmjs.com/package/generator-speedseed-cleanly-polymer-get-started) *(updated to v.0.26.0) (main template)*
@@ -21,8 +21,11 @@
     - **npm run dist.dev** -> Compile the project in -dist and create the local server run dist
     - **npm run dist.dev.debug** -> Compile the project in -build, create the local server and activate the nodejs debugger
     - **npm run dist.dev.open** -> Compile the project in -build, create the local server and open the browser
-    - **npm test** -> Compile the project in -build and launch the unitary tests with PhantomJS
-    - **npm test.dev** -> Compile the project in -build, create the local server and launch the unitary tests with Chrome
+    - **npm run test** -> Compile the project in -build and launch the unitary tests with PhantomJS
+    - **npm run test.dev** -> Compile the project in -build, create the local server and launch the unitary tests with Chrome
+    - **npm run electron.dev** "Compile the files, read ./electron/main.ts and launch electron",
+    - **npm run electron.dist** "Compiles files for distribution, read ./electron/main.ts and launch electron",
+    - **npm run electron.run** "Read ./electron/main.ts and launch electron",
     - **sd construct** -> Create files from. /core and. /config
     - **sd update** -> Use after updating the generator with npm, deletes the core folder and creates the updated one
 
@@ -30,8 +33,11 @@
 
 ### Features and conventions
 - Unitary tests should be called *. spec. js
-- JavaScript files that are compiled to -build should be called index. js, main. js or *. spec. js, the other files should be included in these since they will not be compiled individually to -build
-- Files can be included by templating with {%= include (' name. html') %}
+- JavaScript files that are compiled to -build should be called index.js, main.css or *. spec.js, the other files should be included in these since they will not be compiled individually to -build
+- Files can be included by templating with:
+    - js/ts */\*<= include('nombre.html') >\*/*
+    - html *<\!--<= include('nombre.html') -->*
+    - pug *//<= include('nombre.html') >//*
 - Allows you to update the project kernel using sd update without affecting the development of the project
 - In the command line you can use sd, sdsd or speedseed
 
@@ -40,16 +46,19 @@
 ### File structure
 - **-build** -> *Generated with npm run build, it contains src/ code compiled to html, css, js (es5).*
 - **-dist** -> *Generated with npm run dist, contains src/ compiled to html, css, js (es5) mined code.*
-- **-tmp** -> *Generated intermediary as help before going to -build or -dist.*
+- **-tmp** -> *Generated for decomposition in the .js /\*[ ]\*/*
 - **config** -> *Here you can add **tasks to gulp**, **packages to npm**, **change routes** or overwrite others .json of ./core*
     **construct** -> *Add packages to npm or overwrite others .json of ./core*
     **tasks** -> *Add tasks to gulp*
     **paths** -> *Change core routes*
+    **webpack.options** -> *Change or add options to Webpack*
 - **core** -> *Do not change the contents of this folder, it is updated in future versions of generator-speedseed and its templates*
+- **electron** -> *Main electron files
 - **src** -> *Here it develops*
     - **assets** -> *These files are copied to -dist, under development are read directly from src without being copied to -build*
     - **index.html** -> *Start of page*
     - **main.js** -> *main script*
+- **typings** -> TypeScript Definition Files
 - **package.json** -> *No modification, packages must be added in **config/construct/package.ts** and then make **sd construct** to generate this file*
 
 ---

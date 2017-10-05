@@ -1,89 +1,135 @@
 import { core } from 'root/core/seed'
 
-export default class PathsCore {
-    build: any = {
+const build = '-build'
+const dist = '-dist'
+const src = 'src'
+const tmp = '-tmp'
+
+const paths: any = {
+    build: {
         assets: {
-            dir: '-build/assets',
-            files: '-build/assets/**/*',
+            dir: `${build}/assets`,
+            files: `${build}/assets/**/*`,
         },
 
         cache: [
-            '-build/commons.js',
-            '-build/vendor.js',
+            `${build}/commons.js`,
+            `${build}/vendor.js`,
         ],
 
-        dir: '-build',
+        dir: build,
+
+        files: {
+            js: [
+                `${build}/**/*.coffee`,
+                `${build}/**/*.js`,
+                `${build}/**/*.jsx`,
+                `${build}/**/*.ts`,
+            ],
+        },
 
         vendor: {
-            file: '-build/vendor.js'
-        }
-    }
+            dll: `${build}/vendor.json`,
+        },
+    },
 
-    dist: any = {
+    bundle: {
+        dependenciesSpec: [
+            'chai',
+            'jasmine',
+            'mocha',
+        ],
+
+        vendor: {
+            includePackageDependencies: true,
+
+            dependencies: [],
+        },
+    },
+
+    dist: {
         assets: {
-            dir: '-dist/assets',
+            dir: `${dist}/assets`,
         },
 
-        dir: '-dist',
-    }
+        dir: dist,
+    },
 
-    electron: any = {
-        file: 'electron/index'
-    }
+    electron: {
+        file: 'electron/index',
+        livereload: 'http://localhost:8001/browser-sync/browser-sync-client.js?v=2.18.13',
+    },
 
-    environments: any = {
-        dir: 'environments',
-    }
-
-    html: any = {
-        pug: {
-            doctype: 'html',
-            pretty: true,
-        },
-    }
-
-    htmlDist: any = {
-        pug: {
-            doctype: 'html',
-            pretty: false,
-        },
-    }
-
-    server: any = {
+    server: {
         portBuild: 8001,
         portReload: 8002,
-    }
+    },
 
-    src: any = {
+    src: {
         assets: {
-            dir: 'src/assets',
-            dirRelative: 'assets',
-            files: 'src/assets/**/*',
+            dir: `${src}/assets`,
+            dirRelative: `assets`,
+            files: `${src}/assets/**/*`,
         },
 
-        dir: 'src',
-    }
+        dir: src,
 
-    starterFiles: any = {
-        index: 'index',
-        main: 'main',
-    }
+        files: {
+            cssIndex: [
+                `${src}/**/*index.css`,
+                `${src}/**/*main.css`,
 
-    styles: any = {
-        less: { compress: false },
-        sass: { outputStyle: '' },
-        scss: { outputStyle: '' },
-        styl: { compress: false, linenos: true }
-    }
+                `${src}/**/*index.less`,
+                `${src}/**/*main.less`,
 
-    stylesDist: any = {
+                `${src}/**/*index.sass`,
+                `${src}/**/*main.sass`,
+
+                `${src}/**/*index.scss`,
+                `${src}/**/*main.scss`,
+
+                `${src}/**/*index.styl`,
+                `${src}/**/*main.styl`,
+            ],
+
+            js: [
+                `${src}/**/*.coffee`,
+                `${src}/**/*.js`,
+                `${src}/**/*.jsx`,
+                `${src}/**/*.ts`,
+            ],
+
+            jsIndex: [
+                `${src}/**/*index.coffee`,
+                `${src}/**/*main.coffee`,
+
+                `${src}/**/*index.js`,
+                `${src}/**/*main.js`,
+
+                `${src}/**/*index.jsx`,
+                `${src}/**/*main.jsx`,
+
+                `${src}/**/*index.ts`,
+                `${src}/**/*main.ts`,
+            ],
+
+            main: [
+                `${src}/**/*index.*`,
+                `${src}/**/*main.*`,
+            ],
+
+            unitTestAll: `${src}/**/*.spec*`,
+        }
+    },
+
+    stylesDist: {
         less: { compress: true },
         sass: { outputStyle: 'compressed' },
         scss: { outputStyle: 'compressed' },
         styl: { compress: true }
-    }
+    },
 
-    tasks: any = {
+    tasks: {
         dir: {
             config: '../../config/tasks',
             css: 'css',
@@ -92,9 +138,9 @@ export default class PathsCore {
             secondary: 'secondary',
             test: 'test',
         },
-    }
+    },
 
-    test: any = {
+    test: {
         karma: {
             options: {
                 autowatch: false,
@@ -102,9 +148,10 @@ export default class PathsCore {
                 port: 9876,
 
                 files: [
-                    "./-build/vendor.js",
-                    "./-build/commons.js",
-                    "./-build/**/*.spec.js"
+                    `./${build}/vendor.js`,
+                    `./${build}/libs.js`,
+                    `./${build}/commons.js`,
+                    `./${build}/**/*.spec.js`,
                 ],
 
                 frameworks: [],
@@ -114,28 +161,24 @@ export default class PathsCore {
                     'karma-phantomjs-launcher',
                 ],
             }
-        }
-    }
-
-    tmp: any = {
-        assets: {
-            files: 'tmp/assets/**/*',
         },
+    },
 
-        dir: '-tmp',
+    tmp: {
+        dir: tmp,
+    },
 
-        vendor: {
-            dll: '-tmp/vendor.json',
-        },
-    }
+    yo: require('../.yo-rc.json')['generator-speedseed']
+}
 
-    yo: any = require('../.yo-rc.json')['generator-speedseed']
-
+export default class PathsCore {
     constructor() {
-        this.test.karma.options.browsers = (core.args.dev)
+        paths.test.karma.options.browsers = (core.args.dev)
         ? ['Chrome']
         : ['PhantomJS']
 
-        this.test.karma.options.singleRun = !(core.args.dev)
+        paths.test.karma.options.singleRun = !(core.args.dev)
+
+        return paths
     }
 }

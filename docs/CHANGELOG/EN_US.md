@@ -1,3 +1,11 @@
+### v. 0.29.0
+    - Add MIT License
+    - Changes in paths
+    - Changes in templating
+    - Changes in README
+    - Changed several tasks from gulp to webpack
+    - Webpack options file
+
 ### v.0.28.0
     - Fix: improves speed by not including vendor.js in main.js
     - Update: speedseed to v.022.8

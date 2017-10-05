@@ -2,8 +2,8 @@ import { paths, Task } from 'root/core/seed'
 
 class TaskFile extends Task {
     private files: any = [
-        `${paths.build.dir}/**/${paths.starterFiles.index}.js`,
-        `${paths.build.dir}/**/${paths.starterFiles.main}.js`,
+        `${paths.build.dir}/**/index.js`,
+        `${paths.build.dir}/**/main.js`,
         ...paths.build.cache,
     ]
 

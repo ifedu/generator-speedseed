@@ -9,6 +9,7 @@ class TaskFile extends Task {
         this.run(
             'build',
             'dist',
+            'copy.assets',
             'dev',
             cb
         )

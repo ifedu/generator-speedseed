@@ -1,26 +1,34 @@
+### v.0.29.0
+    - Añadida Licencia MIT
+    - Cambios en paths
+    - Cambios en templating
+    - Cambios en README
+    - Cambiadas varias tareas de gulp a webpack
+    - Fichero de opciones para webpack
+
 ### v.0.28.0
     - Corrige: mejora la velocidad al no incluir los vendor.js en los main.js
-    - Actualiza: speedseed a v.022.8
+    - Actualización: speedseed a v.022.8
     - Añade soporte para crear aplicaciones con Electron
     - Cambios en templating <% a /*<
     - No crea sourcemaps en dist
 
 ### v.0.27.7
     - Corrige: crea .gitignore
-    - Actualiza: speedseed a v.022.7
+    - Actualización: speedseed a v.022.7
     - .tscache por defecto
 
 ### v.0.27.6
-    - Actualiza: speedseed a v.022.6
+    - Actualización: speedseed a v.022.6
     - Añade .tscache
     - bower_components añadido a .gitignore
 
 ### v.0.27.5
-    - Actualiza: speedseed a v.022.5
+    - Actualización: speedseed a v.022.5
     - Corrige: Error en sd construct
 
 ### v.0.27.4
-    - Actualiza: speedseed a v.022.4
+    - Actualización: speedseed a v.022.4
     - Corrige: Mayor velocidad al lanzar sd start por primera vez
 
 ### v.0.27.3
@@ -33,15 +41,15 @@
     - Corrige: Error de TypeScript al iniciar
 
 ### v.0.27.0
-    - Actualizado a las últimas librerías
-    - Actualizado a Webpack3
+    - Actualización: las últimas librerías
+    - Actualización: Webpack 3
     - Cambia Jade por Pug
     - Mejorado el rendimiento
     - Multiples mejoras internas y cambios en el README
     - Uso de TypeScript en todo el core
 
 ### v.0.26.0
-    - Actualiza a Webpack2
+    - Actualización: Webpack 2
     - Corrige: tarea watch con los *.css 
     - Corrige: Rutas con routers
 
@@ -125,8 +133,7 @@
 
 ### v.0.20.1
     - Corrige: error cuando lanzamos speedseed start
-    - Corrige: README en español actualizado
-    - Plantilla multi-tic-tac-toe actualizada
+    - Corrige: README en español actualización:   - Plantilla multi-tic-tac-toe actualizada
 
 ### v.0.20.0
     - Add speedseed cli
@@ -138,8 +145,8 @@
 
 ### v.0.19.0
     - Actualiza http-proxy-middleware a 0.17.0
-    - Actualiza AngularJS a 1.5.7
-    - Actualiza Angular2 a 2.0.0-rc.4
+    - Actualización: gularJS a 1.5.7
+    - Actualización: gular2 a 2.0.0-rc.4
     - Actualiza Polymer a 1.6.0
     - Actualiza React a 15.2.1
     - Añade plantilla speedseed-angular2-whitespace
