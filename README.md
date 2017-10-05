@@ -1,4 +1,4 @@
-### v.0.28.0
+### v.0.29.1
 
 ### Requeriments
 - NodeJS >= 6.0.0
@@ -20,12 +20,12 @@
 - Yeoman
 
 ### Templates
-- [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.28) (main template)*
+- [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.29) (main template)*
     - AngularJS **v.1.6.6**
     - Angular **v.4.4.3**
     - jQuery **v.3.2.1**
     - Polymer **v.1.7.0** *(require bower)*
-    - React **v.15.6.1**
+    - React **v.16.0.0**
     - VanillaJS
 - [angular2-tour-of-heroes](https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes) *(updated to v.0.26) (main template)*
     - Angular2 **v.2.1.1**
@@ -54,4 +54,4 @@
 - ScSS
 - Stylus
 - Redux
-- TypeScript 2.6
+- TypeScript 2.5

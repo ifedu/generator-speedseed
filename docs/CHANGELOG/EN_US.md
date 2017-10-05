@@ -1,3 +1,6 @@
+### v.0.29.1
+    - Fix: README
+    
 ### v. 0.29.0
     - Add MIT License
     - Changes in paths

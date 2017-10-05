@@ -1,3 +1,6 @@
+### v.0.29.1
+    - Corrige: README
+
 ### v.0.29.0
     - Añadida Licencia MIT
     - Cambios en paths
