@@ -4,7 +4,7 @@
     - **npm i generator-speedseed -g**
     - **npm i [TEMPLATE] -g** (ej: **npm i generator-speedseed-multi-tic-tac-toe -g**, install the generator-speedseed templates you need)
     - Official Templates
-        - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.29) (main template)*
+        - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.30) (main template)*
         - [cleanly-angular2-tour-of-heroes](https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes) *(updated to v.0.26) (main template)*
         - [cleanly-breakouts](https://www.npmjs.com/package/generator-speedseed-cleanly-breakouts) *(updated to v.0.26) (main template)*
         - [cleanly-polymer-get-started](https://www.npmjs.com/package/generator-speedseed-cleanly-polymer-get-started) *(updated to v.0.26.0) (main template)*
@@ -26,6 +26,9 @@
     - **npm run electron.dev** "Compile the files, read ./electron/main.ts and launch electron",
     - **npm run electron.dist** "Compiles files for distribution, read ./electron/main.ts and launch electron",
     - **npm run electron.run** "Read ./electron/main.ts and launch electron",
+    - **npm run electron.packager** "Create the executable with ./electron files"
+    - **npm run electron.packager.dev** "Compile the project in -build and copy it to ./electron, create the executable with ./electron files"
+    - **npm run electron.packager.dist** "Compiles the project into -dist and copies it to ./electron, creates the executable with ./electron files"
     - **sd construct** -> Create files from. /core and. /config
     - **sd update** -> Use after updating the generator with npm, deletes the core folder and creates the updated one
 

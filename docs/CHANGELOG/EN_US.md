@@ -1,3 +1,6 @@
+### v.0.30.0
+    - Buildings tasks of app with electron
+
 ### v.0.29.1
     - Fix: README
     

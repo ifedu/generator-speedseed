@@ -11,6 +11,7 @@ class TaskFile extends Task {
         this.run(
             'build',
             'copy.assets',
+            'copy.build-to-electron',
             'electron.run',
             'dev',
             cb

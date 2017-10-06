@@ -1,20 +1,18 @@
 import { paths, Task } from 'root/core/seed'
+import * as packager from 'electron-packager'
 
 class TaskFile extends Task {
-    private files: any = [
-        paths.build.dir,
-        paths.dist.dir,
-        paths.tmp.dir,
-
-        paths.electron.build.dir,
-    ]
-
     constructor() {
         super(__filename)
     }
 
     protected init(cb: any) {
-        this.deleteFiles(this.files, cb)
+
+        packager(paths.electron.packager, (err: any, appPaths: any) => {
+            console.log(appPaths)
+
+            cb()
+        })
     }
 }
 

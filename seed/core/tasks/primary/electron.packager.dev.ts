@@ -10,10 +10,9 @@ class TaskFile extends Task {
     protected init(cb: any) {
         this.run(
             'build',
-            'dist',
             'copy.assets',
             'copy.build-to-electron',
-            'electron.run',
+            'electron.packager',
             cb
         )
     }

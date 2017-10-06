@@ -2,6 +2,7 @@ import { core } from 'root/core/seed'
 
 const build = '-build'
 const dist = '-dist'
+const electron = 'electron'
 const src = 'src'
 const tmp = '-tmp'
 
@@ -56,8 +57,19 @@ const paths: any = {
     },
 
     electron: {
-        file: 'electron/index',
+        dir: './electron',
+        file: 'core/electron',
         livereload: 'http://localhost:8001/browser-sync/browser-sync-client.js?v=2.18.13',
+
+        build: {
+            dir: `${electron}/${build}`,
+        },
+
+        packager: {
+            asar: true,
+            dir: `./${electron}`,
+            name: '_myproject',
+        },
     },
 
     server: {

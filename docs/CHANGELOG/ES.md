@@ -1,3 +1,6 @@
+### v.0.30.0
+- Tareas de construcción de app con electron
+
 ### v.0.29.1
     - Corrige: README
 

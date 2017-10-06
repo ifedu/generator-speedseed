@@ -13,7 +13,7 @@ class TaskFile extends Task {
             'dist',
             'copy.assets',
             'copy.build-to-electron',
-            'electron.run',
+            'electron.packager',
             cb
         )
     }
