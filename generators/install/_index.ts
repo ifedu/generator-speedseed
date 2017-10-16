@@ -16,6 +16,8 @@ export default class Yo extends Base {
     }
 
     prompting() {
+        if (core.speedseedgui) return
+
         const project = prompter.getProject('project')
         const template = prompter.getTemplate('template')
         const templateFiles = prompter.getTemplateFiles('templateFiles')

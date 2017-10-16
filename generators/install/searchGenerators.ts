@@ -14,16 +14,11 @@ export default class SearchGenerators {
         const gs = 'generator-speedseed-'
 
         this.choices = [
-            this.getChoice(`${gs}multi-tic-tac-toe`,
-                             'multi-tic-tac-toe'),
-            this.getChoice(`${gs}cleanly-angular2-tour-of-heroes`,
-                            'cleanly-angular2-tour-of-heroes'),
-            this.getChoice(`${gs}cleanly-polymer-get-started`,
-                            'cleanly-polymer-get-started'),
-            this.getChoice(`${gs}cleanly-todomvc`,
-                            'cleanly-todomvc'),
-            this.getChoice(`${gs}cleanly-breakouts`,
-                            'cleanly-breakouts')
+            this.getChoice(`${gs}multi-tic-tac-toe`, 'multi-tic-tac-toe'),
+            this.getChoice(`${gs}cleanly-angular2-tour-of-heroes`, 'cleanly-angular2-tour-of-heroes'),
+            this.getChoice(`${gs}cleanly-polymer-get-started`, 'cleanly-polymer-get-started'),
+            this.getChoice(`${gs}cleanly-todomvc`, 'cleanly-todomvc'),
+            this.getChoice(`${gs}cleanly-breakouts`, 'cleanly-breakouts')
         ]
     }
 

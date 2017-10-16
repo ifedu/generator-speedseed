@@ -24,7 +24,12 @@ export default class Yo extends Base {
     }
 
     end() {
-        this.composeWith('speedseed:constructs', {})
+        const options: any = {
+            core: this,
+            speedseedgui: core.speedseedgui
+        }
+
+        this.composeWith('speedseed:constructs', options)
 
         core.yo.config.set('templateFiles', false)
     }

@@ -7,8 +7,8 @@ class TaskFile extends Task {
     }
 
     protected init(cb: any) {
-
         packager(paths.electron.packager, (err: any, appPaths: any) => {
+            if (err) console.log(err)
             console.log(appPaths)
 
             cb()

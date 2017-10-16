@@ -1,5 +1,12 @@
+### v.0.31.0
+    - Actualización: speedseed v.0.24.0
+    - Corrige: electron.packager
+    - Adaptación a la GUI
+    - Muestra la versión de la plantilla
+    - Elimina la tarea de watch con gulp
+
 ### v.0.30.0
-- Tareas de construcción de app con electron
+    - Tareas de construcción de app con electron
 
 ### v.0.29.1
     - Corrige: README

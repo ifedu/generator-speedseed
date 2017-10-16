@@ -1,3 +1,10 @@
+### v.0.31.0
+    - Update: speedseed v.0.24.0
+    - Fix: electron.packager
+    - Adaptation to the GUI
+    - Show template version
+    - Delete watch task with gulp
+
 ### v.0.30.0
     - Buildings tasks of app with electron
 

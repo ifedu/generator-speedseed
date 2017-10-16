@@ -1,5 +1,6 @@
 import * as ExtractTextPlugin from 'extract-text-webpack-plugin'
 import { template } from 'lodash'
+import { resolve } from 'path'
 
 import { core, tpl, paths } from 'root/core/seed'
 
@@ -245,7 +246,10 @@ export default class WebpackOptionsCore {
 
             resolve: {
                 extensions: ['.css', '.html', '.js', '.jsx', '.less', '.pug', '.sass', '.scss', '.styl', '.ts', '.tsx'],
-                modules: ['node_modules'],
+                modules: [
+                    resolve('.'),
+                    'node_modules',
+                ],
             },
         },
 

@@ -6,6 +6,8 @@ export default class Yo extends Base {
         super(args, options)
 
         core.setYo(this)
+
+        core.setGui(options.speedseedgui)
     }
 
     paths() {

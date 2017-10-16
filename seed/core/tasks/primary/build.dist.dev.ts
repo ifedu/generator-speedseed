@@ -10,7 +10,7 @@ class TaskFile extends Task {
             'build',
             'dist',
             'copy.assets',
-            'dev',
+            'webserver',
             cb
         )
     }

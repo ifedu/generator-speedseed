@@ -8,7 +8,7 @@ class TaskFile extends Task {
     protected init(cb: any) {
         this.run(
             'build',
-            'dev',
+            'webserver',
             cb
         )
     }

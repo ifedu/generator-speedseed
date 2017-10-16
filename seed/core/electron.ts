@@ -1,6 +1,7 @@
 import { spawn } from 'child_process'
+import { paths } from 'root/core/seed'
 
-spawn('electron', ['./electron/index'], {
+spawn('electron', [`./${paths.electron.dir}/index`], {
     shell: true,
     stdio: 'inherit'
 })
