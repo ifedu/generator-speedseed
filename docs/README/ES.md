@@ -4,7 +4,7 @@
     - **npm i generator-speedseed -g**
     - **npm i [TEMPLATE] -g** (ej: **npm i generator-speedseed-multi-tic-tac-toe -g**, instala las plantillas generator-speedseed que necesites)
     - Plantillas oficiales
-        - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.31) (plantilla primaria)*
+        - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.32) (plantilla primaria)*
         - [cleanly-angular2-tour-of-heroes](https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes) *(updated to v.0.26) (plantilla primaria)*
         - [cleanly-breakouts](https://www.npmjs.com/package/generator-speedseed-cleanly-breakouts) *(updated to v.0.26) (plantilla primaria)*
         - [cleanly-polymer-get-started](https://www.npmjs.com/package/generator-speedseed-cleanly-polymer-get-started) *(updated to v.0.26) (plantilla primaria)*
@@ -23,9 +23,9 @@
     - **npm run dist.dev.open** -> Compila el proyecto en -dist, crea el servidor local y abre el navegador
     - **npm run test** -> Compila el proyecto en -build y lanza los test unitarios con PhantomJS
     - **npm run test.dev** -> Compila el proyecto en -build, crea el servidor local y lanza los test unitarios con Chrome
-    - **npm run electron.dev** "Compila los ficheros, lee ./electron/main.ts y lanza electron",
-    - **npm run electron.dist** "Compila los ficheros para distribución, lee ./electron/main.ts y lanza electron",
-    - **npm run electron.run** "Lee ./electron/main.ts y lanza electron",
+    - **npm run electron.dev** "Compila los ficheros, lee ./-electron/index.js y lanza electron",
+    - **npm run electron.dist** "Compila los ficheros para distribución, lee ./-electron/index.js y lanza electron",
+    - **npm run electron.run** "Lee ./-electron/index.js y lanza electron",
     - **npm run electron.packager** "Crea el ejecutable con los archivos de ./electron"
     - **npm run electron.packager.dev** "Compila el proyecto en -build y lo copia a ./electron, crea el ejecutable con los archivos de ./electron"
     - **npm run electron.packager.dist** "Compila el proyecto en -dist y lo copia a ./electron, crea el ejecutable con los archivos de ./electron"
@@ -49,7 +49,7 @@
 ### Estructura de ficheros
 - **-build** -> *Generada con npm run build, contiene código de src/ compilado a html, css, js(es5).*
 - **-dist** -> *Generada con npm run dist, contiene código minificado de src/ compilado a html, css, js(es5).*
-- **-tmp** -> *Generada para descomentar en los .js /\*[ ]\*/*
+- **-electron** -> *Generada con npm run electron.*, contiene lo que se va empaquetar en Electron*
 - **config** -> *Aquí se pueden añadir **tareas a gulp**, **paquetes a npm**, **cambiar rutas** o sobreescribir otros .json de ./core*
     **construct** -> *Añadir paquetes a npm o sobreescribir otros .json de ./core*
     **tasks** -> *Añadir tareas a gulp*

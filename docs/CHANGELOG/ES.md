@@ -1,3 +1,9 @@
+### v.0.32.0
+    - Mejorado el uso de Webpack con Electron
+    - Carpeta -electron contiene lo que se va empaquetar en Electron
+    - Elimina /*[ ]*/
+    - Elimina -tmp
+
 ### v.0.31.0
     - Actualización: speedseed v.0.24.0
     - Corrige: electron.packager

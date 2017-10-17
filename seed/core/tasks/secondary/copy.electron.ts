@@ -1,8 +1,6 @@
 import { core, paths, Task } from 'root/core/seed'
 
 class TaskFile extends Task {
-    private files: any = paths.src.assets.files
-
     constructor() {
         super(__filename)
     }
@@ -13,8 +11,8 @@ class TaskFile extends Task {
             : paths.build.assets.dir
 
         return this.gulp
-        .src(this.files)
-        .pipe(this.gulp.dest(filesDest))
+        .src(`${process.cwd()}/package.json`)
+        .pipe(this.gulp.dest(paths.electron.tmp.dir))
     }
 }
 

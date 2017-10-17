@@ -2,16 +2,10 @@ import { existsSync } from 'fs'
 import * as modifyFile from 'gulp-modify-file'
 import * as plumber from 'gulp-plumber'
 import { mergeWith } from 'lodash'
-import { basename, dirname, extname, join, sep } from 'path'
+import { extname } from 'path'
 import * as webpack from 'webpack'
 
-import { core, paths, tpl, Task } from 'root/core/seed'
-
-import webpackOptions from 'root/config/webpack.options'
-import WebpackOptionsCore from 'root/core/webpack.options'
-
-const webpackOptionsCore: any = new WebpackOptionsCore()
-mergeWith(webpackOptions, webpackOptionsCore.options, core.concatArr)
+import { core, paths, tpl, webpackOptions, Task } from 'root/core/seed'
 
 class TaskFile extends Task {
     private cb: any
@@ -59,7 +53,7 @@ class TaskFile extends Task {
     }
 
     private getWebpackOptions(): any {
-        const common = this.getWebpackCommonOptions()
+        const common: any = this.getWebpackCommonOptions()
 
         if (core.args.dev) {
             mergeWith(common, webpackOptions.dev, core.concatArr)
@@ -73,7 +67,7 @@ class TaskFile extends Task {
     }
 
     private getWebpackCommonOptions() {
-        const common = {
+        const common: any = {
             entry: this.getEntry(),
             output: {
                 filename: '[name].js',
@@ -85,6 +79,10 @@ class TaskFile extends Task {
             plugins: [
                 ...this.getPlugins(),
             ],
+        }
+
+        if (core.args.electron) {
+            common.target = 'electron-renderer'
         }
 
         mergeWith(common, webpackOptions.common, core.concatArr)
@@ -150,7 +148,7 @@ class TaskFile extends Task {
         }
 
         if (Task.reload) {
-            return this.gulp.start('post-modify-file.js')
+            return this.gulp.start('reload')
         }
     }
 }

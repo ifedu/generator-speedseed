@@ -6,9 +6,8 @@ class TaskFile extends Task {
         paths.build.dirCopy,
         paths.dist.dir,
         paths.dist.dirCopy,
-        paths.tmp.dir,
-
         paths.electron.build.dir,
+        paths.electron.tmp.dir,
     ]
 
     constructor() {

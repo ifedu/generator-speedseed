@@ -2,18 +2,18 @@ import { core } from 'root/core/seed'
 
 let build = '-build'
 const dist = '-dist'
-const electron = 'electron-src'
+const electronTmp = '-electron'
+const electronSrc = 'electron-src'
 const src = 'src'
-const tmp = '-tmp'
 
 export default class PathsCore {
     constructor() {
         if (core.args.electron) {
             if (core.args.dist) {
-                build = `${electron}/${dist}`
+                build = `${electronTmp}/${dist}`
             }
             else {
-                build = `${electron}/${build}`
+                build = `${electronTmp}/${build}`
             }
         }
 
@@ -70,18 +70,27 @@ export default class PathsCore {
             },
 
             electron: {
-                dir: electron,
+                dir: electronSrc,
                 file: 'core/electron',
+                index: `${electronSrc}/index`,
                 livereload: 'http://localhost:8001/browser-sync/browser-sync-client.js?v=2.18.13',
 
                 build: {
-                    dir: `${electron}/${build}`,
+                    dir: `${electronTmp}/${build}`,
+                },
+
+                compile: {
                 },
 
                 packager: {
                     asar: true,
-                    dir: `./${electron}`,
+                    dir: `./${electronTmp}`,
                     name: '_myproject',
+                },
+
+                tmp: {
+                    dir: electronTmp,
+                    file: `${electronTmp}/index.js`,
                 },
             },
 
@@ -189,16 +198,14 @@ export default class PathsCore {
                 },
             },
 
-            tmp: {
-                dir: tmp,
-            },
-
             yo: require('../.yo-rc.json')['generator-speedseed']
         }
 
+        paths.electron.packager.asar = !(core.args.dev)
+
         paths.test.karma.options.browsers = (core.args.dev)
-        ? ['Chrome']
-        : ['PhantomJS']
+            ? ['Chrome']
+            : ['PhantomJS']
 
         paths.test.karma.options.singleRun = !(core.args.dev)
 

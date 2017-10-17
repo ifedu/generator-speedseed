@@ -13,9 +13,16 @@ const tpl: any = new Tpl()
 
 mergeWith(paths, pathsCore, core.concatArr)
 
+const webpackOptions = require('root/config/webpack.options').default
+const WebpackOptionsCore = require('root/core/webpack.options').default
+
+const webpackOptionsCore: any = new WebpackOptionsCore()
+mergeWith(webpackOptions, webpackOptionsCore.options, core.concatArr)
+
 export {
     core,
     paths,
     tpl,
+    webpackOptions,
     Task,
 }

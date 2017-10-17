@@ -9,6 +9,8 @@ class TaskFile extends Task {
         this.run(
             'build',
             'copy.assets',
+            'copy.electron',
+            'bundle.electron',
             'electron.packager',
             cb
         )

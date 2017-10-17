@@ -10,7 +10,6 @@ class TaskFile extends Task {
             'clean',
             'bundle.vendor',
             'bundle',
-            'post-modify-file.js',
             cb
         )
     }

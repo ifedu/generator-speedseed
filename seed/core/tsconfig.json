@@ -18,7 +18,8 @@
         "paths": {
             "*": ["typings/*"],
             "root/*": ["*"],
-            "electron-src/*": ["electron-src/*"]
+            "electron-src/*": ["electron-src/*"],
+            "src/*": ["src/*"]
         },
 
         "typeRoots": [
@@ -36,6 +37,7 @@
         "src",
         "-build",
         "-dist",
+        "-electron",
         "-tmp"
     ]
 }

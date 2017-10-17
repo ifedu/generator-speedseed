@@ -1,3 +1,9 @@
+### v.0.32.0
+    - Improved the use of Webpack with Electron
+    - -electron folder contains what is to be packaged in Electron
+    - Delete /*[ ]*/
+    - Delete -tmp
+
 ### v.0.31.0
     - Update: speedseed v.0.24.0
     - Fix: electron.packager

@@ -9,6 +9,7 @@ class TaskFile extends Task {
         this.run(
             'build',
             'copy.assets',
+            'bundle.electron',
             'electron.run',
             'webserver',
             cb
