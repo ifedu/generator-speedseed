@@ -9,6 +9,7 @@ export default class Yo extends Base {
         core.setYo(this)
 
         core.setGui(options.speedseedgui)
+        core.setUpdate(options.update)
 
         core.setVersion('core', packageNpm)
         core.viewVersion(packageNpm)

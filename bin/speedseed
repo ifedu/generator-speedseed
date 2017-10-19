@@ -34,7 +34,7 @@ const options = {
     },
 
     update() {
-        input('yo speedseed:update')
+        input('yo speedseed --update=true')
     },
 
     help() {

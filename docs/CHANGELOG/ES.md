@@ -1,3 +1,6 @@
+### v.0.33.0
+    - Corrige: sd update
+
 ### v.0.32.0
     - Mejorado el uso de Webpack con Electron
     - Carpeta -electron contiene lo que se va empaquetar en Electron

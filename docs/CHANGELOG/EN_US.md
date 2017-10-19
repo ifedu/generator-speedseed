@@ -1,3 +1,6 @@
+### v.0.33.0
+    - Fix: sd update
+
 ### v.0.32.0
     - Improved the use of Webpack with Electron
     - -electron folder contains what is to be packaged in Electron
