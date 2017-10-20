@@ -40,7 +40,7 @@ class TaskFile extends Task {
     private getWebpackCommonOptions() {
         const common = {
             target: 'electron-main',
-            entry: paths.electron.index,
+            entry: `./${paths.electron.index}`,
             output: {
                 filename: 'index.js',
                 path: `${this.root}/${paths.electron.tmp.dir}`,

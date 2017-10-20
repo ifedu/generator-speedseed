@@ -1,3 +1,8 @@
+### v.0.34.0
+    - Actualización: speedseed v.0.26.0
+    - Corrige: Crear desde speedseed gui
+    - Corrige: electron.bundle
+
 ### v.0.33.0
     - Corrige: sd update
 

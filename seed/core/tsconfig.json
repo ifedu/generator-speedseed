@@ -17,9 +17,7 @@
 
         "paths": {
             "*": ["typings/*"],
-            "root/*": ["*"],
-            "electron-src/*": ["electron-src/*"],
-            "src/*": ["src/*"]
+            "root/*": ["*"]
         },
 
         "typeRoots": [

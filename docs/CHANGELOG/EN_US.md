@@ -1,4 +1,10 @@
+### v.0.34.0
+    - Update: speedseed v.0.26.0
+    - Fix: create sinse speedseed gui
+    - Fix: electron.bundle
+
 ### v.0.33.0
+    - Update: speedseed v.0.25.0
     - Fix: sd update
 
 ### v.0.32.0
