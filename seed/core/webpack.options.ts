@@ -126,7 +126,6 @@ export default class WebpackOptionsCore {
 
         use: [
             rawLoader,
-            cssLoader,
             this.preModifyLoader(/\/\*\</, /\>\*\//),
         ]
     }

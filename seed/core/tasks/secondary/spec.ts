@@ -1,7 +1,5 @@
 import { paths, Task } from 'root/core/seed'
 
-import options from 'root/core/karma.conf'
-
 class TaskFile extends Task {
     constructor() {
         super(__filename)
@@ -9,6 +7,7 @@ class TaskFile extends Task {
 
     protected init(cb: any) {
         const karma = require('karma')
+        const options = require('root/core/karma.conf')
 
         const server = new karma.Server(
             options,

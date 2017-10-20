@@ -1,3 +1,8 @@
+### v.0.34.1
+    - Corrige: .css se cargan correctamente
+    - Corrige: electron no es seleccionado
+    - Corrige: test no es seleccionado
+    
 ### v.0.34.0
     - Actualización: speedseed v.0.26.0
     - Corrige: Crear desde speedseed gui

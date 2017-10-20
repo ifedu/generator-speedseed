@@ -1,3 +1,8 @@
+### v.0.34.1
+    - Fix: .css are loaded correctly
+    - Fix: electron not selected
+    - Fix: test not selected
+    
 ### v.0.34.0
     - Update: speedseed v.0.26.0
     - Fix: create sinse speedseed gui

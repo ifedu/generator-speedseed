@@ -4,7 +4,7 @@
     "license": "MIT",
     "main": "generators/app/index.js",
     "name": "generator-speedseed",
-    "version": "0.34.0",
+    "version": "0.34.1",
     "author": {
         "name": "Eduardo Pérez-Bermejo",
         "email": "ifedu@outlook.com",

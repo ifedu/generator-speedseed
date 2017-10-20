@@ -1,5 +1,4 @@
 import { paths, Task } from 'root/core/seed'
-import * as packager from 'electron-packager'
 
 class TaskFile extends Task {
     constructor() {
@@ -7,6 +6,8 @@ class TaskFile extends Task {
     }
 
     protected init(cb: any) {
+        const packager = require('electron-packager')
+
         packager(paths.electron.packager, (err: any, appPaths: any) => {
             if (err) console.log(err)
             console.log(appPaths)
