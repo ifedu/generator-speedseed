@@ -2,8 +2,8 @@ import { core } from 'root/core/seed'
 
 let build = '-build'
 const dist = '-dist'
-const electronTmp = '-electron'
 const electronSrc = 'electron-src'
+const electronTmp = `${electronSrc}/-electron`
 const src = 'src'
 
 export default class PathsCore {
@@ -73,24 +73,21 @@ export default class PathsCore {
                 dir: electronSrc,
                 file: 'core/electron',
                 index: `${electronSrc}/index`,
+                main: `${electronSrc}/main`,
                 livereload: 'http://localhost:8001/browser-sync/browser-sync-client.js?v=2.18.13',
 
                 build: {
                     dir: `${electronTmp}/${build}`,
                 },
 
-                compile: {
-                },
-
                 packager: {
                     asar: true,
-                    dir: `./${electronTmp}`,
+                    dir: `./${electronSrc}`,
                     name: '_myproject',
                 },
 
                 tmp: {
                     dir: electronTmp,
-                    file: `${electronTmp}/index.js`,
                 },
             },
 

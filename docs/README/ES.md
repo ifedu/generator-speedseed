@@ -4,33 +4,33 @@
     - **npm i generator-speedseed -g**
     - **npm i [TEMPLATE] -g** (ej: **npm i generator-speedseed-multi-tic-tac-toe -g**, instala las plantillas generator-speedseed que necesites)
     - Plantillas oficiales
-        - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.34) (plantilla primaria)*
-        - [cleanly-angular2-tour-of-heroes](https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes) *(updated to v.0.26) (plantilla primaria)*
-        - [cleanly-breakouts](https://www.npmjs.com/package/generator-speedseed-cleanly-breakouts) *(updated to v.0.26) (plantilla primaria)*
-        - [cleanly-polymer-get-started](https://www.npmjs.com/package/generator-speedseed-cleanly-polymer-get-started) *(updated to v.0.26) (plantilla primaria)*
-        - [cleanly-todomvc](https://www.npmjs.com/package/generator-speedseed-cleanly-todomvc) *(updated to v.0.26) (plantilla primaria)*
+        - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.35) (plantilla primaria)*
 - *Usar una vez en la carpeta del proyecto para lanzar el generador e instalas las dependencias*
     - **sd start [nombre de la plantilla]** -> El tercer parámetro es opcional para poder instalar plantillas locales o privadas. Ej: sd start multi-tic-tac-toe-beta
     - **npm i**
 - *En la carpeta del proyecto*
-    - **npm start** o **npm run build.dev** -> Compila el proyecto en -build y crea el servidor local
-    - **npm run build** -> Compila el proyecto en -build
-    - **npm run build.dev.debug** -> Compila el proyecto en -build, crea el servidor local y activa el debugger de nodejs
-    - **npm run build.dev.open** -> Compila el proyecto en -build, crea el servidor local y abre el navegador
-    - **npm run dist** -> Compila el proyecto en -dist
-    - **npm run dist.dev** -> Compila el proyecto en -dist y crea el servidor local
-    - **npm run dist.dev.debug** -> Compila el proyecto en -dist, crea el servidor local y activa el debugger de nodejs
-    - **npm run dist.dev.open** -> Compila el proyecto en -dist, crea el servidor local y abre el navegador
-    - **npm run test** -> Compila el proyecto en -build y lanza los test unitarios con PhantomJS
-    - **npm run test.dev** -> Compila el proyecto en -build, crea el servidor local y lanza los test unitarios con Chrome
-    - **npm run electron.dev** "Compila los ficheros, lee ./-electron/index.js y lanza electron",
-    - **npm run electron.dist** "Compila los ficheros para distribución, lee ./-electron/index.js y lanza electron",
-    - **npm run electron.run** "Lee ./-electron/index.js y lanza electron",
-    - **npm run electron.packager** "Crea el ejecutable con los archivos de ./electron"
-    - **npm run electron.packager.dev** "Compila el proyecto en -build y lo copia a ./electron, crea el ejecutable con los archivos de ./electron"
-    - **npm run electron.packager.dist** "Compila el proyecto en -dist y lo copia a ./electron, crea el ejecutable con los archivos de ./electron"
-    - **sd construct** -> Crea ficheros a partir del ./core y ./config
-    - **sd update** -> Usar después de actualizar el generador mediante npm, elimina la carpeta core y crea la actualizada
+    - *común*
+        - **npm start** o **npm run build.dev** -> Compila el proyecto en -build y crea el servidor local
+        - **npm run build** -> Compila el proyecto en -build
+        - **npm run build.dev.debug** -> Compila el proyecto en -build, crea el servidor local y activa el debugger de nodejs
+        - **npm run build.dev.open** -> Compila el proyecto en -build, crea el servidor local y abre el navegador
+        - **npm run dist** -> Compila el proyecto en -dist
+        - **npm run dist.dev** -> Compila el proyecto en -dist y crea el servidor local
+        - **npm run dist.dev.debug** -> Compila el proyecto en -dist, crea el servidor local y activa el debugger de nodejs
+        - **npm run dist.dev.open** -> Compila el proyecto en -dist, crea el servidor local y abre el navegador
+    - *test*
+        - **npm run test** -> Compila el proyecto en -build y lanza los test unitarios con PhantomJS
+        - **npm run test.dev** -> Compila el proyecto en -build, crea el servidor local y lanza los test unitarios con Chrome
+    - *electron*
+        - **npm run electron.dev** "Compila los ficheros, lee ./-electron/index.js y lanza electron",
+        - **npm run electron.dist** "Compila los ficheros para distribución, lee ./-electron/index.js y lanza electron",
+        - **npm run electron.run** "Lee ./-electron/index.js y lanza electron",
+        - **npm run electron.packager** "Crea el ejecutable con los archivos de ./electron"
+        - **npm run electron.packager.dev** "Compila el proyecto en -build y lo copia a ./electron, crea el ejecutable con los archivos de ./electron"
+        - **npm run electron.packager.dist** "Compila el proyecto en -dist y lo copia a ./electron, crea el ejecutable con los archivos de ./electron"
+    - *speedseed*
+        - **sd construct** -> Crea ficheros a partir del ./core y ./config *se ejecuta automáticamente en preinstall*
+        - **sd update** -> Usar después de actualizar el generador mediante npm, elimina la carpeta core y crea la actualizada
 
 ---
 
@@ -49,14 +49,14 @@
 ### Estructura de ficheros
 - **-build** -> *Generada con npm run build, contiene código de src/ compilado a html, css, js(es5).*
 - **-dist** -> *Generada con npm run dist, contiene código minificado de src/ compilado a html, css, js(es5).*
-- **-electron** -> *Generada con npm run electron.*, contiene lo que se va empaquetar en Electron*
 - **config** -> *Aquí se pueden añadir **tareas a gulp**, **paquetes a npm**, **cambiar rutas** o sobreescribir otros .json de ./core*
     **construct** -> *Añadir paquetes a npm o sobreescribir otros .json de ./core*
     **tasks** -> *Añadir tareas a gulp*
     **paths** -> *Cambiar rutas del core*
-    **webpack.options** -> *Cambia o añade opciones a Webpack*
+    **webpack.options** -> *Cambia o añade opciones a Webpack*s
 - **core** -> *No cambiar el contenido de esta carpeta, es actualizada en futuras versiones de generator-speedseed y sus plantillas*
-- **electron** -> *Archivos principales de electron
+- **electron-src** -> *Archivos principales de electron, contiene lo que se va empaquetar*
+    - **-electron** -> *Generada con npm run electron.**
 - **src** -> *Aquí se desarrolla*
     - **assets** -> *Estos ficheros se copian a -dist, en desarrollo se leen directamente desde src sin copiarse a -build*
     - **index.html** -> *Inicio de la página*

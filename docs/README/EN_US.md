@@ -5,32 +5,32 @@
     - **npm i [TEMPLATE] -g** (ej: **npm i generator-speedseed-multi-tic-tac-toe -g**, install the generator-speedseed templates you need)
     - Official Templates
         - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.34) (main template)*
-        - [cleanly-angular2-tour-of-heroes](https://www.npmjs.com/package/generator-speedseed-cleanly-angular2-tour-of-heroes) *(updated to v.0.26) (main template)*
-        - [cleanly-breakouts](https://www.npmjs.com/package/generator-speedseed-cleanly-breakouts) *(updated to v.0.26) (main template)*
-        - [cleanly-polymer-get-started](https://www.npmjs.com/package/generator-speedseed-cleanly-polymer-get-started) *(updated to v.0.26.0) (main template)*
-        - [cleanly-todomvc](https://www.npmjs.com/package/generator-speedseed-cleanly-todomvc) *(updated to v.0.26) (main template)*
 - *Use once in the project folder to launch the generator and install dependencies*
     - **sd start [template name]** -> The third parameter is optional in order to install local or private templates. Ex: sd start multi-tic-tac-toe-beta
     - **npm i**
 - *In the project folder*
-    - **npm start** o **npm run build.dev** -> Compile the project in -build and create the local server
-    - **npm run build** -> Compile the project in -build
-    - **npm run build.dev.debug** -> Compila el proyecto en -build, crea el servidor local y activa el debugger de nodejs
-    - **npm run build.dev.open** -> Compila el proyecto en -build, crea el servidor local y abre el navegador
-    - **npm run dist** -> Compile the project in -dist
-    - **npm run dist.dev** -> Compile the project in -dist and create the local server run dist
-    - **npm run dist.dev.debug** -> Compile the project in -build, create the local server and activate the nodejs debugger
-    - **npm run dist.dev.open** -> Compile the project in -build, create the local server and open the browser
-    - **npm run test** -> Compile the project in -build and launch the unitary tests with PhantomJS
-    - **npm run test.dev** -> Compile the project in -build, create the local server and launch the unitary tests with Chrome
-    - **npm run electron.dev** "Compile the files, read ./-electron/index.js and launch electron",
-    - **npm run electron.dist** "Compiles files for distribution, read ./-electron/index.js and launch electron",
-    - **npm run electron.run** "Read ./-electron/index.js and launch electron",
-    - **npm run electron.packager** "Create the executable with ./electron files"
-    - **npm run electron.packager.dev** "Compile the project in -build and copy it to ./electron, create the executable with ./electron files"
-    - **npm run electron.packager.dist** "Compiles the project into -dist and copies it to ./electron, creates the executable with ./electron files"
-    - **sd construct** -> Create files from. /core and. /config
-    - **sd update** -> Use after updating the generator with npm, deletes the core folder and creates the updated one
+    - *common*
+        - **npm start** o **npm run build.dev** -> Compile the project in -build and create the local server
+        - **npm run build** -> Compile the project in -build
+        - **npm run build.dev.debug** -> Compila el proyecto en -build, crea el servidor local y activa el debugger de nodejs
+        - **npm run build.dev.open** -> Compila el proyecto en -build, crea el servidor local y abre el navegador
+        - **npm run dist** -> Compile the project in -dist
+        - **npm run dist.dev** -> Compile the project in -dist and create the local server run dist
+        - **npm run dist.dev.debug** -> Compile the project in -build, create the local server and activate the nodejs debugger
+        - **npm run dist.dev.open** -> Compile the project in -build, create the local server and open the browser
+    - *test*
+        - **npm run test** -> Compile the project in -build and launch the unitary tests with PhantomJS
+        - **npm run test.dev** -> Compile the project in -build, create the local server and launch the unitary tests with Chrome
+    - *electron*
+        - **npm run electron.dev** "Compile the files, read ./-electron/index.js and launch electron",
+        - **npm run electron.dist** "Compiles files for distribution, read ./-electron/index.js and launch electron",
+        - **npm run electron.run** "Read ./-electron/index.js and launch electron",
+        - **npm run electron.packager** "Create the executable with ./electron files"
+        - **npm run electron.packager.dev** "Compile the project in -build and copy it to ./electron, create the executable with ./electron files"
+        - **npm run electron.packager.dist** "Compiles the project into -dist and copies it to ./electron, creates the executable with ./electron files"
+    - *speedseed*
+        - **sd construct** -> Create files from. /core and. /config *runs automatically on preinstall*
+        - **sd update** -> Use after updating the generator with npm, deletes the core folder and creates the updated one
 
 ---
 
@@ -49,14 +49,14 @@
 ### File structure
 - **-build** -> *Generated with npm run build, it contains src/ code compiled to html, css, js (es5).*
 - **-dist** -> *Generated with npm run dist, contains src/ compiled to html, css, js (es5) mined code.*
-- **-electron** -> *Generated with npm run electron.*, contains what is to be packaged in Electron*
 - **config** -> *Here you can add **tasks to gulp**, **packages to npm**, **change routes** or overwrite others .json of ./core*
     **construct** -> *Add packages to npm or overwrite others .json of ./core*
     **tasks** -> *Add tasks to gulp*
     **paths** -> *Change core routes*
     **webpack.options** -> *Change or add options to Webpack*
 - **core** -> *Do not change the contents of this folder, it is updated in future versions of generator-speedseed and its templates*
-- **electron** -> *Main electron files
+- **electron-src** -> *Main electron files, contains what is to be packaged*
+    - **-electron** -> *Generated with npm run electron.**
 - **src** -> *Here it develops*
     - **assets** -> *These files are copied to -dist, under development are read directly from src without being copied to -build*
     - **index.html** -> *Start of page*

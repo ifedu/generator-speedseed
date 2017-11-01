@@ -10,7 +10,6 @@ class TaskFile extends Task {
             'build',
             'dist',
             'copy.assets',
-            'copy.electron',
             'bundle.electron',
             'electron.packager',
             cb

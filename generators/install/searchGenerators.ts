@@ -15,10 +15,10 @@ export default class SearchGenerators {
 
         this.choices = [
             this.getChoice(`${gs}multi-tic-tac-toe`, 'multi-tic-tac-toe'),
-            this.getChoice(`${gs}cleanly-angular2-tour-of-heroes`, 'cleanly-angular2-tour-of-heroes'),
-            this.getChoice(`${gs}cleanly-polymer-get-started`, 'cleanly-polymer-get-started'),
-            this.getChoice(`${gs}cleanly-todomvc`, 'cleanly-todomvc'),
-            this.getChoice(`${gs}cleanly-breakouts`, 'cleanly-breakouts')
+            // this.getChoice(`${gs}cleanly-angular2-tour-of-heroes`, 'cleanly-angular2-tour-of-heroes'),
+            // this.getChoice(`${gs}cleanly-polymer-get-started`, ''),
+            // this.getChoice(`${gs}cleanly-todomvc`, ''),
+            // this.getChoice(`${gs}cleanly-breakouts`, '')
         ]
     }
 
@@ -96,6 +96,11 @@ export default class SearchGenerators {
 
         if (name === `${gs}angular2-whitespace`) return false
         if (name === `${gs}polymer-whitespace`) return false
+
+        if (name === `${gs}cleanly-angular2-tour-of-heroes`) return false
+        if (name === `${gs}cleanly-polymer-get-started`) return false
+        if (name === `${gs}cleanly-todomvc`) return false
+        if (name === `${gs}cleanly-breakouts`) return false
 
         return true
     }

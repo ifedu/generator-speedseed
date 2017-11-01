@@ -17,7 +17,8 @@
 
         "paths": {
             "*": ["typings/*"],
-            "root/*": ["*"]
+            "root/*": ["*"],
+            "src/*": ["src/*"]
         },
 
         "typeRoots": [
@@ -32,7 +33,6 @@
 
     "exclude": [
         "node_modules",
-        "src",
         "-build",
         "-dist",
         "-electron",

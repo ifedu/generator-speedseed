@@ -1,3 +1,12 @@
+### v.0.35.0
+    - Actualización: speedseed v.0.27.0
+    - Actualizadas varias librerías
+    - Añade script preinstall a package.json para simplificar la creación de package.json
+    - Cambios en el README
+    - Elimina plantillas antiguas
+    - Mejoras en la creación de apps con electron
+    - Ordena las dependencias de package.json al usar sd construct
+
 ### v.0.34.1
     - Corrige: .css se cargan correctamente
     - Corrige: electron no es seleccionado

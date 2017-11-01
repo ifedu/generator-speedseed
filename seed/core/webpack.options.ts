@@ -246,6 +246,7 @@ export default class WebpackOptionsCore {
             resolve: {
                 extensions: ['.css', '.html', '.js', '.jsx', '.less', '.pug', '.sass', '.scss', '.styl', '.ts', '.tsx'],
                 modules: [
+                    resolve('.'),
                     'node_modules',
                 ],
             },
