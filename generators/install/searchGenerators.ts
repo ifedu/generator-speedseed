@@ -5,7 +5,7 @@ export default class SearchGenerators {
 
     constructor() {
         this.setOfficialGenerators()
-        this.searchGenerators()
+        // this.searchGenerators()
 
         return this.choices
     }

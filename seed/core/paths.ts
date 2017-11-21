@@ -9,12 +9,7 @@ const src = 'src'
 export default class PathsCore {
     constructor() {
         if (core.args.electron) {
-            if (core.args.dist) {
-                build = `${electronTmp}/${dist}`
-            }
-            else {
-                build = `${electronTmp}/${build}`
-            }
+            build = `${electronTmp}/${build}`
         }
 
         const paths: any = {
@@ -81,7 +76,7 @@ export default class PathsCore {
                 },
 
                 packager: {
-                    asar: true,
+                    asar: false,
                     dir: `./${electronSrc}`,
                     name: '_myproject',
                 },
@@ -198,13 +193,11 @@ export default class PathsCore {
             yo: require('../.yo-rc.json')['generator-speedseed']
         }
 
-        paths.electron.packager.asar = !(core.args.dev)
-
         paths.test.karma.options.browsers = (core.args.dev)
             ? ['Chrome']
             : ['PhantomJS']
 
-        paths.test.karma.options.singleRun = !(core.args.dev)
+        paths.test.karma.options.singleRun = (!!core.args.dist)
 
         return paths
     }

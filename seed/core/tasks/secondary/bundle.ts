@@ -20,15 +20,14 @@ class TaskFile extends Task {
     constructor() {
         super(__filename)
 
-        this.files = (core.args.spec)
-            ? [
-                ...this.files,
-                paths.src.files.unitTestAll
-            ]
-            : [
-                ...this.files,
-                `!${paths.src.files.unitTestAll}`,
-            ]
+        const unitTestAll: any = (core.args.spec)
+            ? paths.src.files.unitTestAll
+            : `!${paths.src.files.unitTestAll}`
+
+        this.files = [
+            ...this.files,
+            unitTestAll
+        ]
     }
 
     protected init(cb: any) {
@@ -68,17 +67,15 @@ class TaskFile extends Task {
 
     private getWebpackCommonOptions() {
         const common: any = {
+            context: this.root,
             entry: this.getEntry(),
+
             output: {
                 filename: '[name].js',
                 path: `${this.root}/${paths.build.dir}`,
             },
 
-            context: this.root,
-
-            plugins: [
-                ...this.getPlugins(),
-            ],
+            plugins: this.getPlugins(),
         }
 
         if (core.args.electron) {

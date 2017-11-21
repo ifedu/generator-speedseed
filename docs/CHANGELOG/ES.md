@@ -1,6 +1,10 @@
+### v.0.36.0
+    - Corrige: electron dist
+    - Sólo permite plantilla multi-tic-tac-toe
+
 ### v.0.35.0
     - Actualización: speedseed v.0.27.0
-    - Actualizadas varias librerías
+    - Actualización: librerías
     - Añade script preinstall a package.json para simplificar la creación de package.json
     - Cambios en el README
     - Elimina plantillas antiguas

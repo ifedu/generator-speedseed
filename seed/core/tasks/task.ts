@@ -31,12 +31,6 @@ export default class Task {
         if (core.args.dist) {
             plugins = [
                 ...plugins,
-                new webpack.DefinePlugin({
-                    'process.env': {
-                        NODE_ENV: JSON.stringify('production')
-                    }
-                }),
-
                 new webpack.optimize.UglifyJsPlugin(),
             ]
         }

@@ -1,51 +1,67 @@
+import { mergeWith } from 'lodash'
 import * as webpack from 'webpack'
 
-import { core, paths, Task } from 'root/core/seed'
-
-const pack: any = require('../../../package.json')
-
-const packageDependencies: string[] = (paths.bundle.vendor.includePackageDependencies)
-    ? Object.keys(pack.dependencies)
-    : []
-
-const specDependencies: string[] = (core.args.spec)
-    ? paths.bundle.dependenciesSpec
-    : []
+import { core, paths, webpackOptions, Task } from 'root/core/seed'
 
 class TaskFile extends Task {
-    webpackOptions = {
-        entry: {
-            'vendor': [
-                ...packageDependencies,
-                ...specDependencies,
-                ...paths.bundle.vendor.dependencies
-            ],
-        },
+    private cb: any
+    private pack: any = require('../../../package.json')
 
-        node: {
-            fs: 'empty',
-        },
+    private packageDependencies: string[] = (paths.bundle.vendor.includePackageDependencies)
+        ? Object.keys(this.pack.dependencies)
+        : []
 
-        output: {
-            filename: '[name].js',
-            path: `${this.root}/${paths.build.dir}`,
-            library: '[name]',
-        },
-
-        plugins: this.getPlugins(),
-    }
+    private specDependencies: string[] = (core.args.spec)
+        ? paths.bundle.dependenciesSpec
+        : []
 
     constructor() {
         super(__filename)
     }
 
     protected init(cb: any) {
-        if (
-            !this.webpackOptions.entry.vendor.length ||
-            core.args.one
-        ) return cb()
+        this.cb = cb
 
-        webpack(this.webpackOptions, this.finish.bind(this, cb))
+        webpack(
+            this.getWebpackCommonOptions(),
+            this.webpackCb
+        )
+    }
+
+    private getWebpackCommonOptions() {
+        const common: any = {
+            context: this.root,
+
+            entry: {
+                'vendor': [
+                    ...this.packageDependencies,
+                    ...this.specDependencies,
+                    ...paths.bundle.vendor.dependencies
+                ],
+            },
+
+            node: {
+                fs: 'empty',
+            },
+
+            output: {
+                filename: '[name].js',
+                path: `${this.root}/${paths.build.dir}`,
+                library: '[name]',
+            },
+
+
+            plugins: this.getPlugins(),
+        }
+
+        if (
+            !common.entry.vendor.length ||
+            core.args.one
+        ) return this.cb()
+
+        mergeWith(common, webpackOptions.common, core.concatArr)
+
+        return common
     }
 
     private getPlugins() {
@@ -59,8 +75,8 @@ class TaskFile extends Task {
         return this.getPluginsMin(plugins)
     }
 
-    private finish(cb: any) {
-        cb()
+    private webpackCb = () => {
+        this.cb()
     }
 }
 

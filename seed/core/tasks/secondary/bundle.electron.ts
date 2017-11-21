@@ -39,12 +39,9 @@ class TaskFile extends Task {
 
     private getWebpackCommonOptions() {
         const common = {
-            target: 'electron-main',
+            context: this.root,
             entry: `./${paths.electron.main}`,
-            output: {
-                filename: 'main.js',
-                path: `${this.root}/${paths.electron.tmp.dir}`,
-            },
+            target: 'electron-main',
 
             externals: (ctx: any, req: any, done: any) => (
                 /^node-pty$/.test(req)
@@ -56,7 +53,12 @@ class TaskFile extends Task {
                 __dirname: false,
             },
 
-            context: this.root,
+            output: {
+                filename: 'main.js',
+                path: `${this.root}/${paths.electron.tmp.dir}`,
+            },
+
+            plugins: this.getPluginsMin([]),
         }
 
         mergeWith(common, webpackOptions.common, core.concatArr)
