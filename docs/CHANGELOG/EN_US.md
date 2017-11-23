@@ -1,3 +1,6 @@
+### v.0.36.1
+    - Corrige: compilar rutas con espacios
+
 ### v.0.36.0
     - Fix: electron dist
     - Only allow template multi-tic-tac-toe

@@ -1,3 +1,6 @@
+### v.0.36.1
+    - Corrige: compilar rutas con espacios
+
 ### v.0.36.0
     - Corrige: electron dist
     - Sólo permite plantilla multi-tic-tac-toe

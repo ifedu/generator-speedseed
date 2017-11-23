@@ -76,7 +76,7 @@ export default class WebpackOptionsCore {
     // HTML
     htmlLoader: any = {
         exclude,
-        test: /^(?!.*(index|main))([s\S]+\.(html))$/,
+        test: /^(?!.*(index|main))([\s\S]+\.(html))$/,
         use: [
             htmlLoader,
             this.preModifyLoader(/\<\!\-\-\</, /\>\-\-\>/),
@@ -97,7 +97,7 @@ export default class WebpackOptionsCore {
 
     pugLoader: any = {
         exclude,
-        test: /^(?!.*(index|main))([s\S]+\.(pug))$/,
+        test: /^(?!.*(index|main))([\s\S]+\.(pug))$/,
 
         use: [
             rawLoader,
@@ -122,7 +122,7 @@ export default class WebpackOptionsCore {
     // CSS
     cssLoader: any = {
         exclude,
-        test: /^(?!.*(index|main))([s\S]+\.(css))$/,
+        test: /^(?!.*(index|main))([\s\S]+\.(css))$/,
 
         use: [
             rawLoader,
@@ -144,7 +144,7 @@ export default class WebpackOptionsCore {
 
     lessLoader: any = {
         exclude,
-        test: /^(?!.*(index|main))([s\S]+\.(less))$/,
+        test: /^(?!.*(index|main))([\s\S]+\.(less))$/,
 
         use: [
             rawLoader,
@@ -168,7 +168,7 @@ export default class WebpackOptionsCore {
 
     sassLoader: any = {
         exclude,
-        test: /^(?!.*(index|main))([s\S]+\.(sass|scss))$/,
+        test: /^(?!.*(index|main))([\s\S]+\.(sass|scss))$/,
 
         use: [
             rawLoader,
@@ -192,7 +192,7 @@ export default class WebpackOptionsCore {
 
     stylusLoader: any = {
         exclude,
-        test: /^(?!.*(index|main))([s\S]+\.(styl))$/,
+        test: /^(?!.*(index|main))([\s\S]+\.(styl))$/,
 
         use: [
             rawLoader,

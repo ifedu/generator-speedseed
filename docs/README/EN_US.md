@@ -4,7 +4,7 @@
     - **npm i generator-speedseed -g**
     - **npm i [TEMPLATE] -g** (ej: **npm i generator-speedseed-multi-tic-tac-toe -g**, install the generator-speedseed templates you need)
     - Official Templates
-        - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe) *(updated to v.0.36) (main template)*
+        - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe)
 - *Use once in the project folder to launch the generator and install dependencies*
     - **sd start [template name]** -> The third parameter is optional in order to install local or private templates. Ex: sd start multi-tic-tac-toe-beta
     - **npm i**
