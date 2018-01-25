@@ -1,4 +1,4 @@
-### v.0.36.1
+### v.0.37.0
 
 ### Requeriments
 - NodeJS >= 6.0.0
@@ -21,12 +21,14 @@
 
 ### Templates
 - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe)
-    - AngularJS **v.1.6.6**
-    - Angular **v.5.0.3**
+    - AngularJS **v.1.6.8**
+    - Angular **v.5.2.2**
     - jQuery **v.3.2.1**
-    - Polymer **v.1.7.0** *(require bower)*
+    - Polymer2 **v.2.3.1**
+    - Polymer3 **3.0.0-pre.6**
     - React **v.16.0.0**
     - VanillaJS
+    - WebComponents
 
 ### Templates use
 - BabelJS 6

@@ -37,10 +37,6 @@
 ### Features and conventions
 - Unitary tests should be called *. spec. js
 - JavaScript files that are compiled to -build should be called index.js, main.css or *. spec.js, the other files should be included in these since they will not be compiled individually to -build
-- Files can be included by templating with:
-    - js/ts */\*<= include('nombre.html') >\*/*
-    - html *<\!--<= include('nombre.html') -->*
-    - pug *//<= include('nombre.html') >//*
 - Allows you to update the project kernel using sd update without affecting the development of the project
 - In the command line you can use sd, sdsd or speedseed
 

@@ -1,5 +1,15 @@
+### v.0.37.0
+    - Update: libs
+    - Update: Polymer2 and Polymer3
+    - Fix: error in not having external libs
+    - Add WebComponents
+    - Add access to bower_components since local server
+    - Delete function include since templating 
+    - Delete local typings
+    - num run update launches npm i when it finishes
+
 ### v.0.36.1
-    - Corrige: compilar rutas con espacios
+    - Fix: compile routes with spaces
 
 ### v.0.36.0
     - Fix: electron dist
@@ -7,7 +17,7 @@
 
 ### v.0.35.0
     - Update: speedseed v.0.27.0
-    - Update: libraries
+    - Update: libs
     - Add preinstall script to package.json to simplify package.json creation
     - Changes in README
     - Improvements in the creation of apps with electron

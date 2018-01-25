@@ -19,8 +19,9 @@ class TaskFile extends Task {
         const { dirRelative, dir } = paths.src.assets
 
         let baseDir = paths.build.dir
-        let routes = {
-            [`/${dirRelative}`]: dir
+        let routes: any = {
+            [`/${dirRelative}`]: dir,
+            ['/bower_components']: 'bower_components'
         }
 
         if (core.args.dist) {

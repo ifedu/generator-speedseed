@@ -1,9 +1,10 @@
 import { existsSync } from 'fs'
-import * as modifyFile from 'gulp-modify-file'
 import * as plumber from 'gulp-plumber'
 import { mergeWith } from 'lodash'
 import { extname } from 'path'
 import * as webpack from 'webpack'
+
+const modifyFile = require('gulp-modify-file')
 
 import { core, paths, tpl, webpackOptions, Task } from 'root/core/seed'
 

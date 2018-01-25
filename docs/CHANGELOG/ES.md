@@ -1,3 +1,13 @@
+### v.0.37.0
+    - Actualización: librerías
+    - Actualización: Polymer2 y Polymer3
+    - Corrige: error al no tener librerías externas
+    - Añade WebComponents
+    - Añade acceso a bower_components desde servidor local
+    - Elimina función include desde templating
+    - Elimina typings locales
+    - num run update lanza npm i cuanda acaba
+
 ### v.0.36.1
     - Corrige: compilar rutas con espacios
 

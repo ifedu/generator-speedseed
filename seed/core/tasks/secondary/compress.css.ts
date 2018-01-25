@@ -1,6 +1,6 @@
-import * as cssmin from 'gulp-cssmin'
-
 import { paths, Task } from 'root/core/seed'
+
+const cssmin = require('gulp-cssmin')
 
 class TaskFile extends Task {
     private files: any = [

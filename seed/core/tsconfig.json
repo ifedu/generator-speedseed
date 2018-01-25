@@ -16,14 +16,12 @@
         "lib": ["es2016"],
 
         "paths": {
-            "*": ["typings/*"],
             "root/*": ["*"],
             "src/*": ["src/*"]
         },
 
         "typeRoots": [
-            "./node_modules/@types",
-            "./typings"
+            "./node_modules/@types"
         ],
 
         "types": [

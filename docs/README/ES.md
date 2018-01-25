@@ -37,10 +37,6 @@
 ### Características y convenciones
 - Test Unitarios deben llamarse *.spec.js
 - Los ficheros de JavaScript que se compilan a -build deben llamarse *index.js, *main.css o *.spec.js, los demás ficheros deben ser incluidos en estos puesto que no se compilarán individualmente a -build
-- Se pueden incluir ficheros mediante templating con:
-    - js/ts */\*<= include('nombre.html') >\*/*
-    - html *<\!--<= include('nombre.html') -->*
-    - pug *//<= include('nombre.html') >//*
 - Permite actualizar el núcleo del proyecto mediante sd update sin afectar al desarrollo del proyecto
 - En la línea de comandos se puede usar sd o speedseed
 

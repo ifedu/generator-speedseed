@@ -4,7 +4,7 @@
     "license": "MIT",
     "main": "generators/app/index.js",
     "name": "generator-speedseed",
-    "version": "0.36.1",
+    "version": "0.37.0",
     "author": {
         "name": "Eduardo Pérez-Bermejo",
         "email": "ifedu@outlook.com",
@@ -15,8 +15,8 @@
         "speedseed": "./bin/speedseed"
     },
     "dependencies": {
-        "@types/node": "8.0.53",
-        "@types/yeoman-generator": "2.0.0",
+        "@types/node": "9.3.0",
+        "@types/yeoman-generator": "2.0.1",
         "speedseed": "0.27.0"
     },
     "engines": {

@@ -22,8 +22,12 @@ class TaskFile extends Task {
     protected init(cb: any) {
         this.cb = cb
 
+        const common = this.getWebpackCommonOptions()
+
+        if (!common) return
+
         webpack(
-            this.getWebpackCommonOptions(),
+            common,
             this.webpackCb
         )
     }
