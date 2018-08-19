@@ -1,7 +1,7 @@
-### v.0.37.0
+### v.0.38.0
 
 ### Requeriments
-- NodeJS >= 6.0.0
+- NodeJS >= 8.0.0
 - **npm i yo -g**
 - **npm i generator-speedseed -g**
 - **npm i generator-speedseed-multi-tic-tac-toe -g**
@@ -16,24 +16,24 @@
 
 ### Use
 - Gulp
-- Webpack 3
+- Webpack 4
 - Yeoman
 
 ### Templates
 - [multi-tic-tac-toe](https://www.npmjs.com/package/generator-speedseed-multi-tic-tac-toe)
-    - AngularJS **v.1.6.8**
-    - Angular **v.5.2.2**
+    - AngularJS **v.1.7.3**
+    - Angular **v.6.1.4**
     - jQuery **v.3.2.1**
     - Polymer2 **v.2.3.1**
-    - Polymer3 **3.0.0-pre.6**
-    - React **v.16.0.0**
+    - Polymer3 **3.0.5**
+    - React **v.16.4.2**
     - VanillaJS
     - WebComponents
 
 ### Templates use
 - BabelJS 6
 - CoffeeScript 2
-- Electron
+- Electron 2
 - Jasmine
 - Karma
 - LeSS
@@ -43,4 +43,4 @@
 - ScSS
 - Stylus
 - Redux
-- TypeScript 2.6
+- TypeScript 3

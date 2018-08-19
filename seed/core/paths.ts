@@ -4,6 +4,7 @@ let build = '-build'
 const dist = '-dist'
 const electronSrc = 'electron-src'
 const electronTmp = `${electronSrc}/-electron`
+const portBuild = 8001
 const src = 'src'
 
 export default class PathsCore {
@@ -13,6 +14,18 @@ export default class PathsCore {
         }
 
         const paths: any = {
+            api: {
+                routeLocalHost: 'http://localhost:8080',
+                routeLocalPathName: '/api',
+                routeProd: 'http://myserverapi',
+
+                getRoute() {
+                    return (paths.dev)
+                        ? `${this.routeLocalPathName}/`
+                        : this.routeProd
+                }
+            },
+
             build: {
                 assets: {
                     dir: `${build}/assets`,
@@ -20,7 +33,6 @@ export default class PathsCore {
                 },
 
                 cache: [
-                    `${build}/commons.js`,
                     `${build}/vendor.js`,
                 ],
 
@@ -69,7 +81,7 @@ export default class PathsCore {
                 file: 'core/electron',
                 index: `${electronSrc}/index`,
                 main: `${electronSrc}/main`,
-                livereload: 'http://localhost:8001/browser-sync/browser-sync-client.js?v=2.18.13',
+                livereload: `http://localhost:${portBuild}/browser-sync/browser-sync-client.js?v=2.18.13`,
 
                 build: {
                     dir: `${electronTmp}/${build}`,
@@ -87,7 +99,7 @@ export default class PathsCore {
             },
 
             server: {
-                portBuild: 8001,
+                portBuild,
                 portReload: 8002,
             },
 
@@ -169,14 +181,12 @@ export default class PathsCore {
             test: {
                 karma: {
                     options: {
-                        autowatch: false,
                         basePath: '.',
                         port: 9876,
 
                         files: [
                             `./${build}/vendor.js`,
                             `./${build}/libs.js`,
-                            `./${build}/commons.js`,
                             `./${build}/**/*.spec.js`,
                         ],
 
@@ -197,7 +207,8 @@ export default class PathsCore {
             ? ['Chrome']
             : ['PhantomJS']
 
-        paths.test.karma.options.singleRun = (!!core.args.dist)
+            paths.test.karma.options.autowatch = !!core.args.dev
+            paths.test.karma.options.singleRun = !core.args.dev
 
         return paths
     }

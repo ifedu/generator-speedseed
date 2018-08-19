@@ -7,8 +7,6 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "module": "commonjs",
-        "noImplicitAny": true,
-        "noImplicitReturns": true,
         "pretty": true,
         "sourceMap": true,
         "target": "es5",
