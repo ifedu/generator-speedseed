@@ -1,3 +1,9 @@
+### v.0.38.0
+    - Update: libs
+    - Fix: errors of CORS inn development
+    - common.js isn't necessary with Webpack 4
+    - delete rules in tsconfig noImplicit
+
 ### v.0.37.0
     - Update: libs
     - Update: Polymer2 and Polymer3

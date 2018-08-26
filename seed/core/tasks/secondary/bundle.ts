@@ -83,6 +83,12 @@ class TaskFile extends Task {
             common.target = 'electron-renderer'
         }
 
+        if (core.args.spec) {
+            common.node = {
+                fs: 'empty',
+            }
+        }
+
         mergeWith(common, webpackOptions.common, core.concatArr)
 
         return common
@@ -91,12 +97,7 @@ class TaskFile extends Task {
     private getPlugins() {
         if (core.args.one) return []
 
-        const plugins: any = [
-            new webpack.optimize.CommonsChunkPlugin({
-                filename: 'commons.js',
-                name: 'commons'
-            }),
-        ]
+        const plugins: any = []
 
         this.addPlugin(plugins, `${this.root}/${paths.build.vendor.dll}`)
 

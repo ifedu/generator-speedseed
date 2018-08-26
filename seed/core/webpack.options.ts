@@ -11,7 +11,6 @@ const htmlLoader = { loader: 'html-loader',
     }
 }
 const rawLoader = { loader: 'raw-loader' }
-const styleLoader = { loader: 'style-loader' }
 
 const pugLoader = {
     loader: 'pug-html-loader',

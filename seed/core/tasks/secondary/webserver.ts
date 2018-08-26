@@ -1,5 +1,6 @@
 import * as browserSync from 'browser-sync'
 import * as historyApiFallback from 'connect-history-api-fallback'
+import * as proxy from 'proxy-middleware'
 
 import { core, paths, Task } from 'root/core/seed'
 
@@ -48,6 +49,10 @@ class TaskFile extends Task {
                 middleware: [
                     historyApiFallback({
                         index: '/index.html'
+                    }),
+                    proxy({
+                        href: paths.api.routeLocalHost,
+                        route: paths.api.routeLocalPathName,
                     })
                 ]
             },
